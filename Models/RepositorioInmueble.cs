@@ -51,7 +51,7 @@ public class RepositorioInmueble
         cmd.Parameters.AddWithValue("@activo", inmueble.activo);
         cmd.Parameters.AddWithValue("@idPropietario", inmueble.idPropietario);
         cmd.ExecuteNonQuery();
-        recs = mySqlDatabase.Dispose();
+        var recs = mySqlDatabase.Dispose();
         if (recs == 1)
             response = "Todo OK";
         else
