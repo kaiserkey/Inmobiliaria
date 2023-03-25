@@ -14,7 +14,7 @@ public class RepositorioInmueble
     public List<Inmueble> GetInmuebles()
     {
         var cmd = this.MySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT idI FROM Inmueble";
+        cmd.CommandText = @"SELECT idInmueble, ti FROM Inmueble";
 
     }
 }
