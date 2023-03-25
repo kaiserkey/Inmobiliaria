@@ -1,4 +1,4 @@
-using My
+using MySql.Data
 
 var builder = WebApplication.CreateBuilder(args);
 
