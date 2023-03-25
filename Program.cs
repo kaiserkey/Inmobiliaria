@@ -9,7 +9,7 @@ var app = builder.Build();
 var serviceProvider = new ServiceCollection();
 
 serviceProvider.AddTransient<MySqlDatabase>(_ => new MySqlDatabase("server=localhost;port=3306;database=Inmobiliaria;uid=root;password=1234;"));
-
+//.BuildServiceProvider();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
