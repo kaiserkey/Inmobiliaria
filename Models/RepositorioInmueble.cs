@@ -5,7 +5,6 @@ namespace Inmobiliaria.Models;
 
 public class RepositorioInmueble
 {
-    
 
     public List<Inmueble> GetInmuebles()
     {
