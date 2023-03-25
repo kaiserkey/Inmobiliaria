@@ -9,5 +9,5 @@ public class Inmueble
     private int ambientes{ get; set; }
     private string uso{ get; set; }
     private Boolean activo{ get; set; }
-    
+    private idPropietario
 }
