@@ -8,5 +8,6 @@ public class Inmueble
     private decimal precio{ get; set; }
     private int ambientes{ get; set; }
     private string uso{ get; set; }
-    private Boolean a
+    private Boolean activo{ get; set; }
+    
 }
