@@ -25,4 +25,5 @@ public class InmuebleController : Controller
     {
         return View();
     }
+    
 }
