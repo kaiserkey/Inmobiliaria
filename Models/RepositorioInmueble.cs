@@ -11,7 +11,8 @@ public class RepositorioInmueble
         this.MySqlDatabase = mySqlDatabase;
     }
 
-    public List<Inmueble> GetInmuebles(){
+    public List<Inmueble> GetInmuebles()
+    {
         
     }
 }
