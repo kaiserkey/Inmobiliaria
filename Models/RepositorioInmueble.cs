@@ -51,7 +51,6 @@ public class RepositorioInmueble
         cmd.Parameters.AddWithValue("@activo", inmueble.activo);
         cmd.Parameters.AddWithValue("@idPropietario", inmueble.idPropietario);
         cmd.ExecuteNonQuery();
-        
         var recs = cmd.ExecuteNonQuery();
 
         if (recs == 1)
