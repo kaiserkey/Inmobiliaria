@@ -52,7 +52,7 @@ public class RepositorioInmueble
         cmd.Parameters.AddWithValue("@uso", inmueble.uso);
         cmd.Parameters.AddWithValue("@activo", inmueble.activo);
         cmd.Parameters.AddWithValue("@idPropietario", inmueble.idPropietario);
-        var recs = cmd.ExecuteNonQuery();
+        var recs = Co;
         mySqlDatabase.Dispose();
         if (recs == 1)
             response = "Todo OK";
