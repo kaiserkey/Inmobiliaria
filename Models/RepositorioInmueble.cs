@@ -18,7 +18,7 @@ public class RepositorioInmueble
 
         using (var reader = cmd.ExecuteReader())
         {
-            var inmuebles = new List<Inmueble>();
+            
             while (reader.Read())
             {
                 var inmueble = new Inmueble
