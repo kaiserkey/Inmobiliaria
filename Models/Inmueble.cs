@@ -2,5 +2,6 @@ namespace Inmobiliaria.Models;
 
 public class Inmueble
 {
-    private int idInmueble{}
+    private int idInmueble{ get; set; }
+    
 }
