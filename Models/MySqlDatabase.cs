@@ -1,7 +1,7 @@
 using System;
 using MySql.Data.MySqlClient;
 
-namespace TextTasks
+namespace Inmobiliaria.Models
 {
     public class MySqlDatabase : IDisposable
     {
