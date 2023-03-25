@@ -1,7 +1,7 @@
 using System;
 namespace Inmobiliaria.Models;
 
-public class RepositorioPersona
+public class RepositorioInmueble
 {
     
 }
