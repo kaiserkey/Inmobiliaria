@@ -4,6 +4,9 @@ namespace Inmobiliaria.Models;
 
 public class RepositorioInmueble
 {
+    public RepositorioInmueble()
+    {
+    }
 
     public List<Inmueble> GetInmuebles(MySqlDatabase mySqlDatabase)
     {
