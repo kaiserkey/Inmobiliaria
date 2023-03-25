@@ -35,7 +35,9 @@ public class InmuebleController : Controller
         if res == 0
         {
             return View();
-        }else
-        return RedirectToAction(nameof(Index));
+        }else 
+        {
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
