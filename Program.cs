@@ -10,7 +10,7 @@ var serviceProvider = new ServiceCollection();
 
 serviceProvider.AddTransient<MySqlDatabase>(_ => new MySqlDatabase("server=localhost;port=3306;database=Inmobiliaria;uid=root;password=1234;"));
 //.BuildServiceProvider();
-/* Esta line utiliza para crear una instancia de la clase MySqlDatabase y registrarla en el contenedor de servicios de la aplicación.
+/* Esta linea de codigo se utiliza para crear una instancia de la clase MySqlDatabase y registrarla en el contenedor de servicios de la aplicación.
 
 La clase MySqlDatabase se utiliza para conectarse a una base de datos MySQL. En este caso, se está creando una nueva instancia de esta clase y pasando una cadena de conexión como parámetro en el constructor. La cadena de conexión especifica el servidor MySQL, la base de datos a la que se conectará, el nombre de usuario y la contraseña.
 
