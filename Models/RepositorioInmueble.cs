@@ -6,9 +6,9 @@ namespace Inmobiliaria.Models;
 public class RepositorioInmueble
 {
     private MySqlDatabase MySqlDatabase { get; set; }
-    public RepositorioInmueble()
+    public RepositorioInmueble(MySqlDatabase mySqlDatabase)
     {
-        this.MySqlDatabase = new MySqlDatabase();
+        this.MySqlDatabase = new ;
     }
 
     public List<Inmueble> GetInmuebles()
