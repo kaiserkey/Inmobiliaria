@@ -6,7 +6,7 @@ namespace Inmobiliaria.Models;
 public class RepositorioInmueble
 {
 
-    public List<Inmueble> GetInmuebles()
+    public List<Inmueble> GetInmuebles(MySqlDatabase mySqlDatabase)
     {
         var inmuebles = new List<Inmueble>();
         var cmd = this.MySqlDatabase.Connection.CreateCommand() as MySqlCommand;
