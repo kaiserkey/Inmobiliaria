@@ -14,7 +14,7 @@ public class InmuebleController : Controller
     public IActionResult Index()
     {
         RepositorioInmueble inmuebles = new RepositorioInmueble();
-        List<Inmueble> lista = inmuebles.();
+        List<Inmueble> lista = inmuebles.Get();
         return View();
     }
 }
