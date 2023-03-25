@@ -7,5 +7,5 @@ namespace Inmobiliaria.Controllers;
 
 public class InmuebleController : Controller
 {
-    
+    public Inmu
 }
