@@ -1,6 +1,6 @@
 namespace Inmobiliaria.Models;
 
-public class ErrorViewModel
+public class Inmueble
 {
     public string? RequestId { get; set; }
 
