@@ -7,5 +7,12 @@ namespace Inmobiliaria.Controllers;
 
 public class InmuebleController : Controller
 {
-    public Inmu
+    public InmuebleController()
+    {
+    }
+
+    public IActionResult Index()
+    {
+        return View();
+    }
 }
