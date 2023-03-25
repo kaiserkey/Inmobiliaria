@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 var serviceProvider = new ServiceCollection();
 
-serviceProvider.AddTransient<MySqlDatabase>(_ => new MySqlDatabase("server=localhost; database=Inmobiliaria; uid=root; pwd=YOUR-PASSWORD;"));
+serviceProvider.AddTransient<MySqlDatabase>(_ => new MySqlDatabase("server=localhost; database=Inmobiliaria; uid=root; pwd=1234;"));
 //.BuildServiceProvider();
 /* Esta linea de codigo se utiliza para crear una instancia de la clase MySqlDatabase 
 y registrarla en el contenedor de servicios de la aplicación.
