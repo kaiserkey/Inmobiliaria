@@ -34,7 +34,7 @@ public class InmuebleController : Controller
         int res = inmuebles.CreateInmueble(con, inmueble);
         if (res == 0)
         {
-            return View(Inmueble);
+            return View(inmueble);
         }else 
         {
             return RedirectToAction(nameof(Index));
