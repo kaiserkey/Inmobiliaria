@@ -4,6 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+var 
 services.AddTransient<MySqlDatabase>(_ => new MySqlDatabase("server=YOUR-MYSQL-ENDPOINT; database=texttasks; uid=YOUR-USER-NAME; pwd=YOUR-PASSWORD;"));
 
 
