@@ -28,8 +28,8 @@ public class RepositorioInmueble
                     coordenadas = reader.GetString(nameof(Inmueble.coordenadas)),
                     precio = reader.GetDecimal(nameof(Inmueble.precio)),
                     ambientes = reader.GetInt32(nameof(Inmueble.ambientes)),
-                    uso = reader.GetString(nameof(Inmueble.)),
-                    activo = reader.GetBoolean(nameof(Inmueble.)),
+                    uso = reader.GetString(nameof(Inmueble.uso)),
+                    activo = reader.GetBoolean(nameof(Inmueble.activo)),
                     idPropietario = reader.GetInt32(nameof(Inmueble.))
                 };
                 inmuebles.Add(inmueble);
