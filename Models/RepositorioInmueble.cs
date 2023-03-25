@@ -32,7 +32,7 @@ public class RepositorioInmueble
                 };
                 inmuebles.Add(inmueble);
             }
-            
+
         }
         mySqlDatabase.Dispose();
         return inmuebles;
@@ -52,10 +52,10 @@ public class RepositorioInmueble
         cmd.ExecuteNonQuery();
         mySqlDatabase.Dispose();
         if (recs == 1)
-        response = "OK";
-      else
-        response = "Sorry! I didn't get that.";
+            response = "OK";
+        else
+            response = "Error al agregar el inmueble";
 
-      return response;
+        return response;
     }
 }
