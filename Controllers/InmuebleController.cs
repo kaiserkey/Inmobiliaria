@@ -13,7 +13,7 @@ public class InmuebleController : Controller
 
     public IActionResult Index()
     {
-        RepositorioInmueble 
+        RepositorioInmueble inmuebles = new RepositorioInmueble();
         return View();
     }
 }
