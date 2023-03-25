@@ -8,16 +8,16 @@ namespace Inmobiliaria.Controllers;
 
 public class InmuebleController : Controller
 {
-    private MySqlDatabase db { get; set; }
+    private MySqlDatabase con { get; set; }
     public InmuebleController()
     {
-        this.db = new MySqlDatabase("server=localhost; database=Inmobiliaria; uid=root; pwd=1234;");
+        this.con = new MySqlDatabase("server=localhost; database=Inmobiliaria; uid=root; pwd=1234;");
     }
 
     public IActionResult Index()
     {
         RepositorioInmueble inmuebles = new RepositorioInmueble();
-        List<Inmueble> lista = inmuebles.GetInmuebles(db);
+        List<Inmueble> lista = inmuebles.GetInmuebles(con);
         return View(lista);
     }
 }
