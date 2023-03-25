@@ -13,6 +13,7 @@ public class RepositorioInmueble
 
     public List<Inmueble> GetInmuebles()
     {
+        var inmuebles = new List<Inmueble>();
         var cmd = this.MySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT idInmueble, tipo, coordenadas, precio, ambientes, uso, activo, idPropietario FROM Inmueble";
 
@@ -34,7 +35,8 @@ public class RepositorioInmueble
                 };
                 inmuebles.Add(inmueble);
             }
-            return inmuebles;
+            
         }
+        return inmuebles;
     }
 }
