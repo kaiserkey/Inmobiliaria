@@ -13,6 +13,6 @@ public class RepositorioInmueble
 
     public List<Inmueble> GetInmuebles()
     {
-        
+        var cmd = this.MySqlDatabase.Connection.CreateCommand() as MySqlCommand;
     }
 }
