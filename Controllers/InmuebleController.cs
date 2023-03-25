@@ -7,8 +7,10 @@ namespace Inmobiliaria.Controllers;
 
 public class InmuebleController : Controller
 {
-    public InmuebleController()
+    private MySqlDatabase MySqlDatabase { get; set; }
+    public InmuebleController(MySqlDatabase mySqlDatabase)
     {
+        this.MySqlDatabase = mySqlDatabase;
     }
 
     public IActionResult Index()
