@@ -3,14 +3,14 @@ namespace Inmobiliaria.Models;
 
 public class Inmueble
 {
-    private int idInmueble{ get; set; }
-    private string tipo{ get; set; }
-    private string coordenadas{ get; set; }
-    private decimal precio{ get; set; }
-    private int ambientes{ get; set; }
-    private string uso{ get; set; }
-    private Boolean activo{ get; set; }
-    private int idPropietario{ get; set; }
+    public int idInmueble{ get; set; }
+    public string tipo{ get; set; }
+    public string coordenadas{ get; set; }
+    public decimal precio{ get; set; }
+    public int ambientes{ get; set; }
+    public string uso{ get; set; }
+    public Boolean activo{ get; set; }
+    public int idPropietario{ get; set; }
 
-    
+
 }
