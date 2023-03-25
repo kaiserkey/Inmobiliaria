@@ -4,5 +4,5 @@ public class Inmueble
 {
     private int idInmueble{ get; set; }
     private string coordenadas{ get; set; }
-    private decima
+    private decimal precio{ get; set; }
 }
