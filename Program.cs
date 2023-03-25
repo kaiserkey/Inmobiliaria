@@ -6,7 +6,7 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 var serviceProvider = new ServiceCollection();
 
-serviceProvider.AddTransient<MySqlDatabase>(_ => new MySqlDatabase("server=YOUR-MYSQL-ENDPOINT; database=texttasks; uid=YOUR-USER-NAME; pwd=YOUR-PASSWORD;"));
+serviceProvider.AddTransient<MySqlDatabase>(_ => new MySqlDatabase("server=localhost;port=3306;database=Inmobiliaria;uid=root;password=1234;"));
 
 
 // Configure the HTTP request pipeline.
