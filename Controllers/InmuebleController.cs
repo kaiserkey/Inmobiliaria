@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Inmobiliaria.Models;
 using System.Collections.Generic;
+using MySql.Data.MySqlClient;
 
 namespace Inmobiliaria.Controllers;
 
