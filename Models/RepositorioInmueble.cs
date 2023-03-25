@@ -53,11 +53,7 @@ public class RepositorioInmueble
         cmd.Parameters.AddWithValue("@idPropietario", inmueble.idPropietario);
         var recs = Convert.ToInt32(cmd.ExecuteScalar());
         mySqlDatabase.Dispose();
-        if (recs == 1)
-            response = "Todo OK";
-        else
-            response = "Error al agregar el inmueble";
-
-        return response;
+        
+        return recs;
     }
 }
