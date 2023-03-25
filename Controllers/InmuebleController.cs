@@ -16,7 +16,7 @@ public class InmuebleController : Controller
     public IActionResult Index()
     {
         RepositorioInmueble inmuebles = new RepositorioInmueble();
-        List<Inmueble> lista = inmuebles.GetInmuebles();
+        List<Inmueble> lista = inmuebles.GetInmuebles(MySqlDatabase);
         return View(lista);
     }
 }
