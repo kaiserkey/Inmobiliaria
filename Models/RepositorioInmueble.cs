@@ -30,7 +30,7 @@ public class RepositorioInmueble
                     ambientes = reader.GetInt32(nameof(Inmueble.ambientes)),
                     uso = reader.GetString(nameof(Inmueble.uso)),
                     activo = reader.GetBoolean(nameof(Inmueble.activo)),
-                    idPropietario = reader.GetInt32(nameof(Inmueble.))
+                    idPropietario = reader.GetInt32(nameof(Inmueble.idPropietario))
                 };
                 inmuebles.Add(inmueble);
             }
