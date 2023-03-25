@@ -21,5 +21,8 @@ public class InmuebleController : Controller
         return View(lista);
     }
 
-    
+    public IActionResult Create()
+    {
+        return View();
+    }
 }
