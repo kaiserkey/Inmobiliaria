@@ -20,4 +20,6 @@ public class InmuebleController : Controller
         List<Inmueble> lista = inmuebles.GetInmuebles(con);
         return View(lista);
     }
+
+    
 }
