@@ -8,7 +8,8 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 var serviceProvider = new ServiceCollection();
-
+// Agrega la clase MySqlDatabase al contenedor de servicios.
+    services.AddSingleton<IMySqlDatabase, MySqlDatabase>();
 serviceProvider.AddTransient<MySqlDatabase>(_ => new MySqlDatabase("server=localhost; database=Inmobiliaria; uid=root; pwd=1234;"));
 //.BuildServiceProvider();
 /* Esta linea de codigo se utiliza para crear una instancia de la clase MySqlDatabase 
