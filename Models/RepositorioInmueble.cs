@@ -19,7 +19,6 @@ public class RepositorioInmueble
 
         using (var reader = cmd.ExecuteReader())
         {
-            
             while (reader.Read())
             {
                 var inmueble = new Inmueble
@@ -37,6 +36,7 @@ public class RepositorioInmueble
             }
             
         }
+        
         return inmuebles;
     }
 }
