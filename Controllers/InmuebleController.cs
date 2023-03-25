@@ -13,7 +13,7 @@ public class InmuebleController : Controller
 
     public IActionResult Index()
     {
-        
+        var inmuebles
         return View();
     }
 }
