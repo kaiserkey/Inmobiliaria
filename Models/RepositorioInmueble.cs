@@ -1,7 +1,7 @@
 using System;
 namespace Inmobiliaria.Models;
 
-public class Repositorio
+public class RepositorioPersona
 {
     private int idInmueble{ get; set; }
     private string tipo{ get; set; }
