@@ -24,7 +24,7 @@ public class RepositorioInmueble
                 var inmueble = new Inmueble
                 {
                     idInmueble = reader.GetInt32(nameof(Inmueble.idInmueble)),
-                    tipo = reader.GetString(nameof(Inmueble.)),
+                    tipo = reader.GetString(nameof(Inmueble.tipo)),
                     coordenadas = reader.GetString(nameof(Inmueble.)),
                     precio = reader.GetDecimal(nameof(Inmueble.)),
                     ambientes = reader.GetInt32(nameof(Inmueble.)),
