@@ -38,9 +38,9 @@ public class RepositorioInmueble
         return inmuebles;
     }
 
-    public string CreateInmueble(MySqlDatabase mySqlDatabase, Inmueble inmueble)
+    public int CreateInmueble(MySqlDatabase mySqlDatabase, Inmueble inmueble)
     {
-        string response = null;
+        int response = null;
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"INSERT INTO Inmueble (tipo, coordenadas, precio, ambientes, uso, activo, idPropietario) 
                             VALUES (@tipo, @coordenadas, @precio, @ambientes, @uso, @activo, @idPropietario);
