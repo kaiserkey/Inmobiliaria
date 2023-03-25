@@ -9,7 +9,7 @@ namespace Inmobiliaria.Controllers;
 public class InmuebleController : Controller
 {
     private MySqlDatabase MySqlDatabase { get; set; }
-    public InmuebleController(MySqlDatabase mySqlDatabase)
+    public InmuebleController([FromServices]MySqlDatabase mySqlDatabase)
     {
         this.MySqlDatabase = mySqlDatabase;
     }
