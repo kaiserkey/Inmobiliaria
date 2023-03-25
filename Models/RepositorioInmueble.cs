@@ -38,5 +38,18 @@ public class RepositorioInmueble
         return inmuebles;
     }
 
-    public 
+    public void CreateInmueble(MySqlDatabase mySqlDatabase, Inmueble inmueble)
+    {
+        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
+        cmd.CommandText = @"INSERT INTO Inmueble (tipo, coordenadas, precio, ambientes, uso, activo, idPropietario) VALUES (@tipo, @coordenadas, @precio, @ambientes, @uso, @activo, @idPropietario)";
+        cmd.Parameters.AddWithValue("@tipo", inmueble.tipo);
+        cmd.Parameters.AddWithValue("@coordenadas", inmueble.coordenadas);
+        cmd.Parameters.AddWithValue("@precio", inmueble.precio);
+        cmd.Parameters.AddWithValue("@ambientes", inmueble.ambientes);
+        cmd.Parameters.AddWithValue("@uso", inmueble.uso);
+        cmd.Parameters.AddWithValue("@activo", inmueble.activo);
+        cmd.Parameters.AddWithValue("@idPropietario", inmueble.idPropietario);
+        cmd.ExecuteNonQuery();
+        mySqlDatabase.Dispose();
+    }
 }
