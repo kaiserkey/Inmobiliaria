@@ -34,7 +34,7 @@ public class RepositorioInmueble
             }
             
         }
-        mySqlDatabase.;
+        mySqlDatabase.Dispose();
         return inmuebles;
     }
 }
