@@ -11,7 +11,7 @@ public class InmuebleController : Controller
     private MySqlDatabase db { get; set; }
     public InmuebleController(MySqlDatabase mySqlDatabase)
     {
-        this.db = mySqlDatabase(new MySqlDatabase("server=localhost; database=Inmobiliaria; uid=root; pwd=1234;");
+        this.db = new mySqlDatabase(new MySqlDatabase("server=localhost; database=Inmobiliaria; uid=root; pwd=1234;");
     }
 
     public IActionResult Index()
