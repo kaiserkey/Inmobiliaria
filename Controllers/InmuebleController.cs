@@ -8,7 +8,7 @@ namespace Inmobiliaria.Controllers;
 
 public class InmuebleController : Controller
 {
-    private cmd;
+    private cmd
     private MySqlDatabase MySqlDatabase { get; set; }
     public InmuebleController(MySqlDatabase mySqlDatabase)
     {
