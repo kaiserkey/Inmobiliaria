@@ -16,6 +16,25 @@ public class RepositorioInmueble
         var cmd = this.MySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT idInmueble, tipo, coordenadas, precio, ambientes, uso, activo, idPropietario FROM Inmueble";
 
-        using 
+        using (var reader = cmd.ExecuteReader())
+        {
+            var inmuebles = new List<Inmueble>();
+            while (reader.Read())
+            {
+                var inmueble = new Inmueble
+                {
+                    idInmueble = reader.GetInt32(0),
+                    tipo = reader.GetString(1),
+                    coordenadas = reader.GetString(2),
+                    precio = reader.GetDecimal(3),
+                    ambientes = reader.GetInt32(4),
+                    uso = reader.GetString(5),
+                    activo = reader.GetBoolean(6),
+                    idPropietario = reader.GetInt32(7)
+                };
+                inmuebles.Add(inmueble);
+            }
+            return inmuebles;
+        }
     }
 }
