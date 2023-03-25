@@ -6,5 +6,6 @@ public class Inmueble
     private string coordenadas{ get; set; }
     private decimal precio{ get; set; }
     private int ambientes{ get; set; }
-    private string us
+    private string uso{ get; set; }
+    
 }
