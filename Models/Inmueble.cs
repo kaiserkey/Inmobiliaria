@@ -4,6 +4,7 @@ namespace Inmobiliaria.Models;
 public class Inmueble
 {
     private int idInmueble{ get; set; }
+    private string tipo
     private string coordenadas{ get; set; }
     private decimal precio{ get; set; }
     private int ambientes{ get; set; }
@@ -11,5 +12,5 @@ public class Inmueble
     private Boolean activo{ get; set; }
     private int idPropietario{ get; set; }
 
-    
+
 }
