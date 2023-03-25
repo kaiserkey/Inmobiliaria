@@ -10,4 +10,6 @@ public class RepositorioInmueble
     {
         this.MySqlDatabase = mySqlDatabase;
     }
+
+    
 }
