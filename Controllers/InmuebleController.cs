@@ -31,7 +31,8 @@ public class InmuebleController : Controller
     public IActionResult Create(Inmueble inmueble)
     {
         RepositorioInmueble inmuebles = new RepositorioInmueble();
-        inmuebles.CreateInmueble(con, inmueble);
+        int res = inmuebles.CreateInmueble(con, inmueble);
+        if res 
         return RedirectToAction(nameof(Index));
     }
 }
