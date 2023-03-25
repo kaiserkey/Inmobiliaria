@@ -2,17 +2,23 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+@if (@model.Count > 0)
+{
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>ID: @item.idInmueble</li>
+            <li>TIPO: @item.tipo</li>
+            <li>COORDENADAS: @item.coordenadas</li>
+            <li>PRECIO: @item.precio</li>
+            <li>AMBIENTES: @item.ambientes</li>
+            <li>USO: @item.uso</li>
+            <li>ACTIVO: @item.activo</li>
+            <li>IDPropietario: @item.idPropietario</li>
+        }
+    </ul>
+}else
+{
+    <h2>No hay inmuebles</h2>
+}
 
-<ul>
-    @foreach (var item in Model)
-    {
-        <li>ID: @item.idInmueble</li>
-        <li>TIPO: @item.tipo</li>
-        <li>COORDENADAS: @item.coordenadas</li>
-        <li>PRECIO: @item.precio</li>
-        <li>AMBIENTES: @item.ambientes</li>
-        <li>USO: @item.uso</li>
-        <li>ACTIVO: @item.activo</li>
-        <li>IDPropietario: @item.idPropietario</li>
-    }
-</ul>
