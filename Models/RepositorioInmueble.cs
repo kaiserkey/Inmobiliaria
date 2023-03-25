@@ -41,9 +41,11 @@ public class RepositorioInmueble
     public int CreateInmueble(MySqlDatabase mySqlDatabase, Inmueble inmueble)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
+        
         cmd.CommandText = @"INSERT INTO Inmueble (tipo, coordenadas, precio, ambientes, uso, activo, idPropietario) 
                             VALUES (@tipo, @coordenadas, @precio, @ambientes, @uso, @activo, @idPropietario);
                             SELECT LAST_INSERT_ID();";
+
         cmd.Parameters.AddWithValue("@tipo", inmueble.tipo);
         cmd.Parameters.AddWithValue("@coordenadas", inmueble.coordenadas);
         cmd.Parameters.AddWithValue("@precio", inmueble.precio);
@@ -51,7 +53,9 @@ public class RepositorioInmueble
         cmd.Parameters.AddWithValue("@uso", inmueble.uso);
         cmd.Parameters.AddWithValue("@activo", inmueble.activo);
         cmd.Parameters.AddWithValue("@idPropietario", inmueble.idPropietario);
+
         var recs = Convert.ToInt32(cmd.ExecuteScalar());
+
         mySqlDatabase.Dispose();
         
         return recs;
