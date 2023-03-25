@@ -32,7 +32,10 @@ public class InmuebleController : Controller
     {
         RepositorioInmueble inmuebles = new RepositorioInmueble();
         int res = inmuebles.CreateInmueble(con, inmueble);
-        if res 
+        if res == 0
+        {
+            return View();
+        }else
         return RedirectToAction(nameof(Index));
     }
 }
