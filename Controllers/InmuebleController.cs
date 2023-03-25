@@ -13,6 +13,7 @@ public class InmuebleController : Controller
 
     public IActionResult Index()
     {
+        
         return View();
     }
 }
