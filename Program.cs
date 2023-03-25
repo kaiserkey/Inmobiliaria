@@ -1,4 +1,4 @@
-using MySql.Data;
+using Inmobiliaria.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
