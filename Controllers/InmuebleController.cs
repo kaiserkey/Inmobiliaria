@@ -4,7 +4,7 @@ using Inmobiliaria.Models;
 
 namespace Inmobiliaria.Controllers;
 
-public class InmuebleController : Controll
+public class InmuebleController : Controller
 {
     
 }
