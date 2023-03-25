@@ -15,6 +15,7 @@ public class RepositorioInmueble
     {
         var cmd = this.MySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT idInmueble, tipo, coordenadas, precio, ambientes, uso, activo, idPropietario FROM Inmueble";
-        
+
+        using 
     }
 }
