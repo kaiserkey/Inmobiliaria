@@ -8,7 +8,7 @@ public class RepositorioInmueble
     private MySqlDatabase MySqlDatabase { get; set; }
     public RepositorioInmueble(MySqlDatabase mySqlDatabase)
     {
-        this.MySqlDatabase = new ;
+        this.MySqlDatabase = mySqlDatabase;
     }
 
     public List<Inmueble> GetInmuebles()
