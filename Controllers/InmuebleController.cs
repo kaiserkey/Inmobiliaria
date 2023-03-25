@@ -9,7 +9,7 @@ namespace Inmobiliaria.Controllers;
 public class InmuebleController : Controller
 {
     private MySqlDatabase db { get; set; }
-    public InmuebleController(MySqlDatabase mySqlDatabase)
+    public InmuebleController()
     {
         this.db = new MySqlDatabase("server=localhost; database=Inmobiliaria; uid=root; pwd=1234;");
     }
