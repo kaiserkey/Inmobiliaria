@@ -14,7 +14,7 @@ public class RepositorioInmueble
     public List<Inmueble> GetInmuebles()
     {
         var cmd = this.MySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT  FROM Tasks WHERE Archived IS NULL";
+        cmd.CommandText = @"SELECT  FROM Inmueble WHERE Archived IS NULL";
 
     }
 }
