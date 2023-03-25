@@ -25,9 +25,9 @@ public class RepositorioInmueble
                 {
                     idInmueble = reader.GetInt32(nameof(Inmueble.idInmueble)),
                     tipo = reader.GetString(nameof(Inmueble.tipo)),
-                    coordenadas = reader.GetString(nameof(Inmueble.)),
-                    precio = reader.GetDecimal(nameof(Inmueble.)),
-                    ambientes = reader.GetInt32(nameof(Inmueble.)),
+                    coordenadas = reader.GetString(nameof(Inmueble.coordenadas)),
+                    precio = reader.GetDecimal(nameof(Inmueble.precio)),
+                    ambientes = reader.GetInt32(nameof(Inmueble.ambientes)),
                     uso = reader.GetString(nameof(Inmueble.)),
                     activo = reader.GetBoolean(nameof(Inmueble.)),
                     idPropietario = reader.GetInt32(nameof(Inmueble.))
