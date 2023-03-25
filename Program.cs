@@ -4,6 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+services.AddTransient<MySqlDatabase>(_ => new MySqlDatabase("server=YOUR-MYSQL-ENDPOINT; database=texttasks; uid=YOUR-USER-NAME; pwd=YOUR-PASSWORD;"));
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
