@@ -23,14 +23,14 @@ public class RepositorioInmueble
             {
                 var inmueble = new Inmueble
                 {
-                    idInmueble = reader.GetInt32(nameof()),
-                    tipo = reader.GetString(nameof()),
-                    coordenadas = reader.GetString(nameof()),
-                    precio = reader.GetDecimal(nameof()),
-                    ambientes = reader.GetInt32(nameof()),
-                    uso = reader.GetString(nameof()),
-                    activo = reader.GetBoolean(nameof()),
-                    idPropietario = reader.GetInt32(nameof())
+                    idInmueble = reader.GetInt32(nameof(Inmueble.)),
+                    tipo = reader.GetString(nameof(Inmueble.)),
+                    coordenadas = reader.GetString(nameof(Inmueble.)),
+                    precio = reader.GetDecimal(nameof(Inmueble.)),
+                    ambientes = reader.GetInt32(nameof(Inmueble.)),
+                    uso = reader.GetString(nameof(Inmueble.)),
+                    activo = reader.GetBoolean(nameof(Inmueble.)),
+                    idPropietario = reader.GetInt32(nameof(Inmueble.))
                 };
                 inmuebles.Add(inmueble);
             }
