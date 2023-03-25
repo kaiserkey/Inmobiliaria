@@ -15,6 +15,6 @@ public class InmuebleController : Controller
     {
         RepositorioInmueble inmuebles = new RepositorioInmueble();
         List<Inmueble> lista = inmuebles.GetInmuebles();
-        return View();
+        return View(lista);
     }
 }
