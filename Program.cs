@@ -20,10 +20,10 @@ Al utilizar el método AddTransient, se registra la clase MySqlDatabase como un 
 en el contenedor de servicios de la aplicación. Esto significa que cada vez que se solicite una 
 instancia de la clase MySqlDatabase a través del contenedor de servicios, se creará una nueva 
 instancia de la clase.
-
 La inyección de dependencias es una técnica de programación que se utiliza para separar la creación 
 de objetos y su uso. En este caso, se registra la clase MySqlDatabase en el contenedor de servicios 
-para que pueda ser utilizada por otras clases de la aplicación que dependan de ella, sin tener que preocuparse por crear una instancia de la clase manualmente.
+para que pueda ser utilizada por otras clases de la aplicación que dependan de ella, sin tener que 
+preocuparse por crear una instancia de la clase manualmente.
  */
 
 // Configure the HTTP request pipeline.
