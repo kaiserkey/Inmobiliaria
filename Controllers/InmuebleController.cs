@@ -12,6 +12,5 @@ public class InmuebleController : Controller
     public InmuebleController(MySqlDatabase mySqlDatabase)
     {
         this.MySqlDatabase = mySqlDatabase;
-    
     }
 }
