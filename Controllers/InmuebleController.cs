@@ -38,7 +38,8 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                Inmueble i = new Inmueble();
+                RepositorioInmueble repositorio = new RepositorioInmueble(con);
+                
 
                 return RedirectToAction(nameof(Index));
             }
