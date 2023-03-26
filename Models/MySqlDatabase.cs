@@ -10,7 +10,7 @@ namespace Inmobiliaria.Models
 
         public MySqlDatabase()
         {
-            Connection = new MySqlConnection(this.connectionString);
+            Connection = new MySqlConnection(connectionString);
             this.Connection.Open();
         }
 
