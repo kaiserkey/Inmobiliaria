@@ -18,7 +18,7 @@ namespace Inmobiliaria.Controllers
         {
             RepositorioInmueble repositorio = new RepositorioInmueble(con);
             var lista = repositorio.GetInmuebles();
-            return View();
+            return View(lista);
         }
 
         // GET: Inmueble/Details/5
