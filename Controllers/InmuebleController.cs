@@ -7,27 +7,27 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Inmobiliaria.Controllers
 {
-    public class InmobiliariaController : Controller
+    public class InmuebleController : Controller
     {
-        // GET: Inmobiliaria
+        // GET: Inmueble
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Inmobiliaria/Details/5
+        // GET: Inmueble/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Inmobiliaria/Create
+        // GET: Inmueble/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Inmobiliaria/Create
+        // POST: Inmueble/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -44,13 +44,13 @@ namespace Inmobiliaria.Controllers
             }
         }
 
-        // GET: Inmobiliaria/Edit/5
+        // GET: Inmueble/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Inmobiliaria/Edit/5
+        // POST: Inmueble/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -67,13 +67,13 @@ namespace Inmobiliaria.Controllers
             }
         }
 
-        // GET: Inmobiliaria/Delete/5
+        // GET: Inmueble/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Inmobiliaria/Delete/5
+        // POST: Inmueble/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
