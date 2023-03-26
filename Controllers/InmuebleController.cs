@@ -28,7 +28,6 @@ namespace Inmobiliaria.Controllers
         // GET: Inmueble/Create
         public ActionResult Create()
         {
-            
             return View();
         }
 
