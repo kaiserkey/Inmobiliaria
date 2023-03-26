@@ -42,7 +42,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                RepositorioInmueble repositorio = new RepositorioInmueble(con);
+                RepositorioInmueble repositorio = new RepositorioInmueble();
                 repositorio.CreateInmueble(inmueble);
                 return RedirectToAction(nameof(Index));
             }
