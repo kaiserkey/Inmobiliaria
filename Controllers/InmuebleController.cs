@@ -38,7 +38,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                Inmueble
 
                 return RedirectToAction(nameof(Index));
             }
