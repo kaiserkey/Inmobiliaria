@@ -34,7 +34,7 @@ namespace Inmobiliaria.Controllers
         // POST: Inmueble/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(InmuebleController inmueble)
+        public ActionResult Create(Inmueble inmueble)
         {
             try
             {
