@@ -21,7 +21,7 @@ namespace Inmobiliaria.Controllers
             return View(listaInmuebles);
         }
 
-        dotnet-aspnet-codegenerator view Index List -outDir "Views/Propietarios" -udl --model vsTest.Models.Propietario -f
+        dotnet-aspnet-codegenerator view Index List -outDir "Views/Inmueble" -udl --model vsTest.Models.Propietario -f
 
         // GET: Inmueble/Details/5
         public ActionResult Details(int id)
