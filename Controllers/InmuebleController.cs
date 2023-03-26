@@ -40,7 +40,6 @@ namespace Inmobiliaria.Controllers
             {
                 RepositorioInmueble repositorio = new RepositorioInmueble(con);
                 repositorio.CreateInmueble(inmueble);
-
                 return RedirectToAction(nameof(Index));
             }
             catch
