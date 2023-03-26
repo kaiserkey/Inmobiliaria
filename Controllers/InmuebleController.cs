@@ -38,7 +38,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                InmuebleController 
+                Inmueble i = new Inmueble();
 
                 return RedirectToAction(nameof(Index));
             }
