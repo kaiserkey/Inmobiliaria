@@ -8,7 +8,7 @@ namespace Inmobiliaria.Models
         public MySqlConnection Connection;
         public string connectionString = "server=localhost;port=3306;database=Inmobiliaria;uid=root;password=1234"
 
-        public MySqlDatabase(string connectionString)
+        public MySqlDatabase()
         {
             Connection = new MySqlConnection(connectionString);
             this.Connection.Open();
