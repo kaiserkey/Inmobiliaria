@@ -39,7 +39,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 RepositorioInmueble repositorio = new RepositorioInmueble(con);
-                repositorio.Alta(inmueble);
+                repositorio.Create(inmueble);
 
                 return RedirectToAction(nameof(Index));
             }
