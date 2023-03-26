@@ -17,7 +17,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Index()
         {
             RepositorioInmueble repositorio = new RepositorioInmueble(con);
-            var lista = repositorio.ObtenerTodos();
+            var lista = repositorio.GetInmuebles();
             return View();
         }
 
