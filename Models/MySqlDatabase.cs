@@ -6,7 +6,7 @@ namespace Inmobiliaria.Models
     public class MySqlDatabase : IDisposable
     {
         public MySqlConnection Connection;
-        public 
+        public string 
 
         public MySqlDatabase(string connectionString)
         {
