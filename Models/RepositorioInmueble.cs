@@ -61,7 +61,7 @@ public class RepositorioInmueble
         return recs;
     }
 
-    public int UpdateInmueble(MySqlDatabase mySqlDatabase, int idIinmueble)
+    public int UpdateInmueble(MySqlDatabase mySqlDatabase, int idInmueble)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
