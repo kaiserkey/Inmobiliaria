@@ -38,7 +38,7 @@ public class RepositorioInmueble
         return inmuebles;
     }
 
-    public inmueble
+    public Inmueble GetIN
 
     public int CreateInmueble(MySqlDatabase mySqlDatabase, Inmueble inmueble)
     {
