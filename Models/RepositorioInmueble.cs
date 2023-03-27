@@ -38,6 +38,8 @@ public class RepositorioInmueble
         return inmuebles;
     }
 
+    public inmueble
+
     public int CreateInmueble(MySqlDatabase mySqlDatabase, Inmueble inmueble)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
