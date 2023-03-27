@@ -61,5 +61,26 @@ public class RepositorioInmueble
         return recs;
     }
 
-    public int 
+    public int UpdateInmueble(MySqlDatabase mySqlDatabase, Inmueble inmueble)
+    {
+        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
+        
+        cmd.CommandText = @"UPDATE Inmueble SET tipo = @tipo, coordenadas = @coordenadas, precio = @precio, ambientes = @ambientes, uso = @uso, activo = @activo, idPropietario = @idPropietario
+                            WHERE idInmueble = @idInmueble;";
+
+        cmd.Parameters.AddWithValue("@idInmueble", inmueble.idInmueble);
+        cmd.Parameters.AddWithValue("@tipo", inmueble.tipo);
+        cmd.Parameters.AddWithValue("@coordenadas", inmueble.coordenadas);
+        cmd.Parameters.AddWithValue("@precio", inmueble.precio);
+        cmd.Parameters.AddWithValue("@ambientes", inmueble.ambientes);
+        cmd.Parameters.AddWithValue("@uso", inmueble.uso);
+        cmd.Parameters.AddWithValue("@activo", inmueble.activo);
+        cmd.Parameters.AddWithValue("@idPropietario", inmueble.idPropietario);
+
+        var recs = Convert.ToInt32(cmd.ExecuteNonQuery());
+
+        mySqlDatabase.Dispose();
+        
+        return recs;
+    }
 }
