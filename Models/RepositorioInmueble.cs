@@ -60,4 +60,6 @@ public class RepositorioInmueble
         
         return recs;
     }
+
+    public
 }
