@@ -63,6 +63,7 @@ public class RepositorioInmueble
 
     public int UpdateInmueble(MySqlDatabase mySqlDatabase, Inmueble inmueble)
     {
+        
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
         cmd.CommandText = @"UPDATE Inmueble SET tipo = @tipo, coordenadas = @coordenadas, precio = @precio, ambientes = @ambientes, uso = @uso, activo = @activo, idPropietario = @idPropietario
