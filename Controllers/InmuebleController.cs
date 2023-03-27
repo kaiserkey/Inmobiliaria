@@ -13,7 +13,7 @@ namespace Inmobiliaria.Controllers
         private MySqlDatabase con { get; set; }
         public InmuebleController() { con = new MySqlDatabase(); }
 
-        private readonly R
+        private readonly RepositorioInmueble repositorio;
 
         // GET: Inmueble
         public ActionResult Index()
