@@ -38,7 +38,34 @@ public class RepositorioInmueble
         return inmuebles;
     }
 
-    public Inmueble GetInmueble(MySqlDatabase mySqlDatabase, )
+    public Inmueble GetInmueble(MySqlDatabase mySqlDatabase, int id)
+    {
+        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
+        cmd.CommandText = @"SELECT idInmueble, tipo, coordenadas, precio, ambientes, uso, activo, idPropietario FROM Inmueble WHERE idInmueble = @idInmueble";
+        cmd.Parameters.AddWithValue("@idInmueble", id);
+
+        using (var reader = cmd.ExecuteReader())
+        {
+            if (reader.Read())
+            {
+                var inmueble = new Inmueble
+                {
+                    idInmueble = reader.GetInt32(nameof(Inmueble.idInmueble)),
+                    tipo = reader.GetString(nameof(Inmueble.tipo)),
+                    coordenadas = reader.GetString(nameof(Inmueble.coordenadas)),
+                    precio = reader.GetDecimal(nameof(Inmueble.precio)),
+                    ambientes = reader.GetInt32(nameof(Inmueble.ambientes)),
+                    uso = reader.GetString(nameof(Inmueble.uso)),
+                    activo = reader.GetBoolean(nameof(Inmueble.activo)),
+                    idPropietario = reader.GetInt32(nameof(Inmueble.idPropietario))
+                };
+                mySqlDatabase.Dispose();
+                return inmueble;
+            }
+        }
+        mySqlDatabase.Dispose();
+        return null;
+    }
 
     public int CreateInmueble(MySqlDatabase mySqlDatabase, Inmueble inmueble)
     {
