@@ -11,12 +11,11 @@ namespace Inmobiliaria.Controllers
     public class InmuebleController : Controller
     {
         private MySqlDatabase con { get; set; }
+        private readonly RepositorioInmueble RepoInmueble;
         public InmuebleController() { 
             con = new MySqlDatabase(); 
             RepoInmueble = new RepositorioInmueble();
         }
-
-        
 
         // GET: Inmueble
         public ActionResult Index()
