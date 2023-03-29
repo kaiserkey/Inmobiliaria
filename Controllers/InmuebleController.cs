@@ -48,6 +48,7 @@ namespace Inmobiliaria.Controllers
                 RepoInmueble.CreateInmueble(con, inmueble);
                 return RedirectToAction(nameof(Index));
             }
+            
             catch
             {
                 return View();
