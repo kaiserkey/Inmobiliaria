@@ -70,7 +70,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
+                Inmueble inmueble = inmueble;
 
                 return RedirectToAction(nameof(Index));
             }
