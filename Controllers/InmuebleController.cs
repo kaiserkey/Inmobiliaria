@@ -60,13 +60,13 @@ namespace Inmobiliaria.Controllers
         public ActionResult Edit(int id)
         {
 
-            return View();
+            return View(inmueble);
         }
 
         // POST: Inmueble/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, Inmueble inmuebl)
+        public ActionResult Edit(int id, IFormCollection collection)
         {
             try
             {
