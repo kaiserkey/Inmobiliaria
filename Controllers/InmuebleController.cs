@@ -59,8 +59,6 @@ namespace Inmobiliaria.Controllers
         // GET: Inmueble/Edit/5
         public ActionResult Edit(int id)
         {
-            Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
-            
 
             return View(inmueble);
         }
