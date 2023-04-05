@@ -30,7 +30,6 @@ namespace Inmobiliaria.Controllers
         // GET: Inmueble/Details/5
         public ActionResult Details(int id)
         {
-            Inmueble inm
             return View();
         }
 
@@ -67,11 +66,11 @@ namespace Inmobiliaria.Controllers
         // POST: Inmueble/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, Inmueble updateInmueble)
+        public ActionResult Edit(int id, Inmueble inmuebl)
         {
             try
             {
-                Inmueble inmueble = updateInmueble;
+                Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
 
                 return RedirectToAction(nameof(Index));
             }
