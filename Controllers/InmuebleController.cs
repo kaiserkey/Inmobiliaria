@@ -60,7 +60,7 @@ namespace Inmobiliaria.Controllers
         {
             Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
             Inmueble updateInmueble = new Inmueble();
-            updateInmueble.Direccion = inmueble.tipo;
+            updateInmueble.tipo = inmueble.tipo;
             /* updateInmueble.Tipo = inmueble.Tipo;
             updateInmueble.Uso = inmueble.Uso;
             updateInmueble.Precio = inmueble.Precio;
