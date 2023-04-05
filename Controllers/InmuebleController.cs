@@ -30,6 +30,7 @@ namespace Inmobiliaria.Controllers
         // GET: Inmueble/Details/5
         public ActionResult Details(int id)
         {
+            
             return View();
         }
 
@@ -71,7 +72,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 Inmueble inmueble = updateInmueble;
-                
+
                 return RedirectToAction(nameof(Index));
             }
             catch
