@@ -59,7 +59,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Edit(int id)
         {
             Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
-            inmueble.tipo = Request.QueryString["tipo"];
+            inmueble.tipo = Request;
 
 
             return View(inmueble);
