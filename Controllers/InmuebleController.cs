@@ -60,8 +60,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Edit(int id)
         {
             Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
-            inmueble.tipo = Request.Form["tipo"];
-            Console.WriteLine(Request.Form["tipo"]);
+            
 
             return View(inmueble);
         }
