@@ -60,7 +60,7 @@ namespace Inmobiliaria.Controllers
         {
             Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
             inmueble.tipo = Request.Form["tipo"];
-            
+            writ
 
             return View(inmueble);
         }
