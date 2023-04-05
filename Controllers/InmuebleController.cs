@@ -1,3 +1,4 @@
+using Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,7 +61,7 @@ namespace Inmobiliaria.Controllers
         {
             Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
             inmueble.tipo = Request.Form["tipo"];
-            console
+            Console.WriteLine(Request.Form["tipo"]);
 
             return View(inmueble);
         }
