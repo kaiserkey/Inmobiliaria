@@ -1,4 +1,3 @@
-using Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,8 +59,8 @@ namespace Inmobiliaria.Controllers
         public ActionResult Edit(int id)
         {
             Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
-            inmueble.tipo = Request.Form["tipo"];
-            Console.WriteLine(Request.Form["tipo"]);
+            inmueble.tipo = inmueble.tipo;
+
 
             return View(inmueble);
         }
