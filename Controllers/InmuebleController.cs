@@ -60,7 +60,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Edit(int id)
         {
 
-            return View(inmueble);
+            //return View(inmueble);
         }
 
         // POST: Inmueble/Edit/5
