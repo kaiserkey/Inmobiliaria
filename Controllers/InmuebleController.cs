@@ -59,6 +59,9 @@ namespace Inmobiliaria.Controllers
         // GET: Inmueble/Edit/5
         public ActionResult Edit(int id)
         {
+            Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
+            inmueble.tipo = Request.Form["tipo"];
+            Console.WriteLine(Request.Form["tipo"]);
 
             return View(inmueble);
         }
@@ -70,7 +73,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
+                // TODO: Add update logic here
 
                 return RedirectToAction(nameof(Index));
             }
