@@ -71,7 +71,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 Inmueble inmueble = updateInmueble;
-
+                
                 return RedirectToAction(nameof(Index));
             }
             catch
