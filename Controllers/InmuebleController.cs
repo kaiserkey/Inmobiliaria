@@ -59,15 +59,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Edit(int id)
         {
             Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
-            Inmueble updateInmueble = new Inmueble();
-            updateInmueble.tipo = inmueble.tipo;
-            /* updateInmueble.Tipo = inmueble.Tipo;
-            updateInmueble.Uso = inmueble.Uso;
-            updateInmueble.Precio = inmueble.Precio;
-            updateInmueble.Estado = inmueble.Estado;
-            updateInmueble.IdPropietario = inmueble.IdPropietario;
-            updateInmueble.activo = inmueble.activo;
-             */
+            inmueble.tipo = 
 
 
             return View(inmueble);
