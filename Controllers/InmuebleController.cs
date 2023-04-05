@@ -70,7 +70,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                
+                Inmueble
 
                 return RedirectToAction(nameof(Index));
             }
