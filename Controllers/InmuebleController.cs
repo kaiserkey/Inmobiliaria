@@ -67,6 +67,7 @@ namespace Inmobiliaria.Controllers
             updateInmueble.Precio = inmueble.Precio;
             updateInmueble.Estado = inmueble.Estado;
             updateInmueble.IdPropietario = inmueble.IdPropietario;
+            
 
 
             return View(inmueble);
