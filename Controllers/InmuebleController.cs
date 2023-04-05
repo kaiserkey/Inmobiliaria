@@ -61,6 +61,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Edit(int id)
         {
             Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
+            
             return View(inmueble);
         }
 
