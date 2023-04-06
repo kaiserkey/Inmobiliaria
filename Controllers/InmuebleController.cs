@@ -30,7 +30,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Details(int id)
         {
             var inmueble = RepoInmueble.GetInmueble(con, id);
-            return View(inmue);
+            return View(inmueble);
         }
 
         // GET: Inmueble/Create
