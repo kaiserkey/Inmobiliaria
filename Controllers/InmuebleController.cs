@@ -33,12 +33,6 @@ namespace Inmobiliaria.Controllers
             return View(inmueble);
         }
 
-        // GET: Inmueble/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         // POST: Inmueble/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
