@@ -114,5 +114,5 @@ public class RepositorioInmueble
         return res;
     }
 
-    public int DeleteINmueble
+    public int DeleteInmueble()
 }
