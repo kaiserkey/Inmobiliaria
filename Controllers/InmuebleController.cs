@@ -79,7 +79,8 @@ namespace Inmobiliaria.Controllers
         public ActionResult Delete(int id)
         {
             Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
-            return View();
+
+            return View(inmueble);
         }
 
         // POST: Inmueble/Delete/5
