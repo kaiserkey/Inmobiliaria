@@ -14,5 +14,6 @@ public class Inmueble
     [Display( Name = "Propietario" ) ]
     public int IdPropietario{ get; set; }
 
+    [ForeignKey( nameof( Propietario ) ) ]
 
 }
