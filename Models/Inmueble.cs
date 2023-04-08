@@ -15,5 +15,6 @@ public class Inmueble
     public int IdPropietario{ get; set; }
 
     [ForeignKey( nameof( Propietario ) ) ]
+    
 
 }
