@@ -277,7 +277,7 @@ tbody{
     margin: 5%;
 }
 
-#contenedor-vista-previa .row{
+#contenedor-vista-previa .fila-nombre{
     text-transform: uppercase !important;
 }
 
