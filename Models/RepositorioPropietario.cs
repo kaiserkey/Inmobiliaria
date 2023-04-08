@@ -91,7 +91,7 @@ public class RepositorioPropietario
         return recs;
     }
 
-    public int UpdateInmueble(MySqlDatabase mySqlDatabase, Propietario Propietario)
+    public int UpdatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
@@ -114,7 +114,7 @@ public class RepositorioPropietario
         return res;
     }
 
-    public int DeleteInmueble( MySqlDatabase mySqlDatabase, int id)
+    public int DeletePropietario( MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"DELETE FROM Propietario WHERE IdPropietario = @IdPropietario";
