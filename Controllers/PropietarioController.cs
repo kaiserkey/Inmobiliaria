@@ -65,7 +65,7 @@ namespace Inmobiliaria.Controllers
         // POST: Propietario/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection propietario)
+        public ActionResult Edit(int id, Propietario propietario)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace Inmobiliaria.Controllers
         // POST: Propietario/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection propietario)
+        public ActionResult Delete(int id, Propietario propietario)
         {
             try
             {
