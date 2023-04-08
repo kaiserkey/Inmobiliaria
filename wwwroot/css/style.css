@@ -277,6 +277,9 @@ tbody{
     margin: 5%;
 }
 
+#contenedor-vista-previa .row{
+    text-transform: uppercase;
+}
 
 
 
