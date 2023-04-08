@@ -12,6 +12,12 @@ namespace Inmobiliaria.Controllers
     private readonly RepositorioPropietario RepoPropietario;
     public class PropietarioController : Controller
     {
+        public PropietarioController()
+        {
+            con = new MySqlDatabase();
+            RepoPropietario = new RepositorioPropietario();
+        }
+
         // GET: Propietario
         public ActionResult Index()
         {
