@@ -6,9 +6,14 @@
 
 <table>
     <tr>
-        <td>
-            <a asp-action="Index">Back to List</a>
-        </td>
+        <th class="col">
+                    <h2><a asp-action="Index"><i class="bi bi-arrow-return-left"
+                                style="font-size: 1em; color: black;">Regresar</i></a></h2>
+                </th>
+                <th class="col">
+                    <h2><a href="@Url.Action("Edit", new { id = Inmueble.idInmueble  })"> <i class="bi bi-pencil-square"
+                                style="font-size: 1em; color: green;">Editar</i> </a></h2>
+        </th>
     </tr>
     <tr>
         <td class = "col-sm-2">
