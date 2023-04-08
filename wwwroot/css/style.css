@@ -240,10 +240,7 @@ tbody{
     text-transform: capitalize;
 }
 
-#nuevo-container{
-    border: 1px solid #604232;
-    box-shadow: #bcbbba 0px 0px 20px;
-}
+
 
 #nuevo-container form{
     background-color: #bcbbba;
@@ -252,6 +249,7 @@ tbody{
     -moz-border-radius: 10%;
     -ms-border-radius: 10%;
     -o-border-radius: 10%;
+    box-shadow: #bcbbba 0px 0px 20px;
 }
 
 
