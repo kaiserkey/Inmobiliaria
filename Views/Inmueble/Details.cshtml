@@ -47,10 +47,10 @@
             </tr>
             <tr>
                 <td scope="row">
-
+                    @Html.DisplayNameFor(model => model.precio)
                 </td>
                 <td>
-                    
+                    @Html.DisplayFor(model => model.precio)
                 </td>
             </tr>
             <tr>
@@ -85,12 +85,7 @@
 <div id="contenedor-vista-previa" class="container">
     <div class="row">
         
-        <div class="col-sm-3">
-            @Html.DisplayNameFor(model => model.precio)
-        </div>
-        <div class="col-sm-9">
-            @Html.DisplayFor(model => model.precio)
-        </div>
+    
         <div class="col-sm-3">
             @Html.DisplayNameFor(model => model.ambientes)
         </div>
