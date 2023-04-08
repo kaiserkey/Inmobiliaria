@@ -278,7 +278,7 @@ tbody{
 }
 
 #contenedor-vista-previa .fila-nombre{
-    text-transform: uppercase !important;
+    text-transform: uppercase;
 }
 
 
