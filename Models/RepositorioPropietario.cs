@@ -13,7 +13,7 @@ public class RepositorioPropietario
     {
         var propietarios = new List<Propietario>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdPropietario, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario FROM Propietario";
+        cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Precio, Ambientes, Uso, Activo, IdPropietario FROM Propietario";
 
         using (var reader = cmd.ExecuteReader())
         {
@@ -22,8 +22,8 @@ public class RepositorioPropietario
                 var Propietario = new Propietario
                 {
                     IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
-                    Tipo = reader.GetString(nameof(Propietario.Tipo)),
-                    Coordenadas = reader.GetString(nameof(Propietario.Coordenadas)),
+                    Nombre = reader.GetString(nameof(Propietario.Nombre)),
+                    Apellido = reader.GetString(nameof(Propietario.Apellido)),
                     Precio = reader.GetDecimal(nameof(Propietario.Precio)),
                     Ambientes = reader.GetInt32(nameof(Propietario.Ambientes)),
                     Uso = reader.GetString(nameof(Propietario.Uso)),
@@ -41,7 +41,7 @@ public class RepositorioPropietario
     public Propietario GetInmueble(MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdPropietario, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario 
+        cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Precio, Ambientes, Uso, Activo, IdPropietario 
                             FROM Propietario WHERE IdPropietario = @IdPropietario";
         cmd.Parameters.AddWithValue("@IdPropietario", id);
 
@@ -52,8 +52,8 @@ public class RepositorioPropietario
                 var Propietario = new Propietario
                 {
                     IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
-                    Tipo = reader.GetString(nameof(Propietario.Tipo)),
-                    Coordenadas = reader.GetString(nameof(Propietario.Coordenadas)),
+                    Nombre = reader.GetString(nameof(Propietario.Nombre)),
+                    Apellido = reader.GetString(nameof(Propietario.Apellido)),
                     Precio = reader.GetDecimal(nameof(Propietario.Precio)),
                     Ambientes = reader.GetInt32(nameof(Propietario.Ambientes)),
                     Uso = reader.GetString(nameof(Propietario.Uso)),
@@ -72,12 +72,12 @@ public class RepositorioPropietario
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"INSERT INTO Propietario (Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario) 
-                            VALUES (@Tipo, @Coordenadas, @Precio, @Ambientes, @Uso, @Activo, @IdPropietario);
+        cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Precio, Ambientes, Uso, Activo, IdPropietario) 
+                            VALUES (@Nombre, @Apellido, @Precio, @Ambientes, @Uso, @Activo, @IdPropietario);
                             SELECT LAST_INSERT_ID();";
 
-        cmd.Parameters.AddWithValue("@Tipo", Propietario.Tipo);
-        cmd.Parameters.AddWithValue("@Coordenadas", Propietario.Coordenadas);
+        cmd.Parameters.AddWithValue("@Nombre", Propietario.Nombre);
+        cmd.Parameters.AddWithValue("@Apellido", Propietario.Apellido);
         cmd.Parameters.AddWithValue("@Precio", Propietario.Precio);
         cmd.Parameters.AddWithValue("@Ambientes", Propietario.Ambientes);
         cmd.Parameters.AddWithValue("@Uso", Propietario.Uso);
@@ -95,12 +95,12 @@ public class RepositorioPropietario
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"UPDATE Propietario SET Tipo = @Tipo, Coordenadas = @Coordenadas, Precio = @Precio, Ambientes = @Ambientes, Uso = @Uso, Activo = @Activo, IdPropietario = @IdPropietario
+        cmd.CommandText = @"UPDATE Propietario SET Nombre = @Nombre, Apellido = @Apellido, Precio = @Precio, Ambientes = @Ambientes, Uso = @Uso, Activo = @Activo, IdPropietario = @IdPropietario
                             WHERE IdPropietario = @IdPropietario;";
 
         cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
-        cmd.Parameters.AddWithValue("@Tipo", Propietario.Tipo);
-        cmd.Parameters.AddWithValue("@Coordenadas", Propietario.Coordenadas);
+        cmd.Parameters.AddWithValue("@Nombre", Propietario.Nombre);
+        cmd.Parameters.AddWithValue("@Apellido", Propietario.Apellido);
         cmd.Parameters.AddWithValue("@Precio", Propietario.Precio);
         cmd.Parameters.AddWithValue("@Ambientes", Propietario.Ambientes);
         cmd.Parameters.AddWithValue("@Uso", Propietario.Uso);
