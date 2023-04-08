@@ -270,7 +270,7 @@ tbody{
 }
 
 #margen-titulo{
-    margin: 10px;
+    margin: 10px !important;
 }
 
 
