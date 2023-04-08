@@ -21,6 +21,7 @@ namespace Inmobiliaria.Controllers
         // GET: Propietario
         public ActionResult Index()
         {
+            var listaPropietarios = RepoPropietario.GetPropietarios(con);
             return View();
         }
 
