@@ -13,6 +13,8 @@ public class Inmueble
     public int Ambientes{ get; set; }
     public string Uso{ get; set; }
     [Display( Name = "Activo" )]
+    [Column( TypeName = "bit" )]
+    
     public Boolean Activo{ get; set; }
 
     [Display( Name = "Propietario" ) ]
