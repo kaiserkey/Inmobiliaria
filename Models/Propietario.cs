@@ -7,8 +7,11 @@ public class Propietario
 {
     [Display (Name = "Código")]
     public int IdPropietario{ get; set; }
+    [Display (Name = "Nombre")]
     public string Nombre{ get; set; }
+    [Display (Name = "Apellido")]
     public string Apellido{ get; set; }
+    []
     public string Direccion{ get; set; }
     public string Telefono{ get; set; }
     public string Dni{ get; set; }
