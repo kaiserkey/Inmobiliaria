@@ -24,7 +24,11 @@ namespace Inmobiliaria.Controllers
             return View(listaInmuebles);
         }
 
-        
+        public ActionResult Create()
+        {
+            var listaInmuebles = RepoInmueble.GetInmuebles(con);
+            return View(listaInmuebles);
+        }
 
         // GET: Inmueble/Details/5
         public ActionResult Details(int id)
