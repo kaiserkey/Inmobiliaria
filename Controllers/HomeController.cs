@@ -28,7 +28,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Contacto()
+    public IActionResult Login()
     {
         return View();
     }
