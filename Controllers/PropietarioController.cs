@@ -82,8 +82,8 @@ namespace Inmobiliaria.Controllers
         // GET: Propietario/Delete/5
         public ActionResult Delete(int id)
         {
-            Propietario propietario = 
-            return View();
+            Propietario propietario = RepoPropietario.GetPropietario(con, id);
+            return View(propietario);
         }
 
         // POST: Propietario/Delete/5
@@ -93,7 +93,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                var res = RepoPropietario.DeletePropietario(con, id);
 
                 return RedirectToAction(nameof(Index));
             }
