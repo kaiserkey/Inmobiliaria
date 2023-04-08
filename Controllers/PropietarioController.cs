@@ -22,12 +22,13 @@ namespace Inmobiliaria.Controllers
         public ActionResult Index()
         {
             var listaPropietarios = RepoPropietario.GetPropietarios(con);
-            return View();
+            return View(listaPropietarios);
         }
 
         // GET: Propietario/Details/5
         public ActionResult Details(int id)
         {
+            var propietario = RepoPropietario.GetPropietario(con, id);
             return View();
         }
 
