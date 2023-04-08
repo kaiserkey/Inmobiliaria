@@ -21,7 +21,7 @@ public class RepositorioPropietario
             {
                 var Propietario = new Propietario
                 {
-                    IdPropietario = reader.GetString(nameof(Propietario.IdPropietario)),
+                    IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
                     Nombre = reader.GetString(nameof(Propietario.Nombre)),
                     Apellido = reader.GetString(nameof(Propietario.Apellido)),
                     Direccion = reader.GetString(nameof(Propietario.Direccion)),
@@ -50,7 +50,7 @@ public class RepositorioPropietario
             {
                 var Propietario = new Propietario
                 {
-                    IdPropietario = reader.GetString(nameof(Propietario.IdPropietario)),
+                    IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
                     Nombre = reader.GetString(nameof(Propietario.Nombre)),
                     Apellido = reader.GetString(nameof(Propietario.Apellido)),
                     Direccion = reader.GetString(nameof(Propietario.Direccion)),
