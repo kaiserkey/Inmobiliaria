@@ -214,6 +214,10 @@ footer a{
 
 /* estilos de tablas */
 
+a{
+    
+}
+
 #thead-color{
     background-color: gainsboro;
     color: black;
