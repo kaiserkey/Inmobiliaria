@@ -29,29 +29,52 @@
     <link rel="stylesheet" href="~/Inmobiliaria.styles.css" asp-append-version="true" /> *@
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Inmobiliaria</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+    <!-- Barra de navegacion -->
+    <div id="navbar-color">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container d-flex justify-content-end align-items-center">
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <a class="navbar-brand" href="index.html"><img src="img/inmobiliaria-icon.png" alt="Logo de la Inmobiliaria"></a>
+                    <ul class="navbar-nav d-flex justify-content-center align-items-center">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" href="#">Contratos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" href="#">Inmuebles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Propietarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Inquilinos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pagos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Entrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Salir</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </header>
+    </div>
 
-    
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
