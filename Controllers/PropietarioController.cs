@@ -65,11 +65,11 @@ namespace Inmobiliaria.Controllers
         // POST: Propietario/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, Propietario propietario)
+        public ActionResult Edit(int id, Propietario UpdatePropietario)
         {
             try
             {
-                var res = RepoPropietario.UpdatePropietario(con, propietario);
+                var res = RepoPropietario.UpdatePropietario(con, UpdatePropietario);
 
                 return RedirectToAction(nameof(Index));
             }
