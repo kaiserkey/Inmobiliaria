@@ -11,9 +11,11 @@ public class Propietario
     public string Nombre{ get; set; }
     [Display (Name = "Apellido")]
     public string Apellido{ get; set; }
-    []
+    [Display (Name = "Dirección")]
     public string Direccion{ get; set; }
+    [Display (Name = "Teléfono")]
     public string Telefono{ get; set; }
+    
     public string Dni{ get; set; }
     public string Email{ get; set; }
 }
