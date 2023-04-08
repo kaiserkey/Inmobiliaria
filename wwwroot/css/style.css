@@ -276,11 +276,11 @@ tbody{
 #contenedor-vista-previa{
     font-family: 'Roboto Mono', monospace;
     background-color: #bcbbba;
-    border-radius: 10%;
-    -webkit-border-radius: 10%;
-    -moz-border-radius: 10%;
-    -ms-border-radius: 10%;
-    -o-border-radius: 10%;
+    border-radius: 20%;
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
+    -ms-border-radius: 20%;
+    -o-border-radius: 20%;
     box-shadow: #bcbbba 0px 0px 20px;
     width: 500px;
 }
