@@ -245,7 +245,9 @@ tbody{
     box-shadow: #bcbbba 0px 0px 20px;
 }
 
-
+#nuevo-container p{
+    background-color: #bcbbba;
+}
 
 
 
