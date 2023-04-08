@@ -9,7 +9,7 @@ using Inmobiliaria.Models;
 namespace Inmobiliaria.Controllers
 {
     private MySqlDatabase con { get; set; }
-    private readonly RepositorioPropietario RepoPŕopietario;
+    private readonly RepositorioPropietario RepoPropietario;
     public class PropietarioController : Controller
     {
         // GET: Propietario
