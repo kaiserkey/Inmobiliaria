@@ -1,3 +1,4 @@
+using Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,7 +59,7 @@ namespace Inmobiliaria.Controllers
         // GET: Propietario/Edit/5
         public ActionResult Edit(int id)
         {
-            Console
+            Console.WriteLine("Edit", id);
             Propietario propietario = RepoPropietario.GetPropietario(con, id);
             return View(propietario);
         }
