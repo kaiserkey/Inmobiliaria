@@ -275,7 +275,7 @@ tbody{
 
 #contenedor-vista-previa{
     margin: 5%;
-    font-size: 2r
+    font-size: 2rem !important;
 }
 
 #contenedor-vista-previa .fila-nombre{
