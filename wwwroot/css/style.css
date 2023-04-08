@@ -247,6 +247,7 @@ tbody{
 
 #nuevo-container p{
     background-color: #bcbbba;
+    border: 0;
 }
 #nuevo-container form{
     background-color: #bcbbba;
