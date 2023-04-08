@@ -81,8 +81,8 @@ public class RepositorioInmueble
         cmd.Parameters.AddWithValue("@precio", inmueble.Precio);
         cmd.Parameters.AddWithValue("@ambientes", inmueble.Ambientes);
         cmd.Parameters.AddWithValue("@uso", inmueble.Uso);
-        cmd.Parameters.AddWithValue("@activo", inmueble.activo);
-        cmd.Parameters.AddWithValue("@idPropietario", inmueble.idPropietario);
+        cmd.Parameters.AddWithValue("@activo", inmueble.Activo);
+        cmd.Parameters.AddWithValue("@idPropietario", inmueble.IdPropietario);
 
         var recs = Convert.ToInt32(cmd.ExecuteScalar());
 
