@@ -17,6 +17,7 @@ public class Inmueble
     public int Ambientes{ get; set; }
     [Display( Name = "Uso" )]
     public string Uso{ get; set; }
+    [Display( Name = "Activo" )]
     public Boolean Activo{ get; set; }
 
     [Display( Name = "Propietario" ) ]
