@@ -10,7 +10,9 @@ public class Inmueble
     public int Ambientes{ get; set; }
     public string Uso{ get; set; }
     public Boolean Activo{ get; set; }
+
+    []
     public int IdPropietario{ get; set; }
 
-    
+
 }
