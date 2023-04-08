@@ -13,7 +13,7 @@ public class RepositorioInmueble
     {
         var inmuebles = new List<Inmueble>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdInmueble, tipo, coordenadas, precio, ambientes, uso, activo, idPropietario FROM Inmueble";
+        cmd.CommandText = @"SELECT IdInmueble, Tipo, coordenadas, precio, ambientes, uso, activo, idPropietario FROM Inmueble";
 
         using (var reader = cmd.ExecuteReader())
         {
@@ -22,7 +22,7 @@ public class RepositorioInmueble
                 var inmueble = new Inmueble
                 {
                     IdInmueble = reader.GetInt32(nameof(Inmueble.IdInmueble)),
-                    tipo = reader.GetString(nameof(Inmueble.Tipo)),
+                    Tipo = reader.GetString(nameof(Inmueble.Tipo)),
                     coordenadas = reader.GetString(nameof(Inmueble.Coordenadas)),
                     precio = reader.GetDecimal(nameof(Inmueble.Precio)),
                     ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
@@ -41,7 +41,7 @@ public class RepositorioInmueble
     public Inmueble GetInmueble(MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdInmueble, tipo, coordenadas, precio, ambientes, uso, activo, idPropietario 
+        cmd.CommandText = @"SELECT IdInmueble, Tipo, coordenadas, precio, ambientes, uso, activo, idPropietario 
                             FROM Inmueble WHERE IdInmueble = @IdInmueble";
         cmd.Parameters.AddWithValue("@IdInmueble", id);
 
@@ -52,7 +52,7 @@ public class RepositorioInmueble
                 var inmueble = new Inmueble
                 {
                     IdInmueble = reader.GetInt32(nameof(Inmueble.IdInmueble)),
-                    tipo = reader.GetString(nameof(Inmueble.Tipo)),
+                    Tipo = reader.GetString(nameof(Inmueble.Tipo)),
                     coordenadas = reader.GetString(nameof(Inmueble.Coordenadas)),
                     precio = reader.GetDecimal(nameof(Inmueble.Precio)),
                     ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
@@ -72,11 +72,11 @@ public class RepositorioInmueble
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"INSERT INTO Inmueble (tipo, coordenadas, precio, ambientes, uso, activo, idPropietario) 
-                            VALUES (@tipo, @coordenadas, @precio, @ambientes, @uso, @activo, @idPropietario);
+        cmd.CommandText = @"INSERT INTO Inmueble (Tipo, coordenadas, precio, ambientes, uso, activo, idPropietario) 
+                            VALUES (@Tipo, @coordenadas, @precio, @ambientes, @uso, @activo, @idPropietario);
                             SELECT LAST_INSERT_ID();";
 
-        cmd.Parameters.AddWithValue("@tipo", inmueble.Tipo);
+        cmd.Parameters.AddWithValue("@Tipo", inmueble.Tipo);
         cmd.Parameters.AddWithValue("@coordenadas", inmueble.Coordenadas);
         cmd.Parameters.AddWithValue("@precio", inmueble.Precio);
         cmd.Parameters.AddWithValue("@ambientes", inmueble.Ambientes);
@@ -95,11 +95,11 @@ public class RepositorioInmueble
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"UPDATE Inmueble SET tipo = @tipo, coordenadas = @coordenadas, precio = @precio, ambientes = @ambientes, uso = @uso, activo = @activo, idPropietario = @idPropietario
+        cmd.CommandText = @"UPDATE Inmueble SET Tipo = @Tipo, coordenadas = @coordenadas, precio = @precio, ambientes = @ambientes, uso = @uso, activo = @activo, idPropietario = @idPropietario
                             WHERE IdInmueble = @IdInmueble;";
 
         cmd.Parameters.AddWithValue("@IdInmueble", inmueble.IdInmueble);
-        cmd.Parameters.AddWithValue("@tipo", inmueble.Tipo);
+        cmd.Parameters.AddWithValue("@Tipo", inmueble.Tipo);
         cmd.Parameters.AddWithValue("@coordenadas", inmueble.Coordenadas);
         cmd.Parameters.AddWithValue("@precio", inmueble.Precio);
         cmd.Parameters.AddWithValue("@ambientes", inmueble.Ambientes);
