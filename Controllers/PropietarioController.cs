@@ -58,7 +58,7 @@ namespace Inmobiliaria.Controllers
         // GET: Propietario/Edit/5
         public ActionResult Edit(int id)
         {
-            
+            Propietario 
             return View();
         }
 
