@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 public class Propietario
 {
-    [Display ]
+    [Display (Name = "Código")]
     public int IdPropietario{ get; set; }
     public string Nombre{ get; set; }
     public string Apellido{ get; set; }
