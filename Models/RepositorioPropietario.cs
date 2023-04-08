@@ -24,7 +24,7 @@ public class RepositorioPropietario
                     IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
                     Nombre = reader.GetString(nameof(Propietario.Nombre)),
                     Apellido = reader.GetString(nameof(Propietario.Apellido)),
-                    Direccion = reader.GetDecimal(nameof(Propietario.Direccion)),
+                    Direccion = reader.GetString(nameof(Propietario.Direccion)),
                     Telefono = reader.GetInt32(nameof(Propietario.Telefono)),
                     Dni = reader.GetString(nameof(Propietario.Dni)),
                     Email = reader.GetString(nameof(Propietario.Email))
@@ -53,7 +53,7 @@ public class RepositorioPropietario
                     IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
                     Nombre = reader.GetString(nameof(Propietario.Nombre)),
                     Apellido = reader.GetString(nameof(Propietario.Apellido)),
-                    Direccion = reader.GetDecimal(nameof(Propietario.Direccion)),
+                    Direccion = reader.GetString(nameof(Propietario.Direccion)),
                     Telefono = reader.GetInt32(nameof(Propietario.Telefono)),
                     Dni = reader.GetString(nameof(Propietario.Dni)),
                     Email = reader.GetString(nameof(Propietario.Email))
