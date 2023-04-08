@@ -82,7 +82,7 @@ namespace Inmobiliaria.Controllers
         // GET: Propietario/Delete/5
         public ActionResult Delete(int id)
         {
-            
+            Propietario propietario = 
             return View();
         }
 
