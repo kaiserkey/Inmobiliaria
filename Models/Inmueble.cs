@@ -13,8 +13,9 @@ public class Inmueble
     public string Coordenadas{ get; set; }
     [Display( Name = "Precio" )]
     public decimal Precio{ get; set; }
-    []
+    [Display( Name = "Ambientes" )]
     public int Ambientes{ get; set; }
+    [Display( Name = "Uso" )]
     public string Uso{ get; set; }
     public Boolean Activo{ get; set; }
 
