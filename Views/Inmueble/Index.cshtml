@@ -67,6 +67,7 @@
                     @Html.DisplayFor(modelItem => item.idPropietario)
                 </td>
                 <td>
+                    <a href="@Url.Action("Edit", new { id = item.idInmueble })">Editar</a>
                     @Html.ActionLink("Editar", "Edit", new { id=item.idInmueble })
                 </td>
                 <td>
