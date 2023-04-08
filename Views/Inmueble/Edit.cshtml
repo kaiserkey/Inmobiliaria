@@ -40,7 +40,11 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="uso" class="control-label"></label>
-                    <input asp-for="uso" class="form-control" />
+                    <select asp-for="uso" class="form-control">
+                        <option value="">Selecciona una opción</option>
+                        <option value="comercial">Comercial</option>
+                        <option value="residencial">Residencial</option>
+                    </select>
                     <span asp-validation-for="uso" class="text-danger"></span>
                 </div>
                 <div class="form-group form-check">
