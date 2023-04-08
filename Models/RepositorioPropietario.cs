@@ -59,7 +59,7 @@ public class RepositorioPropietario
                     Email = reader.GetString(nameof(Propietario.Email))
                 };
                 mySqlDatabase.Dispose();
-                return Propietario;
+                return propietario;
             }
         }
         mySqlDatabase.Dispose();
