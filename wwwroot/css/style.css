@@ -278,7 +278,7 @@ tbody{
 }
 
 #contenedor-vista-previa .row{
-    text-transform: uppercase;
+    text-transform: uppercase !;
 }
 
 
