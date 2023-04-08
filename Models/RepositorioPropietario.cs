@@ -11,7 +11,7 @@ public class RepositorioPropietario
 
     public List<Propietario> GetInmuebles(MySqlDatabase mySqlDatabase)
     {
-        var inmuebles = new List<Propietario>();
+        var propietarios = new List<Propietario>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario FROM Propietario";
 
@@ -30,12 +30,12 @@ public class RepositorioPropietario
                     Activo = reader.GetBoolean(nameof(Propietario.Activo)),
                     IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario))
                 };
-                inmuebles.Add(Propietario);
+                propietarios.Add(Propietario);
             }
 
         }
         mySqlDatabase.Dispose();
-        return inmuebles;
+        return propietarios;
     }
 
     public Propietario GetInmueble(MySqlDatabase mySqlDatabase, int id)
