@@ -266,6 +266,7 @@ tbody{
 
 .form-group label{
     padding: 5px;
+    text-transform: uppercase;
 }
 
 
