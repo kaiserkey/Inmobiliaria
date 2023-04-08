@@ -223,6 +223,7 @@ thead{
     text-align: center;
     font-size: 1rem;
     font-size: large;
+    text-transform: uppercase;
 }
 
 table{
