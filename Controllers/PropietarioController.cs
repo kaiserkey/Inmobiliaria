@@ -29,7 +29,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Details(int id)
         {
             var propietario = RepoPropietario.GetPropietario(con, id);
-            return View();
+            return View(propietario);
         }
 
         // GET: Propietario/Create
