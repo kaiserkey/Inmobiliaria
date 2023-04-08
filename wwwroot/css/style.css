@@ -86,8 +86,7 @@ nav li a:hover{
 .hero{
     background-size: cover;
     display: flex;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin: 5%;
     padding: 5px;
     align-items: center;
     justify-content: center;
