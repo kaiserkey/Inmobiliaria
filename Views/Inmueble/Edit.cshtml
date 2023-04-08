@@ -1,0 +1,66 @@
+@model Inmobiliaria.Models.Inmueble
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div id="nuevo-container" class="container d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Edit" method="POST" class="text-center border border-light p-5">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <a asp-action="Index">
+                    <i class="bi bi-arrow-return-left" style="font-size: 2em; color: black;"></i>
+                </a>
+                <p class="h3 mb-4">Editar Inmueble</p>
+                <div class="form-group">
+                    <input type="hidden" asp-for="IdInmueble" class="form-control" />
+                    <span asp-validation-for="IdInmueble" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Tipo" class="control-label"></label>
+                    <input asp-for="Tipo" class="form-control" />
+                    <span asp-validation-for="Tipo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Coordenadas" class="control-label"></label>
+                    <input asp-for="Coordenadas" class="form-control" />
+                    <span asp-validation-for="Coordenadas" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Precio" class="control-label"></label>
+                    <input asp-for="Precio" class="form-control" />
+                    <span asp-validation-for="Precio" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ambientes" class="control-label"></label>
+                    <input asp-for="Ambientes" class="form-control" />
+                    <span asp-validation-for="Ambientes" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Uso" class="control-label"></label>
+                    <select asp-for="Uso" class="form-control">
+                        <option value="">Selecciona una opción</option>
+                        <option value="comercial">Comercial</option>
+                        <option value="residencial">Residencial</option>
+                    </select>
+                    <span asp-validation-for="Uso" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Activo" /> @Html.DisplayNameFor(model => model.Activo)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IdPropietario" class="control-label"></label>
+                    <input asp-for="IdPropietario" class="form-control" />
+                    <span asp-validation-for="IdPropietario" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input id="boton-general" type="submit" value="Save" class="btn btn-info btn-block" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
