@@ -76,11 +76,11 @@ public class RepositorioInmueble
                             VALUES (@tipo, @coordenadas, @precio, @ambientes, @uso, @activo, @idPropietario);
                             SELECT LAST_INSERT_ID();";
 
-        cmd.Parameters.AddWithValue("@tipo", inmueble.tipo);
-        cmd.Parameters.AddWithValue("@coordenadas", inmueble.coordenadas);
-        cmd.Parameters.AddWithValue("@precio", inmueble.precio);
-        cmd.Parameters.AddWithValue("@ambientes", inmueble.ambientes);
-        cmd.Parameters.AddWithValue("@uso", inmueble.uso);
+        cmd.Parameters.AddWithValue("@tipo", inmueble.Tipo);
+        cmd.Parameters.AddWithValue("@coordenadas", inmueble.Coordenadas);
+        cmd.Parameters.AddWithValue("@precio", inmueble.Precio);
+        cmd.Parameters.AddWithValue("@ambientes", inmueble.Ambientes);
+        cmd.Parameters.AddWithValue("@uso", inmueble.Uso);
         cmd.Parameters.AddWithValue("@activo", inmueble.activo);
         cmd.Parameters.AddWithValue("@idPropietario", inmueble.idPropietario);
 
