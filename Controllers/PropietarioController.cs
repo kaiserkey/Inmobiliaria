@@ -41,11 +41,11 @@ namespace Inmobiliaria.Controllers
         // POST: Propietario/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Propietario collection)
+        public ActionResult Create(Propietario propietario)
         {
             try
             {
-                var res = RepoPropietario.CreatePropietario(con, collection);
+                var res = RepoPropietario.CreatePropietario(con, propietario);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -65,11 +65,11 @@ namespace Inmobiliaria.Controllers
         // POST: Propietario/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, IFormCollection propietario)
         {
             try
             {
-                var res = RepoPropietario.UpdatePropietario(con, collection);
+                var res = RepoPropietario.UpdatePropietario(con, propietario);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -88,7 +88,7 @@ namespace Inmobiliaria.Controllers
         // POST: Propietario/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, IFormCollection propietario)
         {
             try
             {
