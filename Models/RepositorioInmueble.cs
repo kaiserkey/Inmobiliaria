@@ -53,12 +53,12 @@ public class RepositorioInmueble
                 {
                     idInmueble = reader.GetInt32(nameof(Inmueble.IdInmueble)),
                     tipo = reader.GetString(nameof(Inmueble.Tipo)),
-                    coordenadas = reader.GetString(nameof(Inmueble.coordenadas)),
-                    precio = reader.GetDecimal(nameof(Inmueble.precio)),
-                    ambientes = reader.GetInt32(nameof(Inmueble.ambientes)),
-                    uso = reader.GetString(nameof(Inmueble.uso)),
-                    activo = reader.GetBoolean(nameof(Inmueble.activo)),
-                    idPropietario = reader.GetInt32(nameof(Inmueble.idPropietario))
+                    coordenadas = reader.GetString(nameof(Inmueble.Coordenadas)),
+                    precio = reader.GetDecimal(nameof(Inmueble.Precio)),
+                    ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
+                    uso = reader.GetString(nameof(Inmueble.Uso)),
+                    activo = reader.GetBoolean(nameof(Inmueble.Activo)),
+                    idPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario))
                 };
                 mySqlDatabase.Dispose();
                 return inmueble;
