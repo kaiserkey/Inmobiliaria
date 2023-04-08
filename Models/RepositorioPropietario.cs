@@ -13,7 +13,7 @@ public class RepositorioPropietario
     {
         var propietarios = new List<Propietario>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Ambientes, Uso, Activo, IdPropietario FROM Propietario";
+        cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Activo, IdPropietario FROM Propietario";
 
         using (var reader = cmd.ExecuteReader())
         {
@@ -25,8 +25,8 @@ public class RepositorioPropietario
                     Nombre = reader.GetString(nameof(Propietario.Nombre)),
                     Apellido = reader.GetString(nameof(Propietario.Apellido)),
                     Direccion = reader.GetDecimal(nameof(Propietario.Direccion)),
-                    Ambientes = reader.GetInt32(nameof(Propietario.Ambientes)),
-                    Uso = reader.GetString(nameof(Propietario.Uso)),
+                    Telefono = reader.GetInt32(nameof(Propietario.Telefono)),
+                    Dni = reader.GetString(nameof(Propietario.Dni)),
                     Activo = reader.GetBoolean(nameof(Propietario.Activo)),
                     IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario))
                 };
@@ -41,7 +41,7 @@ public class RepositorioPropietario
     public Propietario GetInmueble(MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Ambientes, Uso, Activo, IdPropietario 
+        cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Activo, IdPropietario 
                             FROM Propietario WHERE IdPropietario = @IdPropietario";
         cmd.Parameters.AddWithValue("@IdPropietario", id);
 
@@ -55,8 +55,8 @@ public class RepositorioPropietario
                     Nombre = reader.GetString(nameof(Propietario.Nombre)),
                     Apellido = reader.GetString(nameof(Propietario.Apellido)),
                     Direccion = reader.GetDecimal(nameof(Propietario.Direccion)),
-                    Ambientes = reader.GetInt32(nameof(Propietario.Ambientes)),
-                    Uso = reader.GetString(nameof(Propietario.Uso)),
+                    Telefono = reader.GetInt32(nameof(Propietario.Telefono)),
+                    Dni = reader.GetString(nameof(Propietario.Dni)),
                     Activo = reader.GetBoolean(nameof(Propietario.Activo)),
                     IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario))
                 };
@@ -72,15 +72,15 @@ public class RepositorioPropietario
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Direccion, Ambientes, Uso, Activo, IdPropietario) 
-                            VALUES (@Nombre, @Apellido, @Direccion, @Ambientes, @Uso, @Activo, @IdPropietario);
+        cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Direccion, Telefono, Dni, Activo, IdPropietario) 
+                            VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Activo, @IdPropietario);
                             SELECT LAST_INSERT_ID();";
 
         cmd.Parameters.AddWithValue("@Nombre", Propietario.Nombre);
         cmd.Parameters.AddWithValue("@Apellido", Propietario.Apellido);
         cmd.Parameters.AddWithValue("@Direccion", Propietario.Direccion);
-        cmd.Parameters.AddWithValue("@Ambientes", Propietario.Ambientes);
-        cmd.Parameters.AddWithValue("@Uso", Propietario.Uso);
+        cmd.Parameters.AddWithValue("@Telefono", Propietario.Telefono);
+        cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
         cmd.Parameters.AddWithValue("@Activo", Propietario.Activo);
         cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
 
@@ -95,15 +95,15 @@ public class RepositorioPropietario
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"UPDATE Propietario SET Nombre = @Nombre, Apellido = @Apellido, Direccion = @Direccion, Ambientes = @Ambientes, Uso = @Uso, Activo = @Activo, IdPropietario = @IdPropietario
+        cmd.CommandText = @"UPDATE Propietario SET Nombre = @Nombre, Apellido = @Apellido, Direccion = @Direccion, Telefono = @Telefono, Dni = @Dni, Activo = @Activo, IdPropietario = @IdPropietario
                             WHERE IdPropietario = @IdPropietario;";
 
         cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
         cmd.Parameters.AddWithValue("@Nombre", Propietario.Nombre);
         cmd.Parameters.AddWithValue("@Apellido", Propietario.Apellido);
         cmd.Parameters.AddWithValue("@Direccion", Propietario.Direccion);
-        cmd.Parameters.AddWithValue("@Ambientes", Propietario.Ambientes);
-        cmd.Parameters.AddWithValue("@Uso", Propietario.Uso);
+        cmd.Parameters.AddWithValue("@Telefono", Propietario.Telefono);
+        cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
         cmd.Parameters.AddWithValue("@Activo", Propietario.Activo);
         cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
 
