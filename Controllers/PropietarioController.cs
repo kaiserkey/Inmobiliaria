@@ -69,7 +69,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                var 
+                var res = RepoPropietario.EditPropietario(con, collection);
 
                 return RedirectToAction(nameof(Index));
             }
