@@ -18,5 +18,5 @@ public class Inmueble
 
     [ForeignKey( nameof( IdPropietario ) ) ]
 
-
+    public Propietario Propietario{ get; set; }
 }
