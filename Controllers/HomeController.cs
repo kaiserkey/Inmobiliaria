@@ -23,7 +23,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Con()
+    public IActionResult Contacto()
     {
         return View();
     }
