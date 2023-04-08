@@ -3,7 +3,7 @@ namespace Inmobiliaria.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-public class Inmueble
+public class Propietario
 {
     public int IdInmueble{ get; set; }
     public string Tipo{ get; set; }
