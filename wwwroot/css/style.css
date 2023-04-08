@@ -219,7 +219,10 @@ footer a{
     color: black;
 }
 
-t
+thead{
+    text-align: center;
+    font-size: 1rem;
+}
 
 table{
     font-family: 'Roboto Mono', monospace;
