@@ -19,7 +19,7 @@ public class RepositorioPropietario
         {
             while (reader.Read())
             {
-                var Propietario = new Propietario
+                var propietario = new Propietario
                 {
                     IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
                     Nombre = reader.GetString(nameof(Propietario.Nombre)),
@@ -48,7 +48,7 @@ public class RepositorioPropietario
         {
             if (reader.Read())
             {
-                var Propietario = new Propietario
+                var propietario = new Propietario
                 {
                     IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
                     Nombre = reader.GetString(nameof(Propietario.Nombre)),
