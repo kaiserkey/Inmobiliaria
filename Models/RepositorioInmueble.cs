@@ -101,11 +101,11 @@ public class RepositorioInmueble
         cmd.Parameters.AddWithValue("@idInmueble", inmueble.IdInmueble);
         cmd.Parameters.AddWithValue("@tipo", inmueble.Tipo);
         cmd.Parameters.AddWithValue("@coordenadas", inmueble.Coordenadas);
-        cmd.Parameters.AddWithValue("@precio", inmueble.precio);
-        cmd.Parameters.AddWithValue("@ambientes", inmueble.ambientes);
-        cmd.Parameters.AddWithValue("@uso", inmueble.uso);
-        cmd.Parameters.AddWithValue("@activo", inmueble.activo);
-        cmd.Parameters.AddWithValue("@idPropietario", inmueble.idPropietario);
+        cmd.Parameters.AddWithValue("@precio", inmueble.Precio);
+        cmd.Parameters.AddWithValue("@ambientes", inmueble.Ambientes);
+        cmd.Parameters.AddWithValue("@uso", inmueble.Uso);
+        cmd.Parameters.AddWithValue("@activo", inmueble.Activo);
+        cmd.Parameters.AddWithValue("@idPropietario", inmueble.IdPropietario);
 
         var res = Convert.ToInt32(cmd.ExecuteNonQuery());
 
