@@ -284,6 +284,8 @@ tbody{
 
 #eliminar-mensaje{
     color: red;
+    font-weight: 600;
+    font-size: medium;
 }
 
 
