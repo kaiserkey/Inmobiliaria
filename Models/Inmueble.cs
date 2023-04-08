@@ -11,7 +11,7 @@ public class Inmueble
     public string Uso{ get; set; }
     public Boolean Activo{ get; set; }
 
-    [Display( Name =  ) ]
+    [Display( Name = Propietario ) ]
     public int IdPropietario{ get; set; }
 
 
