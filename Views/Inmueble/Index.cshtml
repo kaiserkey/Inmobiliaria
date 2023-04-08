@@ -4,74 +4,80 @@
     ViewData["Title"] = "Inmuebles";
 }
 
-<h1>Inmuebles</h1>
+<div class="col-md-12 text-center">
+    <h1>Inmuebles</h1>
+    <h2><a asp-action="Create">Nuevo Inmueble</a></h2>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordred table-striped">
+        <thead>
+            <tr>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.idInmueble)
+                </th>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.tipo)
+                </th>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.coordenadas)
+                </th>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.precio)
+                </th>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.ambientes)
+                </th>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.uso)
+                </th>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.activo)
+                </th>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.idPropietario)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.idInmueble)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.coordenadas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.precio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ambientes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.uso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.activo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idPropietario)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id=item.idInmueble })
+                </td>
+                <td>
+                    @Html.ActionLink("Detalles", "Details", new { id=item.idInmueble })
+                </td>
+                <td>
+                    @Html.ActionLink("Eliminar", "Delete", new { id=item.idInmueble })
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>
 
-<p>
-    <a asp-action="Create">Nuevo Inmueble</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.idInmueble)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.tipo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.coordenadas)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.precio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ambientes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.uso)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.activo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.idPropietario)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.idInmueble)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.tipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.coordenadas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.precio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ambientes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.uso)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.activo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.idPropietario)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.idInmueble }) |
-                @Html.ActionLink("Details", "Details", new { id=item.idInmueble }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.idInmueble })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
