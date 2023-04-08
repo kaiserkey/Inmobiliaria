@@ -29,7 +29,7 @@ public class RepositorioPropietario
                     Dni = reader.GetString(nameof(Propietario.Dni)),
                     Email = reader.GetString(nameof(Propietario.Email))
                 };
-                propietarios.Add(Propietario);
+                propietarios.Add(propietario);
             }
 
         }
