@@ -7,6 +7,7 @@ public class Inmueble
 {
     [Display( Name = "Código" )]
     public int IdInmueble{ get; set; }
+    [Display( Name = "Tipo" )]
     public string Tipo{ get; set; }
     public string Coordenadas{ get; set; }
     public decimal Precio{ get; set; }
