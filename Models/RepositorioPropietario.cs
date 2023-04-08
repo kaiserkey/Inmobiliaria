@@ -38,7 +38,7 @@ public class RepositorioPropietario
         return propietarios;
     }
 
-    public Propietario GetInmueble(MySqlDatabase mySqlDatabase, int id)
+    public Propietario GetPropietario(MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email 
