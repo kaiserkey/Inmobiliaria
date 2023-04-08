@@ -13,7 +13,7 @@ public class RepositorioPropietario
     {
         var propietarios = new List<Propietario>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Activo, IdPropietario FROM Propietario";
+        cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email, IdPropietario FROM Propietario";
 
         using (var reader = cmd.ExecuteReader())
         {
@@ -27,7 +27,7 @@ public class RepositorioPropietario
                     Direccion = reader.GetDecimal(nameof(Propietario.Direccion)),
                     Telefono = reader.GetInt32(nameof(Propietario.Telefono)),
                     Dni = reader.GetString(nameof(Propietario.Dni)),
-                    Activo = reader.GetBoolean(nameof(Propietario.Activo)),
+                    Email = reader.GetBoolean(nameof(Propietario.Email)),
                     IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario))
                 };
                 propietarios.Add(Propietario);
@@ -41,7 +41,7 @@ public class RepositorioPropietario
     public Propietario GetInmueble(MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Activo, IdPropietario 
+        cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email, IdPropietario 
                             FROM Propietario WHERE IdPropietario = @IdPropietario";
         cmd.Parameters.AddWithValue("@IdPropietario", id);
 
@@ -57,7 +57,7 @@ public class RepositorioPropietario
                     Direccion = reader.GetDecimal(nameof(Propietario.Direccion)),
                     Telefono = reader.GetInt32(nameof(Propietario.Telefono)),
                     Dni = reader.GetString(nameof(Propietario.Dni)),
-                    Activo = reader.GetBoolean(nameof(Propietario.Activo)),
+                    Email = reader.GetBoolean(nameof(Propietario.Email)),
                     IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario))
                 };
                 mySqlDatabase.Dispose();
@@ -72,8 +72,8 @@ public class RepositorioPropietario
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Direccion, Telefono, Dni, Activo, IdPropietario) 
-                            VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Activo, @IdPropietario);
+        cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Direccion, Telefono, Dni, Email, IdPropietario) 
+                            VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email, @IdPropietario);
                             SELECT LAST_INSERT_ID();";
 
         cmd.Parameters.AddWithValue("@Nombre", Propietario.Nombre);
@@ -81,7 +81,7 @@ public class RepositorioPropietario
         cmd.Parameters.AddWithValue("@Direccion", Propietario.Direccion);
         cmd.Parameters.AddWithValue("@Telefono", Propietario.Telefono);
         cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
-        cmd.Parameters.AddWithValue("@Activo", Propietario.Activo);
+        cmd.Parameters.AddWithValue("@Email", Propietario.Email);
         cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
 
         var recs = Convert.ToInt32(cmd.ExecuteScalar());
@@ -95,7 +95,7 @@ public class RepositorioPropietario
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"UPDATE Propietario SET Nombre = @Nombre, Apellido = @Apellido, Direccion = @Direccion, Telefono = @Telefono, Dni = @Dni, Activo = @Activo, IdPropietario = @IdPropietario
+        cmd.CommandText = @"UPDATE Propietario SET Nombre = @Nombre, Apellido = @Apellido, Direccion = @Direccion, Telefono = @Telefono, Dni = @Dni, Email = @Email, IdPropietario = @IdPropietario
                             WHERE IdPropietario = @IdPropietario;";
 
         cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
@@ -104,7 +104,7 @@ public class RepositorioPropietario
         cmd.Parameters.AddWithValue("@Direccion", Propietario.Direccion);
         cmd.Parameters.AddWithValue("@Telefono", Propietario.Telefono);
         cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
-        cmd.Parameters.AddWithValue("@Activo", Propietario.Activo);
+        cmd.Parameters.AddWithValue("@Email", Propietario.Email);
         cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
 
         var res = Convert.ToInt32(cmd.ExecuteNonQuery());
