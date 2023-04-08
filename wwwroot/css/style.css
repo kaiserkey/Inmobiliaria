@@ -215,7 +215,12 @@ footer a{
 /* estilos de tablas */
 
 #thead-color{
-    background-color: gra;
+    background-color: gainsboro;
+    color: black;
+}
+
+table{
+    font-family: 'Roboto Mono', monospace;
 }
 
 
