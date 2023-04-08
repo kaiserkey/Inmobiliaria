@@ -98,9 +98,9 @@ public class RepositorioInmueble
         cmd.CommandText = @"UPDATE Inmueble SET tipo = @tipo, coordenadas = @coordenadas, precio = @precio, ambientes = @ambientes, uso = @uso, activo = @activo, idPropietario = @idPropietario
                             WHERE idInmueble = @idInmueble;";
 
-        cmd.Parameters.AddWithValue("@idInmueble", inmueble.idInmueble);
-        cmd.Parameters.AddWithValue("@tipo", inmueble.tipo);
-        cmd.Parameters.AddWithValue("@coordenadas", inmueble.coordenadas);
+        cmd.Parameters.AddWithValue("@idInmueble", inmueble.IdInmueble);
+        cmd.Parameters.AddWithValue("@tipo", inmueble.Tipo);
+        cmd.Parameters.AddWithValue("@coordenadas", inmueble.Coordenadas);
         cmd.Parameters.AddWithValue("@precio", inmueble.precio);
         cmd.Parameters.AddWithValue("@ambientes", inmueble.ambientes);
         cmd.Parameters.AddWithValue("@uso", inmueble.uso);
@@ -117,8 +117,8 @@ public class RepositorioInmueble
     public int DeleteInmueble( MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"DELETE FROM Inmueble WHERE idInmueble = @IdInmueble";
-        cmd.Parameters.AddWithValue("@IdInmueble", id);
+        cmd.CommandText = @"DELETE FROM Inmueble WHERE idInmueble = @idInmueble";
+        cmd.Parameters.AddWithValue("@idInmueble", id);
 
         var res = Convert.ToInt32(cmd.ExecuteNonQuery());
 
