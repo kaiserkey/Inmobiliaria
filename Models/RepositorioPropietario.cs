@@ -13,7 +13,7 @@ public class RepositorioPropietario
     {
         var propietarios = new List<Propietario>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario FROM Propietario";
+        cmd.CommandText = @"SELECT IdPropietario, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario FROM Propietario";
 
         using (var reader = cmd.ExecuteReader())
         {
@@ -21,7 +21,7 @@ public class RepositorioPropietario
             {
                 var Propietario = new Propietario
                 {
-                    IdInmueble = reader.GetInt32(nameof(Propietario.IdInmueble)),
+                    IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
                     Tipo = reader.GetString(nameof(Propietario.Tipo)),
                     Coordenadas = reader.GetString(nameof(Propietario.Coordenadas)),
                     Precio = reader.GetDecimal(nameof(Propietario.Precio)),
@@ -41,9 +41,9 @@ public class RepositorioPropietario
     public Propietario GetInmueble(MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario 
-                            FROM Propietario WHERE IdInmueble = @IdInmueble";
-        cmd.Parameters.AddWithValue("@IdInmueble", id);
+        cmd.CommandText = @"SELECT IdPropietario, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario 
+                            FROM Propietario WHERE IdPropietario = @IdPropietario";
+        cmd.Parameters.AddWithValue("@IdPropietario", id);
 
         using (var reader = cmd.ExecuteReader())
         {
@@ -51,7 +51,7 @@ public class RepositorioPropietario
             {
                 var Propietario = new Propietario
                 {
-                    IdInmueble = reader.GetInt32(nameof(Propietario.IdInmueble)),
+                    IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
                     Tipo = reader.GetString(nameof(Propietario.Tipo)),
                     Coordenadas = reader.GetString(nameof(Propietario.Coordenadas)),
                     Precio = reader.GetDecimal(nameof(Propietario.Precio)),
@@ -96,9 +96,9 @@ public class RepositorioPropietario
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
         cmd.CommandText = @"UPDATE Propietario SET Tipo = @Tipo, Coordenadas = @Coordenadas, Precio = @Precio, Ambientes = @Ambientes, Uso = @Uso, Activo = @Activo, IdPropietario = @IdPropietario
-                            WHERE IdInmueble = @IdInmueble;";
+                            WHERE IdPropietario = @IdPropietario;";
 
-        cmd.Parameters.AddWithValue("@IdInmueble", Propietario.IdInmueble);
+        cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
         cmd.Parameters.AddWithValue("@Tipo", Propietario.Tipo);
         cmd.Parameters.AddWithValue("@Coordenadas", Propietario.Coordenadas);
         cmd.Parameters.AddWithValue("@Precio", Propietario.Precio);
@@ -117,8 +117,8 @@ public class RepositorioPropietario
     public int DeleteInmueble( MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"DELETE FROM Propietario WHERE IdInmueble = @IdInmueble";
-        cmd.Parameters.AddWithValue("@IdInmueble", id);
+        cmd.CommandText = @"DELETE FROM Propietario WHERE IdPropietario = @IdPropietario";
+        cmd.Parameters.AddWithValue("@IdPropietario", id);
 
         var res = Convert.ToInt32(cmd.ExecuteNonQuery());
 
