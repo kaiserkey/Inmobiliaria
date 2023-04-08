@@ -14,14 +14,7 @@
                 <h2><a href="@Url.Action("Edit", new { id = Inmueble.idInmueble  })"> <i class="bi bi-pencil-square" style="font-size: 1em; color: green;">Editar</i> </a></h2>
             </th>
         </tr>
-        <tr>
-            <td class = "col-sm-6 fila-nombre">
-                @Html.DisplayNameFor(model => model.idInmueble)
-            </td>
-            <td class = "col-sm-6">
-                @Html.DisplayFor(model => model.idInmueble)
-            </td>
-        </tr>
+        
         <tr>
             <td class = "col-sm-6 fila-nombre">
                 @Html.DisplayNameFor(model => model.tipo)
