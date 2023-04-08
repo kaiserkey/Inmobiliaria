@@ -13,7 +13,7 @@ public class RepositorioInmueble
     {
         var inmuebles = new List<Inmueble>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdInmueble, Tipo, coordenadas, precio, ambientes, uso, activo, idPropietario FROM Inmueble";
+        cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, activo, idPropietario FROM Inmueble";
 
         using (var reader = cmd.ExecuteReader())
         {
@@ -23,10 +23,10 @@ public class RepositorioInmueble
                 {
                     IdInmueble = reader.GetInt32(nameof(Inmueble.IdInmueble)),
                     Tipo = reader.GetString(nameof(Inmueble.Tipo)),
-                    coordenadas = reader.GetString(nameof(Inmueble.Coordenadas)),
-                    precio = reader.GetDecimal(nameof(Inmueble.Precio)),
-                    ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
-                    uso = reader.GetString(nameof(Inmueble.Uso)),
+                    Coordenadas = reader.GetString(nameof(Inmueble.Coordenadas)),
+                    Precio = reader.GetDecimal(nameof(Inmueble.Precio)),
+                    Ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
+                    Uso = reader.GetString(nameof(Inmueble.Uso)),
                     activo = reader.GetBoolean(nameof(Inmueble.Activo)),
                     idPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario))
                 };
@@ -41,7 +41,7 @@ public class RepositorioInmueble
     public Inmueble GetInmueble(MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdInmueble, Tipo, coordenadas, precio, ambientes, uso, activo, idPropietario 
+        cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, activo, idPropietario 
                             FROM Inmueble WHERE IdInmueble = @IdInmueble";
         cmd.Parameters.AddWithValue("@IdInmueble", id);
 
@@ -53,10 +53,10 @@ public class RepositorioInmueble
                 {
                     IdInmueble = reader.GetInt32(nameof(Inmueble.IdInmueble)),
                     Tipo = reader.GetString(nameof(Inmueble.Tipo)),
-                    coordenadas = reader.GetString(nameof(Inmueble.Coordenadas)),
-                    precio = reader.GetDecimal(nameof(Inmueble.Precio)),
-                    ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
-                    uso = reader.GetString(nameof(Inmueble.Uso)),
+                    Coordenadas = reader.GetString(nameof(Inmueble.Coordenadas)),
+                    Precio = reader.GetDecimal(nameof(Inmueble.Precio)),
+                    Ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
+                    Uso = reader.GetString(nameof(Inmueble.Uso)),
                     activo = reader.GetBoolean(nameof(Inmueble.Activo)),
                     idPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario))
                 };
@@ -72,15 +72,15 @@ public class RepositorioInmueble
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"INSERT INTO Inmueble (Tipo, coordenadas, precio, ambientes, uso, activo, idPropietario) 
-                            VALUES (@Tipo, @coordenadas, @precio, @ambientes, @uso, @activo, @idPropietario);
+        cmd.CommandText = @"INSERT INTO Inmueble (Tipo, Coordenadas, Precio, Ambientes, Uso, activo, idPropietario) 
+                            VALUES (@Tipo, @Coordenadas, @Precio, @Ambientes, @Uso, @activo, @idPropietario);
                             SELECT LAST_INSERT_ID();";
 
         cmd.Parameters.AddWithValue("@Tipo", inmueble.Tipo);
-        cmd.Parameters.AddWithValue("@coordenadas", inmueble.Coordenadas);
-        cmd.Parameters.AddWithValue("@precio", inmueble.Precio);
-        cmd.Parameters.AddWithValue("@ambientes", inmueble.Ambientes);
-        cmd.Parameters.AddWithValue("@uso", inmueble.Uso);
+        cmd.Parameters.AddWithValue("@Coordenadas", inmueble.Coordenadas);
+        cmd.Parameters.AddWithValue("@Precio", inmueble.Precio);
+        cmd.Parameters.AddWithValue("@Ambientes", inmueble.Ambientes);
+        cmd.Parameters.AddWithValue("@Uso", inmueble.Uso);
         cmd.Parameters.AddWithValue("@activo", inmueble.Activo);
         cmd.Parameters.AddWithValue("@idPropietario", inmueble.IdPropietario);
 
@@ -95,15 +95,15 @@ public class RepositorioInmueble
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"UPDATE Inmueble SET Tipo = @Tipo, coordenadas = @coordenadas, precio = @precio, ambientes = @ambientes, uso = @uso, activo = @activo, idPropietario = @idPropietario
+        cmd.CommandText = @"UPDATE Inmueble SET Tipo = @Tipo, Coordenadas = @Coordenadas, Precio = @Precio, Ambientes = @Ambientes, Uso = @Uso, activo = @activo, idPropietario = @idPropietario
                             WHERE IdInmueble = @IdInmueble;";
 
         cmd.Parameters.AddWithValue("@IdInmueble", inmueble.IdInmueble);
         cmd.Parameters.AddWithValue("@Tipo", inmueble.Tipo);
-        cmd.Parameters.AddWithValue("@coordenadas", inmueble.Coordenadas);
-        cmd.Parameters.AddWithValue("@precio", inmueble.Precio);
-        cmd.Parameters.AddWithValue("@ambientes", inmueble.Ambientes);
-        cmd.Parameters.AddWithValue("@uso", inmueble.Uso);
+        cmd.Parameters.AddWithValue("@Coordenadas", inmueble.Coordenadas);
+        cmd.Parameters.AddWithValue("@Precio", inmueble.Precio);
+        cmd.Parameters.AddWithValue("@Ambientes", inmueble.Ambientes);
+        cmd.Parameters.AddWithValue("@Uso", inmueble.Uso);
         cmd.Parameters.AddWithValue("@activo", inmueble.Activo);
         cmd.Parameters.AddWithValue("@idPropietario", inmueble.IdPropietario);
 
