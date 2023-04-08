@@ -9,8 +9,11 @@ public class Inmueble
     public int IdInmueble{ get; set; }
     [Display( Name = "Tipo" )]
     public string Tipo{ get; set; }
+    [Display( Name = "Coordenadas" )]
     public string Coordenadas{ get; set; }
+    [Display( Name = "Precio" )]
     public decimal Precio{ get; set; }
+    []
     public int Ambientes{ get; set; }
     public string Uso{ get; set; }
     public Boolean Activo{ get; set; }
