@@ -9,7 +9,7 @@ public class RepositorioPropietario
     {
     }
 
-    public List<Propietario> GetInmuebles(MySqlDatabase mySqlDatabase)
+    public List<Propietario> GetPropietarios(MySqlDatabase mySqlDatabase)
     {
         var propietarios = new List<Propietario>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
