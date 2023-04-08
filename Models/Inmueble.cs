@@ -3,7 +3,7 @@ namespace Inmobiliaria.Models;
 
 public class Inmueble
 {
-    public int idInmueble{ get; set; }
+    public int IdInmueble{ get; set; }
     public string tipo{ get; set; }
     public string coordenadas{ get; set; }
     public decimal precio{ get; set; }
