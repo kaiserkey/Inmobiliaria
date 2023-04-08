@@ -12,5 +12,5 @@ public class Inmueble
     public Boolean Activo{ get; set; }
     public int IdPropietario{ get; set; }
 
-
+    
 }
