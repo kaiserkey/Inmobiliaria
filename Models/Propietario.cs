@@ -15,7 +15,8 @@ public class Propietario
     public string Direccion{ get; set; }
     [Display (Name = "Teléfono")]
     public string Telefono{ get; set; }
-    
+    [Display (Name = "DNI")]
     public string Dni{ get; set; }
+    [Display (Name = "Email")]
     public string Email{ get; set; }
 }
