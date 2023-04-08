@@ -1,5 +1,6 @@
 using System;
 namespace Inmobiliaria.Models;
+using System.ComponentModel.DataAnnotations;
 
 public class Inmueble
 {
@@ -15,6 +16,6 @@ public class Inmueble
     public int IdPropietario{ get; set; }
 
     [ForeignKey( nameof( Propietario ) ) ]
-    
+
 
 }
