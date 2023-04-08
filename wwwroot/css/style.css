@@ -247,10 +247,11 @@ tbody{
 
 #nuevo-container p{
     background-color: #bcbbba;
-    border: 0;
+    border: 0 !important;
 }
 #nuevo-container form{
     background-color: #bcbbba;
+    border-top: 0 !important;
 }
 
 
