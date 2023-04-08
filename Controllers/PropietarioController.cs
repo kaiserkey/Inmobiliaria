@@ -46,7 +46,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 var res = RepoPropietario.CreatePropietario(con, collection);
-                
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -58,6 +58,7 @@ namespace Inmobiliaria.Controllers
         // GET: Propietario/Edit/5
         public ActionResult Edit(int id)
         {
+            
             return View();
         }
 
