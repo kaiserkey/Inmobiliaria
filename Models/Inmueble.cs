@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 public class Inmueble
 {
+    [Display( Name = "Código" )]
     public int IdInmueble{ get; set; }
     public string Tipo{ get; set; }
     public string Coordenadas{ get; set; }
