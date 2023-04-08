@@ -21,14 +21,14 @@ public class RepositorioPropietario
             {
                 var Propietario = new Propietario
                 {
-                    IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
+                    ,
                     Nombre = reader.GetString(nameof(Propietario.Nombre)),
                     Apellido = reader.GetString(nameof(Propietario.Apellido)),
                     Direccion = reader.GetDecimal(nameof(Propietario.Direccion)),
                     Telefono = reader.GetInt32(nameof(Propietario.Telefono)),
                     Dni = reader.GetString(nameof(Propietario.Dni)),
                     Email = reader.GetBoolean(nameof(Propietario.Email)),
-                    IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario))
+                    
                 };
                 propietarios.Add(Propietario);
             }
@@ -51,14 +51,14 @@ public class RepositorioPropietario
             {
                 var Propietario = new Propietario
                 {
-                    IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
+                    ,
                     Nombre = reader.GetString(nameof(Propietario.Nombre)),
                     Apellido = reader.GetString(nameof(Propietario.Apellido)),
                     Direccion = reader.GetDecimal(nameof(Propietario.Direccion)),
                     Telefono = reader.GetInt32(nameof(Propietario.Telefono)),
                     Dni = reader.GetString(nameof(Propietario.Dni)),
                     Email = reader.GetBoolean(nameof(Propietario.Email)),
-                    IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario))
+                    
                 };
                 mySqlDatabase.Dispose();
                 return Propietario;
