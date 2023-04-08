@@ -59,7 +59,6 @@ namespace Inmobiliaria.Controllers
         // GET: Propietario/Edit/5
         public ActionResult Edit(int id)
         {
-            Console.WriteLine("Edit", id);
             Propietario propietario = RepoPropietario.GetPropietario(con, id);
             return View(propietario);
         }
