@@ -27,8 +27,7 @@ public class RepositorioPropietario
                     Direccion = reader.GetDecimal(nameof(Propietario.Direccion)),
                     Telefono = reader.GetInt32(nameof(Propietario.Telefono)),
                     Dni = reader.GetString(nameof(Propietario.Dni)),
-                    Email = reader.GetBoolean(nameof(Propietario.Email)),
-                    IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario))
+                    Email = reader.GetBoolean(nameof(Propietario.Email))
                 };
                 propietarios.Add(Propietario);
             }
@@ -57,8 +56,7 @@ public class RepositorioPropietario
                     Direccion = reader.GetDecimal(nameof(Propietario.Direccion)),
                     Telefono = reader.GetInt32(nameof(Propietario.Telefono)),
                     Dni = reader.GetString(nameof(Propietario.Dni)),
-                    Email = reader.GetBoolean(nameof(Propietario.Email)),
-                    IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario))
+                    Email = reader.GetBoolean(nameof(Propietario.Email))
                 };
                 mySqlDatabase.Dispose();
                 return Propietario;
