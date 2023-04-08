@@ -12,7 +12,6 @@ public class Inmueble
     public decimal Precio{ get; set; }
     public int Ambientes{ get; set; }
     public string Uso{ get; set; }
-
     public Boolean Activo{ get; set; }
 
     [Display( Name = "Propietario" ) ]
