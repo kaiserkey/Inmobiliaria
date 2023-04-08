@@ -8,9 +8,9 @@
     <h1>Inmuebles</h1>
     <h2><a asp-action="Create">Nuevo Inmueble</a></h2>
 </div>
-<div class="table-responsive">
-    <table class="table table-bordred table-striped">
-        <thead>
+<div class="table-responsive d-flex justify-content-center align-items-center">
+    <table class="table table-bordered table-striped w-auto">
+        <thead class="">
             <tr>
                 <th class="col">
                     @Html.DisplayNameFor(model => model.idInmueble)
@@ -36,6 +36,8 @@
                 <th class="col">
                     @Html.DisplayNameFor(model => model.idPropietario)
                 </th>
+                <th></th>
+                <th></th>
                 <th></th>
             </tr>
         </thead>
@@ -67,14 +69,13 @@
                     @Html.DisplayFor(modelItem => item.idPropietario)
                 </td>
                 <td>
-                    <a href="@Url.Action("Edit", new { id = item.idInmueble })">Editar</a>
-                    
+                    <a href="@Url.Action("Edit", new { id = item.idInmueble })"> <i class="bi bi-pencil-square" style="font-size: 2em; color: green;"></i> </a>
                 </td>
                 <td>
-                    @Html.ActionLink("Detalles", "Details", new { id=item.idInmueble })
+                    <a href="@Url.Action("Details", new { id = item.idInmueble })"> <i class="bi bi-file-text-fill" style="font-size: 2em; color: orange;"></i> </a>
                 </td>
                 <td>
-                    @Html.ActionLink("Eliminar", "Delete", new { id=item.idInmueble })
+                    <a href="@Url.Action("Delete", new { id = item.idInmueble })"> <i class="bi bi-trash3-fill" style="font-size: 2em; color: red;"></i> </a>
                 </td>
             </tr>
     }
