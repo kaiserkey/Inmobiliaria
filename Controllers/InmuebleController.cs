@@ -86,7 +86,7 @@ namespace Inmobiliaria.Controllers
         // POST: Inmueble/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, Inmueble inmuebleDelete)
+        public ActionResult Delete(int id)
         {
             try
             {
