@@ -49,7 +49,7 @@ namespace Inmobiliaria.Controllers
             try
             {   string fechaFormateada = inquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
                 Console.WriteLine(fechaFormateada);
-                inquilino.FechaNacimiento = new DateTime(fechaFormateada);
+                inquilino.FechaNacimiento = new DateTime(inquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss"));
                 RepoInquilino.CreateInquilino(con, inquilino);
 
                 return RedirectToAction(nameof(Index));
