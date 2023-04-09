@@ -69,7 +69,6 @@ public class RepositorioPropietario
     public int CreatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        Console.WriteLine("Entro Update", Propietario.Apellido);
         cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Direccion, Telefono, Dni, Email) 
                             VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email);
                             SELECT LAST_INSERT_ID();";
