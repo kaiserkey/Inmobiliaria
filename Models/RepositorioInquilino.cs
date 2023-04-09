@@ -92,7 +92,7 @@ public class RepositorioInquilino
 
     public int UpdateInquilino(MySqlDatabase mySqlDatabase, Inquilino Inquilino)
     {
-        var fechaFormat = CreateInquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
+        var fechaFormat = Inquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
 
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
