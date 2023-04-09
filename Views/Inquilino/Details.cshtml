@@ -14,7 +14,7 @@
                                 style="font-size: 1em; color: black;">Regresar</i></a></h2>
                 </th>
                 <th class="col">
-                    <h2><a href="@Url.Action("Edit", new { id = Inquilino.IdPropietario  })"> <i class="bi bi-pencil-square"
+                    <h2><a href="@Url.Action("Edit", new { id = Inquilino.IdInquilino  })"> <i class="bi bi-pencil-square"
                                 style="font-size: 1em; color: green;">Editar</i> </a></h2>
                 </th>
             </tr>
@@ -22,10 +22,10 @@
         <tbody>
             <tr>
                 <td class="fila-nombre">
-                    @Html.DisplayNameFor(model => model.IdPropietario)
+                    @Html.DisplayNameFor(model => model.IdInquilino)
                 </td>
                 <td>
-                    @Html.DisplayFor(model => model.IdPropietario)
+                    @Html.DisplayFor(model => model.IdInquilino)
                 </td>
             </tr>
             <tr>
