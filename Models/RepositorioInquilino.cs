@@ -104,6 +104,7 @@ public class RepositorioInquilino
         cmd.Parameters.AddWithValue("@Telefono", Inquilino.Telefono);
         cmd.Parameters.AddWithValue("@Dni", Inquilino.Dni);
         cmd.Parameters.AddWithValue("@Email", Inquilino.Email);
+        cmd.Parameters.AddWithValue("@FechaNacimiento", Inquilino.FechaNacimiento);
 
         var res = Convert.ToInt32(cmd.ExecuteNonQuery());
 
