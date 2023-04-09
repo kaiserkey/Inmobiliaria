@@ -23,7 +23,7 @@ public class Inmueble
     [Display( Name = "Propietario" ) ]
     public int IdPropietario{ get; set; }
 
-    /* [ForeignKey( nameof( IdPropietario ) ) ]
+    [ForeignKey( nameof( IdPropietario ) ) ]
 
-    public Propietario Propietario{ get; set; } */
+    public Propietario Propietario{ get; set; }
 }
