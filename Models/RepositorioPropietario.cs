@@ -69,7 +69,7 @@ public class RepositorioPropietario
     public int CrearPropietario(MySqlDatabase mySqlDatabase, Propietario propietario)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        
+        Console.WriteLine("Entro Update");
         cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Direccion, Telefono, Dni, Email) 
                             VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email);
                             SELECT LAST_INSERT_ID();";
@@ -82,7 +82,7 @@ public class RepositorioPropietario
         cmd.Parameters.AddWithValue("@Email", propietario.Email);
 
         var res = Convert.ToInt32(cmd.ExecuteScalar());
-        Console.WriteLine("Entro Update");
+        
         mySqlDatabase.Dispose();
         
         return res;
