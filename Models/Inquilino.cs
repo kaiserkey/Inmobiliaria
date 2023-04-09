@@ -3,7 +3,7 @@ namespace Inmobiliaria.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-public class Propietario
+public class Inquilino
 {
     [Display (Name = "Código")]
     public int IdPropietario{ get; set; }
@@ -11,8 +11,6 @@ public class Propietario
     public string Nombre{ get; set; }
     [Display (Name = "Apellido")]
     public string Apellido{ get; set; }
-    [Display (Name = "Dirección")]
-    public string Direccion{ get; set; }
     [Display (Name = "Teléfono")]
     public string Telefono{ get; set; }
     [Display (Name = "DNI")]
