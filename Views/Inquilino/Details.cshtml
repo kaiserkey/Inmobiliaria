@@ -1,8 +1,8 @@
-@model Inmobiliaria.Models.Propietario
+@model Inmobiliaria.Models.Inquilino
 
 @{
     ViewData["Title"] = "Details";
-    var Propietario = Model;
+    var Inquilino = Model;
 }
 
 <div id="contenedor-vista-previa" class="table-responsive d-flex justify-content-center align-items-center">
@@ -14,7 +14,7 @@
                                 style="font-size: 1em; color: black;">Regresar</i></a></h2>
                 </th>
                 <th class="col">
-                    <h2><a href="@Url.Action("Edit", new { id = Propietario.IdPropietario  })"> <i class="bi bi-pencil-square"
+                    <h2><a href="@Url.Action("Edit", new { id = Inquilino.IdPropietario  })"> <i class="bi bi-pencil-square"
                                 style="font-size: 1em; color: green;">Editar</i> </a></h2>
                 </th>
             </tr>
