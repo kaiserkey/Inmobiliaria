@@ -77,7 +77,7 @@ public class RepositorioInquilino
 
         cmd.Parameters.AddWithValue("@Nombre", Inquilino.Nombre);
         cmd.Parameters.AddWithValue("@Apellido", Inquilino.Apellido);
-        cmd.Parameters.AddWithValue("@Direccion", Inquilino.Direccion);
+        
         cmd.Parameters.AddWithValue("@Telefono", Inquilino.Telefono);
         cmd.Parameters.AddWithValue("@Dni", Inquilino.Dni);
         cmd.Parameters.AddWithValue("@Email", Inquilino.Email);
@@ -100,7 +100,6 @@ public class RepositorioInquilino
         cmd.Parameters.AddWithValue("@IdInquilino", Inquilino.IdInquilino);
         cmd.Parameters.AddWithValue("@Nombre", Inquilino.Nombre);
         cmd.Parameters.AddWithValue("@Apellido", Inquilino.Apellido);
-        cmd.Parameters.AddWithValue("@Direccion", Inquilino.Direccion);
         cmd.Parameters.AddWithValue("@Telefono", Inquilino.Telefono);
         cmd.Parameters.AddWithValue("@Dni", Inquilino.Dni);
         cmd.Parameters.AddWithValue("@Email", Inquilino.Email);
