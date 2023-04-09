@@ -93,7 +93,7 @@ public class RepositorioPropietario
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"UPDATE Propietario SET Nombre = @Nombre, Apellido = @Apellido, Direccion = @Direccion, Telefono = @Telefono, Dni = @Dni, Email = @Email
+        cmd.CommandText = @"UPDATE Propietario SET Nombre = @Nombre, Apellido = @Apellido, Direccion = @Direccion, Telefono = @Telefono, Dni = @Dni, Email = @Email 
                             WHERE IdPropietario = @IdPropietario;";
 
         cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
@@ -103,6 +103,8 @@ public class RepositorioPropietario
         cmd.Parameters.AddWithValue("@Telefono", Propietario.Telefono);
         cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
         cmd.Parameters.AddWithValue("@Email", Propietario.Email);
+        cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
+
         var res = Convert.ToInt32(cmd.ExecuteNonQuery());
 
         mySqlDatabase.Dispose();
