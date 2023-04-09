@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Inmobiliaria.Models;
-using 
+using System.Globalization;
 
 namespace Inmobiliaria.Controllers
 {
