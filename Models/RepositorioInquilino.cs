@@ -89,7 +89,7 @@ public class RepositorioInquilino
         return res;
     }
 
-    public int UpdateIn(MySqlDatabase mySqlDatabase, Inquilino Inquilino)
+    public int UpdateInquilino(MySqlDatabase mySqlDatabase, Inquilino Inquilino)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
@@ -111,7 +111,7 @@ public class RepositorioInquilino
         return res;
     }
 
-    public int DeletePropietario( MySqlDatabase mySqlDatabase, int id)
+    public int DeleteInquilino( MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"DELETE FROM Inquilino WHERE IdInquilino = @IdInquilino";
