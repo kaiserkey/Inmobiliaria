@@ -27,7 +27,8 @@ public class RepositorioInquilino
                     Direccion = reader.GetString(nameof(Inquilino.Direccion)),
                     Telefono = reader.GetString(nameof(Inquilino.Telefono)),
                     Dni = reader.GetString(nameof(Inquilino.Dni)),
-                    Email = reader.GetString(nameof(Inquilino.Email))
+                    Email = reader.GetString(nameof(Inquilino.Email)),
+                    FechaNacimeinto = reader.GetDateTime(nameof(Inquilino.FechaNacimiento))
                 };
                 propietarios.Add(Inquilino);
             }
