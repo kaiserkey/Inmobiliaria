@@ -9,27 +9,27 @@ public class RepositorioInquilino
     {
     }
 
-    public List<Propietario> GetPropietarios(MySqlDatabase mySqlDatabase)
+    public List<Inquilino> GetPropietarios(MySqlDatabase mySqlDatabase)
     {
-        var propietarios = new List<Propietario>();
+        var propietarios = new List<Inquilino>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email FROM Propietario";
+        cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email FROM Inquilino";
 
         using (var reader = cmd.ExecuteReader())
         {
             while (reader.Read())
             {
-                var propietario = new Propietario
+                var Inquilino = new Inquilino
                 {
-                    IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
-                    Nombre = reader.GetString(nameof(Propietario.Nombre)),
-                    Apellido = reader.GetString(nameof(Propietario.Apellido)),
-                    Direccion = reader.GetString(nameof(Propietario.Direccion)),
-                    Telefono = reader.GetString(nameof(Propietario.Telefono)),
-                    Dni = reader.GetString(nameof(Propietario.Dni)),
-                    Email = reader.GetString(nameof(Propietario.Email))
+                    IdPropietario = reader.GetInt32(nameof(Inquilino.IdPropietario)),
+                    Nombre = reader.GetString(nameof(Inquilino.Nombre)),
+                    Apellido = reader.GetString(nameof(Inquilino.Apellido)),
+                    Direccion = reader.GetString(nameof(Inquilino.Direccion)),
+                    Telefono = reader.GetString(nameof(Inquilino.Telefono)),
+                    Dni = reader.GetString(nameof(Inquilino.Dni)),
+                    Email = reader.GetString(nameof(Inquilino.Email))
                 };
-                propietarios.Add(propietario);
+                propietarios.Add(Inquilino);
             }
 
         }
@@ -37,48 +37,48 @@ public class RepositorioInquilino
         return propietarios;
     }
 
-    public Propietario GetPropietario(MySqlDatabase mySqlDatabase, int id)
+    public Inquilino GetPropietario(MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email 
-                            FROM Propietario WHERE IdPropietario = @IdPropietario";
+                            FROM Inquilino WHERE IdPropietario = @IdPropietario";
         cmd.Parameters.AddWithValue("@IdPropietario", id);
 
         using (var reader = cmd.ExecuteReader())
         {
             if (reader.Read())
             {
-                var propietario = new Propietario
+                var Inquilino = new Inquilino
                 {
-                    IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
-                    Nombre = reader.GetString(nameof(Propietario.Nombre)),
-                    Apellido = reader.GetString(nameof(Propietario.Apellido)),
-                    Direccion = reader.GetString(nameof(Propietario.Direccion)),
-                    Telefono = reader.GetString(nameof(Propietario.Telefono)),
-                    Dni = reader.GetString(nameof(Propietario.Dni)),
-                    Email = reader.GetString(nameof(Propietario.Email))
+                    IdPropietario = reader.GetInt32(nameof(Inquilino.IdPropietario)),
+                    Nombre = reader.GetString(nameof(Inquilino.Nombre)),
+                    Apellido = reader.GetString(nameof(Inquilino.Apellido)),
+                    Direccion = reader.GetString(nameof(Inquilino.Direccion)),
+                    Telefono = reader.GetString(nameof(Inquilino.Telefono)),
+                    Dni = reader.GetString(nameof(Inquilino.Dni)),
+                    Email = reader.GetString(nameof(Inquilino.Email))
                 };
                 mySqlDatabase.Dispose();
-                return propietario;
+                return Inquilino;
             }
         }
         mySqlDatabase.Dispose();
         return null;
     }
 
-    public int CreatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
+    public int CreatePropietario(MySqlDatabase mySqlDatabase, Inquilino Inquilino)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Direccion, Telefono, Dni, Email) 
+        cmd.CommandText = @"INSERT INTO Inquilino (Nombre, Apellido, Direccion, Telefono, Dni, Email) 
                             VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email);
                             SELECT LAST_INSERT_ID();";
 
-        cmd.Parameters.AddWithValue("@Nombre", Propietario.Nombre);
-        cmd.Parameters.AddWithValue("@Apellido", Propietario.Apellido);
-        cmd.Parameters.AddWithValue("@Direccion", Propietario.Direccion);
-        cmd.Parameters.AddWithValue("@Telefono", Propietario.Telefono);
-        cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
-        cmd.Parameters.AddWithValue("@Email", Propietario.Email);
+        cmd.Parameters.AddWithValue("@Nombre", Inquilino.Nombre);
+        cmd.Parameters.AddWithValue("@Apellido", Inquilino.Apellido);
+        cmd.Parameters.AddWithValue("@Direccion", Inquilino.Direccion);
+        cmd.Parameters.AddWithValue("@Telefono", Inquilino.Telefono);
+        cmd.Parameters.AddWithValue("@Dni", Inquilino.Dni);
+        cmd.Parameters.AddWithValue("@Email", Inquilino.Email);
         
         var res = Convert.ToInt32(cmd.ExecuteScalar());
         
@@ -87,20 +87,20 @@ public class RepositorioInquilino
         return res;
     }
 
-    public int UpdatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
+    public int UpdatePropietario(MySqlDatabase mySqlDatabase, Inquilino Inquilino)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"UPDATE Propietario SET Nombre = @Nombre, Apellido = @Apellido, Direccion = @Direccion, Telefono = @Telefono, Dni = @Dni, Email = @Email
+        cmd.CommandText = @"UPDATE Inquilino SET Nombre = @Nombre, Apellido = @Apellido, Direccion = @Direccion, Telefono = @Telefono, Dni = @Dni, Email = @Email
                             WHERE IdPropietario = @IdPropietario;";
 
-        cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
-        cmd.Parameters.AddWithValue("@Nombre", Propietario.Nombre);
-        cmd.Parameters.AddWithValue("@Apellido", Propietario.Apellido);
-        cmd.Parameters.AddWithValue("@Direccion", Propietario.Direccion);
-        cmd.Parameters.AddWithValue("@Telefono", Propietario.Telefono);
-        cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
-        cmd.Parameters.AddWithValue("@Email", Propietario.Email);
+        cmd.Parameters.AddWithValue("@IdPropietario", Inquilino.IdPropietario);
+        cmd.Parameters.AddWithValue("@Nombre", Inquilino.Nombre);
+        cmd.Parameters.AddWithValue("@Apellido", Inquilino.Apellido);
+        cmd.Parameters.AddWithValue("@Direccion", Inquilino.Direccion);
+        cmd.Parameters.AddWithValue("@Telefono", Inquilino.Telefono);
+        cmd.Parameters.AddWithValue("@Dni", Inquilino.Dni);
+        cmd.Parameters.AddWithValue("@Email", Inquilino.Email);
 
         var res = Convert.ToInt32(cmd.ExecuteNonQuery());
 
@@ -112,7 +112,7 @@ public class RepositorioInquilino
     public int DeletePropietario( MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"DELETE FROM Propietario WHERE IdPropietario = @IdPropietario";
+        cmd.CommandText = @"DELETE FROM Inquilino WHERE IdPropietario = @IdPropietario";
         cmd.Parameters.AddWithValue("@IdPropietario", id);
 
         var res = Convert.ToInt32(cmd.ExecuteNonQuery());
