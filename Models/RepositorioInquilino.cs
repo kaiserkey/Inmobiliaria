@@ -72,7 +72,7 @@ public class RepositorioInquilino
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"INSERT INTO Inquilino (Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento) 
-                            VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email);
+                            VALUES (@Nombre, @Apellido, @Telefono, @Dni, @Email);
                             SELECT LAST_INSERT_ID();";
 
         cmd.Parameters.AddWithValue("@Nombre", Inquilino.Nombre);
