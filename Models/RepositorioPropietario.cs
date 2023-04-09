@@ -71,7 +71,7 @@ public class RepositorioPropietario
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
         cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Direccion, Telefono, Dni, Email) 
-                            VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email, @IdPropietario);
+                            VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email);
                             SELECT LAST_INSERT_ID();";
 
         cmd.Parameters.AddWithValue("@Nombre", Propietario.Nombre);
