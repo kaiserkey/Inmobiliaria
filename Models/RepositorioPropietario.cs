@@ -74,12 +74,12 @@ public class RepositorioPropietario
                             VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email);
                             SELECT LAST_INSERT_ID();";
 
-        cmd.Parameters.AddWithValue("@Nombre", Propietario.Nombre);
-        cmd.Parameters.AddWithValue("@Apellido", Propietario.Apellido);
-        cmd.Parameters.AddWithValue("@Direccion", Propietario.Direccion);
-        cmd.Parameters.AddWithValue("@Telefono", Propietario.Telefono);
-        cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
-        cmd.Parameters.AddWithValue("@Email", Propietario.Email);
+        cmd.Parameters.AddWithValue("@Nombre", propietario.Nombre);
+        cmd.Parameters.AddWithValue("@Apellido", propietario.Apellido);
+        cmd.Parameters.AddWithValue("@Direccion", propietario.Direccion);
+        cmd.Parameters.AddWithValue("@Telefono", propietario.Telefono);
+        cmd.Parameters.AddWithValue("@Dni", propietario.Dni);
+        cmd.Parameters.AddWithValue("@Email", propietario.Email);
 
         var res = Convert.ToInt32(cmd.ExecuteScalar());
         Console.WriteLine("Entro Update");
