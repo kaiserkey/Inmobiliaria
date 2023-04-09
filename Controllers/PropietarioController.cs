@@ -70,7 +70,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                
+                Console.WriteLine("Id: " + id);
                 var res = RepoPropietario.UpdatePropietario(con, UpdatePropietario);
 
                 return RedirectToAction(nameof(Index));
