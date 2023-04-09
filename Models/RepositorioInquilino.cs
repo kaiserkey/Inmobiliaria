@@ -66,15 +66,15 @@ public class RepositorioInquilino
         return null;
     }
 
-    public int CreateInquilino(MySqlDatabase mySqlDatabase, Inquilino Inquilino)
+    public int CreateInquilino(MySqlDatabase mySqlDatabase, Inquilino CreateInquilino)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"INSERT INTO Inquilino (Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento) 
                             VALUES (@Nombre, @Apellido, @Telefono, @Dni, @Email);
                             SELECT LAST_INSERT_ID();";
 
-        cmd.Parameters.AddWithValue("@Nombre", Inquilino.Nombre);
-        cmd.Parameters.AddWithValue("@Apellido", Inquilino.Apellido);
+        cmd.Parameters.AddWithValue("@Nombre", CreateInquilino.Nombre);
+        cmd.Parameters.AddWithValue("@Apellido", CreateInquilino.Apellido);
         cmd.Parameters.AddWithValue("@Telefono", Inquilino.Telefono);
         cmd.Parameters.AddWithValue("@Dni", Inquilino.Dni);
         cmd.Parameters.AddWithValue("@Email", Inquilino.Email);
