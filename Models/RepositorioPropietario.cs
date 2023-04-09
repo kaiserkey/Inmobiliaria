@@ -66,20 +66,21 @@ public class RepositorioPropietario
         return null;
     }
 
-    public int CrearPropietario(MySqlDatabase mySqlDatabase, Propietario CrearPropietario)
+
+    public int CreatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        Console.WriteLine("Entro Update", CrearPropietario.Apellido);
+        Console.WriteLine("Entro Update", Propietario.Apellido);
         cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Direccion, Telefono, Dni, Email) 
                             VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email);
                             SELECT LAST_INSERT_ID();";
 
-        cmd.Parameters.AddWithValue("@Nombre", CrearPropietario.Nombre);
-        cmd.Parameters.AddWithValue("@Apellido", CrearPropietario.Apellido);
-        cmd.Parameters.AddWithValue("@Direccion", CrearPropietario.Direccion);
-        cmd.Parameters.AddWithValue("@Telefono", CrearPropietario.Telefono);
-        cmd.Parameters.AddWithValue("@Dni", CrearPropietario.Dni);
-        cmd.Parameters.AddWithValue("@Email", CrearPropietario.Email);
+        cmd.Parameters.AddWithValue("@Nombre", Propietario.Nombre);
+        cmd.Parameters.AddWithValue("@Apellido", Propietario.Apellido);
+        cmd.Parameters.AddWithValue("@Direccion", Propietario.Direccion);
+        cmd.Parameters.AddWithValue("@Telefono", Propietario.Telefono);
+        cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
+        cmd.Parameters.AddWithValue("@Email", Propietario.Email);
         
         var res = Convert.ToInt32(cmd.ExecuteScalar());
         
@@ -87,8 +88,6 @@ public class RepositorioPropietario
         
         return res;
     }
-
-    public int CreatePropietario()
 
     public int UpdatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
     {
