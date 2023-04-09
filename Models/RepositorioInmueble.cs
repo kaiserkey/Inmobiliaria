@@ -86,7 +86,7 @@ public class RepositorioInmueble
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"INSERT INTO Inmueble (Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, i.IdPropietario) 
+        cmd.CommandText = @"INSERT INTO Inmueble (Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario) 
                             VALUES (@Tipo, @Coordenadas, @Precio, @Ambientes, @Uso, @Activo, @IdPropietario);
                             SELECT LAST_INSERT_ID();";
 
