@@ -88,6 +88,8 @@ public class RepositorioPropietario
         return res;
     }
 
+    public int C
+
     public int UpdatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
