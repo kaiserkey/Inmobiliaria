@@ -68,7 +68,7 @@ public class RepositorioInmueble
         return null;
     }
 
-    public int 
+    public int Create
 
     public int CreateInmueble(MySqlDatabase mySqlDatabase, Inmueble inmueble)
     {
