@@ -49,7 +49,9 @@ public class RepositorioInmueble
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario 
-                            FROM Inmueble WHERE IdInmueble = @IdInmueble";
+                            FROM Inmueble WHERE IdInmueble = @IdInmueble
+                            I
+                            ";
         cmd.Parameters.AddWithValue("@IdInmueble", id);
 
         using (var reader = cmd.ExecuteReader())
