@@ -70,9 +70,9 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                Console.WriteLine("Id: " + id);
+                
                 var res = RepoPropietario.UpdatePropietario(con, UpdatePropietario);
-
+                Console.WriteLine("Id: " + id);
                 return RedirectToAction(nameof(Index));
             }
             catch
