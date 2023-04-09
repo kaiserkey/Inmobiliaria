@@ -56,7 +56,8 @@ public class RepositorioInquilino
                     Direccion = reader.GetString(nameof(Inquilino.Direccion)),
                     Telefono = reader.GetString(nameof(Inquilino.Telefono)),
                     Dni = reader.GetString(nameof(Inquilino.Dni)),
-                    Email = reader.GetString(nameof(Inquilino.Email))
+                    Email = reader.GetString(nameof(Inquilino.Email)),
+                    FechaNacimeint
                 };
                 mySqlDatabase.Dispose();
                 return Inquilino;
