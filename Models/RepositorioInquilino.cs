@@ -77,7 +77,6 @@ public class RepositorioInquilino
 
         cmd.Parameters.AddWithValue("@Nombre", Inquilino.Nombre);
         cmd.Parameters.AddWithValue("@Apellido", Inquilino.Apellido);
-        
         cmd.Parameters.AddWithValue("@Telefono", Inquilino.Telefono);
         cmd.Parameters.AddWithValue("@Dni", Inquilino.Dni);
         cmd.Parameters.AddWithValue("@Email", Inquilino.Email);
