@@ -47,8 +47,8 @@ namespace Inmobiliaria.Controllers
         public ActionResult Create(Inquilino inquilino)
         {
             try
-            {   string fechaFormateada = inquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
-                string fechaNacimientoStr = "10/04/1990 15:30:00";
+            {   
+                string fechaNacimientoStr = inquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
                 DateTime fechaNacimiento = DateTime.ParseExact(fechaNacimientoStr, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
                 string fechaNacimientoFormateada = fechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
 
