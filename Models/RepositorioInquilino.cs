@@ -13,7 +13,7 @@ public class RepositorioInquilino
     {
         var propietarios = new List<Inquilino>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Direccion, Telefono, Dni, Email FROM Inquilino";
+        cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Telefono, Dni, Email FROM Inquilino";
 
         using (var reader = cmd.ExecuteReader())
         {
@@ -40,7 +40,7 @@ public class RepositorioInquilino
     public Inquilino GetPropietario(MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Direccion, Telefono, Dni, Email 
+        cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Telefono, Dni, Email 
                             FROM Inquilino WHERE IdInquilino = @IdInquilino";
         cmd.Parameters.AddWithValue("@IdInquilino", id);
 
@@ -69,7 +69,7 @@ public class RepositorioInquilino
     public int CreatePropietario(MySqlDatabase mySqlDatabase, Inquilino Inquilino)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"INSERT INTO Inquilino (Nombre, Apellido, Direccion, Telefono, Dni, Email) 
+        cmd.CommandText = @"INSERT INTO Inquilino (Nombre, Apellido, Telefono, Dni, Email) 
                             VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email);
                             SELECT LAST_INSERT_ID();";
 
@@ -91,7 +91,7 @@ public class RepositorioInquilino
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"UPDATE Inquilino SET Nombre = @Nombre, Apellido = @Apellido, Direccion = @Direccion, Telefono = @Telefono, Dni = @Dni, Email = @Email
+        cmd.CommandText = @"UPDATE Inquilino SET Nombre = @Nombre, Apellido = @Apellido = @Direccion, Telefono = @Telefono, Dni = @Dni, Email = @Email
                             WHERE IdInquilino = @IdInquilino;";
 
         cmd.Parameters.AddWithValue("@IdInquilino", Inquilino.IdInquilino);
