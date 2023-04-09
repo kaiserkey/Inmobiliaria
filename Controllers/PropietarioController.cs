@@ -46,8 +46,9 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                RepoPropietario.CrearPropietario(con, propietario);
                 Console.WriteLine("Entro Action");
+                RepoPropietario.CrearPropietario(con, propietario);
+                
                 return RedirectToAction(nameof(Index));
             }
             catch
