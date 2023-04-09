@@ -93,7 +93,7 @@ public class RepositorioPropietario
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
-        cmd.CommandText = @"UPDATE Propietario SET Nombre = @Nombre, Apellido = @Apellido, Direccion = @Direccion, Telefono = @Telefono, Dni = @Dni, Email = @Email = @IdPropietario
+        cmd.CommandText = @"UPDATE Propietario SET Nombre = @Nombre, Apellido = @Apellido, Direccion = @Direccion, Telefono = @Telefono, Dni = @Dni, Email = @Email
                             WHERE IdPropietario = @IdPropietario;";
 
         cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
