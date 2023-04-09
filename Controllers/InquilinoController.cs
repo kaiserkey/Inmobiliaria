@@ -47,7 +47,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                inquilino.FechaNacimiento = inquilino.FechaNacimiento.
+                inquilino.FechaNacimiento = inquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
                 RepoInquilino.CreateInquilino(con, inquilino);
 
                 return RedirectToAction(nameof(Index));
