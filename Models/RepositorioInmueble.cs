@@ -37,7 +37,7 @@ public class RepositorioInmueble
                         Dni = reader.GetInt32(nameof(Propietario.Dni)),
                         Telefono = reader.GetInt32(nameof(Propietario.Telefono)),
                         Email = reader.GetString(nameof(Propietario.Email)),
-                        
+                        Direccion = reader.GetString(nameof(Propietario.Direccion)),
                     }
                 };
                 inmuebles.Add(inmueble);
