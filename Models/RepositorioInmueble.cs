@@ -32,7 +32,7 @@ public class RepositorioInmueble
                     Activo = reader.GetBoolean(nameof(Inmueble.Activo)),
                     IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
                     Propietario = new Propietario{
-                        IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
+                        IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
                         Nombre = reader.GetString(nameof(Propietario.Nombre)),
                         Apellido = reader.GetString(nameof(Propietario.Apellido)),
                     }
