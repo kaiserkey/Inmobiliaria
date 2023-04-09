@@ -42,11 +42,11 @@ namespace Inmobiliaria.Controllers
         // POST: Inquilino/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Inquilino collection)
         {
             try
             {
-                // TODO: Add insert logic here
+                
 
                 return RedirectToAction(nameof(Index));
             }
@@ -65,7 +65,7 @@ namespace Inmobiliaria.Controllers
         // POST: Inquilino/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Inquilino collection)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace Inmobiliaria.Controllers
         // POST: Inquilino/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Inquilino collection)
         {
             try
             {
