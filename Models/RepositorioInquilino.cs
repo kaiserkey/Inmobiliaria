@@ -11,7 +11,7 @@ public class RepositorioInquilino
 
     public List<Inquilino> GetInquilinos(MySqlDatabase mySqlDatabase)
     {
-        var propietarios = new List<Inquilino>();
+        var inquilinos = new List<Inquilino>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento FROM Inquilino";
 
@@ -30,12 +30,12 @@ public class RepositorioInquilino
                     Email = reader.GetString(nameof(Inquilino.Email)),
                     FechaNacimeinto = reader.GetDateTime(nameof(Inquilino.FechaNacimiento))
                 };
-                propietarios.Add(Inquilino);
+                inquilinos.Add(Inquilino);
             }
 
         }
         mySqlDatabase.Dispose();
-        return propietarios;
+        return inquilinos;
     }
 
     public Inquilino GetInquilino(MySqlDatabase mySqlDatabase, int id)
