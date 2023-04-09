@@ -36,6 +36,7 @@ public class RepositorioInmueble
                         Apellido = reader.GetString(nameof(Propietario.Apellido)),
                         Dni = reader.GetInt32(nameof(Propietario.Dni)),
                         Telefono = reader.GetInt32(nameof(Propietario.Telefono)),
+                        Email = reader.GetString(nameof(Propietario.Email)),
                         
                     }
                 };
