@@ -13,7 +13,8 @@ public class RepositorioInmueble
     {
         var inmuebles = new List<Inmueble>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario 
+        cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario,
+                         
                             FROM Inmueble i INNER JOIN Propietario p ON i.IdPropietario = p.IdPropietario";
 
         using (var reader = cmd.ExecuteReader())
