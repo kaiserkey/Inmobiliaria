@@ -38,7 +38,7 @@ public class RepositorioInquilino
         return propietarios;
     }
 
-    public Inquilino GetInquil(MySqlDatabase mySqlDatabase, int id)
+    public Inquilino GetInquilino(MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento 
@@ -68,7 +68,7 @@ public class RepositorioInquilino
         return null;
     }
 
-    public int CreatePropietario(MySqlDatabase mySqlDatabase, Inquilino Inquilino)
+    public int CreateInquilino(MySqlDatabase mySqlDatabase, Inquilino Inquilino)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"INSERT INTO Inquilino (Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento) 
