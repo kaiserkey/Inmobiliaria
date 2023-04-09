@@ -29,10 +29,10 @@ public class RepositorioInmueble
                     Ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
                     Uso = reader.GetString(nameof(Inmueble.Uso)),
                     Activo = reader.GetBoolean(nameof(Inmueble.Activo)),
-                    IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario))
+                    IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
                     Propietario = new Propietario{
                         IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
-                        Nombre 
+                        Nombre = reader.GetString(nameof(Propietario.Nombre)),
                     }
                 };
                 inmuebles.Add(inmueble);
