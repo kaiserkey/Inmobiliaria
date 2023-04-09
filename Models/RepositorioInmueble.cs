@@ -51,8 +51,7 @@ public class RepositorioInmueble
         cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario, 
                             p.Nombre, p.Apellido
                             FROM Inmueble i INNER JOIN Propietario p ON i.IdPropietario = p.IdPropietario
-                            WHERE IdInmueble = @IdInmueble
-                            ";
+                            WHERE IdInmueble = @IdInmueble";
         cmd.Parameters.AddWithValue("@IdInmueble", id);
 
         using (var reader = cmd.ExecuteReader())
