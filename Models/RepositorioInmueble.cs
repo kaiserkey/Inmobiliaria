@@ -31,7 +31,7 @@ public class RepositorioInmueble
                     Activo = reader.GetBoolean(nameof(Inmueble.Activo)),
                     IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario))
                     Propietario = new Propietario{
-                        Id
+                        IdPropietario = 
                     }
                 };
                 inmuebles.Add(inmueble);
