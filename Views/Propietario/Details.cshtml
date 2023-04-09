@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Details";
-    var Inmueble = Model;
+    var Propietario = Model;
 }
 
 <div id="contenedor-vista-previa" class="table-responsive d-flex justify-content-center align-items-center">
@@ -14,7 +14,7 @@
                                 style="font-size: 1em; color: black;">Regresar</i></a></h2>
                 </th>
                 <th class="col">
-                    <h2><a href="@Url.Action("Edit", new { id = Inmueble.IdInmueble  })"> <i class="bi bi-pencil-square"
+                    <h2><a href="@Url.Action("Edit", new { id = Propietario.IdInmueble  })"> <i class="bi bi-pencil-square"
                                 style="font-size: 1em; color: green;">Editar</i> </a></h2>
                 </th>
             </tr>
