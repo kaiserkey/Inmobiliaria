@@ -93,7 +93,7 @@ public class RepositorioInquilino
     public int UpdateInquilino(MySqlDatabase mySqlDatabase, Inquilino Inquilino)
     {
         var fechaFormat = CreateInquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
-        
+
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
         cmd.CommandText = @"UPDATE Inquilino SET Nombre = @Nombre, Apellido = @Apellido, Telefono = @Telefono, Dni = @Dni, Email = @Email, FechaNacimiento = @FechaNacimiento
@@ -105,7 +105,7 @@ public class RepositorioInquilino
         cmd.Parameters.AddWithValue("@Telefono", Inquilino.Telefono);
         cmd.Parameters.AddWithValue("@Dni", Inquilino.Dni);
         cmd.Parameters.AddWithValue("@Email", Inquilino.Email);
-        cmd.Parameters.AddWithValue("@FechaNacimiento", Inquilino.FechaNacimiento);
+        cmd.Parameters.AddWithValue("@FechaNacimiento", fechaFormat);
 
         var res = Convert.ToInt32(cmd.ExecuteNonQuery());
 
