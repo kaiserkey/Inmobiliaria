@@ -42,12 +42,12 @@ namespace Inmobiliaria.Controllers
         // POST: Propietario/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Propietario propietario)
+        public ActionResult Create(Propietario CrearPropietario)
         {
             try
             {
-                Console.WriteLine(propietario);
-                RepoPropietario.CrearPropietario(con, propietario);
+                Console.WriteLine("CrearPropietario");
+                RepoPropietario.CrearPropietario(con, CrearPropietario);
                 
                 return RedirectToAction(nameof(Index));
             }
