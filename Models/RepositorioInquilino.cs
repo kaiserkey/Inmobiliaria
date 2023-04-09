@@ -75,10 +75,10 @@ public class RepositorioInquilino
 
         cmd.Parameters.AddWithValue("@Nombre", CreateInquilino.Nombre);
         cmd.Parameters.AddWithValue("@Apellido", CreateInquilino.Apellido);
-        cmd.Parameters.AddWithValue("@Telefono", Inquilino.Telefono);
-        cmd.Parameters.AddWithValue("@Dni", Inquilino.Dni);
-        cmd.Parameters.AddWithValue("@Email", Inquilino.Email);
-        cmd.Parameters.AddWithValue("@FechaNacimiento", Inquilino.FechaNacimiento);
+        cmd.Parameters.AddWithValue("@Telefono", CreateInquilino.Telefono);
+        cmd.Parameters.AddWithValue("@Dni", CreateInquilino.Dni);
+        cmd.Parameters.AddWithValue("@Email", CreateInquilino.Email);
+        cmd.Parameters.AddWithValue("@FechaNacimiento", CreateInquilino.FechaNacimiento);
         
         var res = Convert.ToInt32(cmd.ExecuteScalar());
         
