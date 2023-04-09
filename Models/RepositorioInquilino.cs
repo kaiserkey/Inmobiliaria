@@ -80,7 +80,7 @@ public class RepositorioInquilino
         cmd.Parameters.AddWithValue("@Telefono", CreateInquilino.Telefono);
         cmd.Parameters.AddWithValue("@Dni", CreateInquilino.Dni);
         cmd.Parameters.AddWithValue("@Email", CreateInquilino.Email);
-        cmd.Parameters.AddWithValue("@FechaNacimiento", CreateInquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss"));
+        cmd.Parameters.AddWithValue("@FechaNacimiento", CreateInquilino.FechaNacimiento);
         
         var res = Convert.ToInt32(cmd.ExecuteScalar());
         
