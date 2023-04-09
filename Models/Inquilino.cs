@@ -17,6 +17,6 @@ public class Inquilino
     public string Dni{ get; set; }
     [Display (Name = "Teléfono")]
     public string Telefono{ get; set; }
-    [Display ()]
+    [Display (Name = "Fecha de Nacimiento")]
     public DateTime FechaNacimiento{ get; set; }
 }
