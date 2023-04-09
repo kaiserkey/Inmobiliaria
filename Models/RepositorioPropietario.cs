@@ -66,7 +66,7 @@ public class RepositorioPropietario
         return null;
     }
 
-    public int CrearPropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
+    public int CrearPropietario(MySqlDatabase mySqlDatabase, Propietario propietario)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
