@@ -69,7 +69,7 @@ public class RepositorioInquilino
 
     public int CreateInquilino(MySqlDatabase mySqlDatabase, Inquilino CreateInquilino)
     {
-        var fechaFormat = CreateInquilino..ToString("yyyy-MM-dd HH:mm:ss")
+        var fechaFormat = CreateInquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"INSERT INTO Inquilino (Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento) 
                             VALUES (@Nombre, @Apellido, @Telefono, @Dni, @Email);
@@ -80,7 +80,7 @@ public class RepositorioInquilino
         cmd.Parameters.AddWithValue("@Telefono", CreateInquilino.Telefono);
         cmd.Parameters.AddWithValue("@Dni", CreateInquilino.Dni);
         cmd.Parameters.AddWithValue("@Email", CreateInquilino.Email);
-        cmd.Parameters.AddWithValue("@FechaNacimiento", CreateInquilino.FechaNacimiento);
+        cmd.Parameters.AddWithValue("@FechaNacimiento", fechaFormat);
         
         var res = Convert.ToInt32(cmd.ExecuteScalar());
         
