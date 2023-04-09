@@ -18,5 +18,5 @@ public class Inquilino
     [Display (Name = "Teléfono")]
     public string Telefono{ get; set; }
     [Display (Name = "Fecha de Nacimiento")]
-    public DateOnly FechaNacimiento{ get; set; }
+    public DateTime FechaNacimiento{ get; set; }
 }
