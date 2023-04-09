@@ -88,7 +88,7 @@ public class RepositorioPropietario
         return res;
     }
 
-    public int C
+    public int CreateProp
 
     public int UpdatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
     {
