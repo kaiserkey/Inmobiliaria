@@ -103,7 +103,6 @@ public class RepositorioPropietario
         cmd.Parameters.AddWithValue("@Telefono", Propietario.Telefono);
         cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
         cmd.Parameters.AddWithValue("@Email", Propietario.Email);
-        cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
 
         var res = Convert.ToInt32(cmd.ExecuteNonQuery());
 
