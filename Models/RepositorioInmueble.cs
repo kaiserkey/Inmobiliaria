@@ -14,7 +14,7 @@ public class RepositorioInmueble
         var inmuebles = new List<Inmueble>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario 
-                            FROM Inmueble i INNER JOIN";
+                            FROM Inmueble i INNER JOIN ";
 
         using (var reader = cmd.ExecuteReader())
         {
