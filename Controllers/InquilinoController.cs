@@ -59,7 +59,8 @@ namespace Inmobiliaria.Controllers
         // GET: Inquilino/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var inquilino = RepoInquilino.GetInquilino(con, id);
+            return View(inquilino);
         }
 
         // POST: Inquilino/Edit/5
@@ -69,7 +70,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                // TODO: Add update logic here
+                
 
                 return RedirectToAction(nameof(Index));
             }
