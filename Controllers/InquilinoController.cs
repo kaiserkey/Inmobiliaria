@@ -47,8 +47,8 @@ namespace Inmobiliaria.Controllers
         public ActionResult Create(Inquilino inquilino)
         {
             try
-            {
-                Console.WriteLine(typeof(inquilino.FechaNacimiento));
+            {   var prueba = inquilino.FechaNacimiento;
+                Console.WriteLine(typeof(prueb));
                 /* inquilino.FechaNacimiento = inquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss"); */
                 RepoInquilino.CreateInquilino(con, inquilino);
 
