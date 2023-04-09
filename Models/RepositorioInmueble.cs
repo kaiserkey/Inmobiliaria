@@ -49,8 +49,8 @@ public class RepositorioInmueble
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario 
-                            INNER JOIN 
-                            FROM Inmueble i WHERE IdInmueble = @IdInmueble
+                            FROM Inmueble INNER JOIN 
+                             i WHERE IdInmueble = @IdInmueble
                             ";
         cmd.Parameters.AddWithValue("@IdInmueble", id);
 
