@@ -9,7 +9,7 @@ public class RepositorioInquilino
     {
     }
 
-    public List<Inquilino> GetPropietarios(MySqlDatabase mySqlDatabase)
+    public List<Inquilino> GetInquilinos(MySqlDatabase mySqlDatabase)
     {
         var propietarios = new List<Inquilino>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
@@ -38,7 +38,7 @@ public class RepositorioInquilino
         return propietarios;
     }
 
-    public Inquilino GetPropietario(MySqlDatabase mySqlDatabase, int id)
+    public Inquilino GetInquil(MySqlDatabase mySqlDatabase, int id)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento 
