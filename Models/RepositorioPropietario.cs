@@ -80,9 +80,9 @@ public class RepositorioPropietario
         cmd.Parameters.AddWithValue("@Telefono", propietario.Telefono);
         cmd.Parameters.AddWithValue("@Dni", propietario.Dni);
         cmd.Parameters.AddWithValue("@Email", propietario.Email);
-        Console.WriteLine("Entro Update");
-        var res = Convert.ToInt32(cmd.ExecuteScalar());
         
+        var res = Convert.ToInt32(cmd.ExecuteScalar());
+        Console.WriteLine("Entro Update");
         mySqlDatabase.Dispose();
         
         return res;
