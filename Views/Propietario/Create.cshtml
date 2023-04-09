@@ -1,60 +1,62 @@
-@model Inmobiliaria.Models.Propietario
+@model Inmobiliaria.Models.Inmueble
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Propietario</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="IdPropietario" class="control-label"></label>
-                <input asp-for="IdPropietario" class="form-control" />
-                <span asp-validation-for="IdPropietario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" class="form-control" />
-                <span asp-validation-for="Nombre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Apellido" class="control-label"></label>
-                <input asp-for="Apellido" class="form-control" />
-                <span asp-validation-for="Apellido" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Direccion" class="control-label"></label>
-                <input asp-for="Direccion" class="form-control" />
-                <span asp-validation-for="Direccion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Telefono" class="control-label"></label>
-                <input asp-for="Telefono" class="form-control" />
-                <span asp-validation-for="Telefono" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Dni" class="control-label"></label>
-                <input asp-for="Dni" class="form-control" />
-                <span asp-validation-for="Dni" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div id="nuevo-container" class="container d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-md-12">            
+            <form asp-action="Create" class="text-center border border-light p-5" method="POST">
+                <a asp-action="Index">
+                    <i class="bi bi-arrow-return-left" style="font-size: 2em; color: black;"></i>
+                </a>
+                <p class="h3 mb-4">Crear Nuevo Inmueble</p>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Tipo" class="control-label"></label>
+                    <input asp-for="Tipo" class="form-control" />
+                    <span asp-validation-for="Tipo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Coordenadas" class="control-label"></label>
+                    <input asp-for="Coordenadas" class="form-control" />
+                    <span asp-validation-for="Coordenadas" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Precio" class="control-label"></label>
+                    <input asp-for="Precio" class="form-control" />
+                    <span asp-validation-for="Precio" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ambientes" class="control-label"></label>
+                    <input asp-for="Ambientes" class="form-control" />
+                    <span asp-validation-for="Ambientes" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Uso" class="control-label"></label>
+                    <select asp-for="Uso" class="form-control">
+                        <option value="">Selecciona una opción</option>
+                        <option value="comercial">Comercial</option>
+                        <option value="residencial">Residencial</option>
+                    </select>
+                    <span asp-validation-for="Uso" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Activo" /> @Html.DisplayNameFor(model => model.Activo)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IdPropietario" class="control-label"></label>
+                    <input asp-for="IdPropietario" class="form-control" />
+                    <span asp-validation-for="IdPropietario" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input id="boton-general" type="submit" value="Create" class="btn btn-info btn-block" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
