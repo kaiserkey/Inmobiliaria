@@ -81,11 +81,11 @@ public class RepositorioPropietario
         cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
         cmd.Parameters.AddWithValue("@Email", Propietario.Email);
 
-        var recs = Convert.ToInt32(cmd.ExecuteScalar());
+        var res = Convert.ToInt32(cmd.ExecuteScalar());
 
         mySqlDatabase.Dispose();
         
-        return recs;
+        return res;
     }
 
     public int UpdatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
