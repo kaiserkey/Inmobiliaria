@@ -61,7 +61,7 @@ public class RepositorioInquilino
                     FechaNacimiento = reader.GetDateTime(nameof(Inquilino.FechaNacimiento))
                 };
                 mySqlDatabase.Dispose();
-                return Inquilino;
+                return inquilino;
             }
         }
         mySqlDatabase.Dispose();
