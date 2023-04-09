@@ -11,10 +11,12 @@ public class Inquilino
     public string Nombre{ get; set; }
     [Display (Name = "Apellido")]
     public string Apellido{ get; set; }
-    [Display (Name = "Teléfono")]
-    public string Telefono{ get; set; }
     [Display (Name = "Email")]
     public string Email{ get; set; }
     [Display (Name = "DNI")]
     public string Dni{ get; set; }
+    [Display (Name = "Teléfono")]
+    public string Telefono{ get; set; }
+
+    pu
 }
