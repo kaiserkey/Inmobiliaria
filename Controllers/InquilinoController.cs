@@ -47,6 +47,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
+                inquilino.
                 RepoInquilino.CreateInquilino(con, inquilino);
 
                 return RedirectToAction(nameof(Index));
