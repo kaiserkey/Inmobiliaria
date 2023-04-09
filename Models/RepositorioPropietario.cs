@@ -69,17 +69,17 @@ public class RepositorioPropietario
     public int CrearPropietario(MySqlDatabase mySqlDatabase, Propietario CrearPropietario)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        Console.WriteLine("Entro Update", propietario);
+        Console.WriteLine("Entro Update", CrearPropietario);
         cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Direccion, Telefono, Dni, Email) 
                             VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email);
                             SELECT LAST_INSERT_ID();";
 
-        cmd.Parameters.AddWithValue("@Nombre", propietario.Nombre);
-        cmd.Parameters.AddWithValue("@Apellido", propietario.Apellido);
-        cmd.Parameters.AddWithValue("@Direccion", propietario.Direccion);
-        cmd.Parameters.AddWithValue("@Telefono", propietario.Telefono);
-        cmd.Parameters.AddWithValue("@Dni", propietario.Dni);
-        cmd.Parameters.AddWithValue("@Email", propietario.Email);
+        cmd.Parameters.AddWithValue("@Nombre", CrearPropietario.Nombre);
+        cmd.Parameters.AddWithValue("@Apellido", CrearPropietario.Apellido);
+        cmd.Parameters.AddWithValue("@Direccion", CrearPropietario.Direccion);
+        cmd.Parameters.AddWithValue("@Telefono", CrearPropietario.Telefono);
+        cmd.Parameters.AddWithValue("@Dni", CrearPropietario.Dni);
+        cmd.Parameters.AddWithValue("@Email", CrearPropietario.Email);
         
         var res = Convert.ToInt32(cmd.ExecuteScalar());
         
