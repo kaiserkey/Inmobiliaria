@@ -89,7 +89,7 @@ public class RepositorioInquilino
         return res;
     }
 
-    public int UpdatePropietario(MySqlDatabase mySqlDatabase, Inquilino Inquilino)
+    public int UpdateIn(MySqlDatabase mySqlDatabase, Inquilino Inquilino)
     {
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         
