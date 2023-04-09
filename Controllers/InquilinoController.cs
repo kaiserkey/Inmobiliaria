@@ -94,7 +94,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                
+                RepoInquilino.DeleteInquilino(con, id);
 
                 return RedirectToAction(nameof(Index));
             }
