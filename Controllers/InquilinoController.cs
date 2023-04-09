@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Inmobiliaria.Models;
 
 namespace Inmobiliaria.Controllers
 {
@@ -11,23 +12,25 @@ namespace Inmobiliaria.Controllers
     {
 
         private MySqlDatabase con { get; set; }
-        private readonly RepositorioPropietario RepoPropietario;
-        public PropietarioController()
+        private readonly RepositorioInquilino RepoInquilino;
+        public InquilinoController()
         {
             con = new MySqlDatabase();
-            RepoPropietario = new RepositorioPropietario();
+            RepoInquilino = new RepositorioInquilino();
         }
 
         // GET: Inquilino
         public ActionResult Index()
         {
-            return View();
+            var listaInquilinos = RepoInquilino.GetInquilinos(con);
+            return View(listaInquilinos);
         }
 
         // GET: Inquilino/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var inquilino = RepoInquilino.GetInquilino(con, id);
+            return View(inquilino);
         }
 
         // GET: Inquilino/Create
