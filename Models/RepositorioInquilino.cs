@@ -57,7 +57,7 @@ public class RepositorioInquilino
                     Telefono = reader.GetString(nameof(Inquilino.Telefono)),
                     Dni = reader.GetString(nameof(Inquilino.Dni)),
                     Email = reader.GetString(nameof(Inquilino.Email)),
-                    FechaNacimeint
+                    FechaNacimeinto = reader.GetDateTime(nameof(Inquilino.FechaNacimiento))
                 };
                 mySqlDatabase.Dispose();
                 return Inquilino;
