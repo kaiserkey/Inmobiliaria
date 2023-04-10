@@ -99,8 +99,8 @@ public class RepositorioInmueble
         cmd.Parameters.AddWithValue("@Activo", inmueble.Activo);
         cmd.Parameters.AddWithValue("@IdPropietario", inmueble.IdPropietario);
 
-        var res = Convert.ToInt32(cmd.ExecuteScalar());
-
+        res = Convert.ToInt32(cmd.ExecuteScalar());
+        
         mySqlDatabase.Dispose();
         
         return res;
