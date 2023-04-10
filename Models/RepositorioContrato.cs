@@ -46,7 +46,7 @@ public class RepositorioContrato
         return inmuebles;
     }
 
-    public Contrato GetInmueble(MySqlDatabase mySqlDatabase, int id)
+    public Contrato GetContrato(MySqlDatabase mySqlDatabase, int id)
     {
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
