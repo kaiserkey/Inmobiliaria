@@ -117,7 +117,21 @@
             </div>
         }
         if (ViewBag.Error != null){
-            
+            <div id="modalOK" class="modal fade">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content bg-success">
+                        <div class="modal-header">
+                            <h5 class="modal-title">¡Informacion!!</h5>
+                            <button type="button" class="close bg-secondary" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"><i class="bi bi-x-lg text-white"></i></span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>@ViewBag.Mensaje</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         }
         @RenderBody()
     </main>
