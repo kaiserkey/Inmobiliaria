@@ -63,7 +63,7 @@ namespace Inmobiliaria.Controllers
             return View(inmueble);
         }
 
-        //obtener propietarios po
+        //obtener propietarios por JQuery
         public IActionResult BuscarPropietarios(string busqueda)
         {
             var propietarios = new List<Propietario>();
