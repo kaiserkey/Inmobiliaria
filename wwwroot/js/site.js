@@ -31,3 +31,13 @@ $(document).ready(function() {
         $('#modalOK').modal('hide');
     }, 5000);
 });
+
+$(document).ready(function() {
+    $('#myModal').on('hidden.bs.modal', function () {
+      $(this).remove();
+    });
+    
+    $('.close').click(function() {
+      $('#myModal').modal('hide');
+    });
+  });
