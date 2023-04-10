@@ -125,10 +125,10 @@ public class RepositorioPropietario
             cmd.CommandText = @"DELETE FROM Propietario WHERE IdPropietario = @IdPropietario";
             cmd.Parameters.AddWithValue("@IdPropietario", id);
 
-            var res = Convert.ToInt32(cmd.ExecuteNonQuery());
+            res = Convert.ToInt32(cmd.ExecuteNonQuery());
             
-            return res;
         }
+        return res;
     }
 
     public List<Propietario> BuscarPropietario(MySqlDatabase mySqlDatabase, string nombreCompleto){
