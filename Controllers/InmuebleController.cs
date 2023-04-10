@@ -63,7 +63,7 @@ namespace Inmobiliaria.Controllers
             return View(inmueble);
         }
 
-        public IActionResult BuscarPropietarios(string busqueda)
+        /* public IActionResult BuscarPropietarios(string busqueda)
         {
             var propietarios = new List<Propietario>();
             var propietarios = RepoPropietario.BuscarPropietario(con, busqueda);
@@ -75,7 +75,7 @@ namespace Inmobiliaria.Controllers
             });
 
             return Json(resultados);
-        }
+        } */
 
         // POST: Inmueble/Edit/5
         [HttpPost]
