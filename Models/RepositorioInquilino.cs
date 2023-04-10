@@ -124,10 +124,7 @@ public class RepositorioInquilino
             cmd.CommandText = @"DELETE FROM Inquilino WHERE IdInquilino = @IdInquilino";
             cmd.Parameters.AddWithValue("@IdInquilino", id);
 
-            var res = Convert.ToInt32(cmd.ExecuteNonQuery());
-
-            mySqlDatabase.Dispose();
-            
+            var res = Convert.ToInt32(cmd.ExecuteNonQuery());            
             return res;
         }
     }
