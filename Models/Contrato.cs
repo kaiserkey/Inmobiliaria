@@ -9,5 +9,7 @@ public class Contrato
     public int IdInmueble { get; set; }
     public int IdInquilino { get; set; }
     public DateTime FechaInicio { get; set; }
+    public DateTime FechaFin { get; set; }
+    public decimal Monto { get; set; }
     
 }
