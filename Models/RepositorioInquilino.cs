@@ -130,4 +130,34 @@ public class RepositorioInquilino
         }
         return res;
     }
+
+    public List<Inquilino> BuscarInquilino(MySqlDatabase mySqlDatabase, string nombreCompleto)
+{
+    var inquilinos = new List<Inquilino>();
+    using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+    {
+        cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Email, Dni, Telefono, FechaNacimiento 
+                            FROM Inquilino
+                            WHERE CONCAT(Nombre, ' ', Apellido) LIKE @nombreCompleto";
+        cmd.Parameters.AddWithValue("@nombreCompleto", "%" + nombreCompleto + "%");
+        using (var reader = cmd.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+                var inquilino = new Inquilino
+                {
+                    IdInquilino = reader.GetInt32(nameof(Inquilino.IdInquilino)),
+                    Nombre = reader.GetString(nameof(Inquilino.Nombre)),
+                    Apellido = reader.GetString(nameof(Inquilino.Apellido)),
+                    Email = reader.GetString(nameof(Inquilino.Email)),
+                    Dni = reader.GetString(nameof(Inquilino.Dni)),
+                    Telefono = reader.GetString(nameof(Inquilino.Telefono)),
+                    FechaNacimiento = reader.GetString(nameof(Inquilino.FechaNacimiento))
+                };
+                inquilinos.Add(inquilino);
+            }
+        }
+    }
+    return inquilinos;
+}
 }
