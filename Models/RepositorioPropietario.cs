@@ -123,10 +123,9 @@ public class RepositorioPropietario
             cmd.Parameters.AddWithValue("@IdPropietario", id);
 
             var res = Convert.ToInt32(cmd.ExecuteNonQuery());
-
+            
+            return res;
         }
-        
-        return res;
     }
 
     public List<Propietario> BuscarPropietario(MySqlDatabase mySqlDatabase, string nombreCompleto){
