@@ -25,19 +25,19 @@ $(document).ready(function () {
         $("#PropietarioBusqueda").val(selectedOption);
     });
 });
-$(document).ready(function() {
+$(document).ready(function () {
     $('#modalOK').modal('show');
-    setTimeout(function() {
+    setTimeout(function () {
         $('#modalOK').modal('hide');
     }, 5000);
 });
 
-$(document).ready(function() {
-    $('#myModal').on('hidden.bs.modal', function () {
-      $(this).remove();
+$(document).ready(function () {
+    $('#modalOK').on('hidden.bs.modal', function () {
+        $(this).remove();
     });
-    
-    $('.close').click(function() {
-      $('#myModal').modal('hide');
+
+    $('.close').click(function () {
+        $('#modalOK').modal('hide');
     });
-  });
+});
