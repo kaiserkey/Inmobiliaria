@@ -109,7 +109,6 @@ public class RepositorioContrato
                             }
                         }
                     };
-                    mySqlDatabase.Dispose();
                     return contrato;
                 }
             }
