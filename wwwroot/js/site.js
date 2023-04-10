@@ -58,3 +58,21 @@ $(document).ready(function () {
         $('#modalMessage').modal('hide');
     });
 });
+
+
+$(document).ready(function () {
+    $('#modalError').modal('show');
+    setTimeout(function () {
+        $('#modalError').modal('hide');
+    }, 6000);
+});
+
+$(document).ready(function () {
+    $('#modalError').on('hidden.bs.modal', function () {
+        $(this).remove();
+    });
+
+    $('.close').click(function () {
+        $('#modalError').modal('hide');
+    });
+});
