@@ -165,8 +165,8 @@ public class RepositorioContrato
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"DELETE FROM Contrato WHERE IdInmueble = @IdInmueble";
-            cmd.Parameters.AddWithValue("@IdInmueble", id);
+            cmd.CommandText = @"DELETE FROM Contrato WHERE IdContrato = @IdContrato";
+            cmd.Parameters.AddWithValue("@IdContrato", id);
 
             res = Convert.ToInt32(cmd.ExecuteNonQuery());
         }
