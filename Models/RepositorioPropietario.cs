@@ -95,22 +95,22 @@ public class RepositorioPropietario
 
     public int UpdatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
     {
-        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
         
-        cmd.CommandText = @"UPDATE Propietario SET Nombre = @Nombre, Apellido = @Apellido, Direccion = @Direccion, Telefono = @Telefono, Dni = @Dni, Email = @Email
-                            WHERE IdPropietario = @IdPropietario;";
+            cmd.CommandText = @"UPDATE Propietario SET Nombre = @Nombre, Apellido = @Apellido, Direccion = @Direccion, Telefono = @Telefono, Dni = @Dni, Email = @Email
+                                WHERE IdPropietario = @IdPropietario;";
 
-        cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
-        cmd.Parameters.AddWithValue("@Nombre", Propietario.Nombre);
-        cmd.Parameters.AddWithValue("@Apellido", Propietario.Apellido);
-        cmd.Parameters.AddWithValue("@Direccion", Propietario.Direccion);
-        cmd.Parameters.AddWithValue("@Telefono", Propietario.Telefono);
-        cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
-        cmd.Parameters.AddWithValue("@Email", Propietario.Email);
+            cmd.Parameters.AddWithValue("@IdPropietario", Propietario.IdPropietario);
+            cmd.Parameters.AddWithValue("@Nombre", Propietario.Nombre);
+            cmd.Parameters.AddWithValue("@Apellido", Propietario.Apellido);
+            cmd.Parameters.AddWithValue("@Direccion", Propietario.Direccion);
+            cmd.Parameters.AddWithValue("@Telefono", Propietario.Telefono);
+            cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
+            cmd.Parameters.AddWithValue("@Email", Propietario.Email);
 
-        var res = Convert.ToInt32(cmd.ExecuteNonQuery());
-
-        mySqlDatabase.Dispose();
+            var res = Convert.ToInt32(cmd.ExecuteNonQuery());
+        }
         
         return res;
     }
