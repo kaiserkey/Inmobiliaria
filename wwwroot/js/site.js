@@ -26,8 +26,8 @@ $(document).ready(function () {
     });
 });
 $(document).ready(function() {
-    $('#myModal').modal('show');
+    $('#modalOK').modal('show');
     setTimeout(function() {
-        $('#myModal').modal('hide');
+        $('#modalOK').modal('hide');
     }, 5000);
 });
