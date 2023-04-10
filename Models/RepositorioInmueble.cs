@@ -132,14 +132,14 @@ public class RepositorioInmueble
 
     public int DeleteInmueble( MySqlDatabase mySqlDatabase, int id)
     {
+        int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
             cmd.CommandText = @"DELETE FROM Inmueble WHERE IdInmueble = @IdInmueble";
             cmd.Parameters.AddWithValue("@IdInmueble", id);
 
-            var res = Convert.ToInt32(cmd.ExecuteNonQuery());            
-            return res;
-        }
+            var res = Convert.ToInt32(cmd.ExecuteNonQuery());
+        }return res;
     }
 
 }
