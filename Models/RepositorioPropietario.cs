@@ -119,6 +119,7 @@ public class RepositorioPropietario
 
     public int DeletePropietario( MySqlDatabase mySqlDatabase, int id)
     {
+        int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
             cmd.CommandText = @"DELETE FROM Propietario WHERE IdPropietario = @IdPropietario";
