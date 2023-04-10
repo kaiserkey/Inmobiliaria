@@ -110,25 +110,24 @@ public class RepositorioInmueble
 
     public int UpdateInmueble(MySqlDatabase mySqlDatabase, Inmueble inmueble)
     {
-        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        
-        cmd.CommandText = @"UPDATE Inmueble SET Tipo = @Tipo, Coordenadas = @Coordenadas, Precio = @Precio, Ambientes = @Ambientes, Uso = @Uso, Activo = @Activo, IdPropietario = @IdPropietario
-                            WHERE IdInmueble = @IdInmueble;";
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            
+            cmd.CommandText = @"UPDATE Inmueble SET Tipo = @Tipo, Coordenadas = @Coordenadas, Precio = @Precio, Ambientes = @Ambientes, Uso = @Uso, Activo = @Activo, IdPropietario = @IdPropietario
+                                WHERE IdInmueble = @IdInmueble;";
 
-        cmd.Parameters.AddWithValue("@IdInmueble", inmueble.IdInmueble);
-        cmd.Parameters.AddWithValue("@Tipo", inmueble.Tipo);
-        cmd.Parameters.AddWithValue("@Coordenadas", inmueble.Coordenadas);
-        cmd.Parameters.AddWithValue("@Precio", inmueble.Precio);
-        cmd.Parameters.AddWithValue("@Ambientes", inmueble.Ambientes);
-        cmd.Parameters.AddWithValue("@Uso", inmueble.Uso);
-        cmd.Parameters.AddWithValue("@Activo", inmueble.Activo);
-        cmd.Parameters.AddWithValue("@IdPropietario", inmueble.IdPropietario);
+            cmd.Parameters.AddWithValue("@IdInmueble", inmueble.IdInmueble);
+            cmd.Parameters.AddWithValue("@Tipo", inmueble.Tipo);
+            cmd.Parameters.AddWithValue("@Coordenadas", inmueble.Coordenadas);
+            cmd.Parameters.AddWithValue("@Precio", inmueble.Precio);
+            cmd.Parameters.AddWithValue("@Ambientes", inmueble.Ambientes);
+            cmd.Parameters.AddWithValue("@Uso", inmueble.Uso);
+            cmd.Parameters.AddWithValue("@Activo", inmueble.Activo);
+            cmd.Parameters.AddWithValue("@IdPropietario", inmueble.IdPropietario);
 
-        var res = Convert.ToInt32(cmd.ExecuteNonQuery());
-
-        mySqlDatabase.Dispose();
-        
-        return res;
+            var res = Convert.ToInt32(cmd.ExecuteNonQuery());            
+            return res;
+        }
     }
 
     public int DeleteInmueble( MySqlDatabase mySqlDatabase, int id)
