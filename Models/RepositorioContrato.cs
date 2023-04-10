@@ -84,7 +84,7 @@ public class RepositorioContrato
         return null;
     }
 
-    public int CreateInmueble(MySqlDatabase mySqlDatabase, Contrato CreateInmueble)
+    public int CreateContrato(MySqlDatabase mySqlDatabase, Contrato CreateContrato)
     {
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
@@ -94,16 +94,16 @@ public class RepositorioContrato
                                 VALUES (@Tipo, @Coordenadas, @Precio, @Ambientes, @Uso, @Activo, @IdPropietario);
                                 SELECT LAST_INSERT_ID();";
 
-            cmd.Parameters.AddWithValue("@Tipo", CreateInmueble.Tipo);
-            cmd.Parameters.AddWithValue("@Coordenadas", CreateInmueble.Coordenadas);
-            cmd.Parameters.AddWithValue("@Precio", CreateInmueble.Precio);
-            cmd.Parameters.AddWithValue("@Ambientes", CreateInmueble.Ambientes);
-            cmd.Parameters.AddWithValue("@Uso", CreateInmueble.Uso);
-            cmd.Parameters.AddWithValue("@Activo", CreateInmueble.Activo);
-            cmd.Parameters.AddWithValue("@IdPropietario", CreateInmueble.IdPropietario);
+            cmd.Parameters.AddWithValue("@Tipo", CreateContrato.Tipo);
+            cmd.Parameters.AddWithValue("@Coordenadas", CreateContrato.Coordenadas);
+            cmd.Parameters.AddWithValue("@Precio", CreateContrato.Precio);
+            cmd.Parameters.AddWithValue("@Ambientes", CreateContrato.Ambientes);
+            cmd.Parameters.AddWithValue("@Uso", CreateContrato.Uso);
+            cmd.Parameters.AddWithValue("@Activo", CreateContrato.Activo);
+            cmd.Parameters.AddWithValue("@IdPropietario", CreateContrato.IdPropietario);
 
             res = Convert.ToInt32(cmd.ExecuteScalar());
-            CreateInmueble.IdInmueble = res;
+            CreateContrato.IdInmueble = res;
         }
         return res;
     }
