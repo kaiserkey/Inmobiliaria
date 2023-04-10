@@ -73,7 +73,7 @@ namespace Inmobiliaria.Controllers
             {
                 
                 var res = RepoPropietario.UpdatePropietario(con, UpdatePropietario);
-                TempData["Mensaje"] = "La entidad se actualizo correctamente ID";
+                TempData["Mensaje"] = "La entidad se actualizo correctamente ID:";
                 return RedirectToAction(nameof(Index));
             }
             catch
