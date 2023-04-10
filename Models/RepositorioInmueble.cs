@@ -141,7 +141,6 @@ public class RepositorioInmueble
 
             res = Convert.ToInt32(cmd.ExecuteNonQuery());
         }
-        
         return res;
     }
 
