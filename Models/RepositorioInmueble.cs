@@ -76,7 +76,7 @@ public class RepositorioInmueble
                             Apellido = reader.GetString(nameof(Propietario.Apellido)),
                         }
                     };
-                    mySqlDatabase.Dispose();
+                    
                     return inmueble;
                 }
             }
