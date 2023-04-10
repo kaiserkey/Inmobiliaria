@@ -121,4 +121,6 @@ public class RepositorioPropietario
         
         return res;
     }
+
+    public List<P> BuscarInmuebles(MySqlDatabase mySqlDatabase, string nombre)
 }
