@@ -51,7 +51,7 @@ namespace Inmobiliaria.Controllers
             try
             {   
                 RepoInquilino.CreateInquilino(con, inquilino);
-
+                TempData["Id"] =
                 return RedirectToAction(nameof(Index));
             }
             catch
