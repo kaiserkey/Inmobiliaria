@@ -7,8 +7,10 @@ public class Contrato
 {
     []
     public int IdContrato { get; set; }
-    
+
+    [Display( Name = "Inquilino" ) ]
     public int IdInmueble { get; set; }
+    []
 
     [Display( Name = "Propietario" ) ]
     public int IdPropietario{ get; set; }
