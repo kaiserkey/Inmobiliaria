@@ -123,6 +123,6 @@ public class RepositorioPropietario
     }
 
     public List<Propietario> BuscarInmuebles(MySqlDatabase mySqlDatabase, string dni){
-        
+         
     }
 }
