@@ -16,7 +16,7 @@ namespace Inmobiliaria.Controllers
         public InmuebleController() { 
             con = new MySqlDatabase(); 
             RepoInmueble = new RepositorioInmueble();
-            Repo
+            RepoPropietario = new 
         }
 
         // GET: Inmueble
