@@ -26,6 +26,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Index()
         {
             var listaInquilinos = RepoInquilino.GetInquilinos(con);
+            ViewBag.Id = TempData["Id"];
             return View(listaInquilinos);
         }
 
