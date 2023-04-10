@@ -110,6 +110,7 @@ public class RepositorioInmueble
 
     public int UpdateInmueble(MySqlDatabase mySqlDatabase, Inmueble inmueble)
     {
+        int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
             
@@ -138,8 +139,10 @@ public class RepositorioInmueble
             cmd.CommandText = @"DELETE FROM Inmueble WHERE IdInmueble = @IdInmueble";
             cmd.Parameters.AddWithValue("@IdInmueble", id);
 
-            var res = Convert.ToInt32(cmd.ExecuteNonQuery());
-        }return res;
+            res = Convert.ToInt32(cmd.ExecuteNonQuery());
+        }
+        
+        return res;
     }
 
 }
