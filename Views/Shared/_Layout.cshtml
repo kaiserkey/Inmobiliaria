@@ -32,7 +32,6 @@
 </head>
 
 <body>
-
     <!-- Barra de navegacion -->
     <div id="navbar-color">
         <nav class="navbar navbar-expand-md navbar-light bg-light">
@@ -82,6 +81,15 @@
 
     <div>
         <main>
+            @if (ViewBag.Id != null)
+                {
+                    <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert" data-auto-dismiss="4000">
+                        <strong>¡Éxito!</strong> La entidad fue dada de alta con el id: @ViewBag.Id
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                }
             @RenderBody()
         </main>
     </div>
