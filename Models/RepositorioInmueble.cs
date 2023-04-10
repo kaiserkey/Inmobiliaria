@@ -82,7 +82,7 @@ public class RepositorioInmueble
         return null;
     }
 
-    public int CreateInmueble(MySqlDatabase mySqlDatabase, Inmueble inmueble)
+    public int CreateInmueble(MySqlDatabase mySqlDatabase, Inmueble CreateInmueble)
     {
         int res = -1;
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
@@ -91,16 +91,16 @@ public class RepositorioInmueble
                             VALUES (@Tipo, @Coordenadas, @Precio, @Ambientes, @Uso, @Activo, @IdPropietario);
                             SELECT LAST_INSERT_ID();";
 
-        cmd.Parameters.AddWithValue("@Tipo", inmueble.Tipo);
-        cmd.Parameters.AddWithValue("@Coordenadas", inmueble.Coordenadas);
-        cmd.Parameters.AddWithValue("@Precio", inmueble.Precio);
+        cmd.Parameters.AddWithValue("@Tipo", CreateInmueble.Tipo);
+        cmd.Parameters.AddWithValue("@Coordenadas", CreateInmueble.Coordenadas);
+        cmd.Parameters.AddWithValue("@Precio", CreateInmueble.Precio);
         cmd.Parameters.AddWithValue("@Ambientes", inmueble.Ambientes);
         cmd.Parameters.AddWithValue("@Uso", inmueble.Uso);
         cmd.Parameters.AddWithValue("@Activo", inmueble.Activo);
         cmd.Parameters.AddWithValue("@IdPropietario", inmueble.IdPropietario);
 
         res = Convert.ToInt32(cmd.ExecuteScalar());
-        
+
         mySqlDatabase.Dispose();
         
         return res;
