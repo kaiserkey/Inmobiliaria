@@ -23,6 +23,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Index()
         {
             var listaInmuebles = RepoInmueble.GetInmuebles(con);
+            ViewBag.Id = TempData["Id"];
             return View(listaInmuebles);
         }
 
