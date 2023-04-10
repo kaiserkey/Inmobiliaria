@@ -81,7 +81,7 @@ public class RepositorioPropietario
         cmd.Parameters.AddWithValue("@Email", Propietario.Email);
         
         var res = Convert.ToInt32(cmd.ExecuteScalar());
-        
+        Propietario
         mySqlDatabase.Dispose();
         
         return res;
@@ -122,7 +122,7 @@ public class RepositorioPropietario
         return res;
     }
 
-    public yList<Propietario> BuscarPropietario(MySqlDatabase mySqlDatabase, string nombreCompleto){
+    public List<Propietario> BuscarPropietario(MySqlDatabase mySqlDatabase, string nombreCompleto){
         var propietarios = new List<Propietario>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email 
