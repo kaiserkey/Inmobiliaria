@@ -86,7 +86,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Delete(int id)
         {
             Propietario propietario = RepoPropietario.GetPropietario(con, id);
-            TempData["Mensaje"] = "La entidad se ha e";
+            TempData["Mensaje"] = "La entidad se ha eliminado corectamente.";
             return View(propietario);
         }
 
