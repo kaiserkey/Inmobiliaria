@@ -108,7 +108,7 @@ public class RepositorioContrato
         return res;
     }
 
-    public int UpdateInmueble(MySqlDatabase mySqlDatabase, Contrato Contrato)
+    public int UpdateContrato(MySqlDatabase mySqlDatabase, Contrato Contrato)
     {
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
