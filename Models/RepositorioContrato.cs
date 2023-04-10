@@ -66,8 +66,8 @@ public class RepositorioContrato
     {
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT IdContrato, IdInquilino, IdInmueble, FechaInicio, FechaFin,
-                            i.Nombre, i.Apellido, i.Telefono, i.Email,
+            cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
+                            i.Nombre, i.Apellido,
                             inm.Tipo, inm.Coordenadas, inm.Precio, inm.Ambientes, inm.Uso, inm.Activo,
                             p.Nombre, p.Apellido
                             FROM Contrato c
@@ -90,11 +90,8 @@ public class RepositorioContrato
                         FechaFin = reader.GetDateTime(nameof(Contrato.FechaFin)),
                         Inquilino = new Inquilino
                         {
-                            IdInquilino = reader.GetInt32(nameof(Inquilino.IdInquilino)),
                             Nombre = reader.GetString(nameof(Inquilino.Nombre)),
                             Apellido = reader.GetString(nameof(Inquilino.Apellido)),
-                            Telefono = reader.GetString(nameof(Inquilino.Telefono)),
-                            Email = reader.GetString(nameof(Inquilino.Email))
                         },
                         Inmueble = new Inmueble
                         {
