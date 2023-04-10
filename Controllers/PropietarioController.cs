@@ -89,7 +89,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Delete(int id)
         {
             Propietario propietario = RepoPropietario.GetPropietario(con, id);
-            TempData["Mensaje"] = "La entidad se ha eliminado corectamente.";
+            
             return View(propietario);
         }
 
@@ -101,7 +101,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 var res = RepoPropietario.DeletePropietario(con, id);
-
+                TempData["Mensaje"] = "La entidad se ha eliminado corectamente.";
                 return RedirectToAction(nameof(Index));
             }
             catch
