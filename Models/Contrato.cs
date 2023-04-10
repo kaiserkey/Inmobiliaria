@@ -1,12 +1,22 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+namespace Inmobiliaria.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Inmobiliaria.Models
+public class Contrato
 {
-    public class Contrato
-    {
-        
-    }
+    [Display (Name = "Código")]
+    public int IdInquilino{ get; set; }
+    [Display (Name = "Nombre")]
+    public string Nombre{ get; set; }
+    [Display (Name = "Apellido")]
+    public string Apellido{ get; set; }
+    [Display (Name = "Email")]
+    public string Email{ get; set; }
+    [Display (Name = "DNI")]
+    public string Dni{ get; set; }
+    [Display (Name = "Teléfono")]
+    public string Telefono{ get; set; }
+    [Display (Name = "Fecha de Nacimiento")]
+    public DateTime FechaNacimiento{ get; set; }
 }
