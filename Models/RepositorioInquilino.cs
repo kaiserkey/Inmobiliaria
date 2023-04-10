@@ -41,30 +41,31 @@ public class RepositorioInquilino
 
     public Inquilino GetInquilino(MySqlDatabase mySqlDatabase, int id)
     {
-        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento 
-                            FROM Inquilino WHERE IdInquilino = @IdInquilino";
-        cmd.Parameters.AddWithValue("@IdInquilino", id);
-
-        using (var reader = cmd.ExecuteReader())
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            if (reader.Read())
+            cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento 
+                                FROM Inquilino WHERE IdInquilino = @IdInquilino";
+            cmd.Parameters.AddWithValue("@IdInquilino", id);
+
+            using (var reader = cmd.ExecuteReader())
             {
-                var inquilino = new Inquilino
+                if (reader.Read())
                 {
-                    IdInquilino = reader.GetInt32(nameof(Inquilino.IdInquilino)),
-                    Nombre = reader.GetString(nameof(Inquilino.Nombre)),
-                    Apellido = reader.GetString(nameof(Inquilino.Apellido)),
-                    Telefono = reader.GetString(nameof(Inquilino.Telefono)),
-                    Dni = reader.GetString(nameof(Inquilino.Dni)),
-                    Email = reader.GetString(nameof(Inquilino.Email)),
-                    FechaNacimiento = reader.GetDateTime(nameof(Inquilino.FechaNacimiento))
-                };
-                mySqlDatabase.Dispose();
-                return inquilino;
+                    var inquilino = new Inquilino
+                    {
+                        IdInquilino = reader.GetInt32(nameof(Inquilino.IdInquilino)),
+                        Nombre = reader.GetString(nameof(Inquilino.Nombre)),
+                        Apellido = reader.GetString(nameof(Inquilino.Apellido)),
+                        Telefono = reader.GetString(nameof(Inquilino.Telefono)),
+                        Dni = reader.GetString(nameof(Inquilino.Dni)),
+                        Email = reader.GetString(nameof(Inquilino.Email)),
+                        FechaNacimiento = reader.GetDateTime(nameof(Inquilino.FechaNacimiento))
+                    };
+                    mySqlDatabase.Dispose();
+                    return inquilino;
+                }
             }
-        }
-        mySqlDatabase.Dispose();
+            mySqlDatabase.Dispose();
         return null;
     }
 
