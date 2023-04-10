@@ -94,10 +94,10 @@ public class RepositorioInmueble
         cmd.Parameters.AddWithValue("@Tipo", CreateInmueble.Tipo);
         cmd.Parameters.AddWithValue("@Coordenadas", CreateInmueble.Coordenadas);
         cmd.Parameters.AddWithValue("@Precio", CreateInmueble.Precio);
-        cmd.Parameters.AddWithValue("@Ambientes", inmueble.Ambientes);
-        cmd.Parameters.AddWithValue("@Uso", inmueble.Uso);
-        cmd.Parameters.AddWithValue("@Activo", inmueble.Activo);
-        cmd.Parameters.AddWithValue("@IdPropietario", inmueble.IdPropietario);
+        cmd.Parameters.AddWithValue("@Ambientes", CreateInmueble.Ambientes);
+        cmd.Parameters.AddWithValue("@Uso", CreateInmueble.Uso);
+        cmd.Parameters.AddWithValue("@Activo", CreateInmueble.Activo);
+        cmd.Parameters.AddWithValue("@IdPropietario", CreateInmueble.IdPropietario);
 
         res = Convert.ToInt32(cmd.ExecuteScalar());
 
