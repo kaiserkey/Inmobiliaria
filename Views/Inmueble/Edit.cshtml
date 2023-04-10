@@ -54,6 +54,7 @@
                 <div class="form-group">
                     <label asp-for="IdPropietario" class="control-label"></label>
                     <input type="text" id="PropietarioBusqueda" placeholder="@Html.DisplayFor(model => model.Propietario.Nombre) @Html.DisplayFor(model => model.Propietario.Apellido)" class="form-control" />
+                    <br>
                     <select id="selectPropietario" asp-for="IdPropietario" class="form-control"></select>
                     <span asp-validation-for="IdPropietario" class="text-danger"></span>
                 </div>
@@ -65,16 +66,5 @@
     </div>
 </div>
 <script>
-    $(document).ready(function () {
-        $("#PropietarioBusqueda").on("input", function () {
-            var busqueda = $("#PropietarioBusqueda").val();
-            $.getJSON("/Inmueble/BuscarPropietarios", { busqueda: busqueda }, function (resultados) {
-                var options = '<option value="">Selecciona una opción</option>';
-                $.each(resultados, function (index, resultado) {
-                    options += '<option value="' + resultado.id + '">' + resultado.text + '</option>';
-                });
-                $("#selectPropietario").html(options);
-            });
-        });
-    });
+    
 </script>
