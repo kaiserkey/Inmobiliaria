@@ -69,7 +69,7 @@ public class RepositorioInquilino
 
     public int CreateInquilino(MySqlDatabase mySqlDatabase, Inquilino CreateInquilino)
     {
-        CreatePropietario
+        int res = -1;
         var fechaFormat = CreateInquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
 
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
@@ -84,7 +84,7 @@ public class RepositorioInquilino
         cmd.Parameters.AddWithValue("@Email", CreateInquilino.Email);
         cmd.Parameters.AddWithValue("@FechaNacimiento", fechaFormat);
         
-        var res = Convert.ToInt32(cmd.ExecuteScalar());
+        res = Convert.ToInt32(cmd.ExecuteScalar());
         
         mySqlDatabase.Dispose();
         
