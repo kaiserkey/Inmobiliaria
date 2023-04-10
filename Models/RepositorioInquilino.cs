@@ -112,9 +112,10 @@ public class RepositorioInquilino
             cmd.Parameters.AddWithValue("@Email", Inquilino.Email);
             cmd.Parameters.AddWithValue("@FechaNacimiento", fechaFormat);
 
-            var res = Convert.ToInt32(cmd.ExecuteNonQuery());        
-            return res;
+            res = Convert.ToInt32(cmd.ExecuteNonQuery());        
+            
         }
+        return res;
     }
 
     public int DeleteInquilino( MySqlDatabase mySqlDatabase, int id)
