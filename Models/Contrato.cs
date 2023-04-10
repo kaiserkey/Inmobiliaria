@@ -20,7 +20,7 @@ public class Contrato
     [ForeignKey( nameof( IdPropietario ) ) ]
     public Propietario Propietario{ get; set; }
 
-    []
+    [Display( N)]
     public DateTime FechaInicio { get; set; }
     public DateTime FechaFin { get; set; }
 
