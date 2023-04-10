@@ -73,7 +73,7 @@ namespace Inmobiliaria.Controllers
             {
                 
                 var res = RepoPropietario.UpdatePropietario(con, UpdatePropietario);
-                
+                TempData["Mensaje"] = "Datos guardados correctamente";
                 return RedirectToAction(nameof(Index));
             }
             catch
