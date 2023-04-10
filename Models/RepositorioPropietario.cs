@@ -68,7 +68,6 @@ public class RepositorioPropietario
 
     public int CreatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
     {
-        int res
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Direccion, Telefono, Dni, Email) 
                             VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email);
@@ -81,8 +80,8 @@ public class RepositorioPropietario
         cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
         cmd.Parameters.AddWithValue("@Email", Propietario.Email);
         
-        res = Convert.ToInt32(cmd.ExecuteScalar());
-        Propietario.IdPropietario = res;
+        var res = Convert.ToInt32(cmd.ExecuteScalar());
+        
         mySqlDatabase.Dispose();
         
         return res;
@@ -123,7 +122,7 @@ public class RepositorioPropietario
         return res;
     }
 
-    public List<Propietario> BuscarPropietario(MySqlDatabase mySqlDatabase, string nombreCompleto){
+    public yList<Propietario> BuscarPropietario(MySqlDatabase mySqlDatabase, string nombreCompleto){
         var propietarios = new List<Propietario>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email 
