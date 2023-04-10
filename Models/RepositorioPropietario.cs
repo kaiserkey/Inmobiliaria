@@ -110,12 +110,10 @@ public class RepositorioPropietario
             cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
             cmd.Parameters.AddWithValue("@Email", Propietario.Email);
 
-            var res = Convert.ToInt32(cmd.ExecuteNonQuery());
-            
-            return res;
+            res = Convert.ToInt32(cmd.ExecuteNonQuery());
         }
 
-        
+        return res;       
     }
 
     public int DeletePropietario( MySqlDatabase mySqlDatabase, int id)
