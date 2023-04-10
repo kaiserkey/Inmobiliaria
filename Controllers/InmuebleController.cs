@@ -65,9 +65,7 @@ namespace Inmobiliaria.Controllers
 
         public IActionResult BuscarPropietarios(string busqueda)
         {
-            var propietarios = con.Propietarios
-                                .Where(p => p.Nombre.Contains(busqueda) || p.Apellido.Contains(busqueda))
-                                .ToList();
+            var propietarios = 
 
             var resultados = propietarios.Select(p => new
             {
