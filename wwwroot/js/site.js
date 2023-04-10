@@ -25,3 +25,9 @@ $(document).ready(function () {
         $("#PropietarioBusqueda").val(selectedOption);
     });
 });
+$(document).ready(function() {
+    $('#alert').alert();
+    window.setTimeout(function() {
+        $("#alert").alert('close');
+    }, 5000);
+});
