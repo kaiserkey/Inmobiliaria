@@ -12,36 +12,38 @@ public class RepositorioInmueble
     public List<Inmueble> GetInmuebles(MySqlDatabase mySqlDatabase)
     {
         var inmuebles = new List<Inmueble>();
-        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, i.IdPropietario,
-                            p.Nombre, p.Apellido
-                            FROM Inmueble i INNER JOIN Propietario p ON i.IdPropietario = p.IdPropietario";
-
-        using (var reader = cmd.ExecuteReader())
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            while (reader.Read())
-            {
-                var inmueble = new Inmueble
-                {
-                    IdInmueble = reader.GetInt32(nameof(Inmueble.IdInmueble)),
-                    Tipo = reader.GetString(nameof(Inmueble.Tipo)),
-                    Coordenadas = reader.GetString(nameof(Inmueble.Coordenadas)),
-                    Precio = reader.GetDecimal(nameof(Inmueble.Precio)),
-                    Ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
-                    Uso = reader.GetString(nameof(Inmueble.Uso)),
-                    Activo = reader.GetBoolean(nameof(Inmueble.Activo)),
-                    IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
-                    Propietario = new Propietario{
-                        IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
-                        Nombre = reader.GetString(nameof(Propietario.Nombre)),
-                        Apellido = reader.GetString(nameof(Propietario.Apellido)),
-                    }
-                };
-                inmuebles.Add(inmueble);
-            }
+            cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, i.IdPropietario,
+                                p.Nombre, p.Apellido
+                                FROM Inmueble i INNER JOIN Propietario p ON i.IdPropietario = p.IdPropietario";
 
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var inmueble = new Inmueble
+                    {
+                        IdInmueble = reader.GetInt32(nameof(Inmueble.IdInmueble)),
+                        Tipo = reader.GetString(nameof(Inmueble.Tipo)),
+                        Coordenadas = reader.GetString(nameof(Inmueble.Coordenadas)),
+                        Precio = reader.GetDecimal(nameof(Inmueble.Precio)),
+                        Ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
+                        Uso = reader.GetString(nameof(Inmueble.Uso)),
+                        Activo = reader.GetBoolean(nameof(Inmueble.Activo)),
+                        IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
+                        Propietario = new Propietario{
+                            IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
+                            Nombre = reader.GetString(nameof(Propietario.Nombre)),
+                            Apellido = reader.GetString(nameof(Propietario.Apellido)),
+                        }
+                    };
+                    inmuebles.Add(inmueble);
+                }
+
+            }
+            mySqlDatabase.Dispose();
         }
-        mySqlDatabase.Dispose();
         return inmuebles;
     }
 
