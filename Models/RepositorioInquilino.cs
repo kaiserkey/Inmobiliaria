@@ -98,7 +98,8 @@ public class RepositorioInquilino
     {
         var fechaFormat = Inquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
 
-        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
         
         cmd.CommandText = @"UPDATE Inquilino SET Nombre = @Nombre, Apellido = @Apellido, Telefono = @Telefono, Dni = @Dni, Email = @Email, FechaNacimiento = @FechaNacimiento
                             WHERE IdInquilino = @IdInquilino;";
