@@ -111,19 +111,20 @@ public class RepositorioPropietario
 
             var res = Convert.ToInt32(cmd.ExecuteNonQuery());
         }
-        
+
         return res;
     }
 
     public int DeletePropietario( MySqlDatabase mySqlDatabase, int id)
     {
-        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"DELETE FROM Propietario WHERE IdPropietario = @IdPropietario";
-        cmd.Parameters.AddWithValue("@IdPropietario", id);
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"DELETE FROM Propietario WHERE IdPropietario = @IdPropietario";
+            cmd.Parameters.AddWithValue("@IdPropietario", id);
 
-        var res = Convert.ToInt32(cmd.ExecuteNonQuery());
+            var res = Convert.ToInt32(cmd.ExecuteNonQuery());
 
-        mySqlDatabase.Dispose();
+        }
         
         return res;
     }
