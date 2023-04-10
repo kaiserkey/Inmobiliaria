@@ -87,10 +87,11 @@ public class RepositorioPropietario
             
             res = Convert.ToInt32(cmd.ExecuteScalar());
             createPropietario.IdPropietario = res;
-            mySqlDatabase.Dispose();
+            
+            return res;
         }
         
-        return res;
+        
     }
 
     public int UpdatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
@@ -110,9 +111,11 @@ public class RepositorioPropietario
             cmd.Parameters.AddWithValue("@Email", Propietario.Email);
 
             var res = Convert.ToInt32(cmd.ExecuteNonQuery());
+            
+            return res;
         }
 
-        return res;
+        
     }
 
     public int DeletePropietario( MySqlDatabase mySqlDatabase, int id)
