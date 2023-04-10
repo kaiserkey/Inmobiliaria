@@ -23,7 +23,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Index()
         {
             var listaPropietarios = RepoPropietario.GetPropietarios(con);
-            ViewBag.Id = 1;
+            ViewBag.Id = TempData["Id"] ? TempData["Id"] : n;
             return View(listaPropietarios);
         }
 
