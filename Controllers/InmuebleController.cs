@@ -91,7 +91,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 int res = RepoInmueble.UpdateInmueble(con, UpdateInmueble);
-
+            
                 return RedirectToAction(nameof(Index));
             }
             catch
