@@ -3,9 +3,9 @@ using MySql.Data.MySqlClient;
 
 namespace Inmobiliaria.Models;
 
-public class RepositorioInmueble
+public class RepositorioContrato
 {
-    public RepositorioInmueble()
+    public RepositorioContrato()
     {
     }
 
