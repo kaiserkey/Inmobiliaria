@@ -26,7 +26,7 @@ namespace Inmobiliaria.Controllers
             ViewBag.Id = TempData["Id"];
             if (TempData.ContainsKey("Mensaje")){
                 Console.WriteLine("Entro al tempdata");
-                ViewBag.Mensaje = "asdasdasdasdasdas";
+                ViewBag.Mensaje = "asdasdasdasdasda";
             }
             return View(listaPropietarios);
         }
