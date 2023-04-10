@@ -87,23 +87,24 @@ public class RepositorioInmueble
     public int CreateInmueble(MySqlDatabase mySqlDatabase, Inmueble CreateInmueble)
     {
         int res = -1;
-        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        
-        cmd.CommandText = @"INSERT INTO Inmueble (Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario) 
-                            VALUES (@Tipo, @Coordenadas, @Precio, @Ambientes, @Uso, @Activo, @IdPropietario);
-                            SELECT LAST_INSERT_ID();";
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            
+            cmd.CommandText = @"INSERT INTO Inmueble (Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario) 
+                                VALUES (@Tipo, @Coordenadas, @Precio, @Ambientes, @Uso, @Activo, @IdPropietario);
+                                SELECT LAST_INSERT_ID();";
 
-        cmd.Parameters.AddWithValue("@Tipo", CreateInmueble.Tipo);
-        cmd.Parameters.AddWithValue("@Coordenadas", CreateInmueble.Coordenadas);
-        cmd.Parameters.AddWithValue("@Precio", CreateInmueble.Precio);
-        cmd.Parameters.AddWithValue("@Ambientes", CreateInmueble.Ambientes);
-        cmd.Parameters.AddWithValue("@Uso", CreateInmueble.Uso);
-        cmd.Parameters.AddWithValue("@Activo", CreateInmueble.Activo);
-        cmd.Parameters.AddWithValue("@IdPropietario", CreateInmueble.IdPropietario);
+            cmd.Parameters.AddWithValue("@Tipo", CreateInmueble.Tipo);
+            cmd.Parameters.AddWithValue("@Coordenadas", CreateInmueble.Coordenadas);
+            cmd.Parameters.AddWithValue("@Precio", CreateInmueble.Precio);
+            cmd.Parameters.AddWithValue("@Ambientes", CreateInmueble.Ambientes);
+            cmd.Parameters.AddWithValue("@Uso", CreateInmueble.Uso);
+            cmd.Parameters.AddWithValue("@Activo", CreateInmueble.Activo);
+            cmd.Parameters.AddWithValue("@IdPropietario", CreateInmueble.IdPropietario);
 
-        res = Convert.ToInt32(cmd.ExecuteScalar());
-        CreateInmueble.IdInmueble = res;
-        mySqlDatabase.Dispose();
+            res = Convert.ToInt32(cmd.ExecuteScalar());
+            CreateInmueble.IdInmueble = res;
+            mySqlDatabase.Dispose();
         
         return res;
     }
