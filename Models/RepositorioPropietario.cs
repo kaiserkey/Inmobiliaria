@@ -65,7 +65,6 @@ public class RepositorioPropietario
                     return propietario;
                 }
             }
-            mySqlDatabase.Dispose();
         }
         return null;
     }
