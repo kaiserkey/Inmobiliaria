@@ -42,45 +42,46 @@ public class RepositorioInmueble
                 }
 
             }
-            mySqlDatabase.Dispose();
         }
         return inmuebles;
     }
 
     public Inmueble GetInmueble(MySqlDatabase mySqlDatabase, int id)
     {
-        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, i.IdPropietario, 
-                            p.Nombre, p.Apellido
-                            FROM Inmueble i INNER JOIN Propietario p ON i.IdPropietario = p.IdPropietario
-                            WHERE IdInmueble = @IdInmueble";
-        cmd.Parameters.AddWithValue("@IdInmueble", id);
-
-        using (var reader = cmd.ExecuteReader())
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            if (reader.Read())
+            cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, i.IdPropietario, 
+                                p.Nombre, p.Apellido
+                                FROM Inmueble i INNER JOIN Propietario p ON i.IdPropietario = p.IdPropietario
+                                WHERE IdInmueble = @IdInmueble";
+            cmd.Parameters.AddWithValue("@IdInmueble", id);
+
+            using (var reader = cmd.ExecuteReader())
             {
-                var inmueble = new Inmueble
+                if (reader.Read())
                 {
-                    IdInmueble = reader.GetInt32(nameof(Inmueble.IdInmueble)),
-                    Tipo = reader.GetString(nameof(Inmueble.Tipo)),
-                    Coordenadas = reader.GetString(nameof(Inmueble.Coordenadas)),
-                    Precio = reader.GetDecimal(nameof(Inmueble.Precio)),
-                    Ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
-                    Uso = reader.GetString(nameof(Inmueble.Uso)),
-                    Activo = reader.GetBoolean(nameof(Inmueble.Activo)),
-                    IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
-                    Propietario = new Propietario{
+                    var inmueble = new Inmueble
+                    {
+                        IdInmueble = reader.GetInt32(nameof(Inmueble.IdInmueble)),
+                        Tipo = reader.GetString(nameof(Inmueble.Tipo)),
+                        Coordenadas = reader.GetString(nameof(Inmueble.Coordenadas)),
+                        Precio = reader.GetDecimal(nameof(Inmueble.Precio)),
+                        Ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
+                        Uso = reader.GetString(nameof(Inmueble.Uso)),
+                        Activo = reader.GetBoolean(nameof(Inmueble.Activo)),
                         IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
-                        Nombre = reader.GetString(nameof(Propietario.Nombre)),
-                        Apellido = reader.GetString(nameof(Propietario.Apellido)),
-                    }
-                };
-                mySqlDatabase.Dispose();
-                return inmueble;
+                        Propietario = new Propietario{
+                            IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
+                            Nombre = reader.GetString(nameof(Propietario.Nombre)),
+                            Apellido = reader.GetString(nameof(Propietario.Apellido)),
+                        }
+                    };
+                    mySqlDatabase.Dispose();
+                    return inmueble;
+                }
             }
-        }
-        mySqlDatabase.Dispose();
+            mySqlDatabase.Dispose();
+            
         return null;
     }
 
