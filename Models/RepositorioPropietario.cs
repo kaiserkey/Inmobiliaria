@@ -82,7 +82,7 @@ public class RepositorioPropietario
         cmd.Parameters.AddWithValue("@Email", Propietario.Email);
         
         res = Convert.ToInt32(cmd.ExecuteScalar());
-        
+        Propietario.IdPropietario
         mySqlDatabase.Dispose();
         
         return res;
