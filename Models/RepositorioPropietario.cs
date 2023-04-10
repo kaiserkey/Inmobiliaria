@@ -66,7 +66,7 @@ public class RepositorioPropietario
         return null;
     }
 
-    public int CreatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
+    public int CreatePropietario(MySqlDatabase mySqlDatabase, Propietario CreatePropietario)
     {
         int res = -1;
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
@@ -74,7 +74,7 @@ public class RepositorioPropietario
                             VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email);
                             SELECT LAST_INSERT_ID();";
 
-        cmd.Parameters.AddWithValue("@Nombre", Propietario.Nombre);
+        cmd.Parameters.AddWithValue("@Nombre", CreatePropietario.Nombre);
         cmd.Parameters.AddWithValue("@Apellido", Propietario.Apellido);
         cmd.Parameters.AddWithValue("@Direccion", Propietario.Direccion);
         cmd.Parameters.AddWithValue("@Telefono", Propietario.Telefono);
