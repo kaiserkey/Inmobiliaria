@@ -26,8 +26,8 @@ $(document).ready(function () {
     });
 });
 $(document).ready(function() {
-    $('#alert').alert();
-    window.setTimeout(function() {
-        $("#alert").alert('close');
+    $('#myModal').modal('show');
+    setTimeout(function() {
+        $('#myModal').modal('hide');
     }, 5000);
 });
