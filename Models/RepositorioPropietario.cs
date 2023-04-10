@@ -66,27 +66,48 @@ public class RepositorioPropietario
         return null;
     }
 
-    public int CreatePropietario(MySqlDatabase mySqlDatabase, Propietario CreatePropietario)
+    public int CreatePropietario(MySqlDatabase mySqlDatabase, Propietario createPropietario)
+{
+    int res = -1;
+    using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
     {
-        int res = -1;
-        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Direccion, Telefono, Dni, Email) 
                             VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email);
                             SELECT LAST_INSERT_ID();";
 
-        cmd.Parameters.AddWithValue("@Nombre", CreatePropietario.Nombre);
-        cmd.Parameters.AddWithValue("@Apellido", CreatePropietario.Apellido);
-        cmd.Parameters.AddWithValue("@Direccion", CreatePropietario.Direccion);
-        cmd.Parameters.AddWithValue("@Telefono", CreatePropietario.Telefono);
-        cmd.Parameters.AddWithValue("@Dni", CreatePropietario.Dni);
-        cmd.Parameters.AddWithValue("@Email", CreatePropietario.Email);
+        cmd.Parameters.AddWithValue("@Nombre", createPropietario.Nombre);
+        cmd.Parameters.AddWithValue("@Apellido", createPropietario.Apellido);
+        cmd.Parameters.AddWithValue("@Direccion", createPropietario.Direccion);
+        cmd.Parameters.AddWithValue("@Telefono", createPropietario.Telefono);
+        cmd.Parameters.AddWithValue("@Dni", createPropietario.Dni);
+        cmd.Parameters.AddWithValue("@Email", createPropietario.Email);
         
         res = Convert.ToInt32(cmd.ExecuteScalar());
-        CreatePropietario.IdPropietario = res;
-        mySqlDatabase.Dispose();
-        
-        return res;
+        createPropietario.IdPropietario = res;
     }
+    
+    return res;
+}
+En este caso, estamos envolviendo el objeto MySqlCommand dentro de un bloque using, lo que garantiza que el objeto será eliminado correctamente y sus recursos liberados una vez que salgamos del bloque. También eliminamos la llamada mySqlDatabase.Dispose(), ya que el objeto MySqlConnection también se liberará automáticamente al finalizar el bloque using.
+
+Además, he cambiado el nombre del parámetro CreatePropietario por createPropietario, para seguir las convenciones de nomenclatura de C#. Es una práctica común nombrar los parámetros con minúsculas en el inicio de cada palabra, en lugar de usar mayúsculas.
+
+
+
+
+Daniel González
+var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand; que funcion cumple la clausula as en este codigo
+La cláusula as en este código es una conversión explícita de tipo, que permite convertir el objeto retornado por el método CreateCommand() en un objeto del tipo MySqlCommand.
+
+La razón por la cual se utiliza la cláusula as en lugar de una conversión normal, como por ejemplo (MySqlCommand)mySqlDatabase.Connection.CreateCommand(), es para evitar una excepción de tipo InvalidCastException en caso de que el objeto retornado no sea del tipo MySqlCommand.
+
+Si la conversión normal es utilizada y el objeto retornado no es del tipo correcto, una excepción será lanzada y detendrá la ejecución del programa. En cambio, si se utiliza la cláusula as y el objeto no es del tipo correcto, la variable cmd será nula y se puede manejar esta situación adecuadamente en el código.
+
+
+
+
+
+
 
     public int UpdatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
     {
