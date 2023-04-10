@@ -126,9 +126,9 @@ public class RepositorioInmueble
             cmd.Parameters.AddWithValue("@Activo", inmueble.Activo);
             cmd.Parameters.AddWithValue("@IdPropietario", inmueble.IdPropietario);
 
-            var res = Convert.ToInt32(cmd.ExecuteNonQuery());            
-            return res;
+            var res = Convert.ToInt32(cmd.ExecuteNonQuery());
         }
+        return res;
     }
 
     public int DeleteInmueble( MySqlDatabase mySqlDatabase, int id)
