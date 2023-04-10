@@ -32,7 +32,8 @@ public class RepositorioInmueble
                         Uso = reader.GetString(nameof(Inmueble.Uso)),
                         Activo = reader.GetBoolean(nameof(Inmueble.Activo)),
                         IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
-                        Propietario = new Propietario{
+                        Propietario = new Propietario
+                        {
                             IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
                             Nombre = reader.GetString(nameof(Propietario.Nombre)),
                             Apellido = reader.GetString(nameof(Propietario.Apellido)),
@@ -70,13 +71,14 @@ public class RepositorioInmueble
                         Uso = reader.GetString(nameof(Inmueble.Uso)),
                         Activo = reader.GetBoolean(nameof(Inmueble.Activo)),
                         IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
-                        Propietario = new Propietario{
+                        Propietario = new Propietario
+                        {
                             IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
                             Nombre = reader.GetString(nameof(Propietario.Nombre)),
                             Apellido = reader.GetString(nameof(Propietario.Apellido)),
                         }
                     };
-                    
+
                     return inmueble;
                 }
             }
@@ -89,7 +91,7 @@ public class RepositorioInmueble
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            
+
             cmd.CommandText = @"INSERT INTO Inmueble (Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario) 
                                 VALUES (@Tipo, @Coordenadas, @Precio, @Ambientes, @Uso, @Activo, @IdPropietario);
                                 SELECT LAST_INSERT_ID();";
@@ -113,7 +115,7 @@ public class RepositorioInmueble
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            
+
             cmd.CommandText = @"UPDATE Inmueble SET Tipo = @Tipo, Coordenadas = @Coordenadas, Precio = @Precio, Ambientes = @Ambientes, Uso = @Uso, Activo = @Activo, IdPropietario = @IdPropietario
                                 WHERE IdInmueble = @IdInmueble;";
 
@@ -131,7 +133,7 @@ public class RepositorioInmueble
         return res;
     }
 
-    public int DeleteInmueble( MySqlDatabase mySqlDatabase, int id)
+    public int DeleteInmueble(MySqlDatabase mySqlDatabase, int id)
     {
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
@@ -142,6 +144,37 @@ public class RepositorioInmueble
             res = Convert.ToInt32(cmd.ExecuteNonQuery());
         }
         return res;
+    }
+
+    public List<Propietario> BuscarPropietarioDeInmueble(MySqlDatabase mySqlDatabase, string nombreCompleto)
+    {
+        var propietarios = new List<Propietario>();
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"SELECT p.IdPropietario, p.Nombre, p.Apellido, p.Direccion, p.Telefono, p.Dni, p.Email 
+                            FROM Propietario p
+                            INNER JOIN Inmueble i ON p.IdPropietario = i.IdPropietario
+                            WHERE CONCAT(p.Nombre, ' ', p.Apellido) LIKE @nombreCompleto";
+            cmd.Parameters.AddWithValue("@nombreCompleto", "%" + nombreCompleto + "%");
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var propietario = new Propietario
+                    {
+                        IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
+                        Nombre = reader.GetString(nameof(Propietario.Nombre)),
+                        Apellido = reader.GetString(nameof(Propietario.Apellido)),
+                        Direccion = reader.GetString(nameof(Propietario.Direccion)),
+                        Telefono = reader.GetString(nameof(Propietario.Telefono)),
+                        Dni = reader.GetString(nameof(Propietario.Dni)),
+                        Email = reader.GetString(nameof(Propietario.Email))
+                    };
+                    propietarios.Add(propietario);
+                }
+            }
+        }
+        return propietarios;
     }
 
 }
