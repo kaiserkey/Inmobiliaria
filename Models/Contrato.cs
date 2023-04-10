@@ -10,7 +10,8 @@ public class Contrato
 
     [Display( Name = "Inquilino" ) ]
     public int IdInmueble { get; set; }
-    []
+    [ForeignKey( nameof( IdInmueble ) ) ]
+    public Inmueble Inmueble { get; set; }
 
     [Display( Name = "Propietario" ) ]
     public int IdPropietario{ get; set; }
