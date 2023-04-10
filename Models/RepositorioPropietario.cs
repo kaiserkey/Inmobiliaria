@@ -126,7 +126,8 @@ public class RepositorioPropietario
         var propietarios = new List<Propietario>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email 
-        FROM Propietario";
+                            FROM Propietario
+                            ";
 
         using (var reader = cmd.ExecuteReader())
         {
