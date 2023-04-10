@@ -289,11 +289,11 @@ tbody{
 }
 
 /* Modal mensajes */
-.modal-header {
+#modalOk .modal-header {
     background-color: #28a745;
     color: #fff;
 }
-.modal-body p {
+#modalOk .modal-body p {
     color: #fff;
     text-align: center;
 }
