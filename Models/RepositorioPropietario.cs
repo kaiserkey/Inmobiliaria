@@ -41,30 +41,32 @@ public class RepositorioPropietario
 
     public Propietario GetPropietario(MySqlDatabase mySqlDatabase, int id)
     {
-        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email 
-                            FROM Propietario WHERE IdPropietario = @IdPropietario";
-        cmd.Parameters.AddWithValue("@IdPropietario", id);
-
-        using (var reader = cmd.ExecuteReader())
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            if (reader.Read())
+            cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email 
+                                FROM Propietario WHERE IdPropietario = @IdPropietario";
+            cmd.Parameters.AddWithValue("@IdPropietario", id);
+
+            using (var reader = cmd.ExecuteReader())
             {
-                var propietario = new Propietario
+                if (reader.Read())
                 {
-                    IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
-                    Nombre = reader.GetString(nameof(Propietario.Nombre)),
-                    Apellido = reader.GetString(nameof(Propietario.Apellido)),
-                    Direccion = reader.GetString(nameof(Propietario.Direccion)),
-                    Telefono = reader.GetString(nameof(Propietario.Telefono)),
-                    Dni = reader.GetString(nameof(Propietario.Dni)),
-                    Email = reader.GetString(nameof(Propietario.Email))
-                };
-                mySqlDatabase.Dispose();
-                return propietario;
+                    var propietario = new Propietario
+                    {
+                        IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
+                        Nombre = reader.GetString(nameof(Propietario.Nombre)),
+                        Apellido = reader.GetString(nameof(Propietario.Apellido)),
+                        Direccion = reader.GetString(nameof(Propietario.Direccion)),
+                        Telefono = reader.GetString(nameof(Propietario.Telefono)),
+                        Dni = reader.GetString(nameof(Propietario.Dni)),
+                        Email = reader.GetString(nameof(Propietario.Email))
+                    };
+                    mySqlDatabase.Dispose();
+                    return propietario;
+                }
             }
+            mySqlDatabase.Dispose();
         }
-        mySqlDatabase.Dispose();
         return null;
     }
 
