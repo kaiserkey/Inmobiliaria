@@ -9,7 +9,7 @@ public class RepositorioContrato
     {
     }
 
-    public List<Contrato> GetInmuebles(MySqlDatabase mySqlDatabase)
+    public List<Contrato> GetContratos(MySqlDatabase mySqlDatabase)
     {
         var inmuebles = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
