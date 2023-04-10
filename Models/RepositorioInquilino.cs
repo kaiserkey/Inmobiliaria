@@ -15,27 +15,27 @@ public class RepositorioInquilino
         var inquilinos = new List<Inquilino>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-        cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento FROM Inquilino";
+            cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento FROM Inquilino";
 
-        using (var reader = cmd.ExecuteReader())
-        {
-            while (reader.Read())
+            using (var reader = cmd.ExecuteReader())
             {
-                var inquilino = new Inquilino
+                while (reader.Read())
                 {
-                    IdInquilino = reader.GetInt32(nameof(Inquilino.IdInquilino)),
-                    Nombre = reader.GetString(nameof(Inquilino.Nombre)),
-                    Apellido = reader.GetString(nameof(Inquilino.Apellido)),
-                    Telefono = reader.GetString(nameof(Inquilino.Telefono)),
-                    Dni = reader.GetString(nameof(Inquilino.Dni)),
-                    Email = reader.GetString(nameof(Inquilino.Email)),
-                    FechaNacimiento = reader.GetDateTime(nameof(Inquilino.FechaNacimiento))
-                };
-                inquilinos.Add(inquilino);
-            }
+                    var inquilino = new Inquilino
+                    {
+                        IdInquilino = reader.GetInt32(nameof(Inquilino.IdInquilino)),
+                        Nombre = reader.GetString(nameof(Inquilino.Nombre)),
+                        Apellido = reader.GetString(nameof(Inquilino.Apellido)),
+                        Telefono = reader.GetString(nameof(Inquilino.Telefono)),
+                        Dni = reader.GetString(nameof(Inquilino.Dni)),
+                        Email = reader.GetString(nameof(Inquilino.Email)),
+                        FechaNacimiento = reader.GetDateTime(nameof(Inquilino.FechaNacimiento))
+                    };
+                    inquilinos.Add(inquilino);
+                }
 
+            }
         }
-        mySqlDatabase.Dispose();
         return inquilinos;
     }
 
