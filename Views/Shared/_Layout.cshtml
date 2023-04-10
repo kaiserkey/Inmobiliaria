@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Metadatos -->
     <meta charset="UTF-8">
@@ -28,14 +27,13 @@
     @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Inmobiliaria.styles.css" asp-append-version="true" /> *@
-
+    
 </head>
-
 <body>
     @if (ViewBag.Id != null)
     {
-        <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert" data-auto-dismiss="4000">
-            <strong>¡Éxito!</strong> La entidad fue dada de alta con el id: @ViewBag.Id
+        <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert" data-auto-dismiss="5000">
+            <strong>¡Éxito!</strong> La entidad fue dada de alta con id: @ViewBag.Id
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -51,8 +49,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
-                    <a class="navbar-brand" href="/home"><img src="/img/inmobiliaria-icon.png"
-                            alt="Logo de la Inmobiliaria"></a>
+                    <a class="navbar-brand" href="/home"><img src="/img/inmobiliaria-icon.png" alt="Logo de la Inmobiliaria"></a>
                     <ul class="navbar-nav d-flex justify-content-center align-items-center">
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contratos</a>
@@ -94,12 +91,10 @@
         </main>
     </div>
 
-    <footer id="sticky-footer" class="flex-shrink-0 py-4">
+   <footer id="sticky-footer" class="flex-shrink-0 py-4">
         <div class="container text-center">
             <small>Copyright &copy; DanielSan</small>
-            <a href="https://github.com/kaiserkey/Inmobiliaria" target="_blank" rel="noopener noreferrer"><i
-                    class="bi bi-github text-dark d-flex justify-content-center align-content-center"
-                    style="font-size: 2em; color: #007bff;"></i></a>
+            <a href="https://github.com/kaiserkey/Inmobiliaria" target="_blank" rel="noopener noreferrer"><i class="bi bi-github text-dark d-flex justify-content-center align-content-center" style="font-size: 2em; color: #007bff;"></i></a>
             <br>
             <small>Universidad de la Punta</small>
         </div>
@@ -114,5 +109,4 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
-
 </html>
