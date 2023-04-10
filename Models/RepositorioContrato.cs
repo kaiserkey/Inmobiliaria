@@ -58,7 +58,7 @@ public class RepositorioContrato
         }
     }
     return contratos;
-}
+    }
 
     public Contrato GetContrato(MySqlDatabase mySqlDatabase, int id)
     {
