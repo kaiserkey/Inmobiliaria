@@ -75,4 +75,17 @@
         </div>
     </div>
 </div>
-
+<script>
+    $(document).ready(function () {
+        $("#PropietarioBusqueda").on("input", function () {
+            var busqueda = $("#PropietarioBusqueda").val();
+            $.getJSON("/Propietarios/BuscarPropietarios", { busqueda: busqueda }, function (resultados) {
+                var options = '<option value="">Selecciona una opción</option>';
+                $.each(resultados, function (index, resultado) {
+                    options += '<option value="' + resultado.id + '">' + resultado.text + '</option>';
+                });
+                $("#IdPropietario").html(options);
+            });
+        });
+    });
+</script>
