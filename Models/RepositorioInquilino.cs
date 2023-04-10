@@ -13,7 +13,8 @@ public class RepositorioInquilino
     public List<Inquilino> GetInquilinos(MySqlDatabase mySqlDatabase)
     {
         var inquilinos = new List<Inquilino>();
-        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
         cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento FROM Inquilino";
 
         using (var reader = cmd.ExecuteReader())
