@@ -99,7 +99,7 @@
                 </div>
             </div>
         }
-        if(ViewBag.Mensaje != null){
+        else if(ViewBag.Mensaje != null){
             <div id="modalMessage" class="modal fade">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content bg-yellow text-black">
@@ -116,18 +116,18 @@
                 </div>
             </div>
         }
-        if (ViewBag.Error != null){
+        else if (ViewBag.Error != null){
             <div id="modalError" class="modal fade">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content bg-success">
                         <div class="modal-header">
-                            <h5 class="modal-title">¡Informacion!!</h5>
+                            <h5 class="modal-title">Error!!</h5>
                             <button type="button" class="close bg-secondary" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true"><i class="bi bi-x-lg text-white"></i></span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>@ViewBag.Mensaje</p>
+                            <p>@ViewBag.Error</p>
                         </div>
                     </div>
                 </div>
