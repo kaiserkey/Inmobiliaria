@@ -95,6 +95,7 @@ public class RepositorioPropietario
 
     public int UpdatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
     {
+        int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
         
