@@ -29,7 +29,7 @@ $(document).ready(function () {
     $('#modalOK').modal('show');
     setTimeout(function () {
         $('#modalOK').modal('hide');
-    }, 5000);
+    }, 6000);
 });
 
 $(document).ready(function () {
