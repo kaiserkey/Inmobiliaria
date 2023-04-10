@@ -122,7 +122,7 @@ public class RepositorioPropietario
         return res;
     }
 
-    public IList<Propietario> BuscarPropietario(MySqlDatabase mySqlDatabase, string nombre){
+    public IList<Propietario> BuscarPropietario(MySqlDatabase mySqlDatabase, string nombreCompleto){
         var propietarios = new List<Propietario>();
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
         cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email 
