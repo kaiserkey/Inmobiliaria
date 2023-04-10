@@ -65,7 +65,7 @@ public class RepositorioInquilino
                     return inquilino;
                 }
             }
-            mySqlDatabase.Dispose();
+        }
         return null;
     }
 
@@ -74,21 +74,22 @@ public class RepositorioInquilino
         int res = -1;
         var fechaFormat = CreateInquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
 
-        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"INSERT INTO Inquilino (Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento) 
-                            VALUES (@Nombre, @Apellido, @Telefono, @Dni, @Email, @FechaNacimiento);
-                            SELECT LAST_INSERT_ID();";
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"INSERT INTO Inquilino (Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento) 
+                                VALUES (@Nombre, @Apellido, @Telefono, @Dni, @Email, @FechaNacimiento);
+                                SELECT LAST_INSERT_ID();";
 
-        cmd.Parameters.AddWithValue("@Nombre", CreateInquilino.Nombre);
-        cmd.Parameters.AddWithValue("@Apellido", CreateInquilino.Apellido);
-        cmd.Parameters.AddWithValue("@Telefono", CreateInquilino.Telefono);
-        cmd.Parameters.AddWithValue("@Dni", CreateInquilino.Dni);
-        cmd.Parameters.AddWithValue("@Email", CreateInquilino.Email);
-        cmd.Parameters.AddWithValue("@FechaNacimiento", fechaFormat);
-        
-        res = Convert.ToInt32(cmd.ExecuteScalar());
-        CreateInquilino.IdInquilino = res;
-        mySqlDatabase.Dispose();
+            cmd.Parameters.AddWithValue("@Nombre", CreateInquilino.Nombre);
+            cmd.Parameters.AddWithValue("@Apellido", CreateInquilino.Apellido);
+            cmd.Parameters.AddWithValue("@Telefono", CreateInquilino.Telefono);
+            cmd.Parameters.AddWithValue("@Dni", CreateInquilino.Dni);
+            cmd.Parameters.AddWithValue("@Email", CreateInquilino.Email);
+            cmd.Parameters.AddWithValue("@FechaNacimiento", fechaFormat);
+            
+            res = Convert.ToInt32(cmd.ExecuteScalar());
+            CreateInquilino.IdInquilino = res;
+            mySqlDatabase.Dispose();
         
         return res;
     }
