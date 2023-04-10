@@ -80,8 +80,7 @@ public class RepositorioInmueble
                     return inmueble;
                 }
             }
-            mySqlDatabase.Dispose();
-            
+        }
         return null;
     }
 
