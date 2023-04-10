@@ -88,26 +88,6 @@ public class RepositorioPropietario
     
     return res;
 }
-En este caso, estamos envolviendo el objeto MySqlCommand dentro de un bloque using, lo que garantiza que el objeto será eliminado correctamente y sus recursos liberados una vez que salgamos del bloque. También eliminamos la llamada mySqlDatabase.Dispose(), ya que el objeto MySqlConnection también se liberará automáticamente al finalizar el bloque using.
-
-Además, he cambiado el nombre del parámetro CreatePropietario por createPropietario, para seguir las convenciones de nomenclatura de C#. Es una práctica común nombrar los parámetros con minúsculas en el inicio de cada palabra, en lugar de usar mayúsculas.
-
-
-
-
-Daniel González
-var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand; que funcion cumple la clausula as en este codigo
-La cláusula as en este código es una conversión explícita de tipo, que permite convertir el objeto retornado por el método CreateCommand() en un objeto del tipo MySqlCommand.
-
-La razón por la cual se utiliza la cláusula as en lugar de una conversión normal, como por ejemplo (MySqlCommand)mySqlDatabase.Connection.CreateCommand(), es para evitar una excepción de tipo InvalidCastException en caso de que el objeto retornado no sea del tipo MySqlCommand.
-
-Si la conversión normal es utilizada y el objeto retornado no es del tipo correcto, una excepción será lanzada y detendrá la ejecución del programa. En cambio, si se utiliza la cláusula as y el objeto no es del tipo correcto, la variable cmd será nula y se puede manejar esta situación adecuadamente en el código.
-
-
-
-
-
-
 
     public int UpdatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
     {
