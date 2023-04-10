@@ -63,7 +63,7 @@ namespace Inmobiliaria.Controllers
 
         public IActionResult BuscarPropietarios(string busqueda)
         {
-            var propietarios = p
+            var propietarios = 
 
             return Json(propietarios);
         }
