@@ -69,6 +69,7 @@ public class RepositorioInquilino
 
     public int CreateInquilino(MySqlDatabase mySqlDatabase, Inquilino CreateInquilino)
     {
+        CreatePropietario
         var fechaFormat = CreateInquilino.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
 
         var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
