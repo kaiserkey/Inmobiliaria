@@ -65,9 +65,17 @@ namespace Inmobiliaria.Controllers
 
         public IActionResult BuscarPropietarios(string busqueda)
         {
-            var propietarios = RepoPropietario.GetPropietarios(con);
+            var propietarios = _context.Propietarios
+                                .Where(p => p.Nombre.Contains(busqueda) || p.Apellido.Contains(busqueda))
+                                .ToList();
 
-            return Json(propietarios);
+            var resultados = propietarios.Select(p => new
+            {
+                id = p.IdPropietario,
+                text = p.Nombre + " " + p.Apellido
+            });
+
+            return Json(resultados);
         }
 
         // POST: Inmueble/Edit/5
