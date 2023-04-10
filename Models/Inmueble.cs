@@ -26,4 +26,8 @@ public class Inmueble
     [ForeignKey( nameof( IdPropietario ) ) ]
 
     public Propietario Propietario{ get; set; }
+    [NotMapped]
+    public string PropietarioBusqueda { get; set; }
+
+    public IEnumerable<Propietario> Propietarios { get; set; }
 }

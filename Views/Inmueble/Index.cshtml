@@ -66,7 +66,8 @@
                     @Html.DisplayFor(modelItem => item.Activo)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.IdPropietario)
+                    @Html.DisplayFor(modelItem => item.Propietario.Nombre)
+                    @Html.DisplayFor(modelItem => item.Propietario.Apellido)
                 </td>
                 <td>
                     <a href="@Url.Action("Edit", new { id = item.IdInmueble })"> <i class="bi bi-pencil-square" style="font-size: 2em; color: green;"></i> </a>
