@@ -41,3 +41,20 @@ $(document).ready(function () {
         $('#modalOK').modal('hide');
     });
 });
+
+$(document).ready(function () {
+    $('#modalOK').modal('show');
+    setTimeout(function () {
+        $('#modalOK').modal('hide');
+    }, 6000);
+});
+
+$(document).ready(function () {
+    $('#modalOK').on('hidden.bs.modal', function () {
+        $(this).remove();
+    });
+
+    $('.close').click(function () {
+        $('#modalOK').modal('hide');
+    });
+});
