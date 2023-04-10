@@ -122,20 +122,17 @@ public class RepositorioContrato
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
 
-            cmd.CommandText = @"INSERT INTO Contrato (Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario) 
-                                VALUES (@Tipo, @Coordenadas, @Precio, @Ambientes, @Uso, @Activo, @IdPropietario);
-                                SELECT LAST_INSERT_ID();";
+            cmd.CommandText = @"INSERT INTO Contrato (IdInquilino, IdInmueble, FechaInicio, FechaFin) 
+                            VALUES (@IdInquilino, @IdInmueble, @FechaInicio, @FechaFin);
+                            SELECT LAST_INSERT_ID();";
 
-            cmd.Parameters.AddWithValue("@Tipo", CreateContrato.Tipo);
-            cmd.Parameters.AddWithValue("@Coordenadas", CreateContrato.Coordenadas);
-            cmd.Parameters.AddWithValue("@Precio", CreateContrato.Precio);
-            cmd.Parameters.AddWithValue("@Ambientes", CreateContrato.Ambientes);
-            cmd.Parameters.AddWithValue("@Uso", CreateContrato.Uso);
-            cmd.Parameters.AddWithValue("@Activo", CreateContrato.Activo);
-            cmd.Parameters.AddWithValue("@IdPropietario", CreateContrato.IdPropietario);
+            cmd.Parameters.AddWithValue("@IdInquilino", CreateContrato.IdInquilino);
+            cmd.Parameters.AddWithValue("@IdInmueble", CreateContrato.IdInmueble);
+            cmd.Parameters.AddWithValue("@FechaInicio", CreateContrato.FechaInicio);
+            cmd.Parameters.AddWithValue("@FechaFin", CreateContrato.FechaFin);
 
             res = Convert.ToInt32(cmd.ExecuteScalar());
-            CreateContrato.IdInmueble = res;
+            CreateContrato.IdContrato = res;
         }
         return res;
     }
