@@ -25,6 +25,7 @@ namespace Inmobiliaria.Controllers
             var listaPropietarios = RepoPropietario.GetPropietarios(con);
             ViewBag.Id = TempData["Id"];
             if (TempData.ContainsKey("Mensaje")){
+                Console.WriteLine("Entro al tempdata");
                 ViewBag.Mensaje = TempData["Mensaje"];
             }
             return View(listaPropietarios);
