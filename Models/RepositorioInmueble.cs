@@ -141,6 +141,6 @@ public class RepositorioInmueble
         return res;
     }
 
-    
+    public List<Inmueble> BuscarInmuebles()
 
 }
