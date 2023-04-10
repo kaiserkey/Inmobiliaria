@@ -146,35 +146,36 @@ public class RepositorioInmueble
         return res;
     }
 
-    public List<Propietario> BuscarPropietario(MySqlDatabase mySqlDatabase, string nombreCompleto)
+    public List<Inmueble> BuscarInmueble(MySqlDatabase mySqlDatabase, string busqueda)
+{
+    var inmuebles = new List<Inmueble>();
+    using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
     {
-        var propietarios = new List<Propietario>();
-        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario 
+                            FROM Inmueble 
+                            WHERE (Tipo LIKE @busqueda OR Precio LIKE @busqueda OR Uso LIKE @busqueda) 
+                                AND Activo = 1";
+        cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
+        using (var reader = cmd.ExecuteReader())
         {
-            cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, i.IdPropietario, 
-                                p.Nombre, p.Apellido
-                                FROM Inmueble i INNER JOIN Propietario p ON i.IdPropietario = p.IdPropietario
-                                WHERE CONCAT(p.Nombre, ' ', p.Apellido) LIKE @nombreCompleto";
-            cmd.Parameters.AddWithValue("@nombreCompleto", "%" + nombreCompleto + "%");
-            using (var reader = cmd.ExecuteReader())
+            while (reader.Read())
             {
-                while (reader.Read())
+                var inmueble = new Inmueble
                 {
-                    var propietario = new Propietario
-                    {
-                        IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
-                        Nombre = reader.GetString(nameof(Propietario.Nombre)),
-                        Apellido = reader.GetString(nameof(Propietario.Apellido)),
-                        Direccion = reader.GetString(nameof(Propietario.Direccion)),
-                        Telefono = reader.GetString(nameof(Propietario.Telefono)),
-                        Dni = reader.GetString(nameof(Propietario.Dni)),
-                        Email = reader.GetString(nameof(Propietario.Email))
-                    };
-                    propietarios.Add(propietario);
-                }
+                    IdInmueble = reader.GetInt32(nameof(Inmueble.IdInmueble)),
+                    Tipo = reader.GetString(nameof(Inmueble.Tipo)),
+                    Coordenadas = reader.GetString(nameof(Inmueble.Coordenadas)),
+                    Precio = reader.GetDecimal(nameof(Inmueble.Precio)),
+                    Ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
+                    Uso = reader.GetString(nameof(Inmueble.Uso)),
+                    Activo = reader.GetBoolean(nameof(Inmueble.Activo)),
+                    IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
+                };
+                inmuebles.Add(inmueble);
             }
         }
-        return propietarios;
     }
+    return inmuebles;
+}
 
 }
