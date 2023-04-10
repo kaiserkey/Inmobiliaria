@@ -131,7 +131,7 @@ public class RepositorioContrato
         return res;
     }
 
-    public int DeleteInmueble( MySqlDatabase mySqlDatabase, int id)
+    public int DeleteContrato( MySqlDatabase mySqlDatabase, int id)
     {
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
