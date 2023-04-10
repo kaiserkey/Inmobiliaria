@@ -288,7 +288,14 @@ tbody{
     font-size: medium;
 }
 
-/* Modal  */
+/* Modal mensajes */
+.modal-header {
+    background-color: #28a745;
+    color: #fff;
+}
+.modal-body p {
+    color: #fff;
+}
 
 
 
