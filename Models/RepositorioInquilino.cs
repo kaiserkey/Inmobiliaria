@@ -101,22 +101,20 @@ public class RepositorioInquilino
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
         
-        cmd.CommandText = @"UPDATE Inquilino SET Nombre = @Nombre, Apellido = @Apellido, Telefono = @Telefono, Dni = @Dni, Email = @Email, FechaNacimiento = @FechaNacimiento
-                            WHERE IdInquilino = @IdInquilino;";
+            cmd.CommandText = @"UPDATE Inquilino SET Nombre = @Nombre, Apellido = @Apellido, Telefono = @Telefono, Dni = @Dni, Email = @Email, FechaNacimiento = @FechaNacimiento
+                                WHERE IdInquilino = @IdInquilino;";
 
-        cmd.Parameters.AddWithValue("@IdInquilino", Inquilino.IdInquilino);
-        cmd.Parameters.AddWithValue("@Nombre", Inquilino.Nombre);
-        cmd.Parameters.AddWithValue("@Apellido", Inquilino.Apellido);
-        cmd.Parameters.AddWithValue("@Telefono", Inquilino.Telefono);
-        cmd.Parameters.AddWithValue("@Dni", Inquilino.Dni);
-        cmd.Parameters.AddWithValue("@Email", Inquilino.Email);
-        cmd.Parameters.AddWithValue("@FechaNacimiento", fechaFormat);
+            cmd.Parameters.AddWithValue("@IdInquilino", Inquilino.IdInquilino);
+            cmd.Parameters.AddWithValue("@Nombre", Inquilino.Nombre);
+            cmd.Parameters.AddWithValue("@Apellido", Inquilino.Apellido);
+            cmd.Parameters.AddWithValue("@Telefono", Inquilino.Telefono);
+            cmd.Parameters.AddWithValue("@Dni", Inquilino.Dni);
+            cmd.Parameters.AddWithValue("@Email", Inquilino.Email);
+            cmd.Parameters.AddWithValue("@FechaNacimiento", fechaFormat);
 
-        var res = Convert.ToInt32(cmd.ExecuteNonQuery());
-
-        mySqlDatabase.Dispose();
-        
-        return res;
+            var res = Convert.ToInt32(cmd.ExecuteNonQuery());        
+            return res;
+        }
     }
 
     public int DeleteInquilino( MySqlDatabase mySqlDatabase, int id)
