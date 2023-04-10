@@ -151,10 +151,10 @@ public class RepositorioInmueble
         var propietarios = new List<Propietario>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT p.IdPropietario, p.Nombre, p.Apellido, p.Direccion, p.Telefono, p.Dni, p.Email 
-                            FROM Propietario p
-                            INNER JOIN Inmueble i ON p.IdPropietario = i.IdPropietario
-                            WHERE CONCAT(p.Nombre, ' ', p.Apellido) LIKE @nombreCompleto";
+            cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, i.IdPropietario, 
+                                p.Nombre, p.Apellido
+                                FROM Inmueble i INNER JOIN Propietario p ON i.IdPropietario = p.IdPropietario
+                                WHERE CONCAT(p.Nombre, ' ', p.Apellido) LIKE @nombreCompleto";
             cmd.Parameters.AddWithValue("@nombreCompleto", "%" + nombreCompleto + "%");
             using (var reader = cmd.ExecuteReader())
             {
