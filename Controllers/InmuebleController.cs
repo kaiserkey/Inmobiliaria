@@ -91,7 +91,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 int res = RepoInmueble.UpdateInmueble(con, UpdateInmueble);
-            
+                TempData["Mensaje"] = "La entidad se actualizo correctamente ID:" + id;
                 return RedirectToAction(nameof(Index));
             }
             catch
