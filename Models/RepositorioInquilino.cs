@@ -119,13 +119,14 @@ public class RepositorioInquilino
 
     public int DeleteInquilino( MySqlDatabase mySqlDatabase, int id)
     {
+        int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
             cmd.CommandText = @"DELETE FROM Inquilino WHERE IdInquilino = @IdInquilino";
             cmd.Parameters.AddWithValue("@IdInquilino", id);
 
-            var res = Convert.ToInt32(cmd.ExecuteNonQuery());            
-            return res;
-        }
+            res = Convert.ToInt32(cmd.ExecuteNonQuery());            
+            
+        }return res;
     }
 }
