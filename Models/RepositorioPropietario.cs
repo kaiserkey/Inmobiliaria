@@ -75,14 +75,14 @@ public class RepositorioPropietario
                             SELECT LAST_INSERT_ID();";
 
         cmd.Parameters.AddWithValue("@Nombre", CreatePropietario.Nombre);
-        cmd.Parameters.AddWithValue("@Apellido", Propietario.Apellido);
-        cmd.Parameters.AddWithValue("@Direccion", Propietario.Direccion);
-        cmd.Parameters.AddWithValue("@Telefono", Propietario.Telefono);
-        cmd.Parameters.AddWithValue("@Dni", Propietario.Dni);
-        cmd.Parameters.AddWithValue("@Email", Propietario.Email);
+        cmd.Parameters.AddWithValue("@Apellido", CreatePropietario.Apellido);
+        cmd.Parameters.AddWithValue("@Direccion", CreatePropietario.Direccion);
+        cmd.Parameters.AddWithValue("@Telefono", CreatePropietario.Telefono);
+        cmd.Parameters.AddWithValue("@Dni", CreatePropietario.Dni);
+        cmd.Parameters.AddWithValue("@Email", CreatePropietario.Email);
         
         res = Convert.ToInt32(cmd.ExecuteScalar());
-        Propietario.IdPropietario = res;
+        CreatePropietario.IdPropietario = res;
         mySqlDatabase.Dispose();
         
         return res;
