@@ -46,7 +46,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                RepoPropietario.CreatePropietario(con, propietario);
+                var id = RepoPropietario.CreatePropietario(con, propietario);
                 TempData["Id"] = 
                 return RedirectToAction(nameof(Index));
             }
