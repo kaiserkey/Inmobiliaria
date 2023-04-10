@@ -123,6 +123,30 @@ public class RepositorioPropietario
     }
 
     public IList<Propietario> BuscarPropietario(MySqlDatabase mySqlDatabase, string dni){
-        
+        var propietarios = new List<Propietario>();
+        var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand;
+        cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email 
+        FROM Propietario";
+
+        using (var reader = cmd.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+                var propietario = new Propietario
+                {
+                    IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
+                    Nombre = reader.GetString(nameof(Propietario.Nombre)),
+                    Apellido = reader.GetString(nameof(Propietario.Apellido)),
+                    Direccion = reader.GetString(nameof(Propietario.Direccion)),
+                    Telefono = reader.GetString(nameof(Propietario.Telefono)),
+                    Dni = reader.GetString(nameof(Propietario.Dni)),
+                    Email = reader.GetString(nameof(Propietario.Email))
+                };
+                propietarios.Add(propietario);
+            }
+
+        }
+        mySqlDatabase.Dispose();
+        return propietarios;
     }
 }
