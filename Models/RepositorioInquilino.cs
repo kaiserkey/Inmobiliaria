@@ -86,11 +86,11 @@ public class RepositorioInquilino
             cmd.Parameters.AddWithValue("@Dni", CreateInquilino.Dni);
             cmd.Parameters.AddWithValue("@Email", CreateInquilino.Email);
             cmd.Parameters.AddWithValue("@FechaNacimiento", fechaFormat);
-            
+
             res = Convert.ToInt32(cmd.ExecuteScalar());
             CreateInquilino.IdInquilino = res;
         }
-        
+
         return res;
     }
 
@@ -100,7 +100,7 @@ public class RepositorioInquilino
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-        
+
             cmd.CommandText = @"UPDATE Inquilino SET Nombre = @Nombre, Apellido = @Apellido, Telefono = @Telefono, Dni = @Dni, Email = @Email, FechaNacimiento = @FechaNacimiento
                                 WHERE IdInquilino = @IdInquilino;";
 
@@ -112,13 +112,13 @@ public class RepositorioInquilino
             cmd.Parameters.AddWithValue("@Email", Inquilino.Email);
             cmd.Parameters.AddWithValue("@FechaNacimiento", fechaFormat);
 
-            res = Convert.ToInt32(cmd.ExecuteNonQuery());        
-            
+            res = Convert.ToInt32(cmd.ExecuteNonQuery());
+
         }
         return res;
     }
 
-    public int DeleteInquilino( MySqlDatabase mySqlDatabase, int id)
+    public int DeleteInquilino(MySqlDatabase mySqlDatabase, int id)
     {
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
@@ -132,32 +132,32 @@ public class RepositorioInquilino
     }
 
     public List<Inquilino> BuscarInquilino(MySqlDatabase mySqlDatabase, string nombreCompleto)
-{
-    var inquilinos = new List<Inquilino>();
-    using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
     {
-        cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Email, Dni, Telefono, FechaNacimiento 
+        var inquilinos = new List<Inquilino>();
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Email, Dni, Telefono, FechaNacimiento 
                             FROM Inquilino
                             WHERE CONCAT(Nombre, ' ', Apellido) LIKE @nombreCompleto";
-        cmd.Parameters.AddWithValue("@nombreCompleto", "%" + nombreCompleto + "%");
-        using (var reader = cmd.ExecuteReader())
-        {
-            while (reader.Read())
+            cmd.Parameters.AddWithValue("@nombreCompleto", "%" + nombreCompleto + "%");
+            using (var reader = cmd.ExecuteReader())
             {
-                var inquilino = new Inquilino
+                while (reader.Read())
                 {
-                    IdInquilino = reader.GetInt32(nameof(Inquilino.IdInquilino)),
-                    Nombre = reader.GetString(nameof(Inquilino.Nombre)),
-                    Apellido = reader.GetString(nameof(Inquilino.Apellido)),
-                    Email = reader.GetString(nameof(Inquilino.Email)),
-                    Dni = reader.GetString(nameof(Inquilino.Dni)),
-                    Telefono = reader.GetString(nameof(Inquilino.Telefono)),
-                    FechaNacimiento = reader.GetString(nameof(Inquilino.FechaNacimiento))
-                };
-                inquilinos.Add(inquilino);
+                    var inquilino = new Inquilino
+                    {
+                        IdInquilino = reader.GetInt32(nameof(Inquilino.IdInquilino)),
+                        Nombre = reader.GetString(nameof(Inquilino.Nombre)),
+                        Apellido = reader.GetString(nameof(Inquilino.Apellido)),
+                        Email = reader.GetString(nameof(Inquilino.Email)),
+                        Dni = reader.GetString(nameof(Inquilino.Dni)),
+                        Telefono = reader.GetString(nameof(Inquilino.Telefono)),
+                        FechaNacimiento = reader.GetString(nameof(Inquilino.FechaNacimiento))
+                    };
+                    inquilinos.Add(inquilino);
+                }
             }
         }
+        return inquilinos;
     }
-    return inquilinos;
-}
 }
