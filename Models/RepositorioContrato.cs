@@ -137,25 +137,25 @@ public class RepositorioContrato
         return res;
     }
 
-    public int UpdateContrato(MySqlDatabase mySqlDatabase, Contrato Contrato)
+    public int UpdateContrato(MySqlDatabase mySqlDatabase, Contrato contrato)
     {
+        var fechaInicioFormat = contrato.FechaInicio?.ToString("yyyy-MM-dd HH:mm:ss");
+        var fechaFinFormat = contrato.FechaFin?.ToString("yyyy-MM-dd HH:mm:ss");
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
 
-            cmd.CommandText = @"UPDATE Contrato SET Tipo = @Tipo, Coordenadas = @Coordenadas, Precio = @Precio, Ambientes = @Ambientes, Uso = @Uso, Activo = @Activo, IdPropietario = @IdPropietario
-                                WHERE IdInmueble = @IdInmueble;";
+            cmd.CommandText = @"UPDATE Contrato SET IdInquilino = @IdInquilino, IdInmueble = @IdInmueble, FechaInicio = @FechaInicio, FechaFin = @FechaFin
+                            WHERE IdContrato = @IdContrato;";
 
-            cmd.Parameters.AddWithValue("@IdInmueble", Contrato.IdInmueble);
-            cmd.Parameters.AddWithValue("@Tipo", Contrato.Tipo);
-            cmd.Parameters.AddWithValue("@Coordenadas", Contrato.Coordenadas);
-            cmd.Parameters.AddWithValue("@Precio", Contrato.Precio);
-            cmd.Parameters.AddWithValue("@Ambientes", Contrato.Ambientes);
-            cmd.Parameters.AddWithValue("@Uso", Contrato.Uso);
-            cmd.Parameters.AddWithValue("@Activo", Contrato.Activo);
-            cmd.Parameters.AddWithValue("@IdPropietario", Contrato.IdPropietario);
+            cmd.Parameters.AddWithValue("@IdContrato", contrato.IdContrato);
+            cmd.Parameters.AddWithValue("@IdInquilino", contrato.IdInquilino);
+            cmd.Parameters.AddWithValue("@IdInmueble", contrato.IdInmueble);
+            cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioFormat);
+            cmd.Parameters.AddWithValue("@FechaFin", fechaFinFormat);
 
             res = Convert.ToInt32(cmd.ExecuteNonQuery());
+
         }
         return res;
     }
