@@ -128,7 +128,7 @@ public class RepositorioPropietario
         cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email 
                             FROM Propietario
                             WHERE CONCAT(Nombre, ' ', Apellido) LIKE @nombreCompleto";
-
+        cmd.Parameters.AddWithValue("@nombreCompleto", "%" + nombreCompleto + "%");
         using (var reader = cmd.ExecuteReader())
         {
             while (reader.Read())
