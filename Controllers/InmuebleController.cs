@@ -61,6 +61,8 @@ namespace Inmobiliaria.Controllers
             return View(inmueble);
         }
 
+        
+
         // POST: Inmueble/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
