@@ -87,9 +87,9 @@ public class RepositorioPropietario
             
             res = Convert.ToInt32(cmd.ExecuteScalar());
             createPropietario.IdPropietario = res;
-            return res;
+            
         }
-        
+        return res;
         
     }
 
