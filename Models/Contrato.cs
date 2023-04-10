@@ -22,6 +22,8 @@ public class Contrato
 
     [Display( Name = "Fecha de Inicio")]
     public DateTime FechaInicio { get; set; }
+
+    [Display( Name)]
     public DateTime FechaFin { get; set; }
 
 }
