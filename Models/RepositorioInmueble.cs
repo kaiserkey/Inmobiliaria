@@ -100,7 +100,7 @@ public class RepositorioInmueble
         cmd.Parameters.AddWithValue("@IdPropietario", CreateInmueble.IdPropietario);
 
         res = Convert.ToInt32(cmd.ExecuteScalar());
-        CreateInmueble.
+        CreateInmueble.IdInmueble = res;
         mySqlDatabase.Dispose();
         
         return res;
