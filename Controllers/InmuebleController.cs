@@ -61,7 +61,14 @@ namespace Inmobiliaria.Controllers
             return View(inmueble);
         }
 
-        
+        public IActionResult BuscarPropietarios(string busqueda)
+{
+    var propietarios = _context.Propietarios
+                        .Where(p => p.Nombre.Contains(busqueda) || p.Apellido.Contains(busqueda))
+                        .ToList();
+
+    return Json(propietarios);
+}
 
         // POST: Inmueble/Edit/5
         [HttpPost]
