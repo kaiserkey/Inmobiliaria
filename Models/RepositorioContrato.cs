@@ -32,7 +32,7 @@ public class RepositorioContrato
                         IdContrato = reader.GetInt32(nameof(Contrato.IdContrato)),
                         IdInquilino = reader.GetInt32(nameof(Contrato.IdInquilino)),
                         IdInmueble = reader.GetInt32(nameof(Contrato.IdInmueble)),
-                        FechaInicio = reader.DateTime(nameof(Contrato.FechaInicio))) ? null : (DateTime?)reader.GetDateTime(nameof(Contrato.FechaInicio)),
+                        FechaInicio = reader.DateTime(nameof(Contrato.FechaInicio)f(Contrato.FechaInicio)),
                         FechaFin = reader.IsDBNull(reader.GetOrdinal(nameof(Contrato.FechaFin))) ? null : (DateTime?)reader.GetDateTime(nameof(Contrato.FechaFin)),
                         Inquilino = new Inquilino
                         {
