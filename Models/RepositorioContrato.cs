@@ -66,35 +66,54 @@ public class RepositorioContrato
     {
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, i.IdPropietario, 
-                                p.Nombre, p.Apellido
-                                FROM Contrato i INNER JOIN Propietario p ON i.IdPropietario = p.IdPropietario
-                                WHERE IdInmueble = @IdInmueble";
-            cmd.Parameters.AddWithValue("@IdInmueble", id);
+            cmd.CommandText = @"SELECT IdContrato, IdInquilino, IdInmueble, FechaInicio, FechaFin,
+                            i.Nombre, i.Apellido, i.Telefono, i.Email,
+                            inm.Tipo, inm.Coordenadas, inm.Precio, inm.Ambientes, inm.Uso, inm.Activo,
+                            p.Nombre, p.Apellido
+                            FROM Contrato c
+                            INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
+                            INNER JOIN Inmueble inm ON c.IdInmueble = inm.IdInmueble
+                            INNER JOIN Propietario p ON inm.IdPropietario = p.IdPropietario
+                            WHERE IdContrato = @IdContrato";
+            cmd.Parameters.AddWithValue("@IdContrato", id);
 
             using (var reader = cmd.ExecuteReader())
             {
                 if (reader.Read())
                 {
-                    var Contrato = new Contrato
+                    var contrato = new Contrato
                     {
+                        IdContrato = reader.GetInt32(nameof(Contrato.IdContrato)),
+                        IdInquilino = reader.GetInt32(nameof(Contrato.IdInquilino)),
                         IdInmueble = reader.GetInt32(nameof(Contrato.IdInmueble)),
-                        Tipo = reader.GetString(nameof(Contrato.Tipo)),
-                        Coordenadas = reader.GetString(nameof(Contrato.Coordenadas)),
-                        Precio = reader.GetDecimal(nameof(Contrato.Precio)),
-                        Ambientes = reader.GetInt32(nameof(Contrato.Ambientes)),
-                        Uso = reader.GetString(nameof(Contrato.Uso)),
-                        Activo = reader.GetBoolean(nameof(Contrato.Activo)),
-                        IdPropietario = reader.GetInt32(nameof(Contrato.IdPropietario)),
-                        Propietario = new Propietario
+                        FechaInicio = reader.GetDateTime(nameof(Contrato.FechaInicio)),
+                        FechaFin = reader.GetDateTime(nameof(Contrato.FechaFin)),
+                        Inquilino = new Inquilino
                         {
-                            IdPropietario = reader.GetInt32(nameof(Contrato.IdPropietario)),
-                            Nombre = reader.GetString(nameof(Propietario.Nombre)),
-                            Apellido = reader.GetString(nameof(Propietario.Apellido)),
+                            IdInquilino = reader.GetInt32(nameof(Inquilino.IdInquilino)),
+                            Nombre = reader.GetString(nameof(Inquilino.Nombre)),
+                            Apellido = reader.GetString(nameof(Inquilino.Apellido)),
+                            Telefono = reader.GetString(nameof(Inquilino.Telefono)),
+                            Email = reader.GetString(nameof(Inquilino.Email))
+                        },
+                        Inmueble = new Inmueble
+                        {
+                            IdInmueble = reader.GetInt32(nameof(Inmueble.IdInmueble)),
+                            Tipo = reader.GetString(nameof(Inmueble.Tipo)),
+                            Coordenadas = reader.GetString(nameof(Inmueble.Coordenadas)),
+                            Precio = reader.GetDecimal(nameof(Inmueble.Precio)),
+                            Ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
+                            Uso = reader.GetString(nameof(Inmueble.Uso)),
+                            Activo = reader.GetBoolean(nameof(Inmueble.Activo)),
+                            Propietario = new Propietario
+                            {
+                                Nombre = reader.GetString(nameof(Propietario.Nombre)),
+                                Apellido = reader.GetString(nameof(Propietario.Apellido))
+                            }
                         }
                     };
                     mySqlDatabase.Dispose();
-                    return Contrato;
+                    return contrato;
                 }
             }
         }
