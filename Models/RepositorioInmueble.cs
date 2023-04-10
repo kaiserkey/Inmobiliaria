@@ -104,8 +104,7 @@ public class RepositorioInmueble
 
             res = Convert.ToInt32(cmd.ExecuteScalar());
             CreateInmueble.IdInmueble = res;
-            mySqlDatabase.Dispose();
-        
+        }
         return res;
     }
 
