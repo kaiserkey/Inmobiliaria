@@ -67,27 +67,27 @@ public class RepositorioPropietario
     }
 
     public int CreatePropietario(MySqlDatabase mySqlDatabase, Propietario createPropietario)
-{
-    int res = -1;
-    using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
     {
-        cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Direccion, Telefono, Dni, Email) 
-                            VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email);
-                            SELECT LAST_INSERT_ID();";
+        int res = -1;
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"INSERT INTO Propietario (Nombre, Apellido, Direccion, Telefono, Dni, Email) 
+                                VALUES (@Nombre, @Apellido, @Direccion, @Telefono, @Dni, @Email);
+                                SELECT LAST_INSERT_ID();";
 
-        cmd.Parameters.AddWithValue("@Nombre", createPropietario.Nombre);
-        cmd.Parameters.AddWithValue("@Apellido", createPropietario.Apellido);
-        cmd.Parameters.AddWithValue("@Direccion", createPropietario.Direccion);
-        cmd.Parameters.AddWithValue("@Telefono", createPropietario.Telefono);
-        cmd.Parameters.AddWithValue("@Dni", createPropietario.Dni);
-        cmd.Parameters.AddWithValue("@Email", createPropietario.Email);
+            cmd.Parameters.AddWithValue("@Nombre", createPropietario.Nombre);
+            cmd.Parameters.AddWithValue("@Apellido", createPropietario.Apellido);
+            cmd.Parameters.AddWithValue("@Direccion", createPropietario.Direccion);
+            cmd.Parameters.AddWithValue("@Telefono", createPropietario.Telefono);
+            cmd.Parameters.AddWithValue("@Dni", createPropietario.Dni);
+            cmd.Parameters.AddWithValue("@Email", createPropietario.Email);
+            
+            res = Convert.ToInt32(cmd.ExecuteScalar());
+            createPropietario.IdPropietario = res;
+        }
         
-        res = Convert.ToInt32(cmd.ExecuteScalar());
-        createPropietario.IdPropietario = res;
+        return res;
     }
-    
-    return res;
-}
 
     public int UpdatePropietario(MySqlDatabase mySqlDatabase, Propietario Propietario)
     {
