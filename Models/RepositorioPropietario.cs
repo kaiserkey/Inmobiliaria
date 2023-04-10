@@ -122,7 +122,7 @@ public class RepositorioPropietario
         return res;
     }
 
-    public List<Propietario> BuscarPropietario(MySqlDatabase mySqlDatabase, string dni){
+    public IList<Propietario> BuscarPropietario(MySqlDatabase mySqlDatabase, string dni){
         
     }
 }
