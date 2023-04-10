@@ -23,6 +23,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Index()
         {
             var listaPropietarios = RepoPropietario.GetPropietarios(con);
+            ViewBag.Id = TempData["Id"];
             return View(listaPropietarios);
         }
 
@@ -47,7 +48,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 RepoPropietario.CreatePropietario(con, propietario);
-                TempData["Id"] = propietario.IdPropietario
+                TempData["Id"] = propietario.IdPropietario;
                 return RedirectToAction(nameof(Index));
             }
             catch
