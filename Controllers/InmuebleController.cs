@@ -65,7 +65,7 @@ namespace Inmobiliaria.Controllers
 
         public IActionResult BuscarPropietarios(string busqueda)
         {
-            var propietarios = 
+            var propietarios = RepoPropietario
 
             return Json(propietarios);
         }
