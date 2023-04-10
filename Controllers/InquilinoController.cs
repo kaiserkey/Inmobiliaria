@@ -88,6 +88,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Delete(int id)
         {
             var inquilino = RepoInquilino.GetInquilino(con, id);
+            TempData["Mensaje"] = "La entidad se ha eliminado corectamente.";
             return View(inquilino);
         }
 
