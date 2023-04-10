@@ -89,7 +89,7 @@ public class RepositorioInquilino
             
             res = Convert.ToInt32(cmd.ExecuteScalar());
             CreateInquilino.IdInquilino = res;
-            mySqlDatabase.Dispose();
+        }
         
         return res;
     }
