@@ -27,6 +27,9 @@ namespace Inmobiliaria.Controllers
         {
             var listaInquilinos = RepoInquilino.GetInquilinos(con);
             ViewBag.Id = TempData["Id"];
+            if (TempData.ContainsKey("Mensaje")){
+                ViewBag.Mensaje = TempData["Mensaje"];
+            }
             return View(listaInquilinos);
         }
 
