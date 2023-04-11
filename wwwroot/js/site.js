@@ -51,8 +51,8 @@ $(document).ready(function () {
 
     // Cuando seleccionamos una opción del select, la agregamos al input
     $("#selectInquilino").change(function () {
-        var selectedOption = $("#selectInmueble option:selected").text();
-        $("#InmuebleBusqueda").val(selectedOption);
+        var selectedOption = $("#selectInquilino option:selected").text();
+        $("#InquilinoBusqueda").val(selectedOption);
     });
 });
 
