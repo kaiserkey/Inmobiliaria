@@ -31,6 +31,11 @@ $(document).ready(function () {
     });
 });
 
+// Función para cerrar el modal al hacer clic en el botón
+document.getElementById("btnCerrarModal").addEventListener("click", function() {
+    $('#modalBuscarPropietarios').modal('hide');
+  });
+
 /* Buscar Propietarios */
 $(document).ready(function () {
     $("#PropietarioBusqueda").on("input", function () {
