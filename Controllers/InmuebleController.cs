@@ -77,7 +77,8 @@ namespace Inmobiliaria.Controllers
             var resultados = propietarios.Select(p => new
             {
                 IdPropietario = p.IdPropietario,
-                Nombre = p.Nombre + " " + p.Apellido
+                Nombre = p.Nombre 
+                Apellido = p.Apellido
             });
 
             return Json(resultados);
