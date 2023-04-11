@@ -118,8 +118,8 @@ public class RepositorioContrato
 
     public int CreateContrato(MySqlDatabase mySqlDatabase, Contrato CreateContrato)
     {
-        var fechaInicio = CreateContrato..ToString("yyyy-MM-dd HH:mm:ss");
-        var fechaFin = CreateContrato.FechaNacimiento.ToString("yyyy-MM-dd HH:mm:ss");
+        var fechaInicio = CreateContrato.FechaInicio.ToString("yyyy-MM-dd HH:mm:ss");
+        var fechaFin = CreateContrato.FechaFin.ToString("yyyy-MM-dd HH:mm:ss");
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
