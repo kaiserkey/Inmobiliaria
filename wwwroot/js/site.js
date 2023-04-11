@@ -32,7 +32,9 @@ $(document).ready(function () {
 });
 
 // Función para cerrar el modal al hacer clic en el botón
-function
+function cerrarModal() {
+    $('#modalBuscarPropietarios').modal('hide');
+}
 document.getElementById("btnCerrarModal").addEventListener("click", function () {
     $('#modalBuscarPropietarios').modal('hide');
 });
