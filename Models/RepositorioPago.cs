@@ -15,7 +15,7 @@ public class RepositorioPago
         var pagos = new List<Pago>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT IdPago, Monto, Fecha, NumeroPago, IdContrato
+            cmd.CommandText = @"SELECT IdPago, Importe, Fecha, NumeroPago, IdContrato
                             FROM Pago";
 
             using (var reader = cmd.ExecuteReader())
@@ -25,7 +25,7 @@ public class RepositorioPago
                     var pago = new Pago
                     {
                         IdPago = reader.GetInt32(nameof(Pago.IdPago)),
-                        Monto = reader.GetDecimal(nameof(Pago.Monto)),
+                        Importe = reader.GetDecimal(nameof(Pago.Importe)),
                         NumeroPago = reader.GetString(nameof(Pago.NumeroPago)),
                         Fecha = reader.GetDateTime(nameof(Pago.Fecha)),
                         IdContrato = reader.GetInt32(nameof(Pago.IdContrato)),
@@ -42,7 +42,7 @@ public class RepositorioPago
     {
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT IdPago, Monto, Fecha, NumeroPago, IdContrato
+            cmd.CommandText = @"SELECT IdPago, Importe, Fecha, NumeroPago, IdContrato
                             FROM Pago
                             WHERE IdPago = @IdPago";
             cmd.Parameters.AddWithValue("@IdPago", id);
@@ -54,7 +54,7 @@ public class RepositorioPago
                     var pago = new Pago
                     {
                         IdPago = reader.GetInt32(nameof(Pago.IdPago)),
-                        Monto = reader.GetDecimal(nameof(Pago.Monto)),
+                        Importe = reader.GetDecimal(nameof(Pago.Importe)),
                         NumeroPago = reader.GetString(nameof(Pago.NumeroPago)),
                         Fecha = reader.GetDateTime(nameof(Pago.Fecha)),
                         IdContrato = reader.GetInt32(nameof(Pago.IdContrato)),
@@ -73,11 +73,11 @@ public class RepositorioPago
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
 
-            cmd.CommandText = @"INSERT INTO Pago (Monto, Fecha, NumeroPago, IdContrato) 
-                            VALUES (@Monto, @Fecha, @IdContrato, @NumeroPago);
+            cmd.CommandText = @"INSERT INTO Pago (Importe, Fecha, NumeroPago, IdContrato) 
+                            VALUES (@Importe, @Fecha, @IdContrato, @NumeroPago);
                             SELECT LAST_INSERT_ID();";
 
-            cmd.Parameters.AddWithValue("@Monto", createPago.Monto);
+            cmd.Parameters.AddWithValue("@Importe", createPago.Importe);
             cmd.Parameters.AddWithValue("@NumeroPago", createPago.NumeroPago);
             cmd.Parameters.AddWithValue("@Fecha", createPago.Fecha);
             cmd.Parameters.AddWithValue("@IdContrato", createPago.IdContrato);
@@ -94,11 +94,11 @@ public class RepositorioPago
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
 
-            cmd.CommandText = @"UPDATE Pago SET Monto = @Monto, Fecha = @Fecha, IdContrato = @IdContrato, NumeroPago = @NumeroPago
+            cmd.CommandText = @"UPDATE Pago SET Importe = @Importe, Fecha = @Fecha, IdContrato = @IdContrato, NumeroPago = @NumeroPago
                             WHERE IdPago = @IdPago;";
 
             cmd.Parameters.AddWithValue("@IdPago", pago.IdPago);
-            cmd.Parameters.AddWithValue("@Monto", pago.Monto);
+            cmd.Parameters.AddWithValue("@Importe", pago.Importe);
             cmd.Parameters.AddWithValue("@NumeroPago", pago.NumeroPago);
             cmd.Parameters.AddWithValue("@Fecha", pago.Fecha);
             cmd.Parameters.AddWithValue("@IdContrato", pago.IdContrato);
