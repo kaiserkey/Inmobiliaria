@@ -15,7 +15,7 @@ public class RepositorioPago
         var pagos = new List<Pago>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT IdPago, Monto, Fecha, IdContrato
+            cmd.CommandText = @"SELECT IdPago, Monto, Fecha, NumeroPago, IdContrato
                             FROM Pago";
 
             using (var reader = cmd.ExecuteReader())
