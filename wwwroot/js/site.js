@@ -27,6 +27,8 @@ $(document).ready(function () {
     });
 });
 
+/* B */
+
 
 /* Buscar Propietarios */
 $(document).ready(function () {
