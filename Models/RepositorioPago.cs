@@ -67,7 +67,7 @@ public class RepositorioPago
         return null;
     }
 
-    public int createPago(MySqlDatabase mySqlDatabase, Pago createPago)
+    public int CreatePago(MySqlDatabase mySqlDatabase, Pago createPago)
     {
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
