@@ -31,18 +31,18 @@ $(document).ready(function () {
 $(document).ready(function () {
     $("#InquilinoBusqueda").on("input", function () {
         var busqueda = $("#InquilinoBusqueda").val();
-        $.getJSON("/Inmueble/BuscarInmuebles", { busqueda: busqueda }, function (resultados) {
+        $.getJSON("/Inquilino/BuscarInquilinos", { busqueda: busqueda }, function (resultados) {
             var options = '<option value="">Selecciona una opción</option>';
             $.each(resultados, function (index, resultado) {
                 options += '<option value="' + resultado.id + '">' + resultado.text + '</option>';
             });
-            $("#selectInmueble").html(options);
+            $("#selectInquilino").html(options);
         });
     });
 });
 $(document).ready(function () {
     // Escondemos el select al cargar la página
-    $("#selectInmueble").hide();
+    $("#selectInquilino").hide();
 
     // Cuando hacemos clic en el input, mostramos el select
     $("#InmuebleBusqueda").click(function () {
