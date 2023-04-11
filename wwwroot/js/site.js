@@ -111,7 +111,7 @@ $(document).ready(function () {
 
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModalInmueble() {
-    $('#modalBuscarInquilinos').modal('hide');
+    $('#modalBuscarInmuebles').modal('hide');
 }
 
 
