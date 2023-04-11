@@ -74,7 +74,7 @@ function cerrarModalInquilino() {
     $('#modalBuscarInquilinos').modal('hide');
 } 
 
-
+/* Modal  */
 
 /* 
 //buscar propietarios
