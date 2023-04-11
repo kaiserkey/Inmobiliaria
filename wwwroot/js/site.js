@@ -97,7 +97,7 @@ function buscarInquilino() {
 }
 
 function seleccionarInmueble(idInmueble) {
-    $('#IdInquilino').val(idInmueble);
+    $('#IdInmueble').val(idInmueble);
     $('#modalBuscarInquilinos').modal('hide');
 }
 
