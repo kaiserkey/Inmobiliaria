@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     $("#InmuebleBusqueda").on("input", function () {
-        var busqueda = $("#PropietarioBusqueda").val();
-        $.getJSON("/Inmueble/BuscarPropietarios", { busqueda: busqueda }, function (resultados) {
+        var busqueda = $("#InmuebleBusqueda").val();
+        $.getJSON("/Inmueble/BuscarInmuebles", { busqueda: busqueda }, function (resultados) {
             var options = '<option value="">Selecciona una opción</option>';
             $.each(resultados, function (index, resultado) {
                 options += '<option value="' + resultado.id + '">' + resultado.text + '</option>';
