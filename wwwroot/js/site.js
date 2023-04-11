@@ -10,11 +10,11 @@ function buscarPropietarios() {
         $('#tblPropietarios').empty();
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idPropietario +
-                        '</td><td>' + resultado.nombre + 
-                        '</td><td>' + resultado.apellido + 
-                        '</td><td>' + resultado.telefono +
-                        '</td><td>' + resultado.email +
-                        '</td><td><button type="button" class="btn btn-primary" onclick="seleccionarPropietario(' + resultado.idPropietario + ')">Seleccionar</button></td></tr>';
+                '</td><td>' + resultado.nombre +
+                '</td><td>' + resultado.apellido +
+                '</td><td>' + resultado.telefono +
+                '</td><td>' + resultado.email +
+                '</td><td><button type="button" class="btn btn-primary" onclick="seleccionarPropietario(' + resultado.idPropietario + ')">Seleccionar</button></td></tr>';
             $('#tblPropietarios').append(fila);
         });
     });
@@ -32,9 +32,9 @@ $(document).ready(function () {
 });
 
 // Función para cerrar el modal al hacer clic en el botón
-document.getElementById("btnCerrarModal").addEventListener("click", function() {
+document.getElementById("btnCerrarModal").addEventListener("click", function () {
     $('#modalBuscarPropietarios').modal('hide');
-  });
+});
 
 /* Buscar Propietarios */
 $(document).ready(function () {
