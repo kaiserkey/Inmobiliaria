@@ -46,7 +46,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                RepoContrato.CreateContrato(con, collection);
+                RepoContrato.CreateContrato(con, contrato);
                 TempData["Id"] = contrato.IdContrato;
 
                 return RedirectToAction(nameof(Index));
