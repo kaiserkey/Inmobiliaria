@@ -139,8 +139,8 @@ public class RepositorioContrato
 
     public int UpdateContrato(MySqlDatabase mySqlDatabase, Contrato contrato)
     {
-        var fechaInicioFormat = contrato.FechaInicio?.ToString("yyyy-MM-dd HH:mm:ss");
-        var fechaFinFormat = contrato.FechaFin?.ToString("yyyy-MM-dd HH:mm:ss");
+        var fechaInicioFormat = contrato.FechaInicio.ToString("yyyy-MM-dd HH:mm:ss");
+        var fechaFinFormat = contrato.FechaFin.ToString("yyyy-MM-dd HH:mm:ss");
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
