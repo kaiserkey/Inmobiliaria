@@ -1,3 +1,4 @@
+using Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -129,7 +130,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                CO
+                Console.WriteLine()
                 int res = RepoContrato.DeleteContrato(con, id);
                 TempData["Mensaje"] = "La entidad se ha elimino correctamente.";
                 return RedirectToAction(nameof(Index));
