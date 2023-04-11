@@ -146,7 +146,7 @@ public class RepositorioInmueble
         return res;
     }
 
-    public List<Inmueble> BuscarInmueble(MySqlDatabase mySqlDatabase, int busqueda)
+    public List<Inmueble> BuscarInmueble(MySqlDatabase mySqlDatabase, string busqueda)
     {
         var inmuebles = new List<Inmueble>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
