@@ -6,9 +6,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 public class Pago
 {
     public int IdPago { get; set; }
+
+    [Display (Name = "Fecha")]
     public DateTime Fecha { get; set; }
 
-    
+    [Display (Name = "Importe")]
     public decimal Importe { get; set; }
 
     [Display (Name = "Número de Pago")]
