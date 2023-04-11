@@ -42,12 +42,12 @@ namespace Inmobiliaria.Controllers
         // POST: Contrato/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(COntrato )
         {
             try
             {
                 RepoContrato.CreateContrato(con, collection);
-                
+                TempData["Id"] = 
 
                 return RedirectToAction(nameof(Index));
             }
