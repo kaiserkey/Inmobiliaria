@@ -14,7 +14,7 @@ namespace Inmobiliaria.Controllers
         private readonly RepositorioInmueble RepoInmueble;
         private readonly RepositorioContrato RepoContrato;
 
-        private readonly RepositorioIn
+        private readonly RepositorioInquilino RepoInquilino;
         public ContratoController() { 
             con = new MySqlDatabase(); 
             RepoInmueble = new RepositorioInmueble();
