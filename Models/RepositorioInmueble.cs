@@ -157,7 +157,7 @@ public class RepositorioInmueble
                             FROM Inmueble 
                             WHERE Tipo LIKE @busqueda AND Activo = 1";
             
-            /* cmd.Parameters.AddWithValue("@buscarPor", buscarPor); */
+            cmd.Parameters.AddWithValue("@buscarPor", buscarPor);
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             using (var reader = cmd.ExecuteReader())
             {
