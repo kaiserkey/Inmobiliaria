@@ -11,7 +11,21 @@ $(document).ready(function () {
         });
     });
 });
+$(document).ready(function () {
+    // Escondemos el select al cargar la página
+    $("#selectPropietario").hide();
 
+    // Cuando hacemos clic en el input, mostramos el select
+    $("#PropietarioBusqueda").click(function () {
+        $("#selectPropietario").show();
+    });
+
+    // Cuando seleccionamos una opción del select, la agregamos al input
+    $("#selectPropietario").change(function () {
+        var selectedOption = $("#selectPropietario option:selected").text();
+        $("#PropietarioBusqueda").val(selectedOption);
+    });
+});
 
 
 /* Buscar Propietarios */
