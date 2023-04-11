@@ -51,7 +51,7 @@
                 <div class="form-group">
                     <label asp-for="IdPropietario" class="control-label"></label>
                     <div class="input-group">
-                        <input type="text" id="IdPropietario" class="form-control" />
+                        <input type="text" id="IdPropietario" asp-for="IdPropietario" class="form-control" disabled/>
                         <span class="input-group-addon" id="lupa" style="cursor:pointer" onclick="abrirModal()">
                             <i class="bi bi-search-heart-fill" style="font-size: 1.5em; color: #8a5a41;"></i>
                         </span>
