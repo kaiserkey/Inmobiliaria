@@ -18,7 +18,7 @@ public class Contrato
     public int IdInquilino{ get; set; }
 
     [ForeignKey( nameof( IdInquilino ) ) ]
-    public Propietario Propietario{ get; set; }
+    public Inquilino Inquilino{ get; set; }
 
     [Display( Name = "Fecha de Inicio" )]
     public DateTime FechaInicio { get; set; }
