@@ -93,7 +93,7 @@ namespace Inmobiliaria.Controllers
             {
                 idInmueble = i.IdInmueble,
                 tipo = i.Tipo,
-                
+                coo
             });
 
             return Json(resultados);
