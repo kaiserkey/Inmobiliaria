@@ -131,7 +131,7 @@ public class RepositorioContrato
             cmd.Parameters.AddWithValue("@IdInquilino", CreateContrato.IdInquilino);
             cmd.Parameters.AddWithValue("@IdInmueble", CreateContrato.IdInmueble);
             cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioFormat);
-            cmd.Parameters.AddWithValue("@FechaFin", fechaFin);
+            cmd.Parameters.AddWithValue("@FechaFin", fechaFinFormat);
 
             res = Convert.ToInt32(cmd.ExecuteScalar());
             CreateContrato.IdContrato = res;
