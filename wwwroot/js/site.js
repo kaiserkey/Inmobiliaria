@@ -42,7 +42,7 @@ function abrirModalInquilino() {
     $('#tblInquilinos').empty();
 }
 
-function buscarPropietarios() {
+function buscarInquilino() {
     var nombre = $('#txtBuscar').val();
     $.getJSON('/Contrato/BuscarInquilinos', { busqueda: nombre }, function (resultados) {
         $('#tblInquilinos').empty();
@@ -58,8 +58,8 @@ function buscarPropietarios() {
     });
 }
 
-function seleccionarPropietario(idPropietario) {
-    $('#IdPropietario').val(idPropietario);
+function seleccionarInquilino(idInquilino) {
+    $('#IdInquilino').val(idInquilino);
     $('#modalBuscarInquilino').modal('hide');
 }
 
