@@ -35,7 +35,8 @@ namespace Inmobiliaria.Controllers
         public ActionResult Details(int id)
         {
             Contrato contrato = RepoContrato.GetContrato(con, id);
-            return View();
+
+            return View(contrato);
         }
 
         // GET: Contrato/Create
