@@ -7,6 +7,7 @@ namespace Inmobiliaria.Models;
 public class RepositorioPago {
     public RepositorioPago() {
     }
+
     
 
 
