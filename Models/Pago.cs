@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 public class Pago
 {
-        public int IdPago { get; set; }
+    public int IdPago { get; set; }
     public int IdContrato { get; set; }
     public DateTime Fecha { get; set; }
     public decimal Monto { get; set; }
