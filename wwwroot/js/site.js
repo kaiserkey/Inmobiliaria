@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    $("#PropietarioBusqueda").on("input", function () {
+    $("#InmuebleBusqueda").on("input", function () {
         var busqueda = $("#PropietarioBusqueda").val();
         $.getJSON("/Inmueble/BuscarPropietarios", { busqueda: busqueda }, function (resultados) {
             var options = '<option value="">Selecciona una opción</option>';
