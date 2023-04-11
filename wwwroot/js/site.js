@@ -31,7 +31,7 @@ $(document).ready(function () {
     });
 });
 
-/* Abrir Modal de buscar propietario */
+/* Abrir Modal de buscar inquilino */
 function abrirModal() {
     $('#modalBuscarPropietarios').modal('show');
     $('#tblPropietarios').empty();
