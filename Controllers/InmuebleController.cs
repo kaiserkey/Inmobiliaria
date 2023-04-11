@@ -76,7 +76,7 @@ namespace Inmobiliaria.Controllers
 
             var resultados = propietarios.Select(p => new
             {
-                IdPropietario = p.IdPropietario,
+                idP = p.IdPropietario,
                 nombre = p.Nombre,
                 apellido = p.Apellido,
                 telefono = p.Telefono,
