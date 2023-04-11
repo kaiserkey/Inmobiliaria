@@ -10,7 +10,14 @@ namespace Inmobiliaria.Controllers
     public class ContratoController : Controller
     {
 
-        
+        private MySqlDatabase con { get; set; }
+        private readonly RepositorioInmueble RepoInmueble;
+        private readonly RepositorioPropietario RepoPropietario;
+        public ContratoController() { 
+            con = new MySqlDatabase(); 
+            RepoInmueble = new RepositorioInmueble();
+            RepoPropietario = new RepositorioPropietario();
+        }
         // GET: Contrato
         public ActionResult Index()
         {
