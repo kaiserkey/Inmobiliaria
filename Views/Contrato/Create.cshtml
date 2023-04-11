@@ -13,7 +13,6 @@
                 </a>
                 <p class="h3 mb-4">Crear Nuevo Contrato</p>
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
                 <!-- Inmueble text input -->
                 <div class="form-group">
                     <label asp-for="IdInmueble" class="control-label"></label>
@@ -107,7 +106,14 @@
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label>Ingresa un nombre y apellido para buscar</label>
-                                    <input type="text" id="txtBuscar" class="form-control" />
+                                    <div class="input-group">
+                                        <input type="text" id="txtBuscar" class="form-control" />
+                                        <div class="input-group-append">
+                                            <button id="boton-general" class="btn btn-primary" type="button"
+                                                onclick="buscarInquilino()">Buscar</button>
+                                        </div>
+                                    </div>
+
                                 </div>
                                 <div class="table-responsive mw-100">
                                     <table class="table table-striped d-inline-block">
