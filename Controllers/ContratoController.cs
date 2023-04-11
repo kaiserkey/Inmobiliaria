@@ -89,7 +89,7 @@ namespace Inmobiliaria.Controllers
         // GET: Contrato/Edit/5
         public ActionResult Edit(int id)
         {
-            RepoContrato.GetContrato(con, id);
+            Contrato contratoRepoContrato.GetContrato(con, id);
             return View();
         }
 
