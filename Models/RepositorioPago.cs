@@ -100,7 +100,6 @@ public class RepositorioPago
             cmd.Parameters.AddWithValue("@IdPago", pago.IdPago);
             cmd.Parameters.AddWithValue("@Monto", pago.Monto);
             cmd.Parameters.AddWithValue("@Fecha", pago.Fecha);
-            cmd.Parameters.AddWithValue("@Descripcion", pago.Descripcion);
             cmd.Parameters.AddWithValue("@IdContrato", pago.IdContrato);
 
             res = cmd.ExecuteNonQuery();
