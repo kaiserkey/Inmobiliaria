@@ -35,7 +35,7 @@ $(document).ready(function () {
 function cerrarModal() {
     $('#modalBuscarPropietarios').modal('hide');
 }
-
+/* 
 /* Buscar Propietarios */
 $(document).ready(function () {
     $("#PropietarioBusqueda").on("input", function () {
@@ -63,7 +63,7 @@ $(document).ready(function () {
         var selectedOption = $("#selectPropietario option:selected").text();
         $("#PropietarioBusqueda").val(selectedOption);
     });
-});
+}); */
 
 /* Buscar Inmuebles */
 $(document).ready(function () {
