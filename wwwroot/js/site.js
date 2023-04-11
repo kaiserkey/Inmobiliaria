@@ -1,6 +1,6 @@
 ﻿/* Abrir Modal de buscar propietario */
 function abrirModal() {
-    $('#myModal').modal('show');
+    $('#modalBuscarPropietarios').modal('show');
     $('#tblPropietarios').empty();
 }
 
