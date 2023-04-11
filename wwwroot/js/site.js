@@ -31,7 +31,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $("#InquilinoBusqueda").on("input", function () {
         var busqueda = $("#InquilinoBusqueda").val();
-        $.getJSON("/Inquilino/BuscarInquilinos", { busqueda: busqueda }, function (resultados) {
+        $.getJSON("/Contrato/BuscarInquilinos", { busqueda: busqueda }, function (resultados) {
             var options = '<option value="">Selecciona una opción</option>';
             $.each(resultados, function (index, resultado) {
                 options += '<option value="' + resultado.id + '">' + resultado.text + '</option>';
