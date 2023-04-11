@@ -42,7 +42,8 @@
                     @Html.DisplayFor(modelItem => item.IdInmueble)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.IdInquilino)
+                    @Html.DisplayFor(modelItem => item.Inquilino.Nombre)
+                    @Html.DisplayFor(modelItem => item.Inquilino.Apellido)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.FechaInicio)

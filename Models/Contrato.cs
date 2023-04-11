@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 public class Contrato
 {
-    [Display( Name = "Contrato" )]
+    [Display( Name = "Codigo" )]
     public int IdContrato { get; set; }
 
     [Display( Name = "Inmueble" ) ]
