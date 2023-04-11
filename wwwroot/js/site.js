@@ -12,6 +12,7 @@ function buscarPropietarios() {
             var fila = '<tr><td>' + resultado.IdPropietario +
                         '</td><td>' + resultado.Nombre + 
                         '</td><td>' + resultado.Apellido + 
+                        '</td><td>' + resultado.Dni +
                         '</td><td><button type="button" class="btn btn-primary" onclick="seleccionarPropietario(' + resultado.IdPropietario + ')">Seleccionar</button></td></tr>';
             $('#tblPropietarios').append(fila);
         });
