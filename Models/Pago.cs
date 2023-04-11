@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 public class Pago
 {
+    [Display]
     public int IdPago { get; set; }
 
     [Display (Name = "Fecha")]
