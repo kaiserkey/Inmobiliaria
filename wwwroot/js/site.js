@@ -75,7 +75,7 @@ function cerrarModalInquilino() {
 } 
 
 /* Abrir Modal de buscar inmuebles */
-function abrirModalInquilino() {
+function abrirModalINmueble() {
     $('#modalBuscarInquilinos').modal('show');
     $('#tblInquilinos').empty();
 }
