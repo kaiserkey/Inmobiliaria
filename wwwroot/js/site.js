@@ -83,7 +83,7 @@ function abrirModalInmueble() {
 function buscarInquilino() {
     var nombre = $('#txtBuscar').val();
     $.getJSON('/Contrato/BuscarInmuebles', { busqueda: nombre }, function (resultados) {
-        $('#tblInquilinos').empty();
+        $('#tblInmuebles').empty();
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idInquilino +
                 '</td><td>' + resultado.nombre +
