@@ -1,12 +1,6 @@
+using Internal;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
-namespace Inmobiliaria.Models
-{
-    public class RepositorioPago
-    {
-        
-    }
-}
+namespace Inmobiliaria.Models;
+
