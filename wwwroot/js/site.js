@@ -33,7 +33,7 @@ $(document).ready(function () {
 
 /* Abrir Modal de buscar inquilino */
 function abrirModal() {
-    $('#modalBuscarPropietarios').modal('show');
+    $('#modalBuscarINquilin').modal('show');
     $('#tblPropietarios').empty();
 }
 
