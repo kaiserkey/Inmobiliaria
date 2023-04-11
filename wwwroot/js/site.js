@@ -70,7 +70,7 @@ $(document).ready(function () {
 });
 
 // Función para cerrar el modal al hacer clic en el botón
-function cerrarModalInquilino() {
+function cerrarModalInmueble() {
     $('#modalBuscarInquilinos').modal('hide');
 } 
 
