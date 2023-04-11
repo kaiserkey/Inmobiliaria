@@ -41,7 +41,7 @@ public class RepositorioPago
     {
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT IdPago, Monto, Fecha, Descripcion, IdContrato
+            cmd.CommandText = @"SELECT IdPago, Monto, Fecha, IdContrato
                             FROM Pago
                             WHERE IdPago = @IdPago";
             cmd.Parameters.AddWithValue("@IdPago", id);
@@ -71,7 +71,7 @@ public class RepositorioPago
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
 
-            cmd.CommandText = @"INSERT INTO Pago (Monto, Fecha, Descripcion, IdContrato) 
+            cmd.CommandText = @"INSERT INTO Pago (Monto, Fecha,, IdContrato) 
                             VALUES (@Monto, @Fecha, @IdContrato);
                             SELECT LAST_INSERT_ID();";
 
