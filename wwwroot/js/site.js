@@ -1,4 +1,7 @@
-﻿/* Buscar Inmuebles */
+﻿/* Abrir */
+
+
+/* Buscar Inmuebles */
 $(document).ready(function () {
     $("#InmuebleBusqueda").on("input", function () {
         var busqueda = $("#InmuebleBusqueda").val();
