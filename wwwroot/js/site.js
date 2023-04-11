@@ -60,7 +60,7 @@ function buscarInquilino() {
 
 function seleccionarInquilino(idInquilino) {
     $('#IdInquilino').val(idInquilino);
-    $('#modalBuscarInquilino').modal('hide');
+    $('#modalBuscarInquilinos').modal('hide');
 }
 
 $(document).ready(function () {
@@ -71,7 +71,7 @@ $(document).ready(function () {
 
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModalInquilino() {
-    $('#modalBuscarInquilino').modal('hide');
+    $('#modalBuscarInquilinos').modal('hide');
 } 
 
 
