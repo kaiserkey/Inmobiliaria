@@ -74,7 +74,39 @@ function cerrarModalInquilino() {
     $('#modalBuscarInquilinos').modal('hide');
 } 
 
-/* Abrir Modal de bus */
+/* Abrir Modal de buscar inmuebles */
+function abrirModalInquilino() {
+    $('#modalBuscarInquilinos').modal('show');
+    $('#tblInquilinos').empty();
+}
+
+function buscarInquilino() {
+    var nombre = $('#txtBuscar').val();
+    $.getJSON('/Contrato/BuscarInquilinos', { busqueda: nombre }, function (resultados) {
+        $('#tblInquilinos').empty();
+        $.each(resultados, function (index, resultado) {
+            var fila = '<tr><td>' + resultado.idInquilino +
+                '</td><td>' + resultado.nombre +
+                '</td><td>' + resultado.apellido +
+                '</td><td>' + resultado.telefono +
+                '</td><td>' + resultado.email +
+                '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarInquilino(' + resultado.idInquilino + ')">Seleccionar</button></td></tr>';
+            $('#tblInquilinos').append(fila);
+        });
+    });
+}
+
+function seleccionarInquilino(idInquilino) {
+    $('#IdInquilino').val(idInquilino);
+    $('#modalBuscarInquilinos').modal('hide');
+}
+
+$(document).ready(function () {
+    $('#txtBuscar').on('input', function () {
+        buscarInquilino();
+    });
+});
+
 
 /* 
 //buscar propietarios
