@@ -4,4 +4,4 @@ using MySql.Data.MySqlClient;
 
 namespace Inmobiliaria.Models;
 
-publñic 
+public class Pago 
