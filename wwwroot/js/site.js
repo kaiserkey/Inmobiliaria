@@ -1,4 +1,4 @@
-﻿/* BU */
+﻿/* Buscar Inmuebles */
 $(document).ready(function () {
     $("#InmuebleBusqueda").on("input", function () {
         var busqueda = $("#InmuebleBusqueda").val();
@@ -14,7 +14,7 @@ $(document).ready(function () {
 
 
 
-
+/* Buscar Propietarios */
 $(document).ready(function () {
     $("#PropietarioBusqueda").on("input", function () {
         var busqueda = $("#PropietarioBusqueda").val();
