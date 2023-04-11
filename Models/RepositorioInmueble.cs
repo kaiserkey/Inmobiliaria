@@ -155,9 +155,9 @@ public class RepositorioInmueble
             Console.WriteLine(busqueda);
             cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario 
                             FROM Inmueble 
-                            WHERE @buscarPor LIKE @busqueda AND Activo = 1";
+                            WHERE T LIKE @busqueda AND Activo = 1";
             
-            cmd.Parameters.AddWithValue("@buscarPor", buscarPor);
+            /* cmd.Parameters.AddWithValue("@buscarPor", buscarPor); */
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             using (var reader = cmd.ExecuteReader())
             {
