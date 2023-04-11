@@ -300,7 +300,7 @@ tbody{
 
 /* Modales de busquedas */
 .modal-body {
-    max-height: 800vp;
+    max-width: 800vp;
     overflow-y: auto;
 }
 
