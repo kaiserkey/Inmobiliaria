@@ -23,8 +23,8 @@ namespace Inmobiliaria.Controllers
         // GET: Contrato
         public ActionResult Index()
         {
-            
-            return View();
+            var listaContratos = RepoContrato.GetContratos(con);
+            return View(listaContratos);
         }
 
         // GET: Contrato/Details/5
