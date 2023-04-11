@@ -9,8 +9,8 @@ function buscarPropietarios() {
     $.getJSON('/Inmueble/BuscarPropietarios', { busqueda: nombre }, function (resultados) {
         $('#tblPropietarios').empty();
         $.each(resultados, function (index, resultado) {
-            var fila = '<tr><td>' 
-            '</td><td>' + resultado.Nombre + 
+            var fila = '<tr><td>' +
+                        '</td><td>' + resultado.Nombre + 
                         '</td><td>' + resultado.Apellido + 
                         '</td><td><button type="button" class="btn btn-primary" onclick="seleccionarPropietario(' + resultado.IdPropietario + ')">Seleccionar</button></td></tr>';
             $('#tblPropietarios').append(fila);
