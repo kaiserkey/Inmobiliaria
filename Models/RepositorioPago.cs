@@ -73,7 +73,7 @@ public class RepositorioPago
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
 
-            cmd.CommandText = @"INSERT INTO Pago (Monto, Fecha, IdContrato) 
+            cmd.CommandText = @"INSERT INTO Pago (Monto, Fecha, NumeroPago, IdContrato) 
                             VALUES (@Monto, @Fecha, @IdContrato);
                             SELECT LAST_INSERT_ID();";
 
