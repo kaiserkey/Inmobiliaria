@@ -4,6 +4,28 @@ function abrirModal() {
     $('#tblPropietarios').empty();
 }
 
+$(document).ready(function () {
+    $("#buscarPropietariosBtn").on("click", function () {
+        var nombre = $('#IdPropietario').val();
+        $.get('/Propietarios/Buscar', { nombre: nombre }, function (data) {
+            $('#tblPropietarios').empty();
+            $.each(data, function (i, propietario) {
+                var fila = '<tr><td>' + propietario.Nombre + '</td><td>' + propietario.Apellido + '</td><td><button type="button" class="btn btn-primary" onclick="seleccionarPropietario(' + propietario.IdPropietario + ')">Seleccionar</button></td></tr>';
+                $('#tblPropietarios').append(fila);
+            });
+        });
+    });
+
+    function seleccionarPropietario(idPropietario) {
+        $('#IdPropietario').val(idPropietario);
+        $('#myModal').modal('hide');
+    }
+
+    $('#IdPropietario').on('input', function () {
+        buscarPropietarios();
+    });
+});
+
 
 /* Buscar Inmuebles */
 $(document).ready(function () {
