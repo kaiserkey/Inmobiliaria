@@ -65,7 +65,7 @@ $(document).ready(function () {
     });
 }); */
 
-/* Buscar Inmuebles */
+/* /* Buscar Inmuebles */
 $(document).ready(function () {
     $("#InmuebleBusqueda").on("input", function () {
         var busqueda = $("#InmuebleBusqueda").val();
@@ -94,7 +94,6 @@ $(document).ready(function () {
     });
 });
 
-/* Buscar Inquilinos */
 $(document).ready(function () {
     $("#InquilinoBusqueda").on("input", function () {
         var busqueda = $("#InquilinoBusqueda").val();
@@ -121,7 +120,7 @@ $(document).ready(function () {
         var selectedOption = $("#selectInquilino option:selected").text();
         $("#InquilinoBusqueda").val(selectedOption);
     });
-});
+}); */
 
 /* Mostrar modales de mensajes */
 $(document).ready(function () {
