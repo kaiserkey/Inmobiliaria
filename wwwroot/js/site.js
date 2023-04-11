@@ -42,6 +42,8 @@ $(document).ready(function () {
         $("#PropietarioBusqueda").val(selectedOption);
     });
 });
+
+
 $(document).ready(function () {
     $('#modalOK').modal('show');
     setTimeout(function () {
