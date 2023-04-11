@@ -5,5 +5,5 @@ using MySql.Data.MySqlClient;
 namespace Inmobiliaria.Models;
 
 public class Pago {
-    public pago
+    public RepositorioPago
 }
