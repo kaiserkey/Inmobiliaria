@@ -4,4 +4,6 @@ using MySql.Data.MySqlClient;
 
 namespace Inmobiliaria.Models;
 
-public class Pago 
+public class Pago {
+    public pago
+}
