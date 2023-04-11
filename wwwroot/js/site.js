@@ -29,8 +29,8 @@ $(document).ready(function () {
 
 /* Buscar Inquilinos */
 $(document).ready(function () {
-    $("#IBusqueda").on("input", function () {
-        var busqueda = $("#InmuebleBusqueda").val();
+    $("#InquilinoBusqueda").on("input", function () {
+        var busqueda = $("#InquilinoBusqueda").val();
         $.getJSON("/Inmueble/BuscarInmuebles", { busqueda: busqueda }, function (resultados) {
             var options = '<option value="">Selecciona una opción</option>';
             $.each(resultados, function (index, resultado) {
