@@ -93,7 +93,8 @@ namespace Inmobiliaria.Controllers
             {
                 idInmueble = i.IdInmueble,
                 tipo = i.Tipo,
-                coordenadas = i.C
+                coordenadas = i.Coordenadas,
+                
             });
 
             return Json(resultados);
