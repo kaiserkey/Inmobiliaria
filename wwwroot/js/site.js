@@ -1,4 +1,8 @@
 ﻿/* Abrir Modal de buscar propietario */
+function abrirModal() {
+    $('#myModal').modal('show');
+    $('#tblPropietarios').empty();
+}
 
 
 /* Buscar Inmuebles */

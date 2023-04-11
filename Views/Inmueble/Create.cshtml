@@ -57,6 +57,40 @@
                     </div>
                     <span asp-validation-for="IdPropietario" class="text-danger"></span>
                 </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Buscar Propietario</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label>Nombre del Propietario:</label>
+                                    <input type="text" id="txtBuscar" class="form-control" />
+                                </div>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Codigo</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Telefono</th>
+                                            <th>Email</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblPropietarios">
+                                        <!-- Aquí van los datos... -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 @* <div class="form-group">
                 <label asp-for="IdPropietario" class="control-label"></label>
                 <input type="text" id="PropietarioBusqueda" placeholder="Escribe un nombre para buscar"
