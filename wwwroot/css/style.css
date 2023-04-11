@@ -298,7 +298,11 @@ tbody{
     text-align: center;
 }
 
-/* Moda */
+/* Modales de busquedas */
+.modal-body {
+    max-height: calc(100vh - 300px); /* Adjust the value to your needs */
+    overflow-y: auto;
+}
 
 
 
