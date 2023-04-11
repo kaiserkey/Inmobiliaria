@@ -4,23 +4,23 @@ function abrirModal() {
     $('#tblPropietarios').empty();
 }
 
-$(document).ready(function () {
-    $("#buscarPropietariosBtn").on("click", function () {
-        var nombre = $('#IdPropietario').val();
-        $.get('/Propietarios/Buscar', { nombre: nombre }, function (data) {
-            $('#tblPropietarios').empty();
-            $.each(data, function (i, propietario) {
-                var fila = '<tr><td>' + propietario.Nombre + '</td><td>' + propietario.Apellido + '</td><td><button type="button" class="btn btn-primary" onclick="seleccionarPropietario(' + propietario.IdPropietario + ')">Seleccionar</button></td></tr>';
-                $('#tblPropietarios').append(fila);
-            });
+function buscarPropietarios() {
+    var nombre = $('#txtBuscar').val();
+    $.getJSON('/Inmueble/BuscarPropietarios', { busqueda: nombre }, function (resultados) {
+        $('#tblPropietarios').empty();
+        $.each(resultados, function (index, resultado) {
+            var fila = '<tr><td>' + resultado.Nombre + '</td><td>' + resultado.Apellido + '</td><td><button type="button" class="btn btn-primary" onclick="seleccionarPropietario(' + resultado.IdPropietario + ')">Seleccionar</button></td></tr>';
+            $('#tblPropietarios').append(fila);
         });
     });
+}
 
-    function seleccionarPropietario(idPropietario) {
-        $('#IdPropietario').val(idPropietario);
-        $('#myModal').modal('hide');
-    }
+function seleccionarPropietario(idPropietario) {
+    $('#IdPropietario').val(idPropietario);
+    $('#modalBuscarPropietarios').modal('hide');
+}
 
+$(document).ready(function () {
     $('#IdPropietario').on('input', function () {
         buscarPropietarios();
     });
