@@ -156,7 +156,7 @@ public class RepositorioInmueble
             cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario 
                             FROM Inmueble 
                             WHERE @buscarPor LIKE @busqueda AND Activo = 1";
-
+            /* INtentar parce */
             cmd.Parameters.AddWithValue("@buscarPor", buscarPor);
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             using (var reader = cmd.ExecuteReader())
