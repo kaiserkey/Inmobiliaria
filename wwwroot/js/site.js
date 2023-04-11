@@ -17,7 +17,7 @@ $(document).ready(function () {
 
     // Cuando hacemos clic en el input, mostramos el select
     $("#InmuebleBusqueda").click(function () {
-        $("#selectPropietario").show();
+        $("#selectInmueble").show();
     });
 
     // Cuando seleccionamos una opción del select, la agregamos al input
