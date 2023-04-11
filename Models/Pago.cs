@@ -1,12 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+namespace Inmobiliaria.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Inmobiliaria.Models
+public class Contrato
 {
-    public class Pago
-    {
-        
-    }
+    
 }
