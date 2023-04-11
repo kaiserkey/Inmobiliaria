@@ -80,7 +80,7 @@ function abrirModalInmueble() {
     $('#tblInmuebles').empty();
 }
 
-function buscarInquilino() {
+function buscarInmueble() {
     var nombre = $('#txtBuscar').val();
     $.getJSON('/Contrato/BuscarInmuebles', { busqueda: nombre }, function (resultados) {
         $('#tblInmuebles').empty();
