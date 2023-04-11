@@ -72,7 +72,8 @@ namespace Inmobiliaria.Controllers
             var resultados = inquilinos.Select(i => new
             {
                 idInquilino = i.IdInquilino,
-                text = i.Nombre + " " + i.Apellido
+                nombre = i.Nombre 
+                api.Apellido
             });
 
             return Json(resultados);
