@@ -56,7 +56,20 @@ namespace Inmobiliaria.Controllers
             }
         }
 
-        
+        //obtener propietarios por JQuery
+        public IActionResult BuscarPropietarios(string busqueda)
+        {
+            var propietarios = new List<Propietario>();
+            propietarios = RepoPropietario.BuscarPropietario(con, busqueda);
+
+            var resultados = propietarios.Select(p => new
+            {
+                id = p.IdPropietario,
+                text = p.Nombre + " " + p.Apellido
+            });
+
+            return Json(resultados);
+        }
 
         // GET: Contrato/Edit/5
         public ActionResult Edit(int id)
