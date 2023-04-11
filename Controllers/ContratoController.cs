@@ -23,7 +23,7 @@ namespace Inmobiliaria.Controllers
         // GET: Contrato
         public ActionResult Index()
         {
-
+            
             return View();
         }
 
