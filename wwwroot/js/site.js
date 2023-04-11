@@ -21,7 +21,7 @@ function seleccionarPropietario(idPropietario) {
 }
 
 $(document).ready(function () {
-    $('#IdPropietario').on('input', function () {
+    $('#txtBuscar').on('input', function () {
         buscarPropietarios();
     });
 });
