@@ -152,7 +152,6 @@ public class RepositorioInmueble
         var inmuebles = new List<Inmueble>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            Console.WriteLine(busqueda);
             cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario 
                             FROM Inmueble 
                             WHERE " + buscarPor + " LIKE @busqueda AND Activo = 1";
