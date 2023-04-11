@@ -78,7 +78,7 @@ public class RepositorioPago
                             SELECT LAST_INSERT_ID();";
 
             cmd.Parameters.AddWithValue("@Monto", CreatePago.Monto);
-            
+            cmd.Parameters.AddWithValue("@NumeroPago", CreatePago.NumeroPago);
             cmd.Parameters.AddWithValue("@Fecha", CreatePago.Fecha);
             cmd.Parameters.AddWithValue("@IdContrato", CreatePago.IdContrato);
 
