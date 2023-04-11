@@ -72,6 +72,8 @@ namespace Inmobiliaria.Controllers
             return Json(resultados);
         }
 
+        //obtener Inmuebles por JQuery
+
         // GET: Contrato/Edit/5
         public ActionResult Edit(int id)
         {
