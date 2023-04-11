@@ -21,9 +21,9 @@ $(document).ready(function () {
     });
 
     // Cuando seleccionamos una opción del select, la agregamos al input
-    $("#selectPropietario").change(function () {
-        var selectedOption = $("#selectPropietario option:selected").text();
-        $("#PropietarioBusqueda").val(selectedOption);
+    $("#selectInmueble").change(function () {
+        var selectedOption = $("#selectInmueble option:selected").text();
+        $("#InmuebleBusqueda").val(selectedOption);
     });
 });
 
