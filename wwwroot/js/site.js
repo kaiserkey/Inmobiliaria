@@ -35,9 +35,6 @@ $(document).ready(function () {
 function cerrarModal() {
     $('#modalBuscarPropietarios').modal('hide');
 }
-/* document.getElementById("btnCerrarModal").addEventListener("click", function () {
-    $('#modalBuscarPropietarios').modal('hide');
-}); */
 
 /* Buscar Propietarios */
 $(document).ready(function () {
