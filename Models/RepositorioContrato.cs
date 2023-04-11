@@ -118,8 +118,8 @@ public class RepositorioContrato
 
     public int CreateContrato(MySqlDatabase mySqlDatabase, Contrato CreateContrato)
     {
-        var fechaInicio = CreateContrato.FechaInicio.ToString("yyyy-MM-dd HH:mm:ss");
-        var fechaFin = CreateContrato.FechaFin.ToString("yyyy-MM-dd HH:mm:ss");
+        var fechaInicioFormat = CreateContrato.FechaInicio.ToString("yyyy-MM-dd HH:mm:ss");
+        var fechaFinFormat = CreateContrato.FechaFin.ToString("yyyy-MM-dd HH:mm:ss");
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
@@ -130,7 +130,7 @@ public class RepositorioContrato
 
             cmd.Parameters.AddWithValue("@IdInquilino", CreateContrato.IdInquilino);
             cmd.Parameters.AddWithValue("@IdInmueble", CreateContrato.IdInmueble);
-            cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio);
+            cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioFormat);
             cmd.Parameters.AddWithValue("@FechaFin", fechaFin);
 
             res = Convert.ToInt32(cmd.ExecuteScalar());
