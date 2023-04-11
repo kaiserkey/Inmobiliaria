@@ -118,7 +118,7 @@ namespace Inmobiliaria.Controllers
         // GET: Contrato/Delete/5
         public ActionResult Delete(int id)
         {
-            Contrato
+            Contrato contrato = RepoContrato.GetContrato(con, id);
             return View();
         }
 
