@@ -34,7 +34,7 @@ $(document).ready(function () {
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModal() {
     $('#modalBuscarPropietarios').modal('hide');
-} 
+}
 
 /* Abrir Modal de buscar inquilino */
 function abrirModalInquilino() {
@@ -72,7 +72,7 @@ $(document).ready(function () {
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModalInquilino() {
     $('#modalBuscarInquilinos').modal('hide');
-} 
+}
 
 /* Abrir Modal de buscar inmuebles */
 function abrirModalInmueble() {
@@ -81,8 +81,9 @@ function abrirModalInmueble() {
 }
 
 function buscarInmueble() {
-    var nombre = $('#txtBuscar').val();
-    $.getJSON('/Contrato/BuscarInmuebles', { busqueda: nombre }, function (resultados) {
+    var busqueda = $('#txtBuscar').val();
+    var opcion = $('#buscarInmueblePor').val();
+    $.getJSON('/Contrato/BuscarInmuebles', { busqueda: busqueda, opcion: opcion }, function (resultados) {
         $('#tblInmuebles').empty();
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idInmueble +
