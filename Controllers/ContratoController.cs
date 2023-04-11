@@ -119,7 +119,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Delete(int id)
         {
             Contrato contrato = RepoContrato.GetContrato(con, id);
-            return View();
+            return View(contrato);
         }
 
         // POST: Contrato/Delete/5
