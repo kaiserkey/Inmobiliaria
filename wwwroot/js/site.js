@@ -38,8 +38,6 @@ $(document).ready(function () {
 function cerrarModal() {
     $('#modalBuscarInquilino').modal('hide');
 } 
-/* 
-//buscar propietarios
 /* Abrir Modal de buscar inquilino */
 /* function abrirModal() {
     $('#modalBuscarInquilino').modal('show');
@@ -72,6 +70,8 @@ $(document).ready(function () {
         buscarPropietarios();
     });
 });*/
+/* 
+//buscar propietarios
 $(document).ready(function () {
     $("#PropietarioBusqueda").on("input", function () {
         var busqueda = $("#PropietarioBusqueda").val();
