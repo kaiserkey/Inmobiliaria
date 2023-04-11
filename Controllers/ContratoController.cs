@@ -87,6 +87,7 @@ namespace Inmobiliaria.Controllers
         public IActionResult BuscarInmuebles(string busqueda, string opcion)
         {
             var inmuebles = new List<Inmueble>();
+            Console.
             inmuebles = RepoInmueble.BuscarInmueble(con, busqueda, opcion);
 
             var resultados = inmuebles.Select(i => new
