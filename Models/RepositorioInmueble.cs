@@ -153,7 +153,7 @@ public class RepositorioInmueble
         {
             cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario 
                             FROM Inmueble 
-                            WHERE IdInmueble = @busqueda 
+                            WHERE @buscarPor = @busqueda 
                                 AND Activo = 1";
             cmd.Parameters.AddWithValue("@busqueda", busqueda);
             using (var reader = cmd.ExecuteReader())
