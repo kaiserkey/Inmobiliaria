@@ -45,12 +45,12 @@ $(document).ready(function () {
     $("#selectInquilino").hide();
 
     // Cuando hacemos clic en el input, mostramos el select
-    $("#InmuebleBusqueda").click(function () {
-        $("#selectInmueble").show();
+    $("#InquilinoBusqueda").click(function () {
+        $("#selectInquilino").show();
     });
 
     // Cuando seleccionamos una opción del select, la agregamos al input
-    $("#selectInmueble").change(function () {
+    $("#selectInquilino").change(function () {
         var selectedOption = $("#selectInmueble option:selected").text();
         $("#InmuebleBusqueda").val(selectedOption);
     });
