@@ -47,7 +47,7 @@ function buscarInquilino() {
     $.getJSON('/Contrato/BuscarInquilinos', { busqueda: nombre }, function (resultados) {
         $('#tblInquilinos').empty();
         $.each(resultados, function (index, resultado) {
-            var fila = '<tr><td>' + resultado.idPropietario +
+            var fila = '<tr><td>' + resultado.idInquilino +
                 '</td><td>' + resultado.nombre +
                 '</td><td>' + resultado.apellido +
                 '</td><td>' + resultado.telefono +
