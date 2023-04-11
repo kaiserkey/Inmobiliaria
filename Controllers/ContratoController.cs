@@ -15,8 +15,9 @@ namespace Inmobiliaria.Controllers
         private readonly RepositorioInmueble RepoInmueble;
         private readonly RepositorioContrato RepoContrato;
         private readonly RepositorioInquilino RepoInquilino;
-        public ContratoController() { 
-            con = new MySqlDatabase(); 
+        public ContratoController()
+        {
+            con = new MySqlDatabase();
             RepoInmueble = new RepositorioInmueble();
             RepoContrato = new RepositorioContrato();
             RepoInquilino = new RepositorioInquilino();
@@ -26,12 +27,13 @@ namespace Inmobiliaria.Controllers
         {
             var listaContratos = RepoContrato.GetContratos(con);
             ViewBag.Id = TempData["Id"];
-            if (TempData.ContainsKey("Mensaje")){
+            if (TempData.ContainsKey("Mensaje"))
+            {
                 ViewBag.Mensaje = TempData["Mensaje"];
             }
             return View(listaContratos);
         }
-        
+
         // GET: Contrato/Details/5
         public ActionResult Details(int id)
         {
