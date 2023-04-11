@@ -130,7 +130,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 int res = RepoContrato.DeleteContrato(con, id);
-                TempData["Mensaje"] = "La entidad se elimino correctamente ID:" + id;
+                TempData["Mensaje"] = "La entidad se elimino correctamente";
                 return RedirectToAction(nameof(Index));
             }
             catch
