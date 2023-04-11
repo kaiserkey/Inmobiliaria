@@ -31,6 +31,10 @@ $(document).ready(function () {
     });
 });
 
+
+
+
+// Función para cerrar el modal al hacer clic en el botón
 /* Abrir Modal de buscar inquilino */
 /* function abrirModal() {
     $('#modalBuscarInquilino').modal('show');
@@ -63,10 +67,6 @@ $(document).ready(function () {
         buscarPropietarios();
     });
 });*/
-
-
-
-// Función para cerrar el modal al hacer clic en el botón
 function cerrarModal() {
     $('#modalBuscarInquilino').modal('hide');
 } 
