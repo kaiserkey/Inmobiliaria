@@ -87,8 +87,8 @@ function buscarInmueble() {
         $('#tblInmuebles').empty();
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idInmueble +
-                '</td><td>' + resultado.nombre +
-                '</td><td>' + resultado.apellido +
+                '</td><td>' + resultado.tipo +
+                '</td><td>' + resultado.coordenadas +
                 '</td><td>' + resultado.telefono +
                 '</td><td>' + resultado.email +
                 '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarInmueble(' + resultado.idInmueble + ')">Seleccionar</button></td></tr>';
