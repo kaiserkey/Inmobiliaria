@@ -27,7 +27,34 @@ $(document).ready(function () {
     });
 });
 
-/* B */
+/* Buscar Inquilinos */
+$(document).ready(function () {
+    $("#IBusqueda").on("input", function () {
+        var busqueda = $("#InmuebleBusqueda").val();
+        $.getJSON("/Inmueble/BuscarInmuebles", { busqueda: busqueda }, function (resultados) {
+            var options = '<option value="">Selecciona una opción</option>';
+            $.each(resultados, function (index, resultado) {
+                options += '<option value="' + resultado.id + '">' + resultado.text + '</option>';
+            });
+            $("#selectInmueble").html(options);
+        });
+    });
+});
+$(document).ready(function () {
+    // Escondemos el select al cargar la página
+    $("#selectInmueble").hide();
+
+    // Cuando hacemos clic en el input, mostramos el select
+    $("#InmuebleBusqueda").click(function () {
+        $("#selectInmueble").show();
+    });
+
+    // Cuando seleccionamos una opción del select, la agregamos al input
+    $("#selectInmueble").change(function () {
+        var selectedOption = $("#selectInmueble option:selected").text();
+        $("#InmuebleBusqueda").val(selectedOption);
+    });
+});
 
 
 /* Buscar Propietarios */
