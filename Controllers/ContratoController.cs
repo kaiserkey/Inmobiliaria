@@ -125,7 +125,7 @@ namespace Inmobiliaria.Controllers
         // POST: Contrato/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Contrato collection)
         {
             try
             {
