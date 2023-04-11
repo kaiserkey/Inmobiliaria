@@ -299,7 +299,7 @@ tbody{
 }
 
 /* Modales de busquedas */
-#modalBuscarPropietarios {
+.modal {
     width: 800px;
 }
 
