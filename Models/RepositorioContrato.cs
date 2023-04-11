@@ -145,10 +145,11 @@ public class RepositorioContrato
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
 
-            cmd.CommandText = @"UPDATE Contrato SET IdInmueble = @IdInmueble, FechaInicio = @FechaInicio, FechaFin = @FechaFin
+            cmd.CommandText = @"UPDATE Contrato SET IdInquilino = @IdInquilino, IdInmueble = @IdInmueble, FechaInicio = @FechaInicio, FechaFin = @FechaFin
                             WHERE IdContrato = @IdContrato;";
 
             cmd.Parameters.AddWithValue("@IdContrato", contrato.IdContrato);
+            cmd.Parameters.AddWithValue("@IdInquilino", contrato.);
             cmd.Parameters.AddWithValue("@IdInmueble", contrato.IdInmueble);
             cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioFormat);
             cmd.Parameters.AddWithValue("@FechaFin", fechaFinFormat);
