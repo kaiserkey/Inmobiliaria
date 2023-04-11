@@ -73,6 +73,19 @@ namespace Inmobiliaria.Controllers
         }
 
         //obtener Inmuebles por JQuery
+        public IActionResult BuscarInm(string busqueda)
+        {
+            var inquilinos = new List<Inquilino>();
+            inquilinos = RepoInquilino.BuscarInquilino(con, busqueda);
+
+            var resultados = inquilinos.Select(i => new
+            {
+                id = i.IdInquilino,
+                text = i.Nombre + " " + i.Apellido
+            });
+
+            return Json(resultados);
+        }
 
         // GET: Contrato/Edit/5
         public ActionResult Edit(int id)
