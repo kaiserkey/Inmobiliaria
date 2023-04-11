@@ -301,7 +301,6 @@ tbody{
 /* Modales de busquedas */
 .modal-body {
     width: 800px;
-    overflow-y: auto;
 }
 
 
