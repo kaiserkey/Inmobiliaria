@@ -62,9 +62,9 @@ namespace Inmobiliaria.Controllers
             var inquilinos = new List<Propietario>();
             inquilinos = RepoInquilino.BuscarInquilino(con, busqueda);
 
-            var resultados = propietarios.Select(p => new
+            var resultados = inquilinos.Select(p => new
             {
-                id = p.IdPropietario,
+                id = p.IdI,
                 text = p.Nombre + " " + p.Apellido
             });
 
