@@ -91,7 +91,8 @@ namespace Inmobiliaria.Controllers
 
             var resultados = inmuebles.Select(i => new
             {
-                idInm = i.IdInmueble,
+                idInmueble = i.IdInmueble,
+                
             });
 
             return Json(resultados);
