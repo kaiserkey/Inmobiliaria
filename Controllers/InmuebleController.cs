@@ -80,7 +80,7 @@ namespace Inmobiliaria.Controllers
                 Nombre = p.Nombre,
                 Apellido = p.Apellido,
                 Telefono = p.Telefono,
-                Email 
+                Email = p.Email,
             });
 
             return Json(resultados);
