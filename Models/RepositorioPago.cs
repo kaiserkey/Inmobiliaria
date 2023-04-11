@@ -73,12 +73,11 @@ public class RepositorioPago
         {
 
             cmd.CommandText = @"INSERT INTO Pago (Monto, Fecha, Descripcion, IdContrato) 
-                            VALUES (@Monto, @Fecha, @Descripcion, @IdContrato);
+                            VALUES (@Monto, @Fecha, @IdContrato);
                             SELECT LAST_INSERT_ID();";
 
             cmd.Parameters.AddWithValue("@Monto", CreatePago.Monto);
             cmd.Parameters.AddWithValue("@Fecha", CreatePago.Fecha);
-            cmd.Parameters.AddWithValue("@Descripcion", CreatePago.Descripcion);
             cmd.Parameters.AddWithValue("@IdContrato", CreatePago.IdContrato);
 
             res = Convert.ToInt32(cmd.ExecuteScalar());
