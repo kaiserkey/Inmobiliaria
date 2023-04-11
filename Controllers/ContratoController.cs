@@ -96,7 +96,7 @@ namespace Inmobiliaria.Controllers
         // POST: Contrato/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, Co collection)
+        public ActionResult Edit(int id, Contrato contrato)
         {
             try
             {
