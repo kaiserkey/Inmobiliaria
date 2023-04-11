@@ -9,10 +9,12 @@ namespace Inmobiliaria.Controllers
 {
     public class ContratoController : Controller
     {
+
+        
         // GET: Contrato
         public ActionResult Index()
         {
-            
+
             return View();
         }
 
