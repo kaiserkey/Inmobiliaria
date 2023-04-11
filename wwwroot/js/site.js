@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿/* BU */
+$(document).ready(function () {
     $("#InmuebleBusqueda").on("input", function () {
         var busqueda = $("#InmuebleBusqueda").val();
         $.getJSON("/Inmueble/BuscarInmuebles", { busqueda: busqueda }, function (resultados) {
