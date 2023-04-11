@@ -1,4 +1,4 @@
-﻿/* Abrir Modal  */
+﻿/* Abrir Modal de buscar propietario */
 
 
 /* Buscar Inmuebles */
