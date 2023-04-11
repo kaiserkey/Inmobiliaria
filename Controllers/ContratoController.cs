@@ -95,7 +95,8 @@ namespace Inmobiliaria.Controllers
                 tipo = i.Tipo,
                 coordenadas = i.Coordenadas,
                 precio = i.Precio,
-                ambientes = i.Ambien
+                ambientes = i.Ambientes,
+                uso = 
             });
 
             return Json(resultados);
