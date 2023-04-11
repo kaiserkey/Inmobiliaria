@@ -100,7 +100,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                int res = RepoContrato.(con, createContrato);
+                int res = RepoContrato.UpdateContrato(con, createContrato);
                 TempData["Mensaje"] = "La entidad se actualizo correctamente ID:" + id;
                 return RedirectToAction(nameof(Index));
             }
