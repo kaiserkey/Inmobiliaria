@@ -94,7 +94,7 @@ public class RepositorioPago
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
 
-            cmd.CommandText = @"UPDATE Pago SET Monto = @Monto, Fecha = @Fecha, IdContrato = @IdContrato
+            cmd.CommandText = @"UPDATE Pago SET Monto = @Monto, Fecha = @Fecha, IdContrato = @IdContrato, NumeroPago = @NumeroPago
                             WHERE IdPago = @IdPago;";
 
             cmd.Parameters.AddWithValue("@IdPago", pago.IdPago);
