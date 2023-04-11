@@ -85,7 +85,7 @@ namespace Inmobiliaria.Controllers
         public IActionResult BuscarInmuebles(string busqueda, string buscarPor)
         {
             var inmuebles = new List<Inmueble>();
-            inmuebles = RepoInmueble.BuscarInmueble(con, busqueda);
+            inmuebles = RepoInmueble.BuscarInmueble(con, busqueda, buscarPor);
 
             var resultados = inmuebles.Select(i => new
             {
