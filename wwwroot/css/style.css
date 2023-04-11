@@ -300,8 +300,7 @@ tbody{
 
 /* Modales de busquedas */
 #lupa{
-    color: #8a5a41;
-    font-size: 1.5rem;
+    color: #8a5a41 !important;
 }
 
 
