@@ -42,7 +42,7 @@ namespace Inmobiliaria.Controllers
         // POST: Contrato/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(COntrato )
+        public ActionResult Create(Contrato contrato)
         {
             try
             {
