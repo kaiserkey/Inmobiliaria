@@ -5,7 +5,7 @@ $(document).ready(function () {
         $.getJSON("/Contrato/BuscarInmuebles", { busqueda: busqueda }, function (resultados) {
             var options = '<option value="">Selecciona una opción</option>';
             $.each(resultados, function (index, resultado) {
-                options += '<option value="' + resultado.id + '">' + resultado.text + '</option>';
+                options += '<option value="' + resultado.id + '">' + resultado.id + '</option>';
             });
             $("#selectInmueble").html(options);
         });
