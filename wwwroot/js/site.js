@@ -77,12 +77,12 @@ function cerrarModalInquilino() {
 /* Abrir Modal de buscar inmuebles */
 function abrirModalInmueble() {
     $('#modalBuscarInmuebles').modal('show');
-    $('#tblInquilinos').empty();
+    $('#tblInmuebles').empty();
 }
 
 function buscarInquilino() {
     var nombre = $('#txtBuscar').val();
-    $.getJSON('/Contrato/BuscarInquilinos', { busqueda: nombre }, function (resultados) {
+    $.getJSON('/Contrato/BuscarInmuebles', { busqueda: nombre }, function (resultados) {
         $('#tblInquilinos').empty();
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idInquilino +
