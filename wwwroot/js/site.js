@@ -36,7 +36,7 @@ function cerrarModal() {
     $('#modalBuscarPropietarios').modal('hide');
 }
 /* 
-//buscar prop
+//buscar propietarios
 $(document).ready(function () {
     $("#PropietarioBusqueda").on("input", function () {
         var busqueda = $("#PropietarioBusqueda").val();
