@@ -56,6 +56,8 @@ namespace Inmobiliaria.Controllers
             }
         }
 
+        
+
         // GET: Contrato/Edit/5
         public ActionResult Edit(int id)
         {
