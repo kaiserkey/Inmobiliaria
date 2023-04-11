@@ -4,7 +4,11 @@ using MySql.Data.MySqlClient;
 
 namespace Inmobiliaria.Models;
 
-public class RepPago {
+public class RepositorioPago {
     public RepositorioPago() {
     }
+    
+
+
+
 }
