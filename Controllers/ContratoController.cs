@@ -46,6 +46,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
+                RepoContrato.CreateContrato(con, collection);
                 
 
                 return RedirectToAction(nameof(Index));
