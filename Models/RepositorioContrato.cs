@@ -149,7 +149,7 @@ public class RepositorioContrato
                             WHERE IdContrato = @IdContrato;";
 
             cmd.Parameters.AddWithValue("@IdContrato", contrato.IdContrato);
-            cmd.Parameters.AddWithValue("@IdInquilino", contrato.IdInquilino);
+            cmd.Parameters.AddWithValue("@IdInquilino", contrato);
             cmd.Parameters.AddWithValue("@IdInmueble", contrato.IdInmueble);
             cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioFormat);
             cmd.Parameters.AddWithValue("@FechaFin", fechaFinFormat);
