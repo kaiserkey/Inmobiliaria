@@ -1,59 +1,64 @@
 @model IEnumerable<Inmobiliaria.Models.Contrato>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Inicio Contrato";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.IdContrato)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdInmueble)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdInquilino)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaInicio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaFin)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdContrato)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdInmueble)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdInquilino)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaInicio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaFin)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="col-md-12 text-center">
+    <h1>Contrato</h1>
+    <h2><a asp-action="Create"> <i class="bi bi-plus-square-fill" style="font-size: 1em; color: black;"> Nuevo Contrato </i> </a></h2>
+</div>
+<div class="table-responsive d-flex justify-content-center align-items-center">
+    <table class="table table-bordered table-striped w-auto">
+        <thead id="thead-color">
+            <tr>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.IdContrato)
+                </th>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.IdInmueble)
+                </th>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.IdInquilino)
+                </th>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.FechaInicio)
+                </th>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.FechaFin)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.IdContrato)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdInmueble)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdInquilino)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaFin)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = item.IdContrato })"> <i class="bi bi-pencil-square" style="font-size: 2em; color: green;"></i> </a>
+                </td>
+                <td>
+                    <a href="@Url.Action("Details", new { id = item.IdContrato })"> <i class="bi bi-file-text-fill" style="font-size: 2em; color: orange;"></i> </a>
+                </td>
+                <td>
+                    <a href="@Url.Action("Delete", new { id = item.IdContrato })"> <i class="bi bi-trash3-fill" style="font-size: 2em; color: red;"></i> </a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>
