@@ -90,7 +90,7 @@ function buscarInquilino() {
                 '</td><td>' + resultado.apellido +
                 '</td><td>' + resultado.telefono +
                 '</td><td>' + resultado.email +
-                '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarInquilino(' + resultado.idInquilino + ')">Seleccionar</button></td></tr>';
+                '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarInmueble(' + resultado.idInmueble + ')">Seleccionar</button></td></tr>';
             $('#tblInquilinos').append(fila);
         });
     });
