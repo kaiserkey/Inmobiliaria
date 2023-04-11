@@ -34,13 +34,13 @@ $(document).ready(function () {
 /* Abrir Modal de buscar inquilino */
 function abrirModal() {
     $('#modalBuscarInquilino').modal('show');
-    $('#tblPropietarios').empty();
+    $('#tblInquilinos').empty();
 }
 
 function buscarPropietarios() {
     var nombre = $('#txtBuscar').val();
     $.getJSON('/Inmueble/BuscarPropietarios', { busqueda: nombre }, function (resultados) {
-        $('#tblPropietarios').empty();
+        $('#tblInquilinos').empty();
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idPropietario +
                 '</td><td>' + resultado.nombre +
@@ -48,7 +48,7 @@ function buscarPropietarios() {
                 '</td><td>' + resultado.telefono +
                 '</td><td>' + resultado.email +
                 '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarPropietario(' + resultado.idPropietario + ')">Seleccionar</button></td></tr>';
-            $('#tblPropietarios').append(fila);
+            $('#tblInquilinos').append(fila);
         });
     });
 }
