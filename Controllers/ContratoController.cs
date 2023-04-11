@@ -96,11 +96,11 @@ namespace Inmobiliaria.Controllers
         // POST: Contrato/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Co collection)
         {
             try
             {
-                // TODO: Add update logic here
+                
 
                 return RedirectToAction(nameof(Index));
             }
