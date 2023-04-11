@@ -32,7 +32,7 @@ $(document).ready(function () {
 });
 
 /* Abrir Modal de buscar inquilino */
-function abrirModal() {
+/* function abrirModal() {
     $('#modalBuscarInquilino').modal('show');
     $('#tblInquilinos').empty();
 }
@@ -62,7 +62,7 @@ $(document).ready(function () {
     $('#txtBuscar').on('input', function () {
         buscarPropietarios();
     });
-});
+}); */
 
 
 
