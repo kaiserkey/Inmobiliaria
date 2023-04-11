@@ -10,7 +10,7 @@ public class Pago
     public DateTime Fecha { get; set; }
     public decimal Importe { get; set; }
     public string NumeroPago { get; set; }
-    public string Estado { get; set; }
-    public string Observaciones { get; set; }
+    
+    [ForeignKey("IdContrato")]
     public Contrato Contrato { get; set; }
 }
