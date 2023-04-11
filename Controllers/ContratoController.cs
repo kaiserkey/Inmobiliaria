@@ -24,6 +24,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Index()
         {
             var listaContratos = RepoContrato.GetContratos(con);
+            
             return View(listaContratos);
         }
 
