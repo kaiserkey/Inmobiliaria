@@ -65,12 +65,12 @@ function seleccionarInquilino(idInquilino) {
 
 $(document).ready(function () {
     $('#txtBuscar').on('input', function () {
-        buscarPropietarios();
+        buscarInquilino();
     });
 });
 
 // Función para cerrar el modal al hacer clic en el botón
-function cerrarModal() {
+function cerrarModalInquilino() {
     $('#modalBuscarInquilino').modal('hide');
 } 
 
