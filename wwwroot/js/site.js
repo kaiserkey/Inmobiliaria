@@ -32,7 +32,7 @@ $(document).ready(function () {
 });
 
 /* Abrir Modal de buscar inquilino */
-function abrirModal() {
+/* function abrirModal() {
     $('#modalBuscarInquilino').modal('show');
     $('#tblInquilinos').empty();
 }
@@ -69,7 +69,7 @@ $(document).ready(function () {
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModal() {
     $('#modalBuscarInquilino').modal('hide');
-}
+} */
 /* 
 //buscar propietarios
 $(document).ready(function () {
