@@ -67,7 +67,7 @@ public class RepositorioPago
         return null;
     }
 
-    public int CreatePago(MySqlDatabase mySqlDatabase, Pago CreatePago)
+    public int createPago(MySqlDatabase mySqlDatabase, Pago createPago)
     {
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
@@ -77,13 +77,13 @@ public class RepositorioPago
                             VALUES (@Monto, @Fecha, @IdContrato, @NumeroPago);
                             SELECT LAST_INSERT_ID();";
 
-            cmd.Parameters.AddWithValue("@Monto", CreatePago.Monto);
-            cmd.Parameters.AddWithValue("@NumeroPago", CreatePago.NumeroPago);
-            cmd.Parameters.AddWithValue("@Fecha", CreatePago.Fecha);
-            cmd.Parameters.AddWithValue("@IdContrato", CreatePago.IdContrato);
+            cmd.Parameters.AddWithValue("@Monto", createPago.Monto);
+            cmd.Parameters.AddWithValue("@NumeroPago", createPago.NumeroPago);
+            cmd.Parameters.AddWithValue("@Fecha", createPago.Fecha);
+            cmd.Parameters.AddWithValue("@IdContrato", createPago.IdContrato);
 
             res = Convert.ToInt32(cmd.ExecuteScalar());
-            CreatePago.IdPago = res;
+            createPago.IdPago = res;
         }
         return res;
     }
