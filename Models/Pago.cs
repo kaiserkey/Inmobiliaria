@@ -9,7 +9,9 @@ public class Pago
     public DateTime Fecha { get; set; }
     public decimal Importe { get; set; }
     public string NumeroPago { get; set; }
+
     
+    public int IdContrato { get; set; }
     [ForeignKey("IdContrato")]
     public Contrato Contrato { get; set; }
 }
