@@ -46,7 +46,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                 
+                
 
                 return RedirectToAction(nameof(Index));
             }
