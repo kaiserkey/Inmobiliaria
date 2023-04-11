@@ -51,12 +51,12 @@
                 <div class="form-group">
                     <label asp-for="IdPropietario" class="control-label"></label>
                     <div class="input-group">
-                        <input asp-for="IdPropietario" class="form-control" id="IdPropietario" disabled/>
+                        <input asp-for="IdPropietario" class="form-control" id="IdPropietario"/>
                         <span class="input-group-addon" id="lupa" style="cursor:pointer" onclick="abrirModal()">
                             <i class="bi bi-search-heart-fill" style="font-size: 1.5em; color: #8a5a41;"></i>
                         </span>
+                        <span asp-validation-for="IdPropietario" class="text-danger"></span>
                     </div>
-                    <span asp-validation-for="IdPropietario" class="text-danger"></span>
                 </div>
 
                 <!-- Modal Buscar Propietarios -->
