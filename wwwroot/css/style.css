@@ -300,7 +300,7 @@ tbody{
 
 /* Modales de busquedas */
 .modal-body {
-    max-height: calc(300vh - 500px); /* Adjust the value to your needs */
+    max-height: calc(10000vh - 500px); /* Adjust the value to your needs */
     overflow-y: auto;
 }
 
