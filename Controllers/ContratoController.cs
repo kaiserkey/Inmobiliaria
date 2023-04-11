@@ -30,7 +30,7 @@ namespace Inmobiliaria.Controllers
             }
             return View(listaContratos);
         }
-        // TODO: TERMINAR DELET
+        // TODO: TERMINAR DELETE Y DETAILS
         // GET: Contrato/Details/5
         public ActionResult Details(int id)
         {
