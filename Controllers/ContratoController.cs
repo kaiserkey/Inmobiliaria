@@ -118,6 +118,7 @@ namespace Inmobiliaria.Controllers
         // GET: Contrato/Delete/5
         public ActionResult Delete(int id)
         {
+            Contrato
             return View();
         }
 
