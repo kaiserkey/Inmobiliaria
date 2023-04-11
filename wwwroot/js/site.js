@@ -55,7 +55,7 @@ function buscarPropietarios() {
 
 function seleccionarPropietario(idPropietario) {
     $('#IdPropietario').val(idPropietario);
-    $('#modalBuscarPropietarios').modal('hide');
+    $('#modalBuscarInquilino').modal('hide');
 }
 
 $(document).ready(function () {
@@ -68,7 +68,7 @@ $(document).ready(function () {
 
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModal() {
-    $('#modalBuscarPropietarios').modal('hide');
+    $('#modalBuscarInquilino').modal('hide');
 }
 /* 
 //buscar propietarios
