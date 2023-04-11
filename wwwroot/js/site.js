@@ -13,10 +13,10 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     // Escondemos el select al cargar la página
-    $("#selectPropietario").hide();
+    $("#selectInmueble").hide();
 
     // Cuando hacemos clic en el input, mostramos el select
-    $("#PropietarioBusqueda").click(function () {
+    $("#InmuebleBusqueda").click(function () {
         $("#selectPropietario").show();
     });
 
