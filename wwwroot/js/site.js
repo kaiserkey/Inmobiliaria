@@ -98,12 +98,12 @@ function buscarInquilino() {
 
 function seleccionarInmueble(idInmueble) {
     $('#IdInmueble').val(idInmueble);
-    $('#modalBuscarInquilinos').modal('hide');
+    $('#modalBuscarInmuebles').modal('hide');
 }
 
 $(document).ready(function () {
     $('#txtBuscar').on('input', function () {
-        buscarInquilino();
+        buscarInmueble();
     });
 });
 
