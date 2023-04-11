@@ -103,11 +103,11 @@ function seleccionarInmueble(idInmueble) {
     $('#modalBuscarInmuebles').modal('hide');
 }
 
-$(document).ready(function () {
+/* $(document).ready(function () {
     $('#txtBuscar').on('input', function () {
         buscarInmueble();
     });
-});
+}); */
 
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModalInmueble() {
