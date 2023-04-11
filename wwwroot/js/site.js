@@ -9,11 +9,11 @@ function buscarPropietarios() {
     $.getJSON('/Inmueble/BuscarPropietarios', { busqueda: nombre }, function (resultados) {
         $('#tblPropietarios').empty();
         $.each(resultados, function (index, resultado) {
-            var fila = '<tr><td>' + resultado.IdPropietario +
-                        '</td><td>' + resultado.Nombre + 
-                        '</td><td>' + resultado.Apellido + 
-                        '</td><td>' + resultado.Telefono +
-                        '</td><td>' + resultado.Email +
+            var fila = '<tr><td>' + resultado.idPropietario +
+                        '</td><td>' + resultado.nombre + 
+                        '</td><td>' + resultado.apellido + 
+                        '</td><td>' + resultado.telefono +
+                        '</td><td>' + resultado.email +
                         '</td><td><button type="button" class="btn btn-primary" onclick="seleccionarPropietario(' + resultado.IdPropietario + ')">Seleccionar</button></td></tr>';
             $('#tblPropietarios').append(fila);
         });
