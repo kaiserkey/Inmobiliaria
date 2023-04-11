@@ -8,7 +8,7 @@ public class Contrato
     [Display( Name = "Código" )]
     public int IdContrato { get; set; }
 
-    [Display( Name = "Codigo Inmueble" ) ]
+    [Display( Name = "Codigo De Inmueble" ) ]
     public int IdInmueble { get; set; }
 
     [ForeignKey( nameof( IdInmueble ) ) ]
