@@ -10,7 +10,7 @@ public class Pago
     public decimal Importe { get; set; }
     public string NumeroPago { get; set; }
 
-    
+    [Display ]
     public int IdContrato { get; set; }
     [ForeignKey("IdContrato")]
     public Contrato Contrato { get; set; }
