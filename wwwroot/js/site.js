@@ -6,10 +6,14 @@
             $.each(resultados, function (index, resultado) {
                 options += '<option value="' + resultado.id + '">' + resultado.text + '</option>';
             });
-            $("#selectPropietario").html(options);
+            $("#selectInmueble").html(options);
         });
     });
 });
+
+
+
+
 $(document).ready(function () {
     $("#PropietarioBusqueda").on("input", function () {
         var busqueda = $("#PropietarioBusqueda").val();
