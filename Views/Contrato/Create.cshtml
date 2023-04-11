@@ -37,18 +37,28 @@
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label>Ingresa un nombre y/o dirección para buscar</label>
-                                    <input type="text" id="txtBuscar" class="form-control" />
+                                    <label>Buscar por:</label>
+                                    <div class="input-group">
+                                        <select class="form-select" id="buscarInmueblePor">
+                                            <option value="Tipo">Tipo</option>
+                                            <option value="Coordenadas">Coordenadas</option>
+                                            <option value="Precio">Precio</option>
+                                            <option value="Ambientes">Ambientes</option>
+                                            <option value="Uso">Uso</option>
+                                        </select>
+                                        <input type="text" id="txtBuscar" class="form-control" />
+                                    </div>
                                 </div>
                                 <div class="table-responsive mw-100">
                                     <table class="table table-striped d-inline-block">
                                         <thead>
                                             <tr>
                                                 <th>Codigo</th>
-                                                <th>Direccion</th>
-                                                <th>Area</th>
-                                                <th>Habitaciones</th>
-                                                <th>Baños</th>
+                                                <th>Tipo</th>
+                                                <th>Coordenadas</th>
+                                                <th>Precio</th>
+                                                <th>Ambientes</th>
+                                                <th>Uso</th>
                                             </tr>
                                         </thead>
                                         <tbody id="tblInmuebles">
@@ -58,7 +68,8 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" id="boton-general" onclick="cerrarModalInmueble()"
-                                        class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                        class="btn btn-primary" data-dismiss="modal">Cerrar
+                                    </button>
                                 </div>
                             </div>
                         </div>
