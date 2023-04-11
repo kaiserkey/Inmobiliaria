@@ -96,11 +96,11 @@ namespace Inmobiliaria.Controllers
         // POST: Contrato/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, Contrato createContrato)
+        public ActionResult Edit(int id, Contrato updateContrato)
         {
             try
             {
-                int res = RepoContrato.UpdateContrato(con, createContrato);
+                int res = RepoContrato.UpdateContrato(con, updateContrato);
                 TempData["Mensaje"] = "La entidad se actualizo correctamente ID:" + id;
                 return RedirectToAction(nameof(Index));
             }
