@@ -15,7 +15,7 @@ public class RepositorioPago
         var pagos = new List<Pago>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT IdPago, Monto, Fecha, Descripcion, IdContrato
+            cmd.CommandText = @"SELECT IdPago, Monto, Fecha, IdContrato
                             FROM Pago";
 
             using (var reader = cmd.ExecuteReader())
@@ -27,7 +27,6 @@ public class RepositorioPago
                         IdPago = reader.GetInt32(nameof(Pago.IdPago)),
                         Monto = reader.GetDecimal(nameof(Pago.Monto)),
                         Fecha = reader.GetDateTime(nameof(Pago.Fecha)),
-                        Descripcion = reader.GetString(nameof(Pago.Descripcion)),
                         IdContrato = reader.GetInt32(nameof(Pago.IdContrato)),
                     };
                     pagos.Add(pago);
