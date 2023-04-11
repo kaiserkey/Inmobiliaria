@@ -60,7 +60,7 @@ namespace Inmobiliaria.Controllers
         public IActionResult BuscarPropietarios(string busqueda)
         {
             var propietarios = new List<Propietario>();
-            propietarios = RepoPropietario.BuscarPropietario(con, busqueda);
+            propietarios = RepoInquilino.;
 
             var resultados = propietarios.Select(p => new
             {
