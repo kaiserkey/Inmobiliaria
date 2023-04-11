@@ -71,7 +71,7 @@ namespace Inmobiliaria.Controllers
 
             var resultados = inquilinos.Select(i => new
             {
-                IdInquilino = i.IdInquilino,
+                id = i.IdInquilino,
                 text = i.Nombre + " " + i.Apellido
             });
 
