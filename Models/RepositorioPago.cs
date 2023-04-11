@@ -42,7 +42,7 @@ public class RepositorioPago
     {
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT IdPago, Monto, Fecha, IdContrato
+            cmd.CommandText = @"SELECT IdPago, Monto, Fecha, NumeroPago, IdContrato
                             FROM Pago
                             WHERE IdPago = @IdPago";
             cmd.Parameters.AddWithValue("@IdPago", id);
