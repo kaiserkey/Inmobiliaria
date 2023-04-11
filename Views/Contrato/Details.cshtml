@@ -2,47 +2,66 @@
 
 @{
     ViewData["Title"] = "Details";
+    var Contrato = Model;
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Contrato</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdContrato)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdContrato)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdInmueble)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdInmueble)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdInquilino)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdInquilino)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaInicio)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaInicio)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaFin)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaFin)
-        </dd>
-    </dl>
-</div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+<div id="contenedor-vista-previa" class="table-responsive d-flex justify-content-center align-items-center">
+    <table class="table table-bordered table-striped w-auto">
+        <thead id="thead-color">
+            <tr>
+                <th class="col">
+                    <h2><a asp-action="Index"><i class="bi bi-arrow-return-left"
+                                style="font-size: 1em; color: black;">Regresar</i></a></h2>
+                </th>
+                <th class="col">
+                    <h2><a href="@Url.Action("Edit", new { id = Contrato.IdContrato  })"> <i class="bi bi-pencil-square"
+                                style="font-size: 1em; color: green;">Editar</i> </a></h2>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="fila-nombre">
+                    @Html.DisplayNameFor(model => model.IdContrato)
+                </td>
+                <td >
+                    @Html.DisplayFor(model => model.IdContrato)
+                </td>
+            </tr>
+            <tr>
+                <td class="fila-nombre">
+                    @Html.DisplayNameFor(model => model.IdInmueble)
+                </td>
+                <td >
+                    @Html.DisplayFor(model => model.IdInmueble)
+                </td>
+            </tr>
+            <tr>
+                <td class="fila-nombre">
+                    @Html.DisplayNameFor(model => model.IdInquilino)
+                </td>
+                <td >
+                    @Html.DisplayFor(model => model.Inquilino.Nombre)
+                    @Html.DisplayFor(model => model.Inquilino.Apellido)
+                </td>
+            </tr>
+            <tr>
+                <td class="fila-nombre">
+                    @Html.DisplayNameFor(model => model.FechaInicio)
+                </td>
+                <td >
+                    @Html.DisplayFor(model => model.FechaInicio)
+                </td>
+            </tr>
+            <tr>
+                <td class="fila-nombre">
+                    @Html.DisplayNameFor(model => model.FechaFin)
+                </td>
+                <td >
+                    @Html.DisplayFor(model => model.FechaFin)
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
 </div>

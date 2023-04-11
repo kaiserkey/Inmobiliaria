@@ -9,6 +9,9 @@
         <div class="col-md-12">
             <form asp-action="Edit" method="POST" class="text-center border border-light p-5">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <a asp-action="Index">
+                    <i class="bi bi-arrow-return-left" style="font-size: 2em; color: black;"></i>
+                </a>
                 <div class="form-group">
                     <label asp-for="IdInmueble" class="control-label"></label>
                     <input type="text" id="InmuebleBusqueda" placeholder="@Html.DisplayFor(model => model.Inmueble.IdInmueble)" class="form-control" />
