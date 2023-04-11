@@ -26,6 +26,7 @@ public class RepositorioPago
                     {
                         IdPago = reader.GetInt32(nameof(Pago.IdPago)),
                         Monto = reader.GetDecimal(nameof(Pago.Monto)),
+                        
                         Fecha = reader.GetDateTime(nameof(Pago.Fecha)),
                         IdContrato = reader.GetInt32(nameof(Pago.IdContrato)),
                     };
