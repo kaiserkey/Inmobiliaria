@@ -74,7 +74,8 @@ namespace Inmobiliaria.Controllers
                 idInquilino = i.IdInquilino,
                 nombre = i.Nombre,
                 apellido = i.Apellido,
-                telefono
+                telefono = i.Telefono,
+                email = i.Email,
             });
 
             return Json(resultados);
