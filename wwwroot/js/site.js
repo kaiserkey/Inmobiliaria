@@ -31,13 +31,11 @@ $(document).ready(function () {
     });
 });
 
-
-
-
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModal() {
     $('#modalBuscarInquilino').modal('hide');
 } 
+
 /* Abrir Modal de buscar inquilino */
 /* function abrirModal() {
     $('#modalBuscarInquilino').modal('show');
