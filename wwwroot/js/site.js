@@ -43,7 +43,7 @@ $(document).ready(function () {
     });
 });
 
-
+/* Mostrar modales de mensajes */
 $(document).ready(function () {
     $('#modalOK').modal('show');
     setTimeout(function () {
