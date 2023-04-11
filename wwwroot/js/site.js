@@ -90,7 +90,7 @@ function buscarInmueble() {
                 '</td><td>' + resultado.tipo +
                 '</td><td>' + resultado.coordenadas +
                 '</td><td>' + resultado.precio +
-                '</td><td>' + resultado.uso +
+                '</td><td>' + resultado.ambientes +
                 '</td><td>' + resultado.uso +
                 '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarInmueble(' + resultado.idInmueble + ')">Seleccionar</button></td></tr>';
             $('#tblInquilinos').append(fila);
