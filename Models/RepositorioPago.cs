@@ -86,6 +86,7 @@ public class RepositorioPago
             res = Convert.ToInt32(cmd.ExecuteScalar());
             createPago.IdPago = res;
         }
+        Console.WriteLine("Entro al controlador");
         return res;
     }
 
