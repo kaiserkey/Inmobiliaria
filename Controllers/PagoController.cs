@@ -73,8 +73,8 @@ namespace Inmobiliaria.Controllers
                 nombre = c.Inquilino.Nombre,
                 apellido = c.Inquilino.Apellido,
                 dni = c.Inquilino.Dni,
-                fechaFIn = c.FechaFin,
-                fechaINicio = c.FechaInicio,
+                fechaFin = c.FechaFin,
+                fechaInicio = c.FechaInicio,
             });
 
             return Json(resultados);
