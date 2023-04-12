@@ -205,8 +205,9 @@ public class RepositorioContrato
                         contratos.Add(contrato);
                     }
                 }
+                return contratos;
             }
-            return contratos;
+            
 
             if (buscarPor == "FechaInicio" || buscarPor == "FechaFin")
             {
