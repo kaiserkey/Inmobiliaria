@@ -208,15 +208,15 @@ public class RepositorioContrato
             }
             return contratos;
 
-            
-        }
-        if (buscarPor == "FechaInicio" || buscarPor == "FechaFin")
-        {
-            cmd.CommandText = @"SELECT IdContrato, IdInquilino, IdInmueble, FechaInicio, FechaFin
+            if (buscarPor == "FechaInicio" || buscarPor == "FechaFin")
+            {
+                cmd.CommandText = @"SELECT IdContrato, IdInquilino, IdInmueble, FechaInicio, FechaFin
                             FROM Contrato 
                             WHERE " + buscarPor + " LIKE @busqueda";
-            
+
+            }
         }
+
 
 
     }
