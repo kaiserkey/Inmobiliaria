@@ -6,8 +6,8 @@ function abrirModal() {
 
 function buscarPropietarios() {
     var nombre = $('#txtBuscar').val();
-    $.getJSON('/Pago/BuscarContrato', { busqueda: nombre }, function (resultados) {
-        $('#tblPropietarios').empty();
+    $.getJSON('/Pago/BuscarContratos', { busqueda: nombre }, function (resultados) {
+        $('#tblContrato').empty();
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idPropietario +
                 '</td><td>' + resultado.nombre +
