@@ -60,10 +60,10 @@ namespace Inmobiliaria.Controllers
             var contrato = new List<Contrato>();
             contrato = RepoContrato.BuscarContrato(con, busqueda, buscarPor);
 
-            var resultados = inquilinos.Select(i => new
+            var resultados = contrato.Select(c => new
             {
-                idInquilino = i.IdInquilino,
-                nombre = i.Nombre,
+                idInquilino = c.IdInquilino,
+                nombre = c.Nombre,
                 apellido = i.Apellido,
                 telefono = i.Telefono,
                 email = i.Email,
