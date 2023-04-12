@@ -11,7 +11,7 @@ namespace Inmobiliaria.Controllers
     {
         private MySqlDatabase con { get; set; }
         private readonly RepositorioPago RepoPago;
-        pr
+        private readonly Repositorio
         public PagoController()
         {
             con = new MySqlDatabase();
