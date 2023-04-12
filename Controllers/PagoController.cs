@@ -57,7 +57,7 @@ namespace Inmobiliaria.Controllers
 
         public IActionResult BuscarContrato(string busqueda)
         {
-            var inquilinos = new List<Inquilino>();
+            var contrato = new List<Inquilino>();
             inquilinos = RepoInquilino.BuscarInquilino(con, busqueda);
 
             var resultados = inquilinos.Select(i => new
