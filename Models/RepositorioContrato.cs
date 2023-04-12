@@ -180,6 +180,7 @@ public class RepositorioContrato
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
+            c
             if(buscarPor == "Inquilino")
             {
                 cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin
