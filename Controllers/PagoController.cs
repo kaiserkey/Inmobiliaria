@@ -51,9 +51,10 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
+                Console.WriteLine("Entro al controlador");
                 var res = RepoPago.CreatePago(con, pago);
                 TempData["Id"] = pago.IdPago;
-                Console.WriteLine("Entro al controlador");
+                
                 return RedirectToAction(nameof(Index));
             }
             catch
