@@ -185,7 +185,7 @@ public class RepositorioContrato
             var query = "";
             /* buscarPor = "Inquilino"; */
             Console.WriteLine(buscarPor.Equals("Inquilino", StringComparison.OrdinalIgnoreCase));
-            if (buscarPor == "Inquilino")
+            if (buscarPor.Equals())
             {
                 query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
                             i.Nombre, i.Apellido, i.Dni
