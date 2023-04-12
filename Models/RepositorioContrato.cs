@@ -197,7 +197,6 @@ public class RepositorioContrato
                             WHERE " + buscarPor + " LIKE @busqueda";
             }
             
-
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             using (var reader = cmd.ExecuteReader())
             {
