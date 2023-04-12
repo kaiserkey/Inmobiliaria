@@ -184,7 +184,6 @@ public class RepositorioContrato
         {
             
             var query = "";
-            /* buscarPor = "Inquilino"; */
             
             if (buscarPor.Equals("Inquilino"))
             {
