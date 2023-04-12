@@ -35,8 +35,8 @@ namespace Inmobiliaria.Controllers
         // GET: Pago/Details/5
         public ActionResult Details(int id)
         {
-            Pago pago = RepoPago.GetPago(con, )
-            return View();
+            Pago pago = RepoPago.GetPago(con, id);
+            return View(pago);
         }
 
         // GET: Pago/Create
