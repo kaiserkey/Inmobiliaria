@@ -193,7 +193,7 @@ public class RepositorioContrato
                             INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
                             WHERE CONCAT(i.Nombre, ' ', i.Apellido) LIKE @busqueda";
             }
-            else if (buscarPor == "FechaInicio" || buscarPor == "FechaFin")
+            else if (buscarPor.Equals || buscarPor == "FechaFin")
             {
                 query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
                             i.Nombre, i.Apellido, i.Dni
