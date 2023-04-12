@@ -2,14 +2,17 @@
 
 @{
     ViewData["Title"] = "Delete";
+    var Pago = Model;
 }
 
-<h1>Delete</h1>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Pago</h4>
-    <hr />
+<div id="contenedor-vista-previa" class="table-responsive d-flex justify-content-center align-items-center">
+    <table class="table table-bordered table-striped w-auto">
+        <tr>
+            <th class="col" colspan="2">
+                <h2><a asp-action="Index"><i class="bi bi-arrow-return-left" style="font-size: 1em; color: black;">Regresar</i></a></h2>
+                <h2><a href="@Url.Action("Edit", new { id = Pago.IdPago  })"> <i class="bi bi-pencil-square" style="font-size: 1em; color: green;">Editar</i> </a></h2>
+            </th>
+        </tr>
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.IdPago)
