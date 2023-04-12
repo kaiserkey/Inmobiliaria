@@ -24,6 +24,11 @@ namespace Inmobiliaria.Controllers
         public ActionResult Index()
         {
             var listaPagos = RepoPago.GetPagos(con);
+            ViewBag.Id = TempData["Id"];
+            if (TempData.ContainsKey("Mensaje"))
+            {
+                ViewBag.Mensaje = TempData["Mensaje"];
+            }
             return View(listaPagos);
         }
 
