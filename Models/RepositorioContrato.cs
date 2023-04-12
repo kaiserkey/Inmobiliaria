@@ -178,7 +178,7 @@ public class RepositorioContrato
 
     public List<Contrato> BuscarContrato(MySqlDatabase mySqlDatabase, string busqueda, string buscarPor)
     {
-        Console.WriteLine(buscarPor);
+        
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
