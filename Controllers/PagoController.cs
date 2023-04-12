@@ -65,7 +65,7 @@ namespace Inmobiliaria.Controllers
                 idContrato = c.IdContrato,
                 idInmueble = c.IdInmueble,
                 idInquilino = c.IdInquilino,
-                nombre = c.,
+                nombre = c.Inquilino.Nombre,
                 apellido = c.Apellido,
                 telefono = c.Telefono,
                 email = c.Email,
