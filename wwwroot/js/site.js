@@ -1,6 +1,6 @@
 ﻿/* Abrir Modal de buscar contrato */
 function abrirModal() {
-    $('#modalBuscarPropietarios').modal('show');
+    $('#modalBuscarCOntrato').modal('show');
     $('#tblPropietarios').empty();
 }
 
