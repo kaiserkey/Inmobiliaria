@@ -179,7 +179,7 @@ public class RepositorioContrato
     {
         /* a la hora de realizar la busqueda filtrar primero desde el controlador 
         el id de inquilino a travez del nombre o el documento y luego pasarselo 
-        a la busqueda, parsear las fechas */
+        a la busqueda */
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
