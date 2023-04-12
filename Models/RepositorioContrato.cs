@@ -1,3 +1,4 @@
+using Internal;
 using System;
 using MySql.Data.MySqlClient;
 
@@ -180,7 +181,7 @@ public class RepositorioContrato
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            c
+            Console.WriteLine(buscarPor);
             if(buscarPor == "Inquilino")
             {
                 cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin
