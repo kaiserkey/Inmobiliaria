@@ -21,6 +21,7 @@ namespace Inmobiliaria.Controllers
         // GET: Pago
         public ActionResult Index()
         {
+            var listaPagos = RepoPago.GetPagos(con);
             return View();
         }
 
