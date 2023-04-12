@@ -2,47 +2,65 @@
 
 @{
     ViewData["Title"] = "Details";
+    var Pago = Model;
 }
 
-<h1>Details</h1>
+<div id="contenedor-vista-previa" class="table-responsive d-flex justify-content-center align-items-center">
+    <table class="table table-bordered table-striped w-auto">
+        <thead id="thead-color">
+            <tr>
+                <th class="col">
+                    <h2><a asp-action="Index"><i class="bi bi-arrow-return-left"
+                                style="font-size: 1em; color: black;">Regresar</i></a></h2>
+                </th>
+                <th class="col">
+                    <h2><a href="@Url.Action("Edit", new { id = Pago.IdPago  })"> <i class="bi bi-pencil-square"
+                                style="font-size: 1em; color: green;">Editar</i> </a></h2>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr >
+                <td class="fila-nombre">
+                    @Html.DisplayNameFor(model => model.IdPago)
+                </td>
+                <td >
+                    @Html.DisplayFor(model => model.IdPago)
+                </td>
+                </td>
+            <tr >
+                <td class="fila-nombre">
+                    @Html.DisplayNameFor(model => model.Fecha)
+                </td>
+                <td >
+                    @Html.DisplayFor(model => model.Fecha)
+                </td>
+            </tr>
+            <tr >
+                <td class="fila-nombre">
+                    @Html.DisplayNameFor(model => model.Importe)
+                </td>
+                <td >
+                    @Html.DisplayFor(model => model.Importe)
+                </td>
+            </tr>
+            <tr >
+                <td class="fila-nombre">
+                    @Html.DisplayNameFor(model => model.NumeroPago)
+                </td>
+                <td >
+                    @Html.DisplayFor(model => model.NumeroPago)
+                </td>
+            </tr>
+            <tr >
+                <td class="fila-nombre">
+                    @Html.DisplayNameFor(model => model.IdContrato)
+                </td>
+                <td >
+                    @Html.DisplayFor(model => model.IdContrato)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-<div>
-    <h4>Pago</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdPago)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdPago)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Fecha)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Fecha)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Importe)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Importe)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NumeroPago)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NumeroPago)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdContrato)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdContrato)
-        </dd>
-    </dl>
-</div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
-</div>
