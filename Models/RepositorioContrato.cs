@@ -209,6 +209,7 @@ public class RepositorioContrato
                         IdInmueble = reader.GetInt32(nameof(Contrato.IdInmueble)),
                         FechaInicio = reader.GetDateTime(nameof(Contrato.FechaInicio)),
                         FechaFin = reader.GetDateTime(nameof(Contrato.FechaFin)),
+                        Inquilino.Nombre = reader.GetString(nameof(Inquilino.Nombre)),
                     };
                     contratos.Add(contrato);
                 }
