@@ -20,9 +20,9 @@ function buscarPropietarios() {
     });
 }
 
-function seleccionarPropietario(idPropietario) {
-    $('#IdContrato').val(idPropietario);
-    $('#modalBuscarPropietarios').modal('hide');
+function seleccionarPropietario(idContrato) {
+    $('#IdContrato').val(idContrato);
+    $('#modalBuscarContrato').modal('hide');
 }
 
 $(document).ready(function () {
