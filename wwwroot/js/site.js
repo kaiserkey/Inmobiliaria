@@ -14,6 +14,7 @@ function buscarContratos() {
                 '</td><td>' + resultado.nombre + resultado.apellido + 
                 '</td><td>' + resultado.dni +
                 '</td><td>' + resultado.fechaInicio +
+                '</td><td>' + resultado.fechaInicio +
                 '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarContrato(' + resultado.idPropietario + ')">Seleccionar</button></td></tr>';
             $('#tblContrato').append(fila);
         });
