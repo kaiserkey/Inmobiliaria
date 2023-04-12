@@ -35,7 +35,7 @@ namespace Inmobiliaria.Controllers
         // GET: Pago/Create
         public ActionResult Create()
         {
-            Pago 
+            Pago pago = Repo
             return View();
         }
 
