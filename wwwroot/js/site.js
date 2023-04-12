@@ -12,7 +12,7 @@ function buscarContratos() {
             var fila = '<tr><td>' + resultado.idContrato +
                 '</td><td>' + resultado.idInmueble +
                 '</td><td>' + resultado.nombre + resultado.apellido + 
-                '</td><td>' + resultado.telefono +
+                '</td><td>' + resultado.dni +
                 '</td><td>' + resultado.email +
                 '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarContrato(' + resultado.idPropietario + ')">Seleccionar</button></td></tr>';
             $('#tblContrato').append(fila);
