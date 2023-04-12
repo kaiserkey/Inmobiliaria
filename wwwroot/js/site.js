@@ -11,6 +11,7 @@ function buscarContratos() {
     $.getJSON('/Pago/BuscarContratos', { busqueda: busqueda, opcion: opcion }, function (resultados) {
         $('#tblContrato').empty();
         $.each(resultados, function (index, resultado) {
+            console.log(busqueda, opcion, );
             var fila = '<tr><td>' + resultado.idContrato +
                 '</td><td>' + resultado.idInmueble +
                 '</td><td>' + resultado.nombre + resultado.apellido + 
