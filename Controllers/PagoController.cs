@@ -22,7 +22,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Index()
         {
             var listaPagos = RepoPago.GetPagos(con);
-            return View();
+            return View(listaPagos);
         }
 
         // GET: Pago/Details/5
