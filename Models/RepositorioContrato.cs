@@ -196,7 +196,7 @@ public class RepositorioContrato
                             FROM Contrato 
                             WHERE " + buscarPor + " LIKE @busqueda";
             }
-            
+
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             using (var reader = cmd.ExecuteReader())
             {
@@ -209,6 +209,7 @@ public class RepositorioContrato
                         IdInmueble = reader.GetInt32(nameof(Contrato.IdInmueble)),
                         FechaInicio = reader.GetDateTime(nameof(Contrato.FechaInicio)),
                         FechaFin = reader.GetDateTime(nameof(Contrato.FechaFin)),
+                        Inquilino.
                     };
                     contratos.Add(contrato);
                 }
