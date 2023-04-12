@@ -111,7 +111,8 @@ namespace Inmobiliaria.Controllers
         // GET: Pago/Delete/5
         public ActionResult Delete(int id)
         {
-            Pago pago = RepoPago.DeletePago(con)
+            Pago pago = RepoPago.DeletePago(con, id);
+            
             return View();
         }
 
