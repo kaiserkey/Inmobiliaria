@@ -15,7 +15,7 @@ function buscarPropietarios() {
                 '</td><td>' + resultado.telefono +
                 '</td><td>' + resultado.email +
                 '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarContrato(' + resultado.idPropietario + ')">Seleccionar</button></td></tr>';
-            $('#tblPropietarios').append(fila);
+            $('#tblContrato').append(fila);
         });
     });
 }
