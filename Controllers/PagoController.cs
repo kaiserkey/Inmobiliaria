@@ -123,8 +123,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 var res = RepoPago.DeletePago(con, pago);
-                
-
+                TempData["Mensaje"] = "La entidad se ha elimino correctamente.";
                 return RedirectToAction(nameof(Index));
             }
             catch
