@@ -30,7 +30,7 @@ function seleccionarPropietario(idContrato) {
 
 $(document).ready(function () {
     $('#txtBuscar').on('input', function () {
-        buscarContrato();
+        buscarContratos();
     });
 });
 
