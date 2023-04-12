@@ -82,9 +82,9 @@ public class RepositorioPago
             cmd.Parameters.AddWithValue("@NumeroPago", createPago.NumeroPago);
             cmd.Parameters.AddWithValue("@Fecha", fecha);
             cmd.Parameters.AddWithValue("@IdContrato", createPago.IdContrato);
-            Console.WriteLine("Entro al modelo");
-            res = Convert.ToInt32(cmd.ExecuteScalar());
             
+            res = Convert.ToInt32(cmd.ExecuteScalar());
+            Console.WriteLine("Entro al modelo");
             createPago.IdPago = res;
         }
         
