@@ -86,6 +86,7 @@ namespace Inmobiliaria.Controllers
         // GET: Pago/Edit/5
         public ActionResult Edit(int id)
         {
+            
             return View();
         }
 
