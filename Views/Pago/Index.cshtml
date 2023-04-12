@@ -52,10 +52,10 @@
                         @Html.DisplayFor(modelItem => item.IdContrato)
                     </td>
                     <td class="text-center">
-                        <a asp-action="Details" asp-route-id="@item.IdPago"> <i class="bi bi-file-text-fill" style="font-size: 2em; color: orange;"></i> </a>
+                        <a asp-action="Edit" asp-route-id="@item.IdPago"> <i class="bi bi-pencil-square" style="font-size: 2em; color: green;"></i> </a>
                     </td>
                     <td class="text-center">
-                        <a asp-action="Edit" asp-route-id="@item.IdPago"> <i class="bi bi-pencil-square" style="font-size: 2em; color: green;"></i> </a>
+                        <a asp-action="Details" asp-route-id="@item.IdPago"> <i class="bi bi-file-text-fill" style="font-size: 2em; color: orange;"></i> </a>
                     </td>
                     <td class="text-center">
                         <a asp-action="Delete" asp-route-id="@item.IdPago"> <i class="bi bi-trash3-fill" style="font-size: 2em; color: red;"></i> </a>
