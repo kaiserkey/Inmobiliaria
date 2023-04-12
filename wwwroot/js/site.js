@@ -4,7 +4,7 @@ function abrirModalContrato() {
     $('#tblContrato').empty();
 }
 
-function buscarPropietarios() {
+function buscarContratos() {
     var nombre = $('#txtBuscar').val();
     $.getJSON('/Pago/BuscarContratos', { busqueda: nombre }, function (resultados) {
         $('#tblContrato').empty();
