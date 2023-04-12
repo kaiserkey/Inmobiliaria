@@ -32,7 +32,7 @@ $(document).ready(function () {
 });
 
 // Función para cerrar el modal al hacer clic en el botón
-function cerrarModal() {
+function cerrarModalContrato() {
     $('#modalBuscarContrato').modal('hide');
 }
 
