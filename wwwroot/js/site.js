@@ -21,7 +21,7 @@ function buscarPropietarios() {
 }
 
 function seleccionarPropietario(idPropietario) {
-    $('#IdPropietario').val(idPropietario);
+    $('#IdContrato').val(idPropietario);
     $('#modalBuscarPropietarios').modal('hide');
 }
 
