@@ -207,6 +207,8 @@ public class RepositorioContrato
                 }
             }
             return contratos;
+
+            
         }
         if (buscarPor == "FechaInicio" || buscarPor == "FechaFin")
         {
