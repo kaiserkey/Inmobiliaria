@@ -189,7 +189,7 @@ public class RepositorioContrato
                     INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
                     WHERE CONCAT(i.Nombre, ' ', i.Apellido) LIKE @busqueda";
             }
-            if(bu)
+            if(buscarPor == "FechaI")
             cmd.CommandText = @"SELECT IdContrato, IdInquilino, IdInmueble, FechaInicio, FechaFin
                             FROM Contrato 
                             WHERE " + buscarPor + " LIKE @busqueda";
