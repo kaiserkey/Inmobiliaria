@@ -9,7 +9,7 @@ function buscarContratos() {
     $.getJSON('/Pago/BuscarContratos', { busqueda: nombre }, function (resultados) {
         $('#tblContrato').empty();
         $.each(resultados, function (index, resultado) {
-            var fila = '<tr><td>' + resultado.idCOntrato +
+            var fila = '<tr><td>' + resultado.idContrato +
                 '</td><td>' + resultado.nombre +
                 '</td><td>' + resultado.apellido + 
                 '</td><td>' + resultado.telefono +
