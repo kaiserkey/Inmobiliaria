@@ -74,20 +74,20 @@ public class RepositorioPago
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
 
-            cmd.CommandText = @"INSERT INTO Pago (Importe, Fecha, NumeroPago, IdContrato) 
-                            VALUES (@Importe, @Fecha, @IdContrato, @NumeroPago);
+            cmd.CommandText = @"INSERT INTO Pago (IdContrato, Fecha, NumeroPago, Importe) 
+                            VALUES (@IdContrato, @Fecha, @NumeroPago, @Importe);
                             SELECT LAST_INSERT_ID();";
 
-            cmd.Parameters.AddWithValue("@Importe", createPago.Importe);
-            cmd.Parameters.AddWithValue("@NumeroPago", createPago.NumeroPago);
-            cmd.Parameters.AddWithValue("@Fecha", fecha);
             cmd.Parameters.AddWithValue("@IdContrato", createPago.IdContrato);
-            
+            cmd.Parameters.AddWithValue("@Fecha", fecha);
+            cmd.Parameters.AddWithValue("@NumeroPago", createPago.NumeroPago);
+            cmd.Parameters.AddWithValue("@Importe", createPago.Importe);
+
             res = Convert.ToInt32(cmd.ExecuteScalar());
-            
+
             createPago.IdPago = res;
         }
-        
+
         return res;
     }
 
