@@ -182,11 +182,7 @@ public class RepositorioContrato
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            var query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
-                            i.Nombre, i.Apellido, i.Dni
-                            FROM Contrato c
-                            INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
-                            WHERE CONCAT(i.Nombre, ' ', i.Apellido) LIKE @busqueda";
+            var query = !""
             
             /* if (buscarPor == "Inquilino")
             {
