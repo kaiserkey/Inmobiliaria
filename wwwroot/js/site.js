@@ -5,8 +5,9 @@ function abrirModalContrato() {
 }
 
 function buscarContratos() {
-    var nombre = $('#txtBuscar').val();
-    $.getJSON('/Pago/BuscarContratos', { busqueda: nombre }, function (resultados) {
+    var busqueda = $('#txtBuscar').val();
+    var opcion = $('#buscarInmueblePor').val();
+    $.getJSON('/Contrato/BuscarInmuebles', { busqueda: busqueda, opcion: opcion }, function (resultados) {
         $('#tblContrato').empty();
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idContrato +
