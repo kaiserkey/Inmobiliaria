@@ -194,7 +194,7 @@ public class RepositorioContrato
             }
             else if (buscarPor == "FechaInicio" || buscarPor == "FechaFin")
             {
-                cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
+                query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
                             i.Nombre, i.Apellido, i.Dni
                             FROM Contrato c
                             INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino 
