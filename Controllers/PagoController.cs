@@ -42,7 +42,7 @@ namespace Inmobiliaria.Controllers
         // POST: Pago/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Pago on)
         {
             try
             {
