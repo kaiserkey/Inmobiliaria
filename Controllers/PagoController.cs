@@ -61,7 +61,7 @@ namespace Inmobiliaria.Controllers
         {
             var contrato = new List<Contrato>();
             if (buscarPor == null){
-                console
+                Console.WriteLine("buscarPor es null");
             }
             contrato = RepoContrato.BuscarContrato(con, busqueda, buscarPor);
             
