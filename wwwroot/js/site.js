@@ -12,7 +12,7 @@ function buscarContratos() {
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idContrato +
                 '</td><td>' + resultado.idInmueble +
-                '</td><td>' + resultado.nombre + resultado.apellido + 
+                '</td><td>' + resultado.nombre + " " + resultado.apellido + 
                 '</td><td>' + resultado.dni +
                 '</td><td>' + resultado.fechaInicio +
                 '</td><td>' + resultado.fechaFin +
