@@ -1,3 +1,4 @@
+using Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,7 +60,7 @@ namespace Inmobiliaria.Controllers
         public IActionResult BuscarContratos(string busqueda, string buscarPor)
         {
             var contrato = new List<Contrato>();
-            console
+            Console.WriteLine(busqueda);
             contrato = RepoContrato.BuscarContrato(con, busqueda, buscarPor);
 
             var resultados = contrato.Select(c => new
