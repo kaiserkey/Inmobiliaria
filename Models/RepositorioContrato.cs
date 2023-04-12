@@ -200,6 +200,7 @@ public class RepositorioContrato
                             INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino 
                             WHERE " + buscarPor + " LIKE @busqueda";
             }
+            Console.WriteLine(query)
             cmd.CommandText = query;
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             using (var reader = cmd.ExecuteReader())
