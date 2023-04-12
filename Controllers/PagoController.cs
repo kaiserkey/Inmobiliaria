@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Inmobiliaria.Models;
 
-
 namespace Inmobiliaria.Controllers
 {
     public class PagoController : Controller
