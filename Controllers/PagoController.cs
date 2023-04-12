@@ -55,7 +55,22 @@ namespace Inmobiliaria.Controllers
             }
         }
 
-        
+        public IActionResult BuscarC(string busqueda)
+        {
+            var inquilinos = new List<Inquilino>();
+            inquilinos = RepoInquilino.BuscarInquilino(con, busqueda);
+
+            var resultados = inquilinos.Select(i => new
+            {
+                idInquilino = i.IdInquilino,
+                nombre = i.Nombre,
+                apellido = i.Apellido,
+                telefono = i.Telefono,
+                email = i.Email,
+            });
+
+            return Json(resultados);
+        }
 
         // GET: Pago/Edit/5
         public ActionResult Edit(int id)
