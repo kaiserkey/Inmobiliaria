@@ -192,7 +192,9 @@ public class RepositorioContrato
             }
             if(buscarPor == "FechaInicio" || buscarPor == "FechaFin")
             {
-                
+                cmd.CommandText = @"SELECT IdContrato, IdInquilino, IdInmueble, FechaInicio, FechaFin
+                            FROM Contrato 
+                            WHERE " + buscarPor + " LIKE @busqueda";
             }
             
 
