@@ -84,7 +84,7 @@ public class RepositorioPago
             cmd.Parameters.AddWithValue("@IdContrato", createPago.IdContrato);
             
             res = Convert.ToInt32(cmd.ExecuteScalar());
-            Console.WriteLine("Entro al modelo");
+            
             createPago.IdPago = res;
         }
         
