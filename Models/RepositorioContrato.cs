@@ -183,39 +183,40 @@ public class RepositorioContrato
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            if(buscarPor == "Inquilino")
+            if (buscarPor == "Inquilino")
             {
                 cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin
                     FROM Contrato c
                     INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
                     WHERE CONCAT(i.Nombre, ' ', i.Apellido) LIKE @busqueda";
                 cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
-            using (var reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
+                using (var reader = cmd.ExecuteReader())
                 {
-                    var contrato = new Contrato
+                    while (reader.Read())
                     {
-                        IdContrato = reader.GetInt32(nameof(Contrato.IdContrato)),
-                        IdInquilino = reader.GetInt32(nameof(Contrato.IdInquilino)),
-                        IdInmueble = reader.GetInt32(nameof(Contrato.IdInmueble)),
-                        FechaInicio = reader.GetDateTime(nameof(Contrato.FechaInicio)),
-                        FechaFin = reader.GetDateTime(nameof(Contrato.FechaFin)),
-                    };
-                    contratos.Add(contrato);
+                        var contrato = new Contrato
+                        {
+                            IdContrato = reader.GetInt32(nameof(Contrato.IdContrato)),
+                            IdInquilino = reader.GetInt32(nameof(Contrato.IdInquilino)),
+                            IdInmueble = reader.GetInt32(nameof(Contrato.IdInmueble)),
+                            FechaInicio = reader.GetDateTime(nameof(Contrato.FechaInicio)),
+                            FechaFin = reader.GetDateTime(nameof(Contrato.FechaFin)),
+                        };
+                        contratos.Add(contrato);
+                    }
                 }
             }
+            return contratos;
         }
-        return contratos;
-            }
-            if(buscarPor == "FechaInicio" || buscarPor == "FechaFin")
-            {
-                cmd.CommandText = @"SELECT IdContrato, IdInquilino, IdInmueble, FechaInicio, FechaFin
+        if (buscarPor == "FechaInicio" || buscarPor == "FechaFin")
+        {
+            cmd.CommandText = @"SELECT IdContrato, IdInquilino, IdInmueble, FechaInicio, FechaFin
                             FROM Contrato 
                             WHERE " + buscarPor + " LIKE @busqueda";
-            }
+                
+        }
 
-            
+
     }
 
 }
