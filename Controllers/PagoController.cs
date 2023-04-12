@@ -42,11 +42,11 @@ namespace Inmobiliaria.Controllers
         // POST: Pago/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Pago on)
+        public ActionResult Create(Pago pago)
         {
             try
             {
-                // TODO: Add insert logic here
+                
 
                 return RedirectToAction(nameof(Index));
             }
