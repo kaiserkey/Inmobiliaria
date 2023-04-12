@@ -86,7 +86,7 @@ namespace Inmobiliaria.Controllers
         // GET: Pago/Edit/5
         public ActionResult Edit(int id)
         {
-            
+            var res = RepoPago.GetPago(con, id);
             return View();
         }
 
