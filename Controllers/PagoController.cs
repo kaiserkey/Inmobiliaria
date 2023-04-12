@@ -62,7 +62,7 @@ namespace Inmobiliaria.Controllers
             var contrato = new List<Contrato>();
             
             contrato = RepoContrato.BuscarContrato(con, busqueda, buscarPor);
-            Console.WriteLine(contrato.Nombre);
+            Console.WriteLine(contrato.Inquilino);
             var resultados = contrato.Select(c => new
             {
                 idContrato = c.IdContrato,
