@@ -15,7 +15,7 @@ public class Pago
     public decimal Importe { get; set; }
 
     [Display (Name = "Número de Pago")]
-    public string NumeroPago { get; set; }
+    public int NumeroPago { get; set; }
 
     [Display (Name = "Contrato")]
     public int IdContrato { get; set; }
