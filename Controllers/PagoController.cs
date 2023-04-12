@@ -62,7 +62,7 @@ namespace Inmobiliaria.Controllers
 
             var resultados = contrato.Select(c => new
             {
-                
+                idContrato = c.IdContrato,
                 idInmueble = c.IdInmueble,
                 idInquilino = c.IdInquilino,
                 nombre = c.Nombre,
