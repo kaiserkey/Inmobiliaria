@@ -69,7 +69,7 @@ public class RepositorioPago
 
     public int CreatePago(MySqlDatabase mySqlDatabase, Pago createPago)
     {
-        Console
+        Console.WriteLine("E");
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
