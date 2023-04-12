@@ -183,7 +183,7 @@ public class RepositorioContrato
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
             var query = "";
-            Console.WriteLine(buscarPor === "Inquilino");
+            Console.WriteLine(buscarPor == "Inquilino");
             if (buscarPor == "Inquilino")
             {
                 query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
