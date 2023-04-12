@@ -80,7 +80,7 @@ public class RepositorioPago
 
             cmd.Parameters.AddWithValue("@Importe", createPago.Importe);
             cmd.Parameters.AddWithValue("@NumeroPago", createPago.NumeroPago);
-            cmd.Parameters.AddWithValue("@Fecha", createPago.Fecha);
+            cmd.Parameters.AddWithValue("@Fecha", fecha);
             cmd.Parameters.AddWithValue("@IdContrato", createPago.IdContrato);
 
             res = Convert.ToInt32(cmd.ExecuteScalar());
