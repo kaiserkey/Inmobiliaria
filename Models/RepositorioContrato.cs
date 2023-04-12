@@ -177,7 +177,7 @@ public class RepositorioContrato
 
     public List<Contrato> BuscarContrato(MySqlDatabase mySqlDatabase, string busqueda, string buscarPor)
     {
-        /* a la  */
+        /* a la hora de realizar la busqueda filtrar prime */
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
