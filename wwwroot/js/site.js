@@ -36,6 +36,44 @@ function cerrarModal() {
     $('#modalBuscarPropietarios').modal('hide');
 }
 
+/* Abrir Modal de buscar propietario */
+function abrirModal() {
+    $('#modalBuscarPropietarios').modal('show');
+    $('#tblPropietarios').empty();
+}
+
+function buscarPropietarios() {
+    var nombre = $('#txtBuscar').val();
+    $.getJSON('/Inmueble/BuscarPropietarios', { busqueda: nombre }, function (resultados) {
+        $('#tblPropietarios').empty();
+        $.each(resultados, function (index, resultado) {
+            var fila = '<tr><td>' + resultado.idPropietario +
+                '</td><td>' + resultado.nombre +
+                '</td><td>' + resultado.apellido +
+                '</td><td>' + resultado.telefono +
+                '</td><td>' + resultado.email +
+                '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarPropietario(' + resultado.idPropietario + ')">Seleccionar</button></td></tr>';
+            $('#tblPropietarios').append(fila);
+        });
+    });
+}
+
+function seleccionarPropietario(idPropietario) {
+    $('#IdPropietario').val(idPropietario);
+    $('#modalBuscarPropietarios').modal('hide');
+}
+
+$(document).ready(function () {
+    $('#txtBuscar').on('input', function () {
+        buscarPropietarios();
+    });
+});
+
+// Función para cerrar el modal al hacer clic en el botón
+function cerrarModal() {
+    $('#modalBuscarPropietarios').modal('hide');
+}
+
 /* Abrir Modal de buscar inquilino */
 function abrirModalInquilino() {
     $('#modalBuscarInquilinos').modal('show');
