@@ -178,7 +178,7 @@ public class RepositorioContrato
     public List<Contrato> BuscarContrato(MySqlDatabase mySqlDatabase, string busqueda, string buscarPor)
     {
         /* a la hora de realizar la busqueda filtrar primero desde el controlador 
-        el id de inquilino a tr */
+        el id de inquilino a travez del nombre  */
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
