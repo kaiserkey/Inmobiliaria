@@ -28,12 +28,6 @@ function seleccionarPropietario(idContrato) {
     $('#modalBuscarContrato').modal('hide');
 }
 
-$(document).ready(function () {
-    $('#txtBuscar').on('input', function () {
-        buscarContratos();
-    });
-});
-
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModalContrato() {
     $('#modalBuscarContrato').modal('hide');
