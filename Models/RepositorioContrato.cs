@@ -207,7 +207,7 @@ public class RepositorioContrato
                 }
                 return contratos;
             }
-            
+
 
             if (buscarPor == "FechaInicio" || buscarPor == "FechaFin")
             {
@@ -215,29 +215,30 @@ public class RepositorioContrato
                             FROM Contrato 
                             WHERE " + buscarPor + " LIKE @busqueda";
                 cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
-            using (var reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
+                using (var reader = cmd.ExecuteReader())
                 {
-                    var contrato = new Contrato
+                    while (reader.Read())
                     {
-                        IdContrato = reader.GetInt32(nameof(Contrato.IdContrato)),
-                        IdInquilino = reader.GetInt32(nameof(Contrato.IdInquilino)),
-                        IdInmueble = reader.GetInt32(nameof(Contrato.IdInmueble)),
-                        FechaInicio = reader.GetDateTime(nameof(Contrato.FechaInicio)),
-                        FechaFin = reader.GetDateTime(nameof(Contrato.FechaFin)),
-                    };
-                    contratos.Add(contrato);
+                        var contrato = new Contrato
+                        {
+                            IdContrato = reader.GetInt32(nameof(Contrato.IdContrato)),
+                            IdInquilino = reader.GetInt32(nameof(Contrato.IdInquilino)),
+                            IdInmueble = reader.GetInt32(nameof(Contrato.IdInmueble)),
+                            FechaInicio = reader.GetDateTime(nameof(Contrato.FechaInicio)),
+                            FechaFin = reader.GetDateTime(nameof(Contrato.FechaFin)),
+                        };
+                        contratos.Add(contrato);
+                    }
                 }
+                return contratos;
             }
+            
+
         }
-        return contratos;
-
-            }
-        }
-
-
-
     }
+
+
+
+}
 
 }
