@@ -16,6 +16,7 @@ namespace Inmobiliaria.Controllers
         {
             con = new MySqlDatabase();
             RepoPago = new RepositorioPago();
+            RepoContrato = new RepositorioContrato();
         }
         // GET: Pago
         public ActionResult Index()
