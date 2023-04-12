@@ -11,7 +11,7 @@ function buscarContratos() {
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idContrato +
                 '</td><td>' + resultado.idInmueble +
-                '</td><td>' + resultado.apellido + 
+                '</td><td>' + resultado.nombre + 
                 '</td><td>' + resultado.telefono +
                 '</td><td>' + resultado.email +
                 '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarContrato(' + resultado.idPropietario + ')">Seleccionar</button></td></tr>';
