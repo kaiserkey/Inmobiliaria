@@ -189,15 +189,7 @@ public class RepositorioContrato
                     FROM Contrato c
                     INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
                     WHERE CONCAT(i.Nombre, ' ', i.Apellido) LIKE @busqueda";
-            }
-            if(buscarPor == "FechaInicio" || buscarPor == "FechaFin")
-            {
-                cmd.CommandText = @"SELECT IdContrato, IdInquilino, IdInmueble, FechaInicio, FechaFin
-                            FROM Contrato 
-                            WHERE " + buscarPor + " LIKE @busqueda";
-            }
-
-            cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
+                cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             using (var reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
@@ -215,6 +207,15 @@ public class RepositorioContrato
             }
         }
         return contratos;
+            }
+            if(buscarPor == "FechaInicio" || buscarPor == "FechaFin")
+            {
+                cmd.CommandText = @"SELECT IdContrato, IdInquilino, IdInmueble, FechaInicio, FechaFin
+                            FROM Contrato 
+                            WHERE " + buscarPor + " LIKE @busqueda";
+            }
+
+            
     }
 
 }
