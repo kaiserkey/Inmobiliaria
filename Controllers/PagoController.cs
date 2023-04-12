@@ -97,7 +97,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                var res = RepoPa
+                var res = RepoPago.UpdatePago()
 
                 return RedirectToAction(nameof(Index));
             }
