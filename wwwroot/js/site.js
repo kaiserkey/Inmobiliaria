@@ -1,4 +1,4 @@
-﻿/* Abrir Modal de buscar propietario */
+﻿/* Abrir Modal de buscar contrato */
 function abrirModal() {
     $('#modalBuscarPropietarios').modal('show');
     $('#tblPropietarios').empty();
