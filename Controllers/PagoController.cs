@@ -98,7 +98,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 var res = RepoPago.UpdatePago(con, pago);
-                Console.WriteLine(pago);
+                Console.WriteLine(pago.Importe);
                 TempData["Mensaje"] = "La entidad se actualizo correctamente ID:" + id;
                 return RedirectToAction(nameof(Index));
             }
