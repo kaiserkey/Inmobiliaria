@@ -122,7 +122,8 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                var res = RepoPago.DeletePago()
+                var res = RepoPago.DeletePago(con, pago);
+                
 
                 return RedirectToAction(nameof(Index));
             }
