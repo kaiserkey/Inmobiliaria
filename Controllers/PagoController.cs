@@ -53,7 +53,6 @@ namespace Inmobiliaria.Controllers
             {
                 var res = RepoPago.CreatePago(con, pago);
                 TempData["Id"] = pago.IdPago;
-                
                 return RedirectToAction(nameof(Index));
             }
             catch
