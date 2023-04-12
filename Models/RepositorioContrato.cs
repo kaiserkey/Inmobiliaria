@@ -186,6 +186,7 @@ public class RepositorioContrato
             
             if (buscarPor == "Inquilino")
             {
+                
                 cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
                             i.Nombre, i.Apellido, i.Dni
                             FROM Contrato c
@@ -199,7 +200,7 @@ public class RepositorioContrato
                             FROM Contrato c
                             INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino 
                             WHERE " + buscarPor + " LIKE @busqueda";
-            } */
+            }
 
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             using (var reader = cmd.ExecuteReader())
