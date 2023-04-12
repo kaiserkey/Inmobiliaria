@@ -67,7 +67,7 @@ namespace Inmobiliaria.Controllers
                 idInquilino = c.IdInquilino,
                 nombre = c.Inquilino.Nombre,
                 apellido = c.Inquilino.Apellido,
-                telefono = c.Telefono,
+                dni = c.Telefono,
                 email = c.Email,
             });
 
