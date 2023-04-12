@@ -22,7 +22,7 @@ function buscarContratos() {
     });
 }
 
-function seleccionarCotrato(idContrato) {
+function seleccionarContrato(idContrato) {
     $('#IdContrato').val(idContrato);
     $('#modalBuscarContrato').modal('hide');
 }
