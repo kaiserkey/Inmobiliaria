@@ -10,7 +10,7 @@ function buscarContratos() {
         $('#tblContrato').empty();
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idContrato +
-                '</td><td>' + resultado.nombre +
+                '</td><td>' + resultado.idInmueble +
                 '</td><td>' + resultado.apellido + 
                 '</td><td>' + resultado.telefono +
                 '</td><td>' + resultado.email +
