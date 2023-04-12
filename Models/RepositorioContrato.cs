@@ -212,6 +212,8 @@ public class RepositorioContrato
                         IdInmueble = reader.GetInt32(nameof(Contrato.IdInmueble)),
                         FechaInicio = reader.GetDateTime(nameof(Contrato.FechaInicio)),
                         FechaFin = reader.GetDateTime(nameof(Contrato.FechaFin)),
+                        INquilino = new Inquilino
+                        {
                         Inquilino.Nombre = reader.GetString(nameof(Inquilino.Nombre)),
                         Inquilino.Apellido = reader.GetString(nameof(Inquilino.Apellido)),
                         Inquilino.Dni = reader.GetString(nameof(Inquilino.Dni)),
