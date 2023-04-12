@@ -213,6 +213,7 @@ public class RepositorioContrato
             cmd.CommandText = @"SELECT IdContrato, IdInquilino, IdInmueble, FechaInicio, FechaFin
                             FROM Contrato 
                             WHERE " + buscarPor + " LIKE @busqueda";
+                    
         }
 
 
