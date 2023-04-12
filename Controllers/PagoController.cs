@@ -60,10 +60,10 @@ namespace Inmobiliaria.Controllers
         public IActionResult BuscarContratos(string busqueda, string opcion)
         {
             var contrato = new List<Contrato>();
-            if (buscarPor == null){
+            if (opcion == null){
                 Console.WriteLine("buscarPor es null");
             }
-            contrato = RepoContrato.BuscarContrato(con, busqueda, buscarPor);
+            contrato = RepoContrato.BuscarContrato(con, busqueda, opcion);
             
             var resultados = contrato.Select(c => new
             {
