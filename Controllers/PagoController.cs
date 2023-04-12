@@ -122,7 +122,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                var res = RPago
 
                 return RedirectToAction(nameof(Index));
             }
