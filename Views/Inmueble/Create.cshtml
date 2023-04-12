@@ -51,7 +51,7 @@
                 <div class="form-group">
                     <label asp-for="IdPropietario" class="control-label"></label>
                     <div class="input-group">
-                        <input asp-for="IdPropietario" class="form-control" id="IdPropietario"/>
+                        <input asp-for="IdPropietario" class="form-control" id="IdPropietario" />
                         <span class="input-group-addon" id="lupa" style="cursor:pointer" onclick="abrirModal()">
                             <i class="bi bi-search-heart-fill" style="font-size: 1.5em; color: #8a5a41;"></i>
                         </span>
@@ -72,6 +72,10 @@
                                 <div class="form-group">
                                     <label>Ingresa un nombre y apellido para buscar</label>
                                     <input type="text" id="txtBuscar" class="form-control" />
+                                    <div class="input-group-append">
+                                        <button id="boton-general" class="btn btn-primary" type="button"
+                                            onclick="buscarContratos()">Buscar</button>
+                                    </div>
                                 </div>
                                 <div class="table-responsive mw-100">
                                     <table class="table table-striped d-inline-block">
@@ -90,8 +94,8 @@
                                     </table>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" id="boton-general" onclick="cerrarModal()" class="btn btn-primary"
-                                        data-dismiss="modal">Cerrar</button>
+                                    <button type="button" id="boton-general" onclick="cerrarModal()"
+                                        class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                                 </div>
                             </div>
                         </div>

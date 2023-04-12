@@ -59,12 +59,6 @@ function seleccionarPropietario(idPropietario) {
     $('#modalBuscarPropietarios').modal('hide');
 }
 
-$(document).ready(function () {
-    $('#txtBuscar').on('input', function () {
-        buscarPropietarios();
-    });
-});
-
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModal() {
     $('#modalBuscarPropietarios').modal('hide');
