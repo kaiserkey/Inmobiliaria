@@ -26,7 +26,7 @@ public class RepositorioPago
                     {
                         IdPago = reader.GetInt32(nameof(Pago.IdPago)),
                         Importe = reader.GetDecimal(nameof(Pago.Importe)),
-                        NumeroPago = reader.GetString(nameof(Pago.NumeroPago)),
+                        NumeroPago = reader.GetInt32(nameof(Pago.NumeroPago)),
                         Fecha = reader.GetDateTime(nameof(Pago.Fecha)),
                         IdContrato = reader.GetInt32(nameof(Pago.IdContrato)),
                     };
@@ -55,7 +55,7 @@ public class RepositorioPago
                     {
                         IdPago = reader.GetInt32(nameof(Pago.IdPago)),
                         Importe = reader.GetDecimal(nameof(Pago.Importe)),
-                        NumeroPago = reader.GetString(nameof(Pago.NumeroPago)),
+                        NumeroPago = reader.GetInt32(nameof(Pago.NumeroPago)),
                         Fecha = reader.GetDateTime(nameof(Pago.Fecha)),
                         IdContrato = reader.GetInt32(nameof(Pago.IdContrato)),
                     };
