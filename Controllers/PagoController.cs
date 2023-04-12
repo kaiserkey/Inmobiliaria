@@ -35,6 +35,7 @@ namespace Inmobiliaria.Controllers
         // GET: Pago/Details/5
         public ActionResult Details(int id)
         {
+            Pago 
             return View();
         }
 
