@@ -186,7 +186,7 @@ public class RepositorioContrato
             if(buscarPor == "Inquilino")
             {
                 cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin
-                                    i.Nombre, i.Apellido
+                                    i.Nombre, i.Apellido, i.Dni
                                     FROM Contrato c
                                     INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
                                     WHERE CONCAT(i.Nombre, ' ', i.Apellido) LIKE @busqueda";
@@ -194,7 +194,7 @@ public class RepositorioContrato
             if(buscarPor == "FechaInicio" || buscarPor == "FechaFin")
             {
                 cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin
-                                    i.Nombre, i.Apellido, i.
+                                    i.Nombre, i.Apellido, i.Dni
                                     FROM Contrato c
                                     INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino 
                                     WHERE " + buscarPor + " LIKE @busqueda";
