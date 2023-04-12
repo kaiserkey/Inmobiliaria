@@ -91,6 +91,7 @@ public class RepositorioPago
 
     public int UpdatePago(MySqlDatabase mySqlDatabase, Pago pago)
     {
+        var fecha = createPago.Fecha.ToString("yyyy-MM-dd HH:mm:ss");
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
