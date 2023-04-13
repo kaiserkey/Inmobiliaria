@@ -6,7 +6,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Inmobiliaria.Models
 {
-    [Key]
     [Display(Name = "Código")]
     public int Id { get; set; }
     
@@ -17,6 +16,8 @@ namespace Inmobiliaria.Models
     public string Email { get; set; }
     
     public string Clave { get; set; }
-    public string Avatar { get; set; }    
+    
+    public string Avatar { get; set; }   
+
     public int Rol { get; set; }
 }
