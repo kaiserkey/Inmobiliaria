@@ -13,9 +13,9 @@ namespace Inmobiliaria.Models
     public string Nombre { get; set; }
     [Required]
     public string Apellido { get; set; }
-    [Required, EmailAddress]
+    
     public string Email { get; set; }
-    [Required, DataType(DataType.Password)]
+    
     public string Clave { get; set; }
     public string Avatar { get; set; }    
     public int Rol { get; set; }
