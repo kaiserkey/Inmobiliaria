@@ -25,8 +25,7 @@ namespace Inmobiliaria.Models
     //[NotMapped]//Para EF
     //public string AvatarFileName { get; set; }
     public int Rol { get; set; }
-    [NotMapped]//Para EF
-    public string RolNombre => Rol > 0 ? ((enRoles)Rol).ToString() : "";
+
 
 
 }
