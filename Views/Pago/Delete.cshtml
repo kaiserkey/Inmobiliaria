@@ -9,45 +9,59 @@
     <table class="table table-bordered table-striped w-auto">
         <tr>
             <th class="col" colspan="2">
-                <h2><a asp-action="Index"><i class="bi bi-arrow-return-left" style="font-size: 1em; color: black;">Regresar</i></a></h2>
-                <h2><a href="@Url.Action("Edit", new { id = Pago.IdPago  })"> <i class="bi bi-pencil-square" style="font-size: 1em; color: green;">Editar</i> </a></h2>
+                <h2><a asp-action="Index"><i class="bi bi-arrow-return-left"
+                            style="font-size: 1em; color: black;">Regresar</i></a></h2>
+                <h2><a href="@Url.Action("Edit", new { id = Pago.IdPago  })"> <i class="bi bi-pencil-square"
+                            style="font-size: 1em; color: green;">Editar</i> </a></h2>
             </th>
         </tr>
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdPago)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdPago)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Fecha)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Fecha)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Importe)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Importe)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NumeroPago)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NumeroPago)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdContrato)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdContrato)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+        <tr>
+            <td class="col-sm-4 fila-nombre">
+                @Html.DisplayNameFor(model => model.IdPago)
+            </td>
+            <td class="col-sm-8">
+                @Html.DisplayFor(model => model.IdPago)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-4 fila-nombre">
+                @Html.DisplayNameFor(model => model.Fecha)
+            </td>
+            <td class="col-sm-8">
+                @Html.DisplayFor(model => model.Fecha)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-4 fila-nombre">
+                @Html.DisplayNameFor(model => model.Importe)
+            </td>
+            <td class="col-sm-8">
+                @Html.DisplayFor(model => model.Importe)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-4 fila-nombre">
+                @Html.DisplayNameFor(model => model.NumeroPago)
+            </td>
+            <td class="col-sm-8">
+                @Html.DisplayFor(model => model.NumeroPago)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-4 fila-nombre">
+                @Html.DisplayNameFor(model => model.IdContrato)
+            </td>
+            <td class="col-sm-8">
+                @Html.DisplayFor(model => model.IdContrato)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <h2 id="eliminar-mensaje">Estas seguro de que deseas eliminar este elemento?</h2>
+                <form asp-action="Delete">
+                    <input id="boton-general" type="submit" value="Delete" class="btn btn-info btn-block" />
+                </form>
+            </td>
+        </tr>
+    </table>
 </div>
