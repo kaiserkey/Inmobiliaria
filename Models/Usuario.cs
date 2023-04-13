@@ -17,10 +17,6 @@ namespace Inmobiliaria.Models
     public string Email { get; set; }
     [Required, DataType(DataType.Password)]
     public string Clave { get; set; }
-    public string Avatar { get; set; }
-    
+    public string Avatar { get; set; }    
     public int Rol { get; set; }
-
-
-
 }
