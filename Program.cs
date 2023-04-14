@@ -4,12 +4,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
-  options =>
-  {
-      options.LoginPath = "/Usuarios/login";
-      options.LogoutPath = "/Usuarios/logout";
-      options.AccessDeniedPath = "/Home/Privacy";
-  }
+    options =>
+    {
+        options.LoginPath = "/Usuario/login";
+        options.LogoutPath = "/Usuario/logout";
+        options.AccessDeniedPath = "/Home/Privacy";
+    }
 );
 
 var app = builder.Build();
