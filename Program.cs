@@ -17,6 +17,8 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("Administrador",policy => policy.RequireRole("Administrador"));
 });
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
