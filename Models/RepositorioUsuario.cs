@@ -68,5 +68,21 @@ public class RepositorioUsuario
         return usuario;
     }
 
-    
+    public int CreateUsuario(MySqlDatabase mySqlDatabase, Usuario usuario)
+    {
+        int res = -1;
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"INSERT INTO Usuario (Nombre, Apellido, Direccion, Telefono, Dni, Email, Rol) VALUES (@nombre, @apellido, @direccion, @telefono, @dni, @email, @rol)";
+            cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
+            cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
+            cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
+            cmd.Parameters.AddWithValue("@telefono", usuario.Telefono);
+            cmd.Parameters.AddWithValue("@dni", usuario.Dni);
+            cmd.Parameters.AddWithValue("@email", usuario.Email);
+            cmd.Parameters.AddWithValue("@rol", usuario.Rol);
+            res = cmd.ExecuteNonQuery();
+        }
+        return res;
+    }
 }
