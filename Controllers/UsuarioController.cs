@@ -221,7 +221,6 @@ namespace Inmobiliaria.Controllers
 
                 if (!User.IsInRole("Administrador"))
                 {
-                    //vista = nameof(Perfil);
                     var usuarioActual = Repo.ObtenerPorCorreo(User.Identity.Name);
                     if (usuarioActual.Id != id)
                     {
