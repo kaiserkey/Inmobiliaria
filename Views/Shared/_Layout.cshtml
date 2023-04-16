@@ -45,7 +45,9 @@
                     <a class="navbar-brand" href="/home"><img src="/img/inmobiliaria-icon.png"
                             alt="Logo de la Inmobiliaria"></a>
                     <ul class="navbar-nav d-flex justify-content-center align-items-center">
-                        
+                        @if (!User.Identity.IsAuthenticated){
+                            
+                        }
                         <li class="nav-item">
                             <a class="nav-link" href="/contrato">Contratos</a>
                         </li>
