@@ -74,9 +74,9 @@ public class RepositorioUsuario
             cmd.CommandText = @"INSERT INTO Usuario (Nombre, Apellido, Clave, Avatar, Email, Rol) VALUES (@Nombre, @Apellido, @Clave, @Avatar, @Email, @Rol)";
             cmd.Parameters.AddWithValue("@Nombre", usuario.Nombre);
             cmd.Parameters.AddWithValue("@Apellido", usuario.Apellido);
-            cmd.Parameters.AddWithValue("@Clave", usuario.C);
+            cmd.Parameters.AddWithValue("@Clave", usuario.Clave);
             cmd.Parameters.AddWithValue("@Avatar", usuario.Avatar);
-            cmd.Parameters.AddWithValue("@email", usuario.Email);
+            cmd.Parameters.AddWithValue("@Email", usuario.Email);
             cmd.Parameters.AddWithValue("@rol", usuario.Rol);
             res = cmd.ExecuteNonQuery();
         }
