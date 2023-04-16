@@ -71,7 +71,7 @@ public class RepositorioUsuario
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"INSERT INTO Usuario (Nombre, Apellido, Clave, Avatar, Email, Rol) VALUES (@nombre, @apellido, @direccion, @telefono, @Avatar, @email, @rol)";
+            cmd.CommandText = @"INSERT INTO Usuario (Nombre, Apellido, Clave, Avatar, Email, Rol) VALUES (@nombre, @apellido, @cla, @Avatar, @email, @rol)";
             cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
             cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
             cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
