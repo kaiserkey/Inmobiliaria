@@ -134,7 +134,6 @@ namespace Inmobiliaria.Controllers
                         numBytesRequested: 256 / 8
                     ));
                 usuario.Clave = hashed;
-                //usuario.Rol = User.IsInRole("Administrador") ? usuario.Rol : (int)enRoles.Empleado ;
                 var res = Repo.CrearUsuario(usuario);
                 if (usuario.AvatarFile != null && usuario.Id > 0)
                 {
