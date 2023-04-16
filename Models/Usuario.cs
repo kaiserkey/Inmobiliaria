@@ -4,10 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 public enum UsuarioRol
-    {
-        Administrador = 1,
-        Empleado = 2,
-    }
+{
+    Administrador = 1,
+    Empleado = 2,
+}
 public class Usuario
 {
     [Key]
@@ -21,11 +21,11 @@ public class Usuario
     public string Email { get; set; }
     [Required, DataType(DataType.Password)]
     public string Clave { get; set; }
-    
-    public string Avatar { get; set; }   
+
+    public string Avatar { get; set; }
     [NotMapped]//Para EF
     public IFormFile AvatarFile { get; set; }
 
     public int Rol { get; set; }
-    
+
 }
