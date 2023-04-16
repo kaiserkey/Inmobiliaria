@@ -45,16 +45,19 @@
                     <a class="navbar-brand" href="/home"><img src="/img/inmobiliaria-icon.png"
                             alt="Logo de la Inmobiliaria"></a>
                     <ul class="navbar-nav d-flex justify-content-center align-items-center">
-                        @if (!User.Identity.IsAuthenticated){
+                        @if (!User.Identity.IsAuthenticated)
+                        {
                             <li class="nav-item">
-                            <a class="nav-link" href="/home/about">Sobre Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/home/contacto">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/home/login">Entrar</a>
-                        </li>
+                                <a class="nav-link" href="/home/about">Sobre Nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/home/contacto">Contacto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/home/login">Entrar</a>
+                            </li>
+                        }else{
+                            
                         }
                         <li class="nav-item">
                             <a class="nav-link" href="/contrato">Contratos</a>
@@ -101,7 +104,8 @@
                 </div>
             </div>
         }
-        else if(ViewBag.Mensaje != null){
+        else if (ViewBag.Mensaje != null)
+        {
             <div id="modalMessage" class="modal fade">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content bg-warning text-dark">
@@ -118,7 +122,8 @@
                 </div>
             </div>
         }
-        else if (ViewBag.Error != null){
+        else if (ViewBag.Error != null)
+        {
             <div id="modalError" class="modal fade">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content bg-success">
