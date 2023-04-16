@@ -80,7 +80,8 @@ public class RepositorioUsuario
             cmd.Parameters.AddWithValue("@Avatar", usuario.Avatar);
             cmd.Parameters.AddWithValue("@Email", usuario.Email);
             cmd.Parameters.AddWithValue("@Rol", usuario.Rol);
-            res = cmd.ExecuteNonQuery();
+            res = Convert.ToInt32(cmd.ExecuteScalar());
+            
         }
         return res;
     }
