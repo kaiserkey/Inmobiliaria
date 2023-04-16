@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Inmobiliaria.Models;
 
-    public class RepositorioUsuario
-    {
-        
-    }
+public class RepositorioUsuario
+{
+
+}
