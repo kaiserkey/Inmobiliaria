@@ -42,7 +42,10 @@ namespace Inmobiliaria.Controllers
             return RedirectToAction("Login");
         }
 
-        
+        // POST: Usuario/Login/
+		[HttpPost]
+		[AllowAnonymous]
+		[ValidateAntiForgeryToken]
 
         // GET: Usuario
         public ActionResult Index()
