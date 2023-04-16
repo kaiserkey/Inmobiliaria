@@ -45,7 +45,6 @@ namespace Inmobiliaria.Controllers
         // POST: Usuario/Login/
 		[HttpPost]
 		[AllowAnonymous]
-		[ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(Login login){
             try
             {
