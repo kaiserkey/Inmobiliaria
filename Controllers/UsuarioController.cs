@@ -50,9 +50,41 @@ namespace Inmobiliaria.Controllers
         public async Task<IActionResult> Login(Login login){
             try
             {
-                if (ModelState.IsValid){
-                    
-                }
+                if (ModelState.IsValid)
+				{
+					string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+						password: login.Clave,
+						salt: System.Text.Encoding.ASCII.GetBytes(configuration["Salt"]),
+						prf: KeyDerivationPrf.HMACSHA1,
+						iterationCount: 1000,
+						numBytesRequested: 256 / 8));
+
+					var e = repositorio.ObtenerPorEmail(login.Usuario);
+					if (e == null || e.Clave != hashed)
+					{
+						ModelState.AddModelError("", "El email o la clave no son correctos");
+						TempData["returnUrl"] = returnUrl;
+						return View();
+					}
+
+					var claims = new List<Claim>
+					{
+						new Claim(ClaimTypes.Name, e.Email),
+						new Claim("FullName", e.Nombre + " " + e.Apellido),
+						new Claim(ClaimTypes.Role, e.RolNombre),
+					};
+
+					var claimsIdentity = new ClaimsIdentity(
+							claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+					await HttpContext.SignInAsync(
+							CookieAuthenticationDefaults.AuthenticationScheme,
+							new ClaimsPrincipal(claimsIdentity));
+					TempData.Remove("returnUrl");
+					return Redirect(returnUrl);
+				}
+				TempData["returnUrl"] = returnUrl;
+				return View();
             }
             catch (Exception ex)
             {
