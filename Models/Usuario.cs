@@ -3,7 +3,11 @@ namespace Inmobiliaria.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-
+public enum UsuarioRol
+    {
+        Administrador = 1,
+        Empleado = 2,
+    }
 public class Usuario
 {
     [Key]
@@ -23,9 +27,5 @@ public class Usuario
     public IFormFile AvatarFile { get; set; }
 
     public int Rol { get; set; }
-    public enum UsuarioRol
-    {
-        Administrador = 1,
-        Empleado = 2,
-    }
+    
 }
