@@ -59,7 +59,7 @@ namespace Inmobiliaria.Controllers
 						iterationCount: 1000,
 						numBytesRequested: 256 / 8));
 
-					var e = RepoUsuario.ObtenerPorEmail(login.Usuario);
+					var e = RepoUsuar.ObtenerPorEmail(login.Usuario);
 					if (e == null || e.Clave != hashed)
 					{
 						ModelState.AddModelError("", "El email o la clave no son correctos");
