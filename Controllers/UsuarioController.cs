@@ -179,7 +179,7 @@ namespace Inmobiliaria.Controllers
         [Authorize(Policy = "Administrador")]
         public ActionResult Edit(int id, Usuario usuario)
         {
-            var us = Repo.ObtenerPorId(id);
+            var us = RepoUsuario.ObtenerPorId(id);
             //var vista = nameof(Edit);
             try
             {
@@ -223,14 +223,14 @@ namespace Inmobiliaria.Controllers
                 if (!User.IsInRole("Administrador"))
                 {
                     //vista = nameof(Perfil);
-                    var usuarioActual = Repo.ObtenerPorCorreo(User.Identity.Name);
+                    var usuarioActual = RepoUsuario.ObtenerPorCorreo(User.Identity.Name);
                     if (usuarioActual.Id != id)
                     {
                         return RedirectToAction(nameof(Index), "Home");
                     }
                 }
                 u.Id = id;
-                var res = Repo.EditarUsuario(u);
+                var res = RepoUsuario.EditarUsuario(u);
                 ViewBag.Roles = Usuario.ObtenerRoles();
                 return RedirectToAction(nameof(Index), "Home");
             }
