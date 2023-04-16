@@ -243,7 +243,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Delete(int id)
         {
             Usuario usuario = RepoUsuario.GetUsuario(con, id);
-            return View();
+            return View(usuario);
         }
 
         // POST: Usuario/Delete/5
