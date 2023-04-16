@@ -79,9 +79,9 @@ namespace Inmobiliaria.Controllers
 					await HttpContext.SignInAsync(
 							CookieAuthenticationDefaults.AuthenticationScheme,
 							new ClaimsPrincipal(claimsIdentity));
-                            
-					TempData.Remove("returnUrl");
-					return Redirect(returnUrl);
+
+					
+					return Redirect("/Home");
 				}
 				TempData["returnUrl"] = returnUrl;
 				return View();
