@@ -35,7 +35,7 @@ namespace Inmobiliaria.Controllers
             return View();
         }
 
-        // POST: Usuarios
+        // : Usuario/Logout
 
         // GET: Usuario
         public ActionResult Index()
