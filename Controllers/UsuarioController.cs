@@ -46,6 +46,7 @@ namespace Inmobiliaria.Controllers
 		[HttpPost]
 		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
+        public ActionResult Login(Usuario usuario)
 
         // GET: Usuario
         public ActionResult Index()
