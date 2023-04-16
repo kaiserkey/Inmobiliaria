@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 public class Usuario
 {
+    [Key]
     [Display(Name = "Código")]
     public int Id { get; set; }
     
