@@ -12,7 +12,7 @@ namespace Inmobiliaria.Controllers
     {
         private MySqlDatabase con { get; set; }
         private readonly RepositorioUsuario RepoUsuario;
-
+    
         // GET: Usuario
         public ActionResult Index()
         {
