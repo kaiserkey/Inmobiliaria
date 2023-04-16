@@ -97,7 +97,7 @@ namespace Inmobiliaria.Controllers
         [Authorize(Policy ="Administrador")]
         public ActionResult Index()
         {
-            
+            var usuarios = Repo
             return View();
         }
 
