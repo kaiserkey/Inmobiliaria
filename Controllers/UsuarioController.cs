@@ -206,7 +206,7 @@ namespace Inmobiliaria.Controllers
                     {
                         Directory.CreateDirectory(path);
                     }
-                    string fileName = "avatar_" + usuarioEdit.Id + Path.GetExtension(usuarioEdit.AvatarFile.FileName);
+                    string fileName = "avatar_" + usuarioEdit.IdUsuario + Path.GetExtension(usuarioEdit.AvatarFile.FileName);
                     string pathCompleto = Path.Combine(path, fileName);
                     usuarioEdit.Avatar = Path.Combine("/Uploads", fileName);
                     using (FileStream stream = new FileStream(pathCompleto, FileMode.Create))
@@ -255,7 +255,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 var res = RepoUsuario.DeleteUsuario(con, id);
-                
+
                 return RedirectToAction(nameof(Index));
             }
             catch
