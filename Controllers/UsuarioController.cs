@@ -102,7 +102,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Usuario/Details/5
-        
+        [Authorize(Policy ="Administrador")]
         public ActionResult Details(int id)
         {
             return View();
