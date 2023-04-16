@@ -120,6 +120,7 @@ namespace Inmobiliaria.Controllers
         // POST: Usuario/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy ="Administrador")]
         public ActionResult Create(IFormCollection collection)
         {
             try
