@@ -113,5 +113,7 @@ public class RepositorioUsuario
         return res;
     }
 
-    public 
+    public Usuario ObtenerPorEmail(string email){
+        
+    }
 }
