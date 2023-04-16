@@ -11,7 +11,7 @@ namespace Inmobiliaria.Controllers
     public class UsuarioController : Controller
     {
 
-        
+        private readonly RepositorioUsuario repoUsua;
         // GET: Usuario
         public ActionResult Index()
         {
