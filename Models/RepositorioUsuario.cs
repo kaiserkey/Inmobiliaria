@@ -80,7 +80,7 @@ public class RepositorioUsuario
             cmd.Parameters.AddWithValue("@Avatar", usuario.Avatar);
             cmd.Parameters.AddWithValue("@Email", usuario.Email);
             cmd.Parameters.AddWithValue("@Rol", usuario.Rol);
-            
+
             res = Convert.ToInt32(cmd.ExecuteScalar());
             usuario.IdUsuario = res;
         }
@@ -100,7 +100,8 @@ public class RepositorioUsuario
             cmd.Parameters.AddWithValue("@Email", usuario.Email);
             cmd.Parameters.AddWithValue("@Rol", usuario.Rol);
             cmd.Parameters.AddWithValue("@IdUsuario", usuario.IdUsuario);
-            res = cmd.ExecuteNonQuery();
+            
+            res = Convert.ToInt32(cmd.ExecuteNonQuery());
         }
         return res;
     }
