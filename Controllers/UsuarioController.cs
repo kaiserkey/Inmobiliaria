@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Authentication;
 
 namespace Inmobiliaria.Controllers
 {   
+    [Authorize]
     public class UsuarioController : Controller
     {
         private MySqlDatabase con { get; set; }
