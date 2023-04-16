@@ -83,7 +83,7 @@ namespace Inmobiliaria.Controllers
 					
 					return Redirect("/Home");
 				}
-				TempData["returnUrl"] = returnUrl;
+                
 				return View();
             }
             catch (Exception ex)
