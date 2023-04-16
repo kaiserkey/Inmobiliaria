@@ -228,7 +228,7 @@ namespace Inmobiliaria.Controllers
                     }
                 }
                 usuarioEdit.IdUsuario = id;
-                var res = RepoUsuario.(usuarioEdit);
+                var res = RepoUsuario.UpdateUsuario(usuarioEdit);
                 ViewBag.Roles = Usuario.ObtenerRoles();
                 return RedirectToAction(nameof(Index), "Home");
             }
