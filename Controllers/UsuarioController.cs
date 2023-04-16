@@ -10,9 +10,9 @@ namespace Inmobiliaria.Controllers
 {
     public class UsuarioController : Controller
     {
-
+        private MySqlDatabase con { get; set; }
         private readonly RepositorioUsuario RepoUsuario;
-        
+
         // GET: Usuario
         public ActionResult Index()
         {
