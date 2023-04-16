@@ -36,6 +36,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Usuario/Logout
+        [Route("salir", Name = "logout")]
         public ActionResult Logout()
         {
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
