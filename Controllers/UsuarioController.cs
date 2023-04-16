@@ -105,6 +105,7 @@ namespace Inmobiliaria.Controllers
         [Authorize(Policy ="Administrador")]
         public ActionResult Details(int id)
         {
+            UsuarioController usuario
             return View();
         }
 
