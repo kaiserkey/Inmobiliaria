@@ -165,7 +165,7 @@ namespace Inmobiliaria.Controllers
 
         // GET: Usuario/Edit/5
         [Authorize]
-        public ActionResult Perfil()
+        public ActionResult Edit()
         {
             ViewBag.Roles = Usuario.ObtenerRoles();
             ViewBag.Titulo = "Mi Perfil";
