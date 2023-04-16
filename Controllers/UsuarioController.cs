@@ -179,59 +179,56 @@ namespace Inmobiliaria.Controllers
         [Authorize(Policy = "Administrador")]
         public ActionResult Edit(int id, Usuario usuario)
         {
-            var usuario = RepoUsuario.GetUsuario(con, id);
+            var us = Repo.ObtenerPorId(id);
+            //var vista = nameof(Edit);
             try
             {
-                if (usuario.Clave == null || usuario.Clave == "")
+                if(u.Clave == null || u.Clave == "")
                 {
-                    usuario.Clave = us.Clave;
-                }
-                else
-                {
+                    u.Clave = us.Clave ;
+                }else{
                     string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                            password: usuario.Clave,
-                            salt: System.Text.Encoding.ASCII.GetBytes(configuration["Salt"]),
-                            prf: KeyDerivationPrf.HMACSHA1,
+                            password : u.Clave,
+                            salt : System.Text.Encoding.ASCII.GetBytes(configuration["Salt"]),
+                            prf : KeyDerivationPrf.HMACSHA1,
                             iterationCount: 1000,
                             numBytesRequested: 256 / 8
                         ));
-                    usuario.Clave = hashed;
+                    u.Clave = hashed ;
                 }
 
-                if (usuario.AvatarFile != null)
+                if(u.AvatarFile != null)
                 {
                     string wwwPath = environment.WebRootPath;
-                    string path = Path.Combine(wwwPath, "Uploads");
-                    if (!Directory.Exists(path))
+                    string path = Path.Combine(wwwPath,"Uploads");
+                    if(!Directory.Exists(path))
                     {
                         Directory.CreateDirectory(path);
                     }
-                    string fileName = "avatar_" + usuario.Id + Path.GetExtension(usuario.AvatarFile.FileName);
-                    string pathCompleto = Path.Combine(path, fileName);
-                    usuario.Avatar = Path.Combine("/Uploads", fileName);
-                    using (FileStream stream = new FileStream(pathCompleto, FileMode.Create))
+                    string fileName = "avatar_" + u.Id + Path.GetExtension(u.AvatarFile.FileName);
+                    string pathCompleto = Path.Combine(path,fileName);
+                    u.Avatar = Path.Combine("/Uploads",fileName);
+                    using (FileStream stream = new FileStream(pathCompleto,FileMode.Create))
                     {
-                        usuario.AvatarFile.CopyTo(stream);
+                        u.AvatarFile.CopyTo(stream);
                     }
-                }
-                else
-                {
-                    usuario.Avatar = us.Avatar;
+                }else{
+                    u.Avatar = us.Avatar;
                 }
 
-                if (!User.IsInRole("Administrador"))
+                if(!User.IsInRole("Administrador"))
                 {
                     //vista = nameof(Perfil);
-                    var usuarioActual = RepoUsuario.ObtenerPorCorreo(User.Identity.Name);
-                    if (usuarioActual.Id != id)
+                    var usuarioActual = Repo.ObtenerPorCorreo(User.Identity.Name);
+                    if(usuarioActual.Id != id)
                     {
-                        return RedirectToAction(nameof(Index), "Home");
+                        return RedirectToAction(nameof(Index),"Home");
                     }
                 }
-                usuario.Id = id;
-                var res = RepoUsuario.EditarUsuario(usuario);
+                u.Id = id ;
+                var res = Repo.EditarUsuario(u);
                 ViewBag.Roles = Usuario.ObtenerRoles();
-                return RedirectToAction(nameof(Index), "Home");
+                return RedirectToAction(nameof(Index),"Home");
             }
             catch
             {
