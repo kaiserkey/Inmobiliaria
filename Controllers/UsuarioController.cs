@@ -94,9 +94,10 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Usuario
-        
+        [Authorize(Policy ="Administrador")]
         public ActionResult Index()
         {
+            
             return View();
         }
 
