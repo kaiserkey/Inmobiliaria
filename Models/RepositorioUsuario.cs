@@ -27,7 +27,7 @@ public class RepositorioUsuario
                         Nombre = reader.GetString(nameof(Usuario.Nombre)),
                         Apellido = reader.GetString(nameof(Usuario.Apellido)),
                         Direccion = reader.GetString(nameof(Usuario.Direccion)),
-                        Telefono = reader.GetString(nameof(Usuario.Telefono)),
+                        Telefono = reader.GetString(nameof(Usuario.Clave)),
                         Avatar = reader.GetString(nameof(Usuario.Avatar)),
                         Email = reader.GetString(nameof(Usuario.Email)),
                         Rol = reader.GetString(nameof(Usuario.Rol))
