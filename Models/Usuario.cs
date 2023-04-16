@@ -21,5 +21,13 @@ public class Usuario
     public string Avatar { get; set; }   
     [NotMapped]//Para EF
     public IFormFile AvatarFile { get; set; }
-    public enum Rol { get; set; }
+    public enum UsuarioRol
+    {
+        SuperAdministrador = 1,
+        Administrador = 2,
+        Empleado = 3,
+    }
+    {
+        
+    } Rol { get; set; }
 }
