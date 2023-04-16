@@ -117,7 +117,7 @@ public class RepositorioUsuario
         Usuario? usuario = null;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT IdUsuario, Nombre, Apellido, Clave, Avatar, Email, Rol FROM Usuario WHERE IdUsuario = @id";
+            cmd.CommandText = @"SELECT IdUsuario, Nombre, Apellido, Clave, Avatar, Email, Rol FROM Usuario WHERE Email = @email";
             cmd.Parameters.AddWithValue("@email", email);
             using (var reader = cmd.ExecuteReader())
             {
