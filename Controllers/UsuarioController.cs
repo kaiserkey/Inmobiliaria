@@ -50,7 +50,9 @@ namespace Inmobiliaria.Controllers
         public async Task<IActionResult> Login(Login login){
             try
             {
-                
+                if (ModelState.IsValid){
+                    
+                }
             }
             catch (Exception ex)
             {
