@@ -182,23 +182,23 @@ namespace Inmobiliaria.Controllers
             var usuario = Repo.ObtenerPorId(id);
             try
             {
-                if (u.Clave == null || u.Clave == "")
+                if (usuarioEdit.Clave == null || usuarioEdit.Clave == "")
                 {
-                    u.Clave = usuario.Clave;
+                    usuarioEdit.Clave = usuario.Clave;
                 }
                 else
                 {
                     string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                            password: u.Clave,
+                            password: usuarioEdit.Clave,
                             salt: System.Text.Encoding.ASCII.GetBytes(configuration["Salt"]),
                             prf: KeyDerivationPrf.HMACSHA1,
                             iterationCount: 1000,
                             numBytesRequested: 256 / 8
                         ));
-                    u.Clave = hashed;
+                    usuarioEdit.Clave = hashed;
                 }
 
-                if (u.AvatarFile != null)
+                if (usuarioEdit.AvatarFile != null)
                 {
                     string wwwPath = environment.WebRootPath;
                     string path = Path.Combine(wwwPath, "Uploads");
@@ -206,17 +206,17 @@ namespace Inmobiliaria.Controllers
                     {
                         Directory.CreateDirectory(path);
                     }
-                    string fileName = "avatar_" + u.Id + Path.GetExtension(u.AvatarFile.FileName);
+                    string fileName = "avatar_" + usuarioEdit.Id + Path.GetExtension(usuarioEdit.AvatarFile.FileName);
                     string pathCompleto = Path.Combine(path, fileName);
-                    u.Avatar = Path.Combine("/Uploads", fileName);
+                    usuarioEdit.Avatar = Path.Combine("/Uploads", fileName);
                     using (FileStream stream = new FileStream(pathCompleto, FileMode.Create))
                     {
-                        u.AvatarFile.CopyTo(stream);
+                        usuarioEdit.AvatarFile.CopyTo(stream);
                     }
                 }
                 else
                 {
-                    u.Avatar = usuario.Avatar;
+                    usuarioEdit.Avatar = usuario.Avatar;
                 }
 
                 if (!User.IsInRole("Administrador"))
@@ -228,8 +228,8 @@ namespace Inmobiliaria.Controllers
                         return RedirectToAction(nameof(Index), "Home");
                     }
                 }
-                u.Id = id;
-                var res = Repo.EditarUsuario(u);
+                usuarioEdit.Id = id;
+                var res = Repo.EditarUsuario(usuarioEdit);
                 ViewBag.Roles = Usuario.ObtenerRoles();
                 return RedirectToAction(nameof(Index), "Home");
             }
