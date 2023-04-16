@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 
 namespace Inmobiliaria.Controllers
-{
+{   
     public class UsuarioController : Controller
     {
         private MySqlDatabase con { get; set; }
