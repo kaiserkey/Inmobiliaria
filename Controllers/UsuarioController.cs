@@ -164,9 +164,13 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Usuario/Edit/5
-        public ActionResult Edit(int id)
+        [Authorize]
+        public ActionResult Perfil()
         {
-            return View();
+            ViewBag.Roles = Usuario.ObtenerRoles();
+            ViewBag.Titulo = "Mi Perfil";
+            var u = Repo.ObtenerPorCorreo(User.Identity.Name);
+            return View("Edit",u);
         }
 
         // POST: Usuario/Edit/5
