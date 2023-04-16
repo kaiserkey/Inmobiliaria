@@ -242,6 +242,7 @@ namespace Inmobiliaria.Controllers
         [Authorize(Policy ="Administrador")]
         public ActionResult Delete(int id)
         {
+            Usuario usuario
             return View();
         }
 
