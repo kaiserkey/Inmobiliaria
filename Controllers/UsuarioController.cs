@@ -249,6 +249,7 @@ namespace Inmobiliaria.Controllers
         // POST: Usuario/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy ="Administrador")]
         public ActionResult Delete(int id, IFormCollection collection)
         {
             try
