@@ -180,55 +180,58 @@ namespace Inmobiliaria.Controllers
         public ActionResult Edit(int id, Usuario usuario)
         {
             var us = Repo.ObtenerPorId(id);
-            //var vista = nameof(Edit);
             try
             {
-                if(u.Clave == null || u.Clave == "")
+                if (u.Clave == null || u.Clave == "")
                 {
-                    u.Clave = us.Clave ;
-                }else{
+                    u.Clave = us.Clave;
+                }
+                else
+                {
                     string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                            password : u.Clave,
-                            salt : System.Text.Encoding.ASCII.GetBytes(configuration["Salt"]),
-                            prf : KeyDerivationPrf.HMACSHA1,
+                            password: u.Clave,
+                            salt: System.Text.Encoding.ASCII.GetBytes(configuration["Salt"]),
+                            prf: KeyDerivationPrf.HMACSHA1,
                             iterationCount: 1000,
                             numBytesRequested: 256 / 8
                         ));
-                    u.Clave = hashed ;
+                    u.Clave = hashed;
                 }
 
-                if(u.AvatarFile != null)
+                if (u.AvatarFile != null)
                 {
                     string wwwPath = environment.WebRootPath;
-                    string path = Path.Combine(wwwPath,"Uploads");
-                    if(!Directory.Exists(path))
+                    string path = Path.Combine(wwwPath, "Uploads");
+                    if (!Directory.Exists(path))
                     {
                         Directory.CreateDirectory(path);
                     }
                     string fileName = "avatar_" + u.Id + Path.GetExtension(u.AvatarFile.FileName);
-                    string pathCompleto = Path.Combine(path,fileName);
-                    u.Avatar = Path.Combine("/Uploads",fileName);
-                    using (FileStream stream = new FileStream(pathCompleto,FileMode.Create))
+                    string pathCompleto = Path.Combine(path, fileName);
+                    u.Avatar = Path.Combine("/Uploads", fileName);
+                    using (FileStream stream = new FileStream(pathCompleto, FileMode.Create))
                     {
                         u.AvatarFile.CopyTo(stream);
                     }
-                }else{
+                }
+                else
+                {
                     u.Avatar = us.Avatar;
                 }
 
-                if(!User.IsInRole("Administrador"))
+                if (!User.IsInRole("Administrador"))
                 {
                     //vista = nameof(Perfil);
                     var usuarioActual = Repo.ObtenerPorCorreo(User.Identity.Name);
-                    if(usuarioActual.Id != id)
+                    if (usuarioActual.Id != id)
                     {
-                        return RedirectToAction(nameof(Index),"Home");
+                        return RedirectToAction(nameof(Index), "Home");
                     }
                 }
-                u.Id = id ;
+                u.Id = id;
                 var res = Repo.EditarUsuario(u);
                 ViewBag.Roles = Usuario.ObtenerRoles();
-                return RedirectToAction(nameof(Index),"Home");
+                return RedirectToAction(nameof(Index), "Home");
             }
             catch
             {
