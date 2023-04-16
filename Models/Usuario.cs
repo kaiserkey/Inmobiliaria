@@ -27,7 +27,4 @@ public class Usuario
         Administrador = 2,
         Empleado = 3,
     }
-    {
-        
-    } Rol { get; set; }
 }
