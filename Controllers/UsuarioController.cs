@@ -19,7 +19,7 @@ namespace Inmobiliaria.Controllers
         private readonly RepositorioUsuario RepoUsuario;
         private readonly IConfiguration configuration;
         private readonly IWebHostEnvironment environment;
-        [Authorize]
+        
         public UsuarioController(IConfiguration configuration, IWebHostEnvironment environment)
         {
             con = new MySqlDatabase();
