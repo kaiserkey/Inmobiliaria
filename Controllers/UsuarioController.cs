@@ -42,6 +42,8 @@ namespace Inmobiliaria.Controllers
             return RedirectToAction("Login");
         }
 
+        
+
         // GET: Usuario
         public ActionResult Index()
         {
