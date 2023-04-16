@@ -110,6 +110,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Usuario/Create
+        [Authorize(Policy ="Administrador")]
         public ActionResult Create()
         {
             return View();
