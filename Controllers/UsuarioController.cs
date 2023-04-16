@@ -53,8 +53,7 @@ namespace Inmobiliaria.Controllers
             }
             catch (System.Exception)
             {
-                
-                throw;
+                ModelState.AddModelError("",ex.Message);
             }
         }
 
