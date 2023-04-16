@@ -29,7 +29,7 @@ namespace Inmobiliaria.Controllers
             this.environment = environment;
         }
 
-        
+        [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
