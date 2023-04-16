@@ -98,7 +98,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Index()
         {
             var usuarios = RepoUsuario.GetUsuarios(con);
-            return View();
+            return View(usuarios);
         }
 
         // GET: Usuario/Details/5
