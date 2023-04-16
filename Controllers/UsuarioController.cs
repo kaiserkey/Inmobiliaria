@@ -28,6 +28,11 @@ namespace Inmobiliaria.Controllers
             this.configuration = configuration;
             this.environment = environment;
         }
+
+        
+
+
+
         // GET: Usuario
         public ActionResult Index()
         {
