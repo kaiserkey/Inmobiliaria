@@ -47,7 +47,15 @@ namespace Inmobiliaria.Controllers
 		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(Login login){
-            
+            try
+            {
+                
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
         }
 
         // GET: Usuario
