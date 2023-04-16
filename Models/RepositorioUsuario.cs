@@ -91,8 +91,7 @@ public class RepositorioUsuario
             cmd.CommandText = @"UPDATE Usuario SET Nombre=@Nombre, Apellido=@Apellido, Clave=@Clave, Avatar=@Avatar, Email=@Email, Rol=@Rol WHERE IdUsuario = @id";
             cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
             cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
-            cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
-            cmd.Parameters.AddWithValue("@telefono", usuario.Telefono);
+            cmd.Parameters.AddWithValue("@Clave", usuario.Direccion);
             cmd.Parameters.AddWithValue("@Avatar", usuario.Avatar);
             cmd.Parameters.AddWithValue("@email", usuario.Email);
             cmd.Parameters.AddWithValue("@rol", usuario.Rol);
