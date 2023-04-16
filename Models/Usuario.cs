@@ -9,7 +9,7 @@ public class Usuario
     [Key]
     [Display(Name = "Código")]
     public int Id { get; set; }
-    
+    [Required]
     public string Nombre { get; set; }
     
     public string Apellido { get; set; }
