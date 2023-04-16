@@ -35,17 +35,17 @@ namespace Inmobiliaria.Controllers
             return View();
         }
 
-        // GET: Usuario
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         // GET: Usuario/Logout
         public ActionResult Logout()
         {
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login");
+        }
+
+        // GET: Usuario
+        public ActionResult Index()
+        {
+            return View();
         }
 
         // GET: Usuario/Details/5
