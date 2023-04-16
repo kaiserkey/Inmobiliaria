@@ -23,8 +23,7 @@ public class Usuario
     public IFormFile AvatarFile { get; set; }
     public enum UsuarioRol
     {
-        SuperAdministrador = 1,
-        Administrador = 2,
-        Empleado = 3,
+        Administrador = 1,
+        Empleado = 2,
     }
 }
