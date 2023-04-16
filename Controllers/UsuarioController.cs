@@ -52,7 +52,6 @@ namespace Inmobiliaria.Controllers
             {
                 if (ModelState.IsValid)
 				{
-                    var returnUrl = String.IsNullOrEmpty(TempData["returnUrl"] as string) ? "/Home" : TempData["returnUrl"].ToString();
 					string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
 						password: login.Clave,
 						salt: System.Text.Encoding.ASCII.GetBytes(configuration["Salt"]),
@@ -63,10 +62,9 @@ namespace Inmobiliaria.Controllers
 					var Usuario = RepoUsuario.ObtenerPorEmail(login.Usuario);
 					if (Usuario == null || Usuario.Clave != hashed)
 					{
-						ModelState.AddModelError("", "El email o la clave no son correctos");
-						TempData["returnUrl"] = returnUrl;
-						return View();
-					}
+                        ModelState.AddModelError("","Usuario o contraseña incorrecto");
+                        return View();
+                    }
 
 					var claims = new List<Claim>
 					{
