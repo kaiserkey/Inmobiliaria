@@ -113,6 +113,7 @@ namespace Inmobiliaria.Controllers
         [Authorize(Policy ="Administrador")]
         public ActionResult Create()
         {
+            ViewBag.Roles = Usuario.ObtenerRoles();
             return View();
         }
 
