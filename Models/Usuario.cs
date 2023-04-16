@@ -12,7 +12,7 @@ public class Usuario
 {
     [Key]
     [Display(Name = "Código")]
-    public int Id { get; set; }
+    public int IdUsuario { get; set; }
     [Required]
     public string Nombre { get; set; }
     [Required]
