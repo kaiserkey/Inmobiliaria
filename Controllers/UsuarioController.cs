@@ -59,7 +59,7 @@ namespace Inmobiliaria.Controllers
 						iterationCount: 1000,
 						numBytesRequested: 256 / 8));
 
-					var Usuario = RepoUsuario.ObtenerPorEmail(login.Usuario);
+					var Usuario = RepoUsuario.ObtenerPorEmail(con, login.Usuario);
 					if (Usuario == null || Usuario.Clave != hashed)
 					{
                         ModelState.AddModelError("","Usuario o contraseña incorrecto");
@@ -83,7 +83,7 @@ namespace Inmobiliaria.Controllers
 					
 					return Redirect("/Home");
 				}
-                
+
 				return View();
             }
             catch (Exception ex)
