@@ -15,10 +15,12 @@ namespace Inmobiliaria.Controllers
         private readonly IConfiguration configuration;
         private readonly IWebHostEnvironment environment;
 
-        public UsuarioController( )
+        public UsuarioController(IConfiguration configuration, IWebHostEnvironment environment)
         {
             con = new MySqlDatabase();
             RepoUsuario = new RepositorioUsuario();
+            this.configuration = configuration;
+            this.environment = environment;
         }
         // GET: Usuario
         public ActionResult Index()
