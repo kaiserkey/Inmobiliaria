@@ -151,7 +151,7 @@ namespace Inmobiliaria.Controllers
                     {
                         usuario.AvatarFile.CopyTo(stream);
                     }
-                    RepoUsuario.UpdateUsuario(usuario);
+                    RepoUsuario.UpdateUsuario(con, usuario);
                 }
 
                 return RedirectToAction(nameof(Index));
