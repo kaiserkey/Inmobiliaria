@@ -12,8 +12,10 @@ namespace Inmobiliaria.Controllers
     {
         private MySqlDatabase con { get; set; }
         private readonly RepositorioUsuario RepoUsuario;
+        private readonly IConfiguration configuration;
+        private readonly IWebHostEnvironment environment;
 
-        public UsuarioController()
+        public UsuarioController( )
         {
             con = new MySqlDatabase();
             RepoUsuario = new RepositorioUsuario();
