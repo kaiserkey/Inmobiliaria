@@ -177,7 +177,7 @@ namespace Inmobiliaria.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Policy = "Administrador")]
-        public ActionResult Edit(int id, Usuario )
+        public ActionResult Edit(int id, Usuario usuario)
         {
             try
             {
