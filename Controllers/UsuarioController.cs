@@ -170,12 +170,14 @@ namespace Inmobiliaria.Controllers
             ViewBag.Roles = Usuario.ObtenerRoles();
             ViewBag.Titulo = "Mi Perfil";
             var usuario = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
-            return View("Edit",usuario);
+            return View("Edit", usuario);
         }
 
         // POST: Usuario/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "Administrador")]
+
         public ActionResult Edit(int id, IFormCollection collection)
         {
             try
