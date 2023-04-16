@@ -221,7 +221,7 @@ namespace Inmobiliaria.Controllers
 
                 if (!User.IsInRole("Administrador"))
                 {
-                    var usuarioActual = Repo.ObtenerPorCorreo(User.Identity.Name);
+                    var usuarioActual = RepoUsuario(User.Identity.Name);
                     if (usuarioActual.Id != id)
                     {
                         return RedirectToAction(nameof(Index), "Home");
