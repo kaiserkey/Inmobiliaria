@@ -19,6 +19,7 @@ public class Usuario
     public string Clave { get; set; }
     
     public string Avatar { get; set; }   
+[NotMapped]//Para EF
 
     public int Rol { get; set; }
 }
