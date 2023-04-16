@@ -105,7 +105,7 @@ namespace Inmobiliaria.Controllers
         [Authorize(Policy ="Administrador")]
         public ActionResult Details(int id)
         {
-            Usuario usuario = 
+            Usuario usuario = RepoUsuario.GetUsuario(con, id)
             return View();
         }
 
