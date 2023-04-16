@@ -46,7 +46,15 @@
                             alt="Logo de la Inmobiliaria"></a>
                     <ul class="navbar-nav d-flex justify-content-center align-items-center">
                         @if (!User.Identity.IsAuthenticated){
-                            
+                            <li class="nav-item">
+                            <a class="nav-link" href="/home/about">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home/contacto">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home/login">Entrar</a>
+                        </li>
                         }
                         <li class="nav-item">
                             <a class="nav-link" href="/contrato">Contratos</a>
@@ -62,15 +70,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/pago">Pagos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/home/about">Sobre Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/home/contacto">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/home/login">Entrar</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Salir</a>
