@@ -77,7 +77,7 @@ public class RepositorioUsuario
             cmd.Parameters.AddWithValue("@Clave", usuario.Clave);
             cmd.Parameters.AddWithValue("@Avatar", usuario.Avatar);
             cmd.Parameters.AddWithValue("@Email", usuario.Email);
-            cmd.Parameters.AddWithValue("@rol", usuario.Rol);
+            cmd.Parameters.AddWithValue("@Rol", usuario.Rol);
             res = cmd.ExecuteNonQuery();
         }
         return res;
