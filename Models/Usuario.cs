@@ -13,7 +13,7 @@ public class Usuario
     public string Nombre { get; set; }
     [Required]
     public string Apellido { get; set; }
-    [Required][]
+    [Required, EmailAddress]
     public string Email { get; set; }
     
     public string Clave { get; set; }
