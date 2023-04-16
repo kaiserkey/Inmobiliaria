@@ -85,4 +85,35 @@ public class RepositorioUsuario
         }
         return res;
     }
+
+    public int UpdateUsuario(MySqlDatabase mySqlDatabase, Usuario usuario)
+    {
+        int res = -1;
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"UPDATE Usuario SET Nombre=@nombre, Apellido=@apellido, Direccion=@direccion, Telefono=@telefono, Dni=@dni, Email=@email, Rol=@rol WHERE IdUsuario = @id";
+            cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
+            cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
+            cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
+            cmd.Parameters.AddWithValue("@telefono", usuario.Telefono);
+            cmd.Parameters.AddWithValue("@dni", usuario.Dni);
+            cmd.Parameters.AddWithValue("@email", usuario.Email);
+            cmd.Parameters.AddWithValue("@rol", usuario.Rol);
+            cmd.Parameters.AddWithValue("@id", usuario.IdUsuario);
+            res = cmd.ExecuteNonQuery();
+        }
+        return res;
+    }
+
+    public int DeleteUsuario(MySqlDatabase mySqlDatabase, int id)
+    {
+        int res = -1;
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"DELETE FROM Usuario WHERE IdUsuario = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+            res = cmd.ExecuteNonQuery();
+        }
+        return res;
+    }
 }
