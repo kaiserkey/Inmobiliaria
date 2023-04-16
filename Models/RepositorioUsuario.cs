@@ -113,7 +113,7 @@ public class RepositorioUsuario
         return res;
     }
 
-    public Usuario ObtenerPorEmail(string email){
+    public Usuario ObtenerPorEmail(MySqlDatabase mySqlDatabase, string email){
         Usuario? usuario = null;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
