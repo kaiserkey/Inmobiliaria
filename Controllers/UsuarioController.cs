@@ -52,7 +52,7 @@ namespace Inmobiliaria.Controllers
             {
                 if (ModelState.IsValid)
 				{
-                    
+                    var returnUrl = String.IsNullOrEmpty(TempData["returnUrl"] as string) ? "/Home" : TempData["returnUrl"].ToString();
 					string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
 						password: login.Clave,
 						salt: System.Text.Encoding.ASCII.GetBytes(configuration["Salt"]),
