@@ -15,7 +15,7 @@ public class RepositorioUsuario
         var usuarios = new List<Usuario>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT IdUsuario, Nombre, Apellido, Direccion, Telefono, Dni, Email, Rol FROM Usuario";
+            cmd.CommandText = @"SELECT IdUsuario, Nombre, Apellido, Direccion, Telefono, Avatar, Email, Rol FROM Usuario";
 
             using (var reader = cmd.ExecuteReader())
             {
@@ -28,7 +28,7 @@ public class RepositorioUsuario
                         Apellido = reader.GetString(nameof(Usuario.Apellido)),
                         Direccion = reader.GetString(nameof(Usuario.Direccion)),
                         Telefono = reader.GetString(nameof(Usuario.Telefono)),
-                        Dni = reader.GetString(nameof(Usuario.Dni)),
+                        Avatar = reader.GetString(nameof(Usuario.Avatar)),
                         Email = reader.GetString(nameof(Usuario.Email)),
                         Rol = reader.GetString(nameof(Usuario.Rol))
                     };
@@ -45,7 +45,7 @@ public class RepositorioUsuario
         Usuario? usuario = null;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT IdUsuario, Nombre, Apellido, Direccion, Telefono, Dni, Email, Rol FROM Usuario WHERE IdUsuario = @id";
+            cmd.CommandText = @"SELECT IdUsuario, Nombre, Apellido, Direccion, Telefono, Avatar, Email, Rol FROM Usuario WHERE IdUsuario = @id";
             cmd.Parameters.AddWithValue("@id", id);
             using (var reader = cmd.ExecuteReader())
             {
@@ -58,7 +58,7 @@ public class RepositorioUsuario
                         Apellido = reader.GetString(nameof(Usuario.Apellido)),
                         Direccion = reader.GetString(nameof(Usuario.Direccion)),
                         Telefono = reader.GetString(nameof(Usuario.Telefono)),
-                        Dni = reader.GetString(nameof(Usuario.Dni)),
+                        Avatar = reader.GetString(nameof(Usuario.Avatar)),
                         Email = reader.GetString(nameof(Usuario.Email)),
                         Rol = reader.GetString(nameof(Usuario.Rol))
                     };
@@ -73,7 +73,7 @@ public class RepositorioUsuario
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"INSERT INTO Usuario (Nombre, Apellido, Direccion, Telefono, Dni, Email, Rol) VALUES (@nombre, @apellido, @direccion, @telefono, @dni, @email, @rol)";
+            cmd.CommandText = @"INSERT INTO Usuario (Nombre, Apellido, Direccion, Telefono, Avatar, Email, Rol) VALUES (@nombre, @apellido, @direccion, @telefono, @Avatar, @email, @rol)";
             cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
             cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
             cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
@@ -91,7 +91,7 @@ public class RepositorioUsuario
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"UPDATE Usuario SET Nombre=@nombre, Apellido=@apellido, Direccion=@direccion, Telefono=@telefono, Dni=@dni, Email=@email, Rol=@rol WHERE IdUsuario = @id";
+            cmd.CommandText = @"UPDATE Usuario SET Nombre=@nombre, Apellido=@apellido, Direccion=@direccion, Telefono=@telefono, Avatar=@Avatar, Email=@email, Rol=@rol WHERE IdUsuario = @id";
             cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
             cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
             cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
