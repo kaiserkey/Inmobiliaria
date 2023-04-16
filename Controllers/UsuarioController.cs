@@ -180,7 +180,6 @@ namespace Inmobiliaria.Controllers
         public ActionResult Edit(int id, Usuario usuario)
         {
             var us = RepoUsuario.GetUsuario(con, id);
-            //var vista = nameof(Edit);
             try
             {
                 if (u.Clave == null || u.Clave == "")
