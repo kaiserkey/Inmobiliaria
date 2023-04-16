@@ -15,7 +15,7 @@ public class RepositorioUsuario
         var usuarios = new List<Usuario>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT IdUsuario, Nombre, Apellido, Avatar, Email, Rol FROM Usuario";
+            cmd.CommandText = @"SELECT IdUsuario, Nombre, Apellido, Avatar, Email, Rol, Clave FROM Usuario";
 
             using (var reader = cmd.ExecuteReader())
             {
