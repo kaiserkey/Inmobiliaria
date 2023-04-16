@@ -100,7 +100,7 @@ public class RepositorioUsuario
             cmd.Parameters.AddWithValue("@Email", usuario.Email);
             cmd.Parameters.AddWithValue("@Rol", usuario.Rol);
             cmd.Parameters.AddWithValue("@IdUsuario", usuario.IdUsuario);
-            
+
             res = Convert.ToInt32(cmd.ExecuteNonQuery());
         }
         return res;
@@ -113,7 +113,8 @@ public class RepositorioUsuario
         {
             cmd.CommandText = @"DELETE FROM Usuario WHERE IdUsuario = @id";
             cmd.Parameters.AddWithValue("@id", id);
-            res = cmd.ExecuteNonQuery();
+            
+            res = Convert.ToInt32(cmd.ExecuteNonQuery());
         }
         return res;
     }
