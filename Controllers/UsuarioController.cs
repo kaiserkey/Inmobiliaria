@@ -179,12 +179,12 @@ namespace Inmobiliaria.Controllers
         [Authorize(Policy = "Administrador")]
         public ActionResult Edit(int id, Usuario usuario)
         {
-            var us = Repo.ObtenerPorId(id);
+            var usuario = Repo.ObtenerPorId(id);
             try
             {
                 if (u.Clave == null || u.Clave == "")
                 {
-                    u.Clave = us.Clave;
+                    u.Clave = usuario.Clave;
                 }
                 else
                 {
@@ -216,7 +216,7 @@ namespace Inmobiliaria.Controllers
                 }
                 else
                 {
-                    u.Avatar = us.Avatar;
+                    u.Avatar = usuario.Avatar;
                 }
 
                 if (!User.IsInRole("Administrador"))
