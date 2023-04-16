@@ -6,5 +6,9 @@ namespace Inmobiliaria.Models;
 
 public class RepositorioUsuario
 {
+    public RepositorioUsuario()
+    {
+    }
 
+    
 }
