@@ -59,8 +59,8 @@ namespace Inmobiliaria.Controllers
 						iterationCount: 1000,
 						numBytesRequested: 256 / 8));
 
-					var e = RepoUsuario.ObtenerPorEmail(login.Usuario);
-					if (e == null || e.Clave != hashed)
+					var Usuario = RepoUsuario.ObtenerPorEmail(login.Usuario);
+					if (Usuario == null || Usuario.Clave != hashed)
 					{
 						ModelState.AddModelError("", "El email o la clave no son correctos");
 						TempData["returnUrl"] = returnUrl;
@@ -69,9 +69,9 @@ namespace Inmobiliaria.Controllers
 
 					var claims = new List<Claim>
 					{
-						new Claim(ClaimTypes.Name, e.Email),
-						new Claim("FullName", e.Nombre + " " + e.Apellido),
-						new Claim(ClaimTypes.Role, e.RolNombre),
+						new Claim(ClaimTypes.Name, Usuario.Email),
+						new Claim("FullName", Usuario.Nombre + " " + Usuario.Apellido),
+						new Claim(ClaimTypes.Role, Usuario.RolNombre),
 					};
 
 					var claimsIdentity = new ClaimsIdentity(
