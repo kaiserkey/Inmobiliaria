@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace Inmobiliaria.Models
+public class Usuario
 {
     [Display(Name = "Código")]
     public int Id { get; set; }
