@@ -179,7 +179,7 @@ namespace Inmobiliaria.Controllers
         [Authorize(Policy = "Administrador")]
         public ActionResult Edit(int id, Usuario usuario)
         {
-            var us = RepoUsuario.ObtenerPorId(id);
+            var us = RepoUsuario.GetUsuario(id);
             //var vista = nameof(Edit);
             try
             {
