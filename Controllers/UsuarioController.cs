@@ -135,7 +135,7 @@ namespace Inmobiliaria.Controllers
                     ));
                 usuario.Clave = hashed;
                 //usuario.Rol = User.IsInRole("Administrador") ? usuario.Rol : (int)enRoles.Empleado ;
-                var res = RepoUsuario.CrearUsuario(usuario);
+                var res = RepoUsuario.(usuario);
                 if (usuario.AvatarFile != null && usuario.Id > 0)
                 {
                     string wwwPath = environment.WebRootPath;
@@ -151,7 +151,7 @@ namespace Inmobiliaria.Controllers
                     {
                         usuario.AvatarFile.CopyTo(stream);
                     }
-                    Repo.EditarUsuario(usuario);
+                    RepoUsuario.EditarUsuario(usuario);
                 }
 
                 return RedirectToAction(nameof(Index));
