@@ -78,7 +78,7 @@ public class RepositorioUsuario
             cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
             cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
             cmd.Parameters.AddWithValue("@telefono", usuario.Telefono);
-            cmd.Parameters.AddWithValue("@dni", usuario.Dni);
+            cmd.Parameters.AddWithValue("@avatar", usuario.Avatar);
             cmd.Parameters.AddWithValue("@email", usuario.Email);
             cmd.Parameters.AddWithValue("@rol", usuario.Rol);
             res = cmd.ExecuteNonQuery();
@@ -96,7 +96,7 @@ public class RepositorioUsuario
             cmd.Parameters.AddWithValue("@apellido", usuario.Apellido);
             cmd.Parameters.AddWithValue("@direccion", usuario.Direccion);
             cmd.Parameters.AddWithValue("@telefono", usuario.Telefono);
-            cmd.Parameters.AddWithValue("@dni", usuario.Dni);
+            cmd.Parameters.AddWithValue("@avatar", usuario.Avatar);
             cmd.Parameters.AddWithValue("@email", usuario.Email);
             cmd.Parameters.AddWithValue("@rol", usuario.Rol);
             cmd.Parameters.AddWithValue("@id", usuario.IdUsuario);
