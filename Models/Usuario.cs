@@ -30,4 +30,14 @@ public class Usuario
     [NotMapped]//Para EF
     public string RolNombre => Rol > 0 ? ((UsuarioRol)Rol).ToString() : "";
 
+    public static IDictionary<int, string> ObtenerRoles()
+    {
+        SortedDictionary<int, string> roles = new SortedDictionary<int, string>();
+        Type tipoEnumRol = typeof(UsuarioRol);
+        foreach (var valor in Enum.GetValues(tipoEnumRol))
+        {
+            roles.Add((int)valor, Enum.GetName(tipoEnumRol, valor));
+        }
+        return roles;
+    }
 }
