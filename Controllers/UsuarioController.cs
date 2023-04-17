@@ -95,7 +95,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Usuario
-        [Authorize(Policy = "Administrador")]
+        //[Authorize(Policy = "Administrador")]
         public ActionResult Index()
         {
             var usuarios = RepoUsuario.GetUsuarios(con);
