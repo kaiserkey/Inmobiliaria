@@ -50,11 +50,11 @@ namespace Inmobiliaria.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(Login login)
         {
-            
             try
             {
                 if (ModelState.IsValid)
                 {
+                    Console.WriteLine("Entro al login");
                     string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                         password: login.Clave,
                         salt: System.Text.Encoding.ASCII.GetBytes(configuration["Salt"]),
