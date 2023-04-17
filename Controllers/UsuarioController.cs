@@ -53,14 +53,14 @@ namespace Inmobiliaria.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    
+
                     string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                         password: login.Clave,
                         salt: System.Text.Encoding.ASCII.GetBytes(configuration["Salt"]),
                         prf: KeyDerivationPrf.HMACSHA1,
                         iterationCount: 1000,
                         numBytesRequested: 256 / 8));
-                    
+
                     var Usuario = RepoUsuario.ObtenerPorEmail(con, login.Usuario);
                     if (Usuario == null || Usuario.Clave != hashed)
                     {
@@ -229,7 +229,7 @@ namespace Inmobiliaria.Controllers
                     }
                 }
                 usuarioEdit.IdUsuario = id;
-                var res = RepoUsuario.UpdateUsuario(con,usuarioEdit);
+                var res = RepoUsuario.UpdateUsuario(con, usuarioEdit);
                 ViewBag.Roles = Usuario.ObtenerRoles();
                 return RedirectToAction(nameof(Index), "Home");
             }
@@ -240,7 +240,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Usuario/Delete/5
-        [Authorize(Policy ="Administrador")]
+        [Authorize(Policy = "Administrador")]
         public ActionResult Delete(int id)
         {
             Usuario usuario = RepoUsuario.GetUsuario(con, id);
@@ -250,7 +250,7 @@ namespace Inmobiliaria.Controllers
         // POST: Usuario/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Policy ="Administrador")]
+        [Authorize(Policy = "Administrador")]
         public ActionResult Delete(int id, Usuario usuario)
         {
             try
