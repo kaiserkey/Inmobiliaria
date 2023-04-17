@@ -183,4 +183,13 @@ $(document).ready(function () {
     });
 });
 
-//vista previa de ima
+//vista previa de imagen usuario
+function mostrarImagenSeleccionada(event) {
+    var imagen = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var vistaPrevia = document.getElementById("vista-previa");
+        vistaPrevia.innerHTML = '<img src="' + e.target.result + '" style="max-width: 100%; max-height: 200px;" />';
+    }
+    reader.readAsDataURL(imagen);
+}
