@@ -96,7 +96,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Usuario
-        //[Authorize(Policy = "Administrador")]
+        [Authorize(Policy = "Administrador")]
         public ActionResult Index()
         {
             var usuarios = RepoUsuario.GetUsuarios(con);
@@ -112,7 +112,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Usuario/Create
-        //[Authorize(Policy = "Administrador")]
+        [Authorize(Policy = "Administrador")]
         public ActionResult Create()
         {
             ViewBag.Roles = Usuario.ObtenerRoles();
@@ -122,7 +122,7 @@ namespace Inmobiliaria.Controllers
         // POST: Usuario/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //[Authorize(Policy = "Administrador")]
+        [Authorize(Policy = "Administrador")]
         public ActionResult Create(Usuario usuario)
         {
             try
