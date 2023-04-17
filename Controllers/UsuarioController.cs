@@ -61,10 +61,10 @@ namespace Inmobiliaria.Controllers
                         prf: KeyDerivationPrf.HMACSHA1,
                         iterationCount: 1000,
                         numBytesRequested: 256 / 8));
-                    Console.WriteLine("Entro al login", hashed);
+                    
                     var Usuario = RepoUsuario.ObtenerPorEmail(con, login.Usuario);
                     if (Usuario == null || Usuario.Clave != hashed)
-                    {
+                    {Console.WriteLine("Entro al login", hashed);
                         ModelState.AddModelError("", "Usuario o contraseña incorrecto");
                         return View();
                     }
