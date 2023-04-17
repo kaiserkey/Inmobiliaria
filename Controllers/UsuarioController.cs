@@ -64,7 +64,7 @@ namespace Inmobiliaria.Controllers
                     
                     var Usuario = RepoUsuario.ObtenerPorEmail(con, login.Usuario);
                     if (Usuario == null || Usuario.Clave != hashed)
-                    {Console.WriteLine("Entro al login", hashed);
+                    {Console.WriteLine("Usuario o contraseña incorrecto", hashed);
                         ModelState.AddModelError("", "Usuario o contraseña incorrecto");
                         return View();
                     }
