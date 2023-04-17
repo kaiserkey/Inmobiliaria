@@ -35,7 +35,9 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="AvatarFile" class="control-label">Imagen</label>
-                    <input asp-for="AvatarFile" type="file" id="formFile" accept="image/jpeg, image/png, image/gif" onchange="mostrarImagenSeleccionada(event)" class="form-control" />
+                    <input asp-for="AvatarFile" type="file" id="formFile" accept="image/jpeg, image/png, image/gif"
+                        onchange="mostrarImagenSeleccionada(event)" class="form-control-file"
+                        data-browse="Seleccionar archivo">
                     <span asp-validation-for="Avatar" class="text-danger"></span>
                 </div>
                 <div class="form-group">
