@@ -308,3 +308,6 @@ tbody {
 }
 
 /* estilo de crear usuario */
+.custom-file-input {
+    display: none;
+}
