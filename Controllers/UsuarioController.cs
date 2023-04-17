@@ -1,3 +1,4 @@
+using Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +50,7 @@ namespace Inmobiliaria.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(Login login)
         {
+            Console.
             try
             {
                 if (ModelState.IsValid)
