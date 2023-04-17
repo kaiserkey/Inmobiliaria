@@ -166,7 +166,6 @@ $(document).ready(function () {
     });
 });
 
-
 $(document).ready(function () {
     $('#modalError').modal('show');
     setTimeout(function () {
