@@ -182,3 +182,5 @@ $(document).ready(function () {
         $('#modalError').modal('hide');
     });
 });
+
+//vista previa de ima
