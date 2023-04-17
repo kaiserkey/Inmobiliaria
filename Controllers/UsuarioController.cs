@@ -13,7 +13,7 @@ using Inmobiliaria.Models;
 
 namespace Inmobiliaria.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class UsuarioController : Controller
     {
         private MySqlDatabase con { get; set; }
