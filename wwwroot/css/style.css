@@ -308,3 +308,14 @@ tbody {
 }
 
 /* estilo de crear usuario */
+.custom-file-label::after {
+    content: "Seleccionar imagen";
+}
+
+.custom-file-input:lang(en)~.custom-file-label::after {
+    content: "Seleccionar imagen";
+}
+
+.custom-file-input:lang(en)~.custom-file-label::before {
+    content: "Archivo: ";
+}
