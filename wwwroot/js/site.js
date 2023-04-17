@@ -197,6 +197,6 @@ function mostrarImagenSeleccionada(event) {
     } else {
         var vistaPrevia = document.getElementById("vista-previa");
         var imagenPrevia = vistaPrevia.querySelector("#imagen-previa");
-        imagenPrevia.src = "/img/default.png";
+        imagenPrevia.src = "/img/default.webp";
     }
 }
