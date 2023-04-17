@@ -189,7 +189,14 @@ function mostrarImagenSeleccionada(event) {
     var reader = new FileReader();
     reader.onload = function(e) {
         var vistaPrevia = document.getElementById("vista-previa");
-        vistaPrevia.innerHTML = '<img src="' + e.target.result + '" style="max-width: 100%; max-height: 200px;" />';
+        var imagenPrevia = vistaPrevia.querySelector("#imagen-previa");
+        imagenPrevia.src = e.target.result;
     }
-    reader.readAsDataURL(imagen);
+    if (imagen) {
+        reader.readAsDataURL(imagen);
+    } else {
+        var vistaPrevia = document.getElementById("vista-previa");
+        var imagenPrevia = vistaPrevia.querySelector("#imagen-previa");
+        imagenPrevia.src = "/img/default.png";
+    }
 }
