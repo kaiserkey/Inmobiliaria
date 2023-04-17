@@ -308,6 +308,6 @@ tbody {
 }
 
 /* estilo de crear usuario */
-#formFile {
+.form-group label[for="formFile"] {
     display: none;
 }
