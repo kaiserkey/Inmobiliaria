@@ -1,7 +1,8 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
+
 /* barra de navegacion */
 .navbar {
     font-size: 13px !important;
@@ -12,7 +13,7 @@
     font-weight: 600;
 }
 
-#navbar-color *{
+#navbar-color * {
     background-color: #8a5a41 !important;
     color: #ffffff !important;
 }
@@ -31,7 +32,7 @@
     -o-border-radius: 10%;
 }
 
-nav img{
+nav img {
     width: 55px;
     height: 55px;
     border-radius: 50%;
@@ -42,7 +43,7 @@ nav img{
     -o-border-radius: 50%;
 }
 
-nav img:hover{
+nav img:hover {
     border: 2px solid #e95a0d;
     transition: 1s;
     -webkit-transition: 1s;
@@ -52,7 +53,7 @@ nav img:hover{
     box-shadow: #e95a0d 0px 0px 10px;
 }
 
-nav li a:hover{
+nav li a:hover {
     font-size: 20px !important;
     transition: 1s;
     -webkit-transition: 1s;
@@ -71,19 +72,19 @@ nav li a:hover{
 }
 
 @media screen and (min-width: 700px) {
-    .hero-principal-img{
+    .hero-principal-img {
         max-width: 650px !important;
     }
 }
 
 @media screen and (min-width: 700px) {
-    #login{
+    #login {
         max-height: 650px !important;
     }
 }
 
 /* seccion hero */
-.hero{
+.hero {
     background-size: cover;
     display: flex;
     margin: 5%;
@@ -94,7 +95,7 @@ nav li a:hover{
     font-family: 'Roboto Mono', monospace;
 }
 
-.hero-principal-img{
+.hero-principal-img {
     margin-bottom: 10px;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -103,12 +104,12 @@ nav li a:hover{
     -o-border-radius: 20px;
 }
 
-.hero{
+.hero {
     min-height: 450px;
     text-align: center;
 }
 
-#hero-principal{
+#hero-principal {
     padding: 10px;
     background-color: #604232;
     border-radius: 5%;
@@ -118,7 +119,7 @@ nav li a:hover{
     -o-border-radius: 5%;
 }
 
-section h1{
+section h1 {
     font-size: 2rem;
     font-weight: 700;
     color: #ffffff !important;
@@ -126,21 +127,21 @@ section h1{
     margin-bottom: 20px;
 }
 
-section h2{
+section h2 {
     font-size: 1rem;
     font-weight: 500;
     color: #ffffff !important;
     margin-bottom: 20px;
 }
 
-section p{
+section p {
     font-size: 1rem;
     font-weight: 500;
     color: #ffffff !important;
     margin-bottom: 20px;
 }
 
-.inicio-hr hr{
+.inicio-hr hr {
     width: 50%;
     background-color: #604232;
     margin: 0 auto;
@@ -150,9 +151,9 @@ section p{
     border-width: 4px;
 }
 
-.fin-hr hr{
+.fin-hr hr {
     width: 50%;
-    background-color:#604232;
+    background-color: #604232;
     margin: 0 auto;
     margin-bottom: 50px;
     margin-top: 10px;
@@ -174,7 +175,7 @@ section p{
 
 /* seccion contacto */
 
-#contacto-image img{
+#contacto-image img {
     width: 580px;
     height: 650px;
     background-size: cover;
@@ -182,7 +183,7 @@ section p{
     background-repeat: no-repeat;
 }
 
-#boton-general{
+#boton-general {
     background-color: #8a5a41 !important;
     color: #ffffff !important;
     border-color: #8a5a41 !important;
@@ -198,7 +199,8 @@ footer {
     letter-spacing: .3rem;
     font-weight: 500;
 }
-footer a{
+
+footer a {
     text-decoration: none;
 }
 
@@ -209,33 +211,33 @@ footer a{
     padding: 0.75rem 1rem;
 }
 
-#login{
+#login {
     height: 500px;
 }
 
 /* estilos de tablas */
 
-a{
+a {
     text-decoration: none !important;
 }
 
-#thead-color{
+#thead-color {
     background-color: gainsboro;
     color: black;
 }
 
-thead{
+thead {
     text-align: center;
     font-size: 1rem;
     font-size: large;
     text-transform: uppercase;
 }
 
-table{
+table {
     font-family: 'Roboto Mono', monospace;
 }
 
-tbody{
+tbody {
     text-align: center;
     font-size: 1rem;
     text-transform: capitalize;
@@ -243,7 +245,7 @@ tbody{
 
 
 
-#nuevo-container form{
+#nuevo-container form {
     font-family: 'Roboto Mono', monospace;
     background-color: #bcbbba;
     border-radius: 10%;
@@ -256,34 +258,34 @@ tbody{
 }
 
 
-#nuevo-container a{
+#nuevo-container a {
     font-size: medium;
     color: blue;
 }
 
-.form-group{
+.form-group {
     padding: 5px;
 }
 
-.form-group label{
+.form-group label {
     padding: 5px;
     text-transform: uppercase;
 }
 
-#margen-titulo h2{
+#margen-titulo h2 {
     margin-right: 10px !important;
 }
 
-#contenedor-vista-previa{
+#contenedor-vista-previa {
     margin: 5%;
 }
 
-#contenedor-vista-previa .fila-nombre{
+#contenedor-vista-previa .fila-nombre {
     text-transform: uppercase;
     font-weight: 600;
 }
 
-#eliminar-mensaje{
+#eliminar-mensaje {
     color: red;
     font-weight: 600;
     font-size: medium;
@@ -294,26 +296,18 @@ tbody{
     background-color: #28a745;
     color: #fff;
 }
+
 #modalOK .modal-body p {
     color: #fff;
     text-align: center;
 }
 
 /* Modales de busquedas */
-#lupa{
+#lupa {
     margin-left: 10px;
 }
 
 /* estilo de crear usuario */
 .form-group label[for="formFile"] {
     display: none;
-  }
-
-
-
-
-
-
-
-
-
+}
