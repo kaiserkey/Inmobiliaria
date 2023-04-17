@@ -305,7 +305,9 @@ tbody{
 }
 
 /* estilo de crear usuario */
-
+.form-group label[for="formFile"] {
+    display: none;
+  }
 
 
 
