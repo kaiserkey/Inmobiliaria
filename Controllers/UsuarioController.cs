@@ -174,11 +174,10 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Usuario/Edit/5
-        [Authorize]
+        [Authorize(Policy ="Administrador")]
         public ActionResult Edit()
         {
             ViewBag.Roles = Usuario.ObtenerRoles();
-            ViewBag.Titulo = "Mi Perfil";
             var usuario = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
             return View("Edit", usuario);
         }
