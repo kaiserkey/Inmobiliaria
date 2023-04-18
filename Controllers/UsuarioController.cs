@@ -247,6 +247,80 @@ namespace Inmobiliaria.Controllers
             }
         }
 
+        // GET: Usuario/Edit/5
+        [Authorize(Policy ="Administrador")]
+        public ActionResult Edit(int id)
+        {
+            ViewBag.Roles = Usuario.ObtenerRoles();
+            var usuario = RepoUsuario.GetUsuario(con, id);
+            return View(usuario);
+        }
+
+        // POST: Usuario/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Policy = "Administrador")]
+        public ActionResult Edit(int id, Usuario usuarioEdit)
+        {
+            var usuario = RepoUsuario.GetUsuario(con, id);
+            try
+            {
+                if (usuarioEdit.Clave == null || usuarioEdit.Clave == "")
+                {
+                    usuarioEdit.Clave = usuario.Clave;
+                }
+                else
+                {
+                    string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                            password: usuarioEdit.Clave,
+                            salt: System.Text.Encoding.ASCII.GetBytes(configuration["Salt"]),
+                            prf: KeyDerivationPrf.HMACSHA1,
+                            iterationCount: 1000,
+                            numBytesRequested: 256 / 8
+                        ));
+                    usuarioEdit.Clave = hashed;
+                }
+
+                if (usuarioEdit.AvatarFile != null)
+                {
+                    string wwwPath = environment.WebRootPath;
+                    string path = Path.Combine(wwwPath, "Uploads");
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    string fileName = "avatar_" + usuarioEdit.IdUsuario + Path.GetExtension(usuarioEdit.AvatarFile.FileName);
+                    string pathCompleto = Path.Combine(path, fileName);
+                    usuarioEdit.Avatar = Path.Combine("/Uploads", fileName);
+                    using (FileStream stream = new FileStream(pathCompleto, FileMode.Create))
+                    {
+                        usuarioEdit.AvatarFile.CopyTo(stream);
+                    }
+                }
+                else
+                {
+                    usuarioEdit.Avatar = usuario.Avatar;
+                }
+
+                if (!User.IsInRole("Administrador"))
+                {
+                    var usuarioActual = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
+                    if (usuarioActual.IdUsuario != id)
+                    {
+                        return RedirectToAction(nameof(Index), "Home");
+                    }
+                }
+                usuarioEdit.IdUsuario = id;
+                var res = RepoUsuario.UpdateUsuario(con, usuarioEdit);
+                ViewBag.Roles = Usuario.ObtenerRoles();
+                return RedirectToAction(nameof(Index), "Home");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
         // GET: Usuario/Delete/5
         [Authorize(Policy = "Administrador")]
         public ActionResult Delete(int id)
