@@ -247,15 +247,6 @@ namespace Inmobiliaria.Controllers
             }
         }
 
-        // GET: Usuario/Edit/5
-        [Authorize(Policy ="Administrador")]
-        public ActionResult Edit(int id)
-        {
-            ViewBag.Roles = Usuario.ObtenerRoles();
-            var usuario = RepoUsuario.GetUsuario(con, id);
-            return View(usuario);
-        }
-
         // POST: Usuario/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
