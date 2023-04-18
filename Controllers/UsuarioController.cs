@@ -181,6 +181,7 @@ namespace Inmobiliaria.Controllers
             var usuario = RepoUsuario.ObtenerPorEmail(con, id);
             return View(usuario);
         }
+        
 
         // POST: Usuario/Edit/5
         [HttpPost]
