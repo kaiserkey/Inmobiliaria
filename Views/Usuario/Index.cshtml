@@ -28,9 +28,7 @@
                 <th class="col">
                     @Html.DisplayNameFor(model => model.RolNombre)
                 </th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th colspan="3"></th>
             </tr>
         </thead>
         <tbody>
@@ -41,7 +39,7 @@
                         @if(item.Avatar!=""){
                             <img src="@Html.DisplayFor(modelItem => item.Avatar)" alt="Avatar" style="width: 45px; heigh:45px;" class="img-thumbnail rounded-circle"> 
                         }else{
-                            <img src="/Uploads\base.png" alt="Avatar" style="width: 45px; heigh:45px;" class="img-thumbnail rounded-circle">
+                            <img src="/img/default.webp" alt="Avatar" style="width: 45px; heigh:45px;" class="img-thumbnail rounded-circle">
                         }
                     </td>
                     <td>
