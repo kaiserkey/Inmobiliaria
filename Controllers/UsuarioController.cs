@@ -207,7 +207,6 @@ namespace Inmobiliaria.Controllers
                     usuarioEdit.Clave = hashed;
                 }
 
-                
                 usuarioEdit.IdUsuario = id;
                 var res = RepoUsuario.UpdateUsuario(con, usuarioEdit);
                 ViewBag.Roles = Usuario.ObtenerRoles();
