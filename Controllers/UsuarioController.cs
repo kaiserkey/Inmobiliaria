@@ -259,7 +259,7 @@ namespace Inmobiliaria.Controllers
         // POST: Usuario/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Policy = "Administrador")]
+        [Authorize(Policy = "E")]
         public ActionResult EditarPerfil(int id, Usuario usuarioEdit)
         {
             var usuario = RepoUsuario.GetUsuario(con, id);
