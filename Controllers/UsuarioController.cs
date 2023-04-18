@@ -188,7 +188,6 @@ namespace Inmobiliaria.Controllers
         [Authorize(Policy = "Administrador")]
         public ActionResult Edit(int id, Usuario usuarioEdit)
         {
-            var usuario = RepoUsuario.GetUsuario(con, id);
             try
             {
                 if (usuarioEdit.Clave == null || usuarioEdit.Clave == "")
