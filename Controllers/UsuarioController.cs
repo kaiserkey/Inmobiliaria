@@ -178,7 +178,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Edit(int id)
         {
             ViewBag.Roles = Usuario.ObtenerRoles();
-            var usuario = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
+            var usuario = RepoUsuario.ObtenerPorEmail(con, id);
             return View("Edit", usuario);
         }
 
