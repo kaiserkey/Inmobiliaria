@@ -169,10 +169,10 @@ namespace Inmobiliaria.Controllers
         {
             ViewBag.Roles = Usuario.ObtenerRoles();
             ViewBag.Titulo = "Mi Perfil";
-            var u = Repo.ObtenerPorCorreo(User.Identity.Name);
-            return View("Edit",u);
+            var usuario = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
+            return View("Edit", usuario);
         }
-        
+
         // GET: Usuario/Edit/5
         [Authorize]
         public ActionResult Edit()
