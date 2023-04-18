@@ -207,27 +207,6 @@ namespace Inmobiliaria.Controllers
                     usuarioEdit.Clave = hashed;
                 }
 
-                if (usuarioEdit.AvatarFile != null)
-                {
-                    string wwwPath = environment.WebRootPath;
-                    string path = Path.Combine(wwwPath, "Uploads");
-                    if (!Directory.Exists(path))
-                    {
-                        Directory.CreateDirectory(path);
-                    }
-                    string fileName = "avatar_" + usuarioEdit.IdUsuario + Path.GetExtension(usuarioEdit.AvatarFile.FileName);
-                    string pathCompleto = Path.Combine(path, fileName);
-                    usuarioEdit.Avatar = Path.Combine("/Uploads", fileName);
-                    using (FileStream stream = new FileStream(pathCompleto, FileMode.Create))
-                    {
-                        usuarioEdit.AvatarFile.CopyTo(stream);
-                    }
-                }
-                else
-                {
-                    usuarioEdit.Avatar = usuario.Avatar;
-                }
-
                 if (!User.IsInRole("Administrador"))
                 {
                     var usuarioActual = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
