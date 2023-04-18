@@ -175,7 +175,7 @@ namespace Inmobiliaria.Controllers
 
         // GET: Usuario/Edit/5
         [Authorize(Policy ="Administrador")]
-        public ActionResult Edit()
+        public ActionResult Edit(int id)
         {
             ViewBag.Roles = Usuario.ObtenerRoles();
             var usuario = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
