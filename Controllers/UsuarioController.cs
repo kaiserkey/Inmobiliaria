@@ -301,6 +301,9 @@ namespace Inmobiliaria.Controllers
             try
             {
                 var res = RepoUsuario.DeleteUsuario(con, id);
+                if res {
+                    
+                }
                 // Delete avatar image
                 if (usuario.Avatar != null || usuario.Avatar != "")
                 {
