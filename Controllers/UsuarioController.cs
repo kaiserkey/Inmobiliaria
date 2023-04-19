@@ -312,7 +312,7 @@ namespace Inmobiliaria.Controllers
                         if (System.IO.File.Exists(wwwPath+usuario_avatar.Avatar))
                         {
                             System.IO.File.Delete(wwwPath+usuario_avatar.Avatar);
-                            Console.WriteLine("Archivo eliminado exitosamente: " + path);
+                            Console.WriteLine("Archivo eliminado exitosamente: ");
                         }
                     }
                 }
