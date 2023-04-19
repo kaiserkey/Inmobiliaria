@@ -134,6 +134,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Contrato/Delete/5
+        [Authorize(Policy = "Administrador")]
         public ActionResult Delete(int id)
         {
             Contrato contrato = RepoContrato.GetContrato(con, id);
