@@ -2,7 +2,7 @@ using System;
 namespace Inmobiliaria.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+//TODO: agregarle telefono y dni
 public enum UsuarioRol
 {
     Administrador = 1,
