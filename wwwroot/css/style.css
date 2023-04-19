@@ -326,6 +326,10 @@ tbody {
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
 }
+#contenedor-table .table-user-information>tbody>tr>td {
+    border-top: 0;
+}
+
 .table-user-information>tbody>tr {
     border-top: 1px solid rgb(221, 221, 221);
 }
