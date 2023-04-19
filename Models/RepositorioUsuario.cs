@@ -86,6 +86,8 @@ public class RepositorioUsuario
             cmd.Parameters.AddWithValue("@Avatar", usuario.Avatar);
             cmd.Parameters.AddWithValue("@Email", usuario.Email);
             cmd.Parameters.AddWithValue("@Rol", usuario.Rol);
+            cmd.Parameters.AddWithValue("@Dni", usuario.Dni);
+            cmd.Parameters.AddWithValue("@Telefono", usuario.Telefono);
 
             res = Convert.ToInt32(cmd.ExecuteScalar());
             usuario.IdUsuario = res;
