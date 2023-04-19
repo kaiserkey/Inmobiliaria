@@ -328,6 +328,7 @@ tbody {
 }
 #contenedor-table .panel-heading{
     background-color: #c8b19a;
+    padding: 5px;
 }
 
 .table-user-information>tbody>tr {
