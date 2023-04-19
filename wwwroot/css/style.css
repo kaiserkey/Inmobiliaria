@@ -314,12 +314,12 @@ tbody {
 /* editar perfil estilos */
 #editar-perfil form{
     font-family: 'Roboto Mono', monospace;
-    border-radius: ;
+    border-radius: 20px;
     background-color: #c8b19a;
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 /* estilo del perfil de usuario */
 #contenedor-perfil{
