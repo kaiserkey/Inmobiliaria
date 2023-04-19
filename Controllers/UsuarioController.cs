@@ -302,11 +302,11 @@ namespace Inmobiliaria.Controllers
             {
                 var res = RepoUsuario.DeleteUsuario(con, id);
                 // Delete avatar image
-                if (usuario != null && !string.IsNullOrEmpty(usuario.Avatar))
+                if (usuario.Avatar != null || usuario.Avatar != "")
                 {
                     string wwwPath = environment.WebRootPath;
                     string path = Path.Combine(wwwPath, usuario.Avatar);
-                    string path_2 = Directory.GetCurrentDirectory();
+                    //string path_2 = Directory.GetCurrentDirectory();
                     Console.WriteLine(path);
                     if (System.IO.File.Exists(path))
                     {
