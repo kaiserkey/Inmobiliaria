@@ -305,7 +305,7 @@ namespace Inmobiliaria.Controllers
                 if (res > 0)
                 {
                     // Delete avatar image
-                    if (usuario.Avatar != null || usuario_avatar.Avatar != "")
+                    if (usuario_avatar.Avatar != null || usuario_avatar.Avatar != "")
                     {
                         string wwwPath = environment.WebRootPath;
                         string path = Path.Combine(wwwPath, usuario.Avatar);
