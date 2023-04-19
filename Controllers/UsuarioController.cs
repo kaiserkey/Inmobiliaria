@@ -299,7 +299,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 var res = RepoUsuario.DeleteUsuario(con, id);
-                // Delete user's avatar image
+                // Delete avatar image
                 if (usuario != null && !string.IsNullOrEmpty(usuario.Avatar))
                 {
                     string wwwPath = environment.WebRootPath;
