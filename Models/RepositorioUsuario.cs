@@ -100,8 +100,7 @@ public class RepositorioUsuario
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"UPDATE Usuario SET Nombre=@Nombre, Apellido=@Apellido, Clave=@Clave, Avatar=@Avatar, Email=@Email, Rol=@Rol, Dni=@Dni, Telefono=@Telefono
-                                WHERE IdUsuario = @IdUsuario"; 
+            cmd.CommandText = @"UPDATE Usuario SET Nombre=@Nombre, Apellido=@Apellido, Clave=@Clave, Avatar=@Avatar, Email=@Email, Rol=@Rol, Dni=@Dni, Telefono=@Telefono 
                                 WHERE IdUsuario = @IdUsuario";
             cmd.Parameters.AddWithValue("@Nombre", usuario.Nombre);
             cmd.Parameters.AddWithValue("@Apellido", usuario.Apellido);
@@ -110,6 +109,8 @@ public class RepositorioUsuario
             cmd.Parameters.AddWithValue("@Email", usuario.Email);
             cmd.Parameters.AddWithValue("@Rol", usuario.Rol);
             cmd.Parameters.AddWithValue("@IdUsuario", usuario.IdUsuario);
+            cmd.Parameters.AddWithValue("@Dni", usuario.Dni);
+            cmd.Parameters.AddWithValue("@Telefono", usuario.Telefono);
 
             res = Convert.ToInt32(cmd.ExecuteNonQuery());
         }
