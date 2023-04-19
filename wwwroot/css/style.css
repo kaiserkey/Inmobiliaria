@@ -326,8 +326,8 @@ tbody {
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
 }
-#contenedor-table .table-user-information>tbody>tr>td {
-    border-top: 0;
+#contenedor-table {
+    
 }
 
 .table-user-information>tbody>tr {
