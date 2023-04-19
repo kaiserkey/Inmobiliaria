@@ -300,12 +300,12 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                var usuario = RepoUsuario.GetUsuario(con, id);
+                var usuario_avatar = RepoUsuario.GetUsuario(con, id);
                 var res = RepoUsuario.DeleteUsuario(con, id);
                 if (res > 0)
                 {
                     // Delete avatar image
-                    if (usuario.Avatar != null || usuario.Avatar != "")
+                    if (usuario.Avatar != null || usuario_avatar.Avatar != "")
                     {
                         string wwwPath = environment.WebRootPath;
                         string path = Path.Combine(wwwPath, usuario.Avatar);
