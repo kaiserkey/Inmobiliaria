@@ -314,8 +314,8 @@ tbody {
 
 /* estilo del perfil de usuario */
 #contenedor-perfil{
-    margin-top: 10%;
-    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-bottom: 10%;
 }
 .table-user-information>tbody>tr {
     border-top: 1px solid rgb(221, 221, 221);
