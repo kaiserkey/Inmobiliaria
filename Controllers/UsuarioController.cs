@@ -302,6 +302,8 @@ namespace Inmobiliaria.Controllers
                 // Delete user's avatar image
                 if (usuario != null && !string.IsNullOrEmpty(usuario.Avatar))
                 {
+                    string wwwPath = environment.WebRootPath;
+                    string path = Path.Combine(wwwPath, "Uploads");
                     System.IO.File.Delete(usuario.Avatar);
                 }
                 return RedirectToAction(nameof(Index));
