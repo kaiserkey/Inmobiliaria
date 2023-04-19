@@ -100,7 +100,8 @@ public class RepositorioUsuario
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"UPDATE Usuario SET Nombre=@Nombre, Apellido=@Apellido, Clave=@Clave, Avatar=@Avatar, Email=@Email, Rol=@Rol WHERE IdUsuario = @IdUsuario";
+            cmd.CommandText = @"UPDATE Usuario SET Nombre=@Nombre, Apellido=@Apellido, Clave=@Clave, Avatar=@Avatar, Email=@Email, Rol=@Rol 
+                WHERE IdUsuario = @IdUsuario";
             cmd.Parameters.AddWithValue("@Nombre", usuario.Nombre);
             cmd.Parameters.AddWithValue("@Apellido", usuario.Apellido);
             cmd.Parameters.AddWithValue("@Clave", usuario.Clave);
