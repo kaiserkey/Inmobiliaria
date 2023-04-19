@@ -1,3 +1,4 @@
+using Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -304,6 +305,7 @@ namespace Inmobiliaria.Controllers
                 {
                     string wwwPath = environment.WebRootPath;
                     string path = Path.Combine(wwwPath, usuario.Avatar);
+                    Console.WriteLine(path);
                     System.IO.File.Delete(path);
                 }
                 return RedirectToAction(nameof(Index));
