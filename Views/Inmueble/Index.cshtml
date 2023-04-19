@@ -39,6 +39,9 @@
                 </th>
                 <th></th>
                 <th></th>
+                @if (User.IsInRole("Administrador")){
+                        
+                    }
                 <th></th>
             </tr>
         </thead>
@@ -80,13 +83,15 @@
                                 style="font-size: 2em; color: orange;"></i> </a>
                     </td>
                     @if (User.IsInRole("Administrador"))
-                        {<td>
-                        
+                    {
+                        <td>
+
                             <a href="@Url.Action("Delete", new { id = item.IdInmueble })"> <i class="bi bi-trash3-fill"
                                     style="font-size: 2em; color: red;"></i> </a>
-                        
 
-                    </td>}
+
+                        </td>
+                    }
                 </tr>
             }
         </tbody>
