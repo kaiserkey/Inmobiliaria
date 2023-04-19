@@ -312,7 +312,7 @@ tbody {
     display: none;
 }
 /* editar perfil estilos */
-#editar-perfil{
+#editar-perfil form{
     background-color: #c8b19a;
 }
 /* estilo del perfil de usuario */
