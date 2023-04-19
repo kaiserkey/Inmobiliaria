@@ -22,8 +22,9 @@ public class Usuario
     [Required, DataType(DataType.Password)]
     public string Clave { get; set; }
 
+    []
     public string Dni { get; set; }
-    
+    public string Telefono { get; set; }
 
     public string Avatar { get; set; }
     [NotMapped]//Para EF
