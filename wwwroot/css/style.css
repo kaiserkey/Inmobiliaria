@@ -326,7 +326,7 @@ tbody {
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
 }
-#contenedor-table {
+#contenedor-table .panel-heading{
     
 }
 
