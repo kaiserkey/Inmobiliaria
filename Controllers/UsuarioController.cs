@@ -300,7 +300,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                var ava
+                var usuario 
                 var res = RepoUsuario.DeleteUsuario(con, id);
                 if (res > 0)
                 {
