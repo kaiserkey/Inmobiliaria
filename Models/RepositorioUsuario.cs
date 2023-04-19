@@ -47,7 +47,8 @@ public class RepositorioUsuario
         Usuario? usuario = null;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT IdUsuario, Nombre, Apellido, Clave, Avatar, Email, Rol, Dni, Telefono FROM Usuario WHERE IdUsuario = @id";
+            cmd.CommandText = @"SELECT IdUsuario, Nombre, Apellido, Clave, Avatar, Email, Rol, Dni, Telefono
+                                FROM Usuario WHERE IdUsuario = @id";
             cmd.Parameters.AddWithValue("@id", id);
             using (var reader = cmd.ExecuteReader())
             {
@@ -61,7 +62,8 @@ public class RepositorioUsuario
                         Clave = reader.GetString(nameof(Usuario.Clave)),
                         Avatar = reader.GetString(nameof(Usuario.Avatar)),
                         Email = reader.GetString(nameof(Usuario.Email)),
-                        Rol = reader.GetInt32(nameof(Usuario.Rol))
+                        Rol = reader.GetInt32(nameof(Usuario.Rol)),
+                        
                     };
                 }
             }
