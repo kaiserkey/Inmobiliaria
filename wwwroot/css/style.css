@@ -313,7 +313,7 @@ tbody {
 }
 /* editar perfil estilos */
 #editar-perfil form{
-    
+    margin-top: 5%;
     font-family: 'Roboto Mono', monospace;
     border-radius: 20px;
     background-color: #c8b19a;
