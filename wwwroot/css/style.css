@@ -319,7 +319,7 @@ tbody {
     border: solid 1px #ccc;
 }
 #contenedor-table{
-    
+    border: solid 1px #ccc;
 }
 .table-user-information>tbody>tr {
     border-top: 1px solid rgb(221, 221, 221);
