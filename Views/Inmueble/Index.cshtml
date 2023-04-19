@@ -6,7 +6,8 @@
 
 <div class="col-md-12 text-center">
     <h1>Inmuebles</h1>
-    <h2><a asp-action="Create"> <i class="bi bi-plus-square-fill" style="font-size: 1em; color: black;"> Nuevo Inmueble </i> </a></h2>
+    <h2><a asp-action="Create"> <i class="bi bi-plus-square-fill" style="font-size: 1em; color: black;"> Nuevo Inmueble
+            </i> </a></h2>
 </div>
 <div class="table-responsive d-flex justify-content-center align-items-center">
     <table class="table table-bordered table-striped w-auto">
@@ -42,44 +43,52 @@
             </tr>
         </thead>
         <tbody>
-    @foreach (var item in Model) {
-            <tr>
-                <td scope="row">
-                    @Html.DisplayFor(modelItem => item.IdInmueble)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tipo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Coordenadas)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Precio)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ambientes)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Uso)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Activo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Propietario.Nombre)
-                    @Html.DisplayFor(modelItem => item.Propietario.Apellido)
-                </td>
-                <td>
-                    <a href="@Url.Action("Edit", new { id = item.IdInmueble })"> <i class="bi bi-pencil-square" style="font-size: 2em; color: green;"></i> </a>
-                </td>
-                <td>
-                    <a href="@Url.Action("Details", new { id = item.IdInmueble })"> <i class="bi bi-file-text-fill" style="font-size: 2em; color: orange;"></i> </a>
-                </td>
-                <td>
-                    <a href="@Url.Action("Delete", new { id = item.IdInmueble })"> <i class="bi bi-trash3-fill" style="font-size: 2em; color: red;"></i> </a>
-                </td>
-            </tr>
-    }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td scope="row">
+                        @Html.DisplayFor(modelItem => item.IdInmueble)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tipo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Coordenadas)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ambientes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Uso)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Activo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Propietario.Nombre)
+                        @Html.DisplayFor(modelItem => item.Propietario.Apellido)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = item.IdInmueble })"> <i class="bi bi-pencil-square"
+                                style="font-size: 2em; color: green;"></i> </a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Details", new { id = item.IdInmueble })"> <i class="bi bi-file-text-fill"
+                                style="font-size: 2em; color: orange;"></i> </a>
+                    </td>
+                    <td>
+                        @if (User.IsInRole("Administrador"))
+                        {
+                            <a href="@Url.Action("Delete", new { id = item.IdInmueble })"> <i class="bi bi-trash3-fill"
+                                    style="font-size: 2em; color: red;"></i> </a>
+                        }
+
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>
