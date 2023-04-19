@@ -320,6 +320,11 @@ tbody {
 #contenedor-table{
     padding: 2%;
     border: solid 1px #ccc;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 .table-user-information>tbody>tr {
     border-top: 1px solid rgb(221, 221, 221);
