@@ -22,6 +22,8 @@ public class Usuario
     [Required, DataType(DataType.Password)]
     public string Clave { get; set; }
 
+    public string 
+
     public string Avatar { get; set; }
     [NotMapped]//Para EF
     public IFormFile AvatarFile { get; set; }
