@@ -308,9 +308,7 @@ namespace Inmobiliaria.Controllers
                     if (usuario_avatar.Avatar != null || usuario_avatar.Avatar != "")
                     {
                         string wwwPath = environment.WebRootPath;
-                        string path = Path.Combine(wwwPath, usuario_avatar.Avatar);
-                        //string path_2 = Directory.GetCurrentDirectory();
-                        Console.WriteLine(wwwPath+usuario_avatar.Avatar);
+                        
                         if (System.IO.File.Exists(wwwPath+usuario_avatar.Avatar))
                         {
                             System.IO.File.Delete(wwwPath+usuario_avatar.Avatar);
