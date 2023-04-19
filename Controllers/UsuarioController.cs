@@ -291,7 +291,7 @@ namespace Inmobiliaria.Controllers
             Usuario usuario = RepoUsuario.GetUsuario(con, id);
             return View(usuario);
         }
-//TODO: A
+//TODO: AGREGAR PERFIL DE USUARIO Y 
         // POST: Usuario/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
