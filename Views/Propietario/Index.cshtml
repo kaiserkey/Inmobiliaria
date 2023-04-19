@@ -6,7 +6,8 @@
 
 <div class="col-md-12 text-center">
     <h1>Propietario</h1>
-    <h2><a asp-action="Create"> <i class="bi bi-plus-square-fill" style="font-size: 1em; color: black;"> Nuevo Propietario </i> </a></h2>
+    <h2><a asp-action="Create"> <i class="bi bi-plus-square-fill" style="font-size: 1em; color: black;"> Nuevo
+                Propietario </i> </a></h2>
 </div>
 <div class="table-responsive d-flex justify-content-center align-items-center">
     <table class="table table-bordered table-striped w-auto">
@@ -35,44 +36,58 @@
                 </th>
                 <th></th>
                 <th></th>
-                <th></th>
+                @if (User.IsInRole("Administrador"))
+                {
+                    <th></th>
+                }
+
             </tr>
         </thead>
         <tbody>
-    @foreach (var item in Model) {
-            <tr>
-                <td scope="row">
-                    @Html.DisplayFor(modelItem => item.IdPropietario)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Apellido)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Direccion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Dni)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Telefono)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    <a href="@Url.Action("Edit", new { id = item.IdPropietario })"> <i class="bi bi-pencil-square" style="font-size: 2em; color: green;"></i> </a>
-                </td>
-                <td>
-                    <a href="@Url.Action("Details", new { id = item.IdPropietario })"> <i class="bi bi-file-text-fill" style="font-size: 2em; color: orange;"></i> </a>
-                </td>
-                <td>
-                    <a href="@Url.Action("Delete", new { id = item.IdPropietario })"> <i class="bi bi-trash3-fill" style="font-size: 2em; color: red;"></i> </a>
-                </td>
-            </tr>
-    }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td scope="row">
+                        @Html.DisplayFor(modelItem => item.IdPropietario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Direccion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Dni)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", new { id = item.IdPropietario })"> <i class="bi bi-pencil-square"
+                                style="font-size: 2em; color: green;"></i> </a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Details", new { id = item.IdPropietario })"> <i class="bi bi-file-text-fill"
+                                style="font-size: 2em; color: orange;"></i> </a>
+                    </td>
+                    @if (User.IsInRole("Administrador"))
+                    {
+                        <td>
+
+                            <a href="@Url.Action("Delete", new { id = item.IdPropietario })"> <i class="bi bi-trash3-fill"
+                                    style="font-size: 2em; color: red;"></i> </a>
+
+
+                        </td>
+                    }
+                </tr>
+            }
         </tbody>
     </table>
 </div>

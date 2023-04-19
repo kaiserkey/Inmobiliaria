@@ -6,7 +6,8 @@
 
 <div class="col-md-12 text-center">
     <h1>Pagos</h1>
-    <h2><a asp-action="Create"> <i class="bi bi-plus-square-fill" style="font-size: 1em; color: black;"> Nuevo Pago </i> </a></h2>
+    <h2><a asp-action="Create"> <i class="bi bi-plus-square-fill" style="font-size: 1em; color: black;"> Nuevo Pago </i>
+        </a></h2>
 </div>
 <div class="table-responsive d-flex justify-content-center align-items-center">
     <table class="table table-bordered table-striped w-auto">
@@ -29,7 +30,11 @@
                 </th>
                 <th></th>
                 <th></th>
-                <th></th>
+                @if (User.IsInRole("Administrador"))
+                {
+                    <th></th>
+                }
+
             </tr>
         </thead>
         <tbody>
@@ -52,14 +57,23 @@
                         @Html.DisplayFor(modelItem => item.IdContrato)
                     </td>
                     <td class="text-center">
-                        <a asp-action="Edit" asp-route-id="@item.IdPago"> <i class="bi bi-pencil-square" style="font-size: 2em; color: green;"></i> </a>
+                        <a asp-action="Edit" asp-route-id="@item.IdPago"> <i class="bi bi-pencil-square"
+                                style="font-size: 2em; color: green;"></i> </a>
                     </td>
                     <td class="text-center">
-                        <a asp-action="Details" asp-route-id="@item.IdPago"> <i class="bi bi-file-text-fill" style="font-size: 2em; color: orange;"></i> </a>
+                        <a asp-action="Details" asp-route-id="@item.IdPago"> <i class="bi bi-file-text-fill"
+                                style="font-size: 2em; color: orange;"></i> </a>
                     </td>
-                    <td class="text-center">
-                        <a asp-action="Delete" asp-route-id="@item.IdPago"> <i class="bi bi-trash3-fill" style="font-size: 2em; color: red;"></i> </a>
-                    </td>
+                    @if (User.IsInRole("Administrador"))
+                    {
+                        <td class="text-center">
+
+                            <a asp-action="Delete" asp-route-id="@item.IdPago"> <i class="bi bi-trash3-fill"
+                                    style="font-size: 2em; color: red;"></i> </a>
+
+
+                        </td>
+                    }
                 </tr>
             }
         </tbody>
