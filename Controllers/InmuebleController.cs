@@ -111,6 +111,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Inmueble/Delete/5
+        [Authorize(Policy = "Administrador")]
         public ActionResult Delete(int id)
         {
             Inmueble inmueble = RepoInmueble.GetInmueble(con, id);

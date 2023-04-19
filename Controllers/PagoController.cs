@@ -115,6 +115,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Pago/Delete/5
+        [Authorize(Policy = "Administrador")]
         public ActionResult Delete(int id)
         {
             Pago pago = RepoPago.GetPago(con, id);
