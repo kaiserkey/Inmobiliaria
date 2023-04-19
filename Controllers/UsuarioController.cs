@@ -171,7 +171,7 @@ namespace Inmobiliaria.Controllers
         {
             ViewBag.Roles = Usuario.ObtenerRoles();
             var usuario = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
-            return View("Edit", usuario);
+            return View(usuario);
         }
 
         // GET: Usuario/Edit/5
