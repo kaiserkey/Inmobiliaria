@@ -311,9 +311,9 @@ namespace Inmobiliaria.Controllers
                         string path = Path.Combine(wwwPath, usuario_avatar.Avatar);
                         //string path_2 = Directory.GetCurrentDirectory();
                         Console.WriteLine(wwwPath+usuario_avatar.Avatar);
-                        if (System.IO.File.Exists(path))
+                        if (System.IO.File.Exists(wwwPath+usuario_avatar.Avatar))
                         {
-                            System.IO.File.Delete(path);
+                            System.IO.File.Delete(wwwPath+usuario_avatar.Avatar);
                             Console.WriteLine("Archivo eliminado exitosamente: " + path);
                         }
                     }
