@@ -318,6 +318,9 @@ tbody {
     margin-bottom: 10%;
     border: solid 1px #ccc;
 }
+#contenedor-table{
+    
+}
 .table-user-information>tbody>tr {
     border-top: 1px solid rgb(221, 221, 221);
 }
