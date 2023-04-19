@@ -302,7 +302,7 @@ namespace Inmobiliaria.Controllers
                 // Delete user's avatar image
                 if (usuario != null && !string.IsNullOrEmpty(usuario.Avatar))
                 {
-                    System.IO.File.Delete(usuarioToDelete.Avatar);
+                    System.IO.File.Delete(usuario.Avatar);
                 }
                 return RedirectToAction(nameof(Index));
             }
