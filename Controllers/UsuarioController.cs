@@ -310,7 +310,7 @@ namespace Inmobiliaria.Controllers
                         string wwwPath = environment.WebRootPath;
                         string path = Path.Combine(wwwPath, usuario_avatar.Avatar);
                         //string path_2 = Directory.GetCurrentDirectory();
-                        Console.WriteLine(wwwPath+path);
+                        Console.WriteLine(wwwPath+usuario_avatar.Avatar);
                         if (System.IO.File.Exists(path))
                         {
                             System.IO.File.Delete(path);
