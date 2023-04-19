@@ -313,6 +313,7 @@ tbody {
 }
 
 /* estilo del perfil de usuario */
+
 .table-user-information>tbody>tr {
     border-top: 1px solid rgb(221, 221, 221);
 }
