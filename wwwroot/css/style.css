@@ -318,6 +318,7 @@ tbody {
     margin-bottom: 10%;
 }
 #contenedor-table{
+    padding: 5%;
     border: solid 1px #ccc;
 }
 .table-user-information>tbody>tr {
