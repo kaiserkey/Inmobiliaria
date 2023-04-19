@@ -301,22 +301,23 @@ namespace Inmobiliaria.Controllers
             try
             {
                 var res = RepoUsuario.DeleteUsuario(con, id);
-                if (res) {
-                    
-                }
-                // Delete avatar image
-                if (usuario.Avatar != null || usuario.Avatar != "")
+                if (res)
                 {
-                    string wwwPath = environment.WebRootPath;
-                    string path = Path.Combine(wwwPath, usuario.Avatar);
-                    //string path_2 = Directory.GetCurrentDirectory();
-                    Console.WriteLine(path);
-                    if (System.IO.File.Exists(path))
+                    // Delete avatar image
+                    if (usuario.Avatar != null || usuario.Avatar != "")
                     {
-                        System.IO.File.Delete(path);
-                        Console.WriteLine("Archivo eliminado exitosamente: " + path);
+                        string wwwPath = environment.WebRootPath;
+                        string path = Path.Combine(wwwPath, usuario.Avatar);
+                        //string path_2 = Directory.GetCurrentDirectory();
+                        Console.WriteLine(path);
+                        if (System.IO.File.Exists(path))
+                        {
+                            System.IO.File.Delete(path);
+                            Console.WriteLine("Archivo eliminado exitosamente: " + path);
+                        }
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
             catch
