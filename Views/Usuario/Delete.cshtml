@@ -2,67 +2,92 @@
 
 @{
     ViewData["Title"] = "Delete";
+    var Usuario = Model;
 }
 
-<h1>Delete</h1>
+<div id="contenedor-vista-previa" class="table-responsive d-flex justify-content-center align-items-center">
+    <table class="table table-bordered table-striped w-auto">
+        <tr>
+            <th class="col" colspan="2">
+                <h2><a asp-action="Index"><i class="bi bi-arrow-return-left"
+                            style="font-size: 1em; color: black;">Regresar</i></a></h2>
+                <h2><a href="@Url.Action("Edit", new { id = Usuario.IdInmueble  })"> <i class="bi bi-pencil-square"
+                            style="font-size: 1em; color: green;">Editar</i> </a></h2>
+            </th>
+        </tr>
+        <tr>
+            <td class="col-sm-4 fila-nombre">
+                @Html.DisplayNameFor(model => model.IdUsuario)
+            </td>
+            <td class="col-sm-8">
+                @Html.DisplayFor(model => model.IdUsuario)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-4 fila-nombre">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </td>
+            <td class="col-sm-8">
+                @Html.DisplayFor(model => model.Nombre)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-4 fila-nombre">
+                @Html.DisplayNameFor(model => model.Apellido)
+            </td>
+            <td class="col-sm-8">
+                @Html.DisplayFor(model => model.Apellido)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-4 fila-nombre">
+                @Html.DisplayNameFor(model => model.Email)
+            </td>
+            <td class="col-sm-8">
+                @Html.DisplayFor(model => model.Email)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-4 fila-nombre">
+                @Html.DisplayNameFor(model => model.Clave)
+            </td>
+            <td class="col-sm-8">
+                @Html.DisplayFor(model => model.Clave)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-4 fila-nombre">
+                @Html.DisplayNameFor(model => model.Avatar)
+            </td>
+            <td class="col-sm-8">
+                @Html.DisplayFor(model => model.Avatar)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-4 fila-nombre">
+                @Html.DisplayNameFor(model => model.Rol)
+            </td>
+            <td class="col-sm-8">
+                @Html.DisplayFor(model => model.Rol)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-4 fila-nombre">
+                @Html.DisplayNameFor(model => model.RolNombre)
+            </td>
+            <td class="col-sm-8">
+                @Html.DisplayFor(model => model.RolNombre)
+            </td>
+        </tr>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Usuario</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdUsuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdUsuario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Apellido)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Apellido)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Clave)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Clave)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Avatar)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Avatar)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Rol)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Rol)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RolNombre)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RolNombre)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+        <tr>
+            <td colspan="2">
+                <h2 id="eliminar-mensaje">Estas seguro de que deseas eliminar este elemento?</h2>
+                <form asp-action="Delete">
+                    <input id="boton-general" type="submit" value="Delete" class="btn btn-info btn-block" />
+                </form>
+            </td>
+        </tr>
+
+    </table>
 </div>
