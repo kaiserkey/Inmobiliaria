@@ -304,7 +304,7 @@ namespace Inmobiliaria.Controllers
                 {
                     string wwwPath = environment.WebRootPath;
                     string path = Path.Combine(wwwPath, usuario.Avatar);
-                    System.IO.File.Delete(usuario.Avatar);
+                    System.IO.File.Delete(path);
                 }
                 return RedirectToAction(nameof(Index));
             }
