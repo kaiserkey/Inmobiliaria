@@ -336,7 +336,7 @@ tbody {
 }
 
 #contenedor-table td{
-    pad
+    padding: 3px;
 }
 
 .table-user-information>tbody>tr {
