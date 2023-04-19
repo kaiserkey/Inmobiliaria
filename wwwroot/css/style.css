@@ -312,7 +312,9 @@ tbody {
     display: none;
 }
 /* editar perfil estilos */
-#editar-perfil
+#editar-perfil{
+    background-color: ;
+}
 /* estilo del perfil de usuario */
 #contenedor-perfil{
     margin-top: 5%;
