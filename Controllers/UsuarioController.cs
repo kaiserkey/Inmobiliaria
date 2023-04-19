@@ -299,7 +299,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 var res = RepoUsuario.DeleteUsuario(con, id);
-
+                
                 return RedirectToAction(nameof(Index));
             }
             catch

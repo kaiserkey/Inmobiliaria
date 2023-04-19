@@ -17,6 +17,23 @@
         </tr>
         <tr>
             <td class="col-sm-4 fila-nombre">
+                @Html.DisplayNameFor(model => model.Avatar)
+            </td>
+            <td class="col-sm-8">
+                @if (Model.Avatar != "")
+                {
+                    <img src="@Model.Avatar" alt="Avatar" style="width: 45px; heigh:45px;"
+                        class="img-thumbnail rounded-circle">
+                }
+                else
+                {
+                    <img src="/img/default.webp" alt="Avatar" style="width: 45px; heigh:45px;"
+                        class="img-thumbnail rounded-circle">
+                }
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-4 fila-nombre">
                 @Html.DisplayNameFor(model => model.IdUsuario)
             </td>
             <td class="col-sm-8">
@@ -47,33 +64,10 @@
                 @Html.DisplayFor(model => model.Email)
             </td>
         </tr>
-        <tr>
-            <td class="col-sm-4 fila-nombre">
-                @Html.DisplayNameFor(model => model.Clave)
-            </td>
-            <td class="col-sm-8">
-                @Html.DisplayFor(model => model.Clave)
-            </td>
-        </tr>
-        <tr>
-            <td class="col-sm-4 fila-nombre">
-                @Html.DisplayNameFor(model => model.Avatar)
-            </td>
-            <td class="col-sm-8">
-                @Html.DisplayFor(model => model.Avatar)
-            </td>
-        </tr>
+
         <tr>
             <td class="col-sm-4 fila-nombre">
                 @Html.DisplayNameFor(model => model.Rol)
-            </td>
-            <td class="col-sm-8">
-                @Html.DisplayFor(model => model.Rol)
-            </td>
-        </tr>
-        <tr>
-            <td class="col-sm-4 fila-nombre">
-                @Html.DisplayNameFor(model => model.RolNombre)
             </td>
             <td class="col-sm-8">
                 @Html.DisplayFor(model => model.RolNombre)
