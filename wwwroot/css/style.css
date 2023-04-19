@@ -316,7 +316,7 @@ tbody {
 #contenedor-perfil{
     margin-top: 5%;
     margin-bottom: 10%;
-    border: ;
+    border: solid 1px #ccc;
 }
 .table-user-information>tbody>tr {
     border-top: 1px solid rgb(221, 221, 221);
