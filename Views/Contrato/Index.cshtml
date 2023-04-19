@@ -61,14 +61,16 @@
                         <a href="@Url.Action("Details", new { id = item.IdContrato })"> <i class="bi bi-file-text-fill"
                                 style="font-size: 2em; color: orange;"></i> </a>
                     </td>
-                    <td>
-                        @if (User.IsInRole("Administrador"))
-                        {
+                    @if (User.IsInRole("Administrador"))
+                    {
+                        <td>
+
                             <a href="@Url.Action("Delete", new { id = item.IdContrato })"> <i class="bi bi-trash3-fill"
                                     style="font-size: 2em; color: red;"></i> </a>
-                        }
 
-                    </td>
+
+                        </td>
+                    }
                 </tr>
             }
         </tbody>
