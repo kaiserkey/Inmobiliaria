@@ -31,7 +31,8 @@ public class RepositorioUsuario
                         Avatar = reader.GetString(nameof(Usuario.Avatar)),
                         Email = reader.GetString(nameof(Usuario.Email)),
                         Rol = reader.GetInt32(nameof(Usuario.Rol)),
-                        
+                        Dni = reader.GetString(nameof(Usuario.Dni)),
+                        Telefono = reader.GetString(nameof(Usuario.Telefono))
                     };
                     usuarios.Add(usuario);
                 }
