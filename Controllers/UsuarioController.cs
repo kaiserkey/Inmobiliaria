@@ -174,7 +174,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Usuario/Edit/5
-        [Authorize(Policy ="Administrador")]
+        [Authorize(Policy = "Administrador")]
         public ActionResult Edit(int id)
         {
             ViewBag.Roles = Usuario.ObtenerRoles();
@@ -299,7 +299,11 @@ namespace Inmobiliaria.Controllers
             try
             {
                 var res = RepoUsuario.DeleteUsuario(con, id);
-                
+                // Delete user's avatar image
+                if (usuarioToDelete != null && !string.IsNullOrEmpty(usuarioToDelete.Avatar))
+                {
+                    System.IO.File.Delete(usuarioToDelete.Avatar);
+                }
                 return RedirectToAction(nameof(Index));
             }
             catch
