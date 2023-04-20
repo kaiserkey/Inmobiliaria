@@ -67,6 +67,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Propietario/Edit/5
+        [Authorize]
         public ActionResult Edit(int id)
         {
             Propietario propietario = RepoPropietario.GetPropietario(con, id);
@@ -76,6 +77,7 @@ namespace Inmobiliaria.Controllers
         // POST: Propietario/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit(int id, Propietario UpdatePropietario)
         {
             try
