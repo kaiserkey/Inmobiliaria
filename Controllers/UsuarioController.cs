@@ -229,7 +229,7 @@ namespace Inmobiliaria.Controllers
         // POST: Usuario/EditarPerfil/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        []
+        [Authorize]
         public ActionResult EditarPerfil(int id, Usuario usuarioEdit)
         {
             Console.WriteLine("Editar perfil");
