@@ -232,7 +232,7 @@ namespace Inmobiliaria.Controllers
         [Authorize]
         public ActionResult EditarPerfil(int id, Usuario usuarioEdit)
         {
-            var usuario = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
+            var usuario = RepoUsuario.GetUsuario(con, id);
             try
             {
                 if (usuarioEdit.Clave == null || usuarioEdit.Clave == "")
