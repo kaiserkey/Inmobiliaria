@@ -226,7 +226,7 @@ namespace Inmobiliaria.Controllers
             }
         }
 
-        // POST: Usuario/EditarPerfil
+        // POST: Usuario/EditarPerfil/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
