@@ -46,6 +46,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Pago/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -54,6 +55,7 @@ namespace Inmobiliaria.Controllers
         // POST: Pago/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(Pago pago)
         {
             try
