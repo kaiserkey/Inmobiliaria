@@ -3,5 +3,5 @@ Usuario: kaiserkey2@gmail.com
 Password: 123
 
 Empleado
-Usuario: 
+Usuario: josevizcay@gmail.com
 Password: 123
