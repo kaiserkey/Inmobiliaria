@@ -1,4 +1,6 @@
 Administrador
 Usuario: kaiserkey2@gmail.com
-password: 123
+Password: 123
+
 Empleado
+Usuario
