@@ -27,6 +27,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Inmueble
+        [Authorize]
         public ActionResult Index()
         {
             var listaInmuebles = RepoInmueble.GetInmuebles(con);
@@ -37,12 +38,14 @@ namespace Inmobiliaria.Controllers
             return View(listaInmuebles);
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             return View();
         }
 
         // GET: Inmueble/Details/5
+        [Authorize]
         public ActionResult Details(int id)
         {
             var inmueble = RepoInmueble.GetInmueble(con, id);
