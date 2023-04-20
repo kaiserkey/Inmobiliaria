@@ -240,6 +240,7 @@ namespace Inmobiliaria.Controllers
                 {
                     return RedirectToAction(nameof(Index), "Home");
                 }
+                
                 if (usuarioEdit.Clave == null || usuarioEdit.Clave == "")
                 {
                     usuarioEdit.Clave = usuario.Clave;
