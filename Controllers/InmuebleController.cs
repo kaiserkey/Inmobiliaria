@@ -52,6 +52,7 @@ namespace Inmobiliaria.Controllers
         // POST: Inmueble/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(Inmueble inmueble)
         {
             try
@@ -68,6 +69,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Inmueble/Edit/5
+        [Authorize]
         public ActionResult Edit(int id)
         {
             Inmueble inmueble = RepoInmueble.GetInmueble(con, id);
@@ -96,6 +98,7 @@ namespace Inmobiliaria.Controllers
         // POST: Inmueble/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit(int id, Inmueble UpdateInmueble)
         {
             try

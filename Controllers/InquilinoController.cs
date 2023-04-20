@@ -16,6 +16,7 @@ using System.Globalization;
 
 namespace Inmobiliaria.Controllers
 {
+    [Authorize]
     public class InquilinoController : Controller
     {
 
@@ -29,6 +30,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Inquilino
+        [Authorize]
         public ActionResult Index()
         {
             var listaInquilinos = RepoInquilino.GetInquilinos(con);
@@ -40,6 +42,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Inquilino/Details/5
+        [Authorize]
         public ActionResult Details(int id)
         {
             var inquilino = RepoInquilino.GetInquilino(con, id);
@@ -47,6 +50,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Inquilino/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
