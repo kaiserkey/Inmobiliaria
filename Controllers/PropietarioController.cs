@@ -15,6 +15,7 @@ using Inmobiliaria.Models;
 
 namespace Inmobiliaria.Controllers
 {
+    [Authorize]
     public class PropietarioController : Controller
     {
         private MySqlDatabase con { get; set; }
@@ -26,7 +27,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Propietario
-        
+        [Authorize]
         public ActionResult Index()
         {
             var listaPropietarios = RepoPropietario.GetPropietarios(con);
