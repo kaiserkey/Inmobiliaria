@@ -1,4 +1,4 @@
-administrador
-usuario: kaiserkey2@gmail.com
+Administrador
+Usuario: kaiserkey2@gmail.com
 password: 123
-emple
+Empleado
