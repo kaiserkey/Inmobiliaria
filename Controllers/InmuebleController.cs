@@ -15,6 +15,7 @@ using Inmobiliaria.Models;
 
 namespace Inmobiliaria.Controllers
 {
+    [Authorize]
     public class InmuebleController : Controller
     {
         private MySqlDatabase con { get; set; }
