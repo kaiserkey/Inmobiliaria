@@ -235,6 +235,11 @@ namespace Inmobiliaria.Controllers
             var usuario = RepoUsuario.GetUsuario(con, id);
             try
             {
+                var usuarioActual = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
+                if (usuarioActual.IdUsuario != id)
+                {
+                    return RedirectToAction(nameof(Index), "Home");
+                }
                 if (usuarioEdit.Clave == null || usuarioEdit.Clave == "")
                 {
                     usuarioEdit.Clave = usuario.Clave;
@@ -272,9 +277,9 @@ namespace Inmobiliaria.Controllers
                     usuarioEdit.Avatar = usuario.Avatar;
                 }
 
-                
-                    
-                
+
+
+
                 usuarioEdit.IdUsuario = id;
                 var res = RepoUsuario.UpdateUsuario(con, usuarioEdit);
                 ViewBag.Roles = Usuario.ObtenerRoles();
@@ -310,10 +315,10 @@ namespace Inmobiliaria.Controllers
                     if (usuario_avatar.Avatar != null || usuario_avatar.Avatar != "")
                     {
                         string wwwPath = environment.WebRootPath;
-                        
-                        if (System.IO.File.Exists(wwwPath+usuario_avatar.Avatar))
+
+                        if (System.IO.File.Exists(wwwPath + usuario_avatar.Avatar))
                         {
-                            System.IO.File.Delete(wwwPath+usuario_avatar.Avatar);
+                            System.IO.File.Delete(wwwPath + usuario_avatar.Avatar);
                             Console.WriteLine("Archivo eliminado exitosamente: ");
                         }
                     }
