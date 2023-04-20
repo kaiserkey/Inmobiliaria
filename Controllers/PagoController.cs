@@ -91,6 +91,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Pago/Edit/5
+        [Authorize]
         public ActionResult Edit(int id)
         {
             Pago pago = RepoPago.GetPago(con, id);
@@ -100,6 +101,7 @@ namespace Inmobiliaria.Controllers
         // POST: Pago/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit(int id, Pago pago)
         {
             try
