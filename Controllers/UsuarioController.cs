@@ -230,7 +230,7 @@ namespace Inmobiliaria.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult EditarPerfil(int Usuario usuarioEdit)
+        public ActionResult EditarPerfil(int id, Usuario usuarioEdit)
         {
             var usuario = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
             try
