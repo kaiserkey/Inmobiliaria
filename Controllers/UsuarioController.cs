@@ -240,7 +240,7 @@ namespace Inmobiliaria.Controllers
                 {
                     return RedirectToAction(nameof(Index), "Home");
                 }
-                
+
                 if (usuarioEdit.Clave == null || usuarioEdit.Clave == "")
                 {
                     usuarioEdit.Clave = usuario.Clave;
@@ -277,9 +277,6 @@ namespace Inmobiliaria.Controllers
                 {
                     usuarioEdit.Avatar = usuario.Avatar;
                 }
-
-
-
 
                 usuarioEdit.IdUsuario = id;
                 var res = RepoUsuario.UpdateUsuario(con, usuarioEdit);
