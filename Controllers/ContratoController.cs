@@ -15,6 +15,7 @@ using Inmobiliaria.Models;
 
 namespace Inmobiliaria.Controllers
 {
+    [Authorize]
     public class ContratoController : Controller
     {
         private MySqlDatabase con { get; set; }
@@ -29,6 +30,7 @@ namespace Inmobiliaria.Controllers
             RepoInquilino = new RepositorioInquilino();
         }
         // GET: Contrato
+        [Authorize]
         public ActionResult Index()
         {
             var listaContratos = RepoContrato.GetContratos(con);
