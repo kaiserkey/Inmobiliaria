@@ -41,6 +41,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Contrato/Details/5
+        [Authorize]
         public ActionResult Details(int id)
         {
             Contrato contrato = RepoContrato.GetContrato(con, id);
@@ -49,6 +50,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Contrato/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -57,6 +59,7 @@ namespace Inmobiliaria.Controllers
         // POST: Contrato/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(Contrato contrato)
         {
             try
