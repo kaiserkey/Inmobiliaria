@@ -26,6 +26,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Propietario
+        
         public ActionResult Index()
         {
             var listaPropietarios = RepoPropietario.GetPropietarios(con);
@@ -37,6 +38,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Propietario/Details/5
+        [Authorize]
         public ActionResult Details(int id)
         {
             var propietario = RepoPropietario.GetPropietario(con, id);
@@ -44,6 +46,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Propietario/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -52,6 +55,7 @@ namespace Inmobiliaria.Controllers
         // POST: Propietario/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(Propietario propietario)
         {
             try
