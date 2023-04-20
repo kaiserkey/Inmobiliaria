@@ -233,7 +233,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult EditarPerfil(int id, Usuario usuarioEdit)
         {
             Console.WriteLine("Editar perfil");
-            var usuario = RepoUsuario.GetUsuario(con, id);
+            var usuario = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
             try
             {
                 var usuarioActual = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
