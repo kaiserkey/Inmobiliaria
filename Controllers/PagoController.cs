@@ -15,6 +15,7 @@ using Inmobiliaria.Models;
 
 namespace Inmobiliaria.Controllers
 {
+    [Authorize]
     public class PagoController : Controller
     {
         private MySqlDatabase con { get; set; }
@@ -27,6 +28,7 @@ namespace Inmobiliaria.Controllers
             RepoContrato = new RepositorioContrato();
         }
         // GET: Pago
+        [Authorize]
         public ActionResult Index()
         {
             var listaPagos = RepoPago.GetPagos(con);
@@ -39,6 +41,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Pago/Details/5
+        [Authorize]
         public ActionResult Details(int id)
         {
             Pago pago = RepoPago.GetPago(con, id);
