@@ -272,14 +272,13 @@ namespace Inmobiliaria.Controllers
                     usuarioEdit.Avatar = usuario.Avatar;
                 }
 
-                if (!User.IsInRole("Administrador"))
-                {
+                
                     var usuarioActual = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
                     if (usuarioActual.IdUsuario != id)
                     {
                         return RedirectToAction(nameof(Index), "Home");
                     }
-                }
+                
                 usuarioEdit.IdUsuario = id;
                 var res = RepoUsuario.UpdateUsuario(con, usuarioEdit);
                 ViewBag.Roles = Usuario.ObtenerRoles();
