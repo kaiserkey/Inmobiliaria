@@ -232,7 +232,7 @@ namespace Inmobiliaria.Controllers
                     if (usuario.Avatar != null || usuario.Avatar != "")
                     {
                         string wwwPath_delete = environment.WebRootPath;
-                        string filePath1 = wwwPath + usuario.Avatar;
+                        string filePath_delete = wwwPath + usuario.Avatar;
 
                         if (System.IO.File.Exists(filePath) && Path.GetFileName(filePath) != "default.webp")
                         {
