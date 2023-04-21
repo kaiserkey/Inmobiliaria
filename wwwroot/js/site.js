@@ -184,6 +184,7 @@ $(document).ready(function () {
 });
 
 //vista previa de imagen usuario
+//agegarle la funcionalida
 function mostrarImagenSeleccionada(event) {
     var imagen = event.target.files[0];
     var reader = new FileReader();
