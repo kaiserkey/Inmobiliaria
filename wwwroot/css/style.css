@@ -61,7 +61,6 @@ nav li a:not(.dropdown-item, .nav-link):hover {
     -o-transition: 1s;
     box-shadow: #e95a0d82 0px 2px 0px;
     margin-bottom: 3px;
-    color: #28a745 !important;
 }
 
 nav li .dropdown-item:hover, .nav-link:hover {
