@@ -228,7 +228,7 @@ namespace Inmobiliaria.Controllers
                 
                 if (usuarioEdit.AvatarFile != null)
                 {
-                    //borramos la imagen anteio
+                    //borramos la imagen anterior
                     if (usuario.Avatar != null || usuario.Avatar != "")
                     {
                         string wwwPath_delete = environment.WebRootPath;
