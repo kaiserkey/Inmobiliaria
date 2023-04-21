@@ -53,7 +53,7 @@ nav img:hover {
     box-shadow: #e95a0d 0px 0px 10px;
 }
 
-nav li a:hover {
+nav li a:not(.dropdown-item):hover {
     font-size: 20px !important;
     transition: 1s;
     -webkit-transition: 1s;
