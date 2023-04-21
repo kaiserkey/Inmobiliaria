@@ -243,8 +243,8 @@ namespace Inmobiliaria.Controllers
                         }
                     }
 
-                    string wwwPath = environment.WebRootPath;
-                    string path = Path.Combine(wwwPath, "Uploads");
+                    wwwPath = environment.WebRootPath;
+                    path = Path.Combine(wwwPath, "Uploads");
                     if (!Directory.Exists(path))
                     {
                         Directory.CreateDirectory(path);
