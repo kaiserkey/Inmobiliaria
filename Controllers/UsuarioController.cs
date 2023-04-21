@@ -236,7 +236,7 @@ namespace Inmobiliaria.Controllers
 
                         if (System.IO.File.Exists(filePath_delete) && Path.GetFileName(filePath_delete) != "default.webp")
                         {
-                            System.IO.File.Delete(filePath);
+                            System.IO.File.Delete(filePath_delete);
                             Console.WriteLine("Archivo eliminado exitosamente");
                         }
                     }
