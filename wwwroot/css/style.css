@@ -65,6 +65,7 @@ nav li a:not(.dropdown-item, .nav-link):hover {
 }
 
 nav li .dropdown-item:hover, .nav-link:hover {
+    background-color: ;
     font-size: 15px !important;
     transition: 1s;
     -webkit-transition: 1s;
