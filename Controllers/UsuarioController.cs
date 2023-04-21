@@ -122,7 +122,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // POST: Usuario/Create
-         [HttpPost]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Policy = "Administrador")]
         public ActionResult Create(Usuario usuario)
