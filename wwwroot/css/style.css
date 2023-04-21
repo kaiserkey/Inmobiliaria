@@ -368,3 +368,7 @@ tbody {
 }
 
 /* Estilos del contenedor principal */
+#contenedor-principal{
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
