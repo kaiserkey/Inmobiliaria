@@ -357,35 +357,35 @@ namespace Inmobiliaria.Controllers
 
         // POST: Usuario/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Authorize(Policy = "Administrador")]
-        public ActionResult Delete(int id, Usuario usuario)
+[ValidateAntiForgeryToken]
+[Authorize(Policy = "Administrador")]
+public ActionResult Delete(int id, Usuario usuario)
+{
+    try
+    {
+        var usuario_avatar = RepoUsuario.GetUsuario(con, id);
+        var res = RepoUsuario.DeleteUsuario(con, id);
+        if (res > 0)
         {
-            try
+            // Delete avatar image
+            if (usuario_avatar.Avatar != null || usuario_avatar.Avatar != "")
             {
-                var usuario_avatar = RepoUsuario.GetUsuario(con, id);
-                var res = RepoUsuario.DeleteUsuario(con, id);
-                if (res > 0)
+                string wwwPath = environment.WebRootPath;
+                string filePath = wwwPath + usuario_avatar.Avatar;
+                
+                if (System.IO.File.Exists(filePath) && Path.GetFileName(filePath) != "default.webp")
                 {
-                    // Delete avatar image
-                    if (usuario_avatar.Avatar != null || usuario_avatar.Avatar != "")
-                    {
-                        string wwwPath = environment.WebRootPath;
-
-                        if (System.IO.File.Exists(wwwPath + usuario_avatar.Avatar))
-                        {
-                            System.IO.File.Delete(wwwPath + usuario_avatar.Avatar);
-                            Console.WriteLine("Archivo eliminado exitosamente: ");
-                        }
-                    }
+                    System.IO.File.Delete(filePath);
+                    Console.WriteLine("Archivo eliminado exitosamente: ");
                 }
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
             }
         }
+
+        return RedirectToAction(nameof(Index));
     }
+    catch
+    {
+        return View();
+    }
+}
 }
