@@ -137,7 +137,7 @@ namespace Inmobiliaria.Controllers
                         numBytesRequested: 256 / 8
                     ));
                 usuario.Clave = hashed;
-                Console.WriteLine();
+                Console.WriteLine(usuario.);
                 var res = RepoUsuario.CreateUsuario(con, usuario);
                 
                 if (usuario.AvatarFile != null && usuario.IdUsuario > 0)
