@@ -369,5 +369,5 @@ tbody {
 
 /* Estilos del contenedor principal */
 #contenedor-principal{
-    height: max-content;
+    height: 100%;
 }
