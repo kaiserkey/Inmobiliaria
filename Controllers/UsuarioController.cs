@@ -307,10 +307,10 @@ namespace Inmobiliaria.Controllers
                 if (usuarioEdit.AvatarFile != null)
                 {
                     //borramos la imagen anterior
-                    if (usuario.Avatar != null || usuario.Avatar != "")
+                    if (usuarioActual.Avatar != null || usuarioActual.Avatar != "")
                     {
                         string wwwPath_delete = environment.WebRootPath;
-                        string filePath_delete = wwwPath_delete + usuario.Avatar;
+                        string filePath_delete = wwwPath_delete + usuarioActual.Avatar;
 
                         if (System.IO.File.Exists(filePath_delete) && Path.GetFileName(filePath_delete) != "default.webp")
                         {
