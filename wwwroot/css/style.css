@@ -20,11 +20,11 @@
 
 #navbar-color *:hover{
     color: #25cc4c !important;
-    text-shadow: 0 0 2px #00FF00 !important;
+    
 }
 
 #navbar-color a:hover{
-    
+    text-shadow: 0 0 2px #00FF00 !important;
 }
 
 .navbar-collapse {
