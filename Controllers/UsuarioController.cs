@@ -156,7 +156,7 @@ namespace Inmobiliaria.Controllers
                     }
                     RepoUsuario.UpdateUsuario(con, usuario);
                 }
-
+                ViewBag.Roles = Usuario.ObtenerRoles();
                 return RedirectToAction(nameof(Index));
             }
             catch
