@@ -225,7 +225,7 @@ namespace Inmobiliaria.Controllers
                         ));
                     usuarioEdit.Clave = hashed;
                 }
-                Console
+                Console.WriteLine();
                 if (usuarioEdit.AvatarFile != null)
                 {
                     string wwwPath = environment.WebRootPath;
