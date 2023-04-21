@@ -54,7 +54,6 @@ nav img:hover {
 }
 
 nav li a:not(.dropdown-item, .nav-link):hover {
-    color: #28a745 !important;
     font-size: 20px !important;
     transition: 1s;
     -webkit-transition: 1s;
