@@ -228,8 +228,8 @@ namespace Inmobiliaria.Controllers
                 
                 if (usuarioEdit.AvatarFile != null)
                 {
-                    string wwwPath;
-                    string path;
+                    string wwwPath = "";
+                    string path = "";
 
                     if (usuario.Avatar != null || usuario.Avatar != "")
                     {
