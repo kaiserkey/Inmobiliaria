@@ -228,13 +228,13 @@ namespace Inmobiliaria.Controllers
                 
                 if (usuarioEdit.AvatarFile != null)
                 {
-                    string wwwPath = "";
-                    string path = "";
-
+                    string wwwPath = environment.WebRootPath;
+                    string path = Path.Combine(wwwPath, "Uploads");
+                    
                     if (usuario.Avatar != null || usuario.Avatar != "")
                     {
-                        wwwPath = environment.WebRootPath;
-                        filePath = wwwPath + usuario.Avatar;
+                        string wwwPath = environment.WebRootPath;
+                        string filePath = wwwPath + usuario.Avatar;
 
                         if (System.IO.File.Exists(filePath) && Path.GetFileName(filePath) != "default.webp")
                         {
@@ -243,8 +243,8 @@ namespace Inmobiliaria.Controllers
                         }
                     }
 
-                    wwwPath = environment.WebRootPath;
-                    path = Path.Combine(wwwPath, "Uploads");
+                    string wwwPath = environment.WebRootPath;
+                    string path = Path.Combine(wwwPath, "Uploads");
                     if (!Directory.Exists(path))
                     {
                         Directory.CreateDirectory(path);
