@@ -228,10 +228,10 @@ namespace Inmobiliaria.Controllers
                 
                 if (usuarioEdit.AvatarFile != null)
                 {
-                    if (usuario_avatar.Avatar != null || usuario_avatar.Avatar != "")
+                    if (usuario.Avatar != null || usuario.Avatar != "")
                     {
                         string wwwPath = environment.WebRootPath;
-                        string filePath = wwwPath + usuario_avatar.Avatar;
+                        string filePath = wwwPath + usuario.Avatar;
 
                         if (System.IO.File.Exists(filePath) && Path.GetFileName(filePath) != "default.webp")
                         {
