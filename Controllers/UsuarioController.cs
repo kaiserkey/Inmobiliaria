@@ -139,7 +139,7 @@ namespace Inmobiliaria.Controllers
                 usuario.Clave = hashed;
                 
                 var res = RepoUsuario.CreateUsuario(con, usuario);
-                Console.
+                Console.WriteLine(usuario.AvatarFile);
                 if (usuario.AvatarFile != null && usuario.IdUsuario > 0)
                 {
                     string wwwPath = environment.WebRootPath;
