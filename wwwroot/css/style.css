@@ -23,6 +23,8 @@
     text-shadow: 0 0 2px #00FF00 !important;
 }
 
+#navbar-color a
+
 .navbar-collapse {
     align-items: center;
     justify-content: space-between;
