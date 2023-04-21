@@ -340,7 +340,7 @@ namespace Inmobiliaria.Controllers
                 usuarioEdit.IdUsuario = id;
                 var res = RepoUsuario.UpdateUsuario(con, usuarioEdit);
                 ViewBag.Roles = Usuario.ObtenerRoles();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Perfil));
             }
             catch
             {
