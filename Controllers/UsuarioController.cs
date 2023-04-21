@@ -228,8 +228,8 @@ namespace Inmobiliaria.Controllers
                 
                 if (usuarioEdit.AvatarFile != null)
                 {
-                    string wwwPath = environment.WebRootPath;
-                    string path = Path.Combine(wwwPath, "Uploads");
+                    string wwwPath;
+                    string path;
 
                     if (usuario.Avatar != null || usuario.Avatar != "")
                     {
