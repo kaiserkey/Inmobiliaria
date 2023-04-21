@@ -122,52 +122,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // POST: Usuario/Create
-        /* [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Authorize(Policy = "Administrador")]
-        public ActionResult Create(Usuario usuario)
-        {
-            try
-            {
-                string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                        password: usuario.Clave,
-                        salt: System.Text.Encoding.ASCII.GetBytes(configuration["Salt"]),
-                        prf: KeyDerivationPrf.HMACSHA1,
-                        iterationCount: 1000,
-                        numBytesRequested: 256 / 8
-                    ));
-                usuario.Clave = hashed;
-                
-                var res = RepoUsuario.CreateUsuario(con, usuario);
-                
-                if (usuario.AvatarFile != null && usuario.IdUsuario > 0)
-                {
-                    string wwwPath = environment.WebRootPath;
-                    string path = Path.Combine(wwwPath, "Uploads");
-                    if (!Directory.Exists(path))
-                    {
-                        Directory.CreateDirectory(path);
-                    }
-                    string fileName = "avatar_" + usuario.IdUsuario + Path.GetExtension(usuario.AvatarFile.FileName);
-                    string pathCompleto = Path.Combine(path, fileName);
-                    usuario.Avatar = Path.Combine("/Uploads", fileName);
-                    using (FileStream stream = new FileStream(pathCompleto, FileMode.Create))
-                    {
-                        usuario.AvatarFile.CopyTo(stream);
-                    }
-                    RepoUsuario.UpdateUsuario(con, usuario);
-                }
-                ViewBag.Roles = Usuario.ObtenerRoles();
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                ViewBag.Roles = Usuario.ObtenerRoles();
-                return View();
-            }
-        } */
-
-        [HttpPost]
+         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Policy = "Administrador")]
         public ActionResult Create(Usuario usuario)
