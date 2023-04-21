@@ -226,7 +226,7 @@ namespace Inmobiliaria.Controllers
                     usuarioEdit.Clave = hashed;
                 }
 
-                if (u.AvatarFile != null)
+                if (usuario.AvatarFile != null)
                 {
                     string wwwPath = environment.WebRootPath;
                     string path = Path.Combine(wwwPath, "Uploads");
@@ -234,17 +234,17 @@ namespace Inmobiliaria.Controllers
                     {
                         Directory.CreateDirectory(path);
                     }
-                    string fileName = "avatar_" + u.Id + Path.GetExtension(u.AvatarFile.FileName);
+                    string fileName = "avatar_" + usuario.Id + Path.GetExtension(usuario.AvatarFile.FileName);
                     string pathCompleto = Path.Combine(path, fileName);
-                    u.Avatar = Path.Combine("/Uploads", fileName);
+                    usuario.Avatar = Path.Combine("/Uploads", fileName);
                     using (FileStream stream = new FileStream(pathCompleto, FileMode.Create))
                     {
-                        u.AvatarFile.CopyTo(stream);
+                        usuario.AvatarFile.CopyTo(stream);
                     }
                 }
                 else
                 {
-                    u.Avatar = us.Avatar;
+                    usuario.Avatar = us.Avatar;
                 }
 
                 var res = RepoUsuario.UpdateUsuario(con, usuarioEdit);
