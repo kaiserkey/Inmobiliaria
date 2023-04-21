@@ -225,7 +225,7 @@ namespace Inmobiliaria.Controllers
                         ));
                     usuarioEdit.Clave = hashed;
                 }
-                
+
                 if (usuarioEdit.AvatarFile != null)
                 {
                     //borramos la imagen anterior
