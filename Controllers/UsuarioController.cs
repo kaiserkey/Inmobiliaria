@@ -306,6 +306,18 @@ namespace Inmobiliaria.Controllers
 
                 if (usuarioEdit.AvatarFile != null)
                 {
+                    //borramos la imagen anterior
+                    if (usuario.Avatar != null || usuario.Avatar != "")
+                    {
+                        string wwwPath_delete = environment.WebRootPath;
+                        string filePath_delete = wwwPath_delete + usuario.Avatar;
+
+                        if (System.IO.File.Exists(filePath_delete) && Path.GetFileName(filePath_delete) != "default.webp")
+                        {
+                            System.IO.File.Delete(filePath_delete);
+                            Console.WriteLine("Archivo eliminado exitosamente");
+                        }
+                    }
                     string wwwPath = environment.WebRootPath;
                     string path = Path.Combine(wwwPath, "Uploads");
                     if (!Directory.Exists(path))
