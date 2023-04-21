@@ -371,10 +371,11 @@ namespace Inmobiliaria.Controllers
                     if (usuario_avatar.Avatar != null || usuario_avatar.Avatar != "")
                     {
                         string wwwPath = environment.WebRootPath;
+                        string filePath = wwwPath + usuario_avatar.Avatar;
 
-                        if (System.IO.File.Exists(wwwPath + usuario_avatar.Avatar))
+                        if (System.IO.File.Exists(filePath) && Path.GetFileName(filePath) != "default.webp")
                         {
-                            System.IO.File.Delete(wwwPath + usuario_avatar.Avatar);
+                            System.IO.File.Delete(filePath);
                             Console.WriteLine("Archivo eliminado exitosamente: ");
                         }
                     }
