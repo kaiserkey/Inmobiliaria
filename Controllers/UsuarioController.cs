@@ -230,11 +230,11 @@ namespace Inmobiliaria.Controllers
                 {
                     string wwwPath = environment.WebRootPath;
                     string path = Path.Combine(wwwPath, "Uploads");
-                    
+
                     if (usuario.Avatar != null || usuario.Avatar != "")
                     {
-                        string wwwPath = environment.WebRootPath;
-                        string filePath = wwwPath + usuario.Avatar;
+                        wwwPath = environment.WebRootPath;
+                        filePath = wwwPath + usuario.Avatar;
 
                         if (System.IO.File.Exists(filePath) && Path.GetFileName(filePath) != "default.webp")
                         {
