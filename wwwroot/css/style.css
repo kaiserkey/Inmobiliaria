@@ -64,6 +64,17 @@ nav li a:not(.dropdown-item):hover {
     margin-bottom: 3px;
 }
 
+nav li a:not(.dropdown-item):hover {
+    font-size: 20px !important;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    box-shadow: #e95a0d82 0px 2px 0px;
+    margin-bottom: 3px;
+}
+
 /* adaptable responsivo */
 @media screen and (max-width: 767px) {
     .navbar-brand {
