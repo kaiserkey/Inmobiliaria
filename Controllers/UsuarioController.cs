@@ -244,7 +244,7 @@ namespace Inmobiliaria.Controllers
                 }
                 else
                 {
-                    usuarioEdit.Avatar = us.Avatar;
+                    usuarioEdit.Avatar = usuario.Avatar;
                 }
 
                 var res = RepoUsuario.UpdateUsuario(con, usuarioEdit);
