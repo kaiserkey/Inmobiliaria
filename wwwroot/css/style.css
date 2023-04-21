@@ -23,7 +23,9 @@
     text-shadow: 0 0 2px #00FF00 !important;
 }
 
-#navbar-color a
+#navbar-color a:hover{
+    
+}
 
 .navbar-collapse {
     align-items: center;
