@@ -184,7 +184,7 @@ $(document).ready(function () {
 });
 
 //vista previa de imagen usuario
-//agegarle la funcionalida
+//agegarle la funcionalidad para que la imagen seleccionada por defecto 
 function mostrarImagenSeleccionada(event) {
     var imagen = event.target.files[0];
     var reader = new FileReader();
