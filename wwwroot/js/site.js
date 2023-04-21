@@ -185,7 +185,7 @@ $(document).ready(function () {
 
 //vista previa de imagen usuario
 //agegarle la funcionalidad para que la imagen seleccionada por defecto sea 
-//la /img/default.webp 
+//la /img/default.webp y que si no se selecciona ninguna imagen se muestre la imagen por defecto
 function mostrarImagenSeleccionada(event) {
     var imagen = event.target.files[0];
     var reader = new FileReader();
