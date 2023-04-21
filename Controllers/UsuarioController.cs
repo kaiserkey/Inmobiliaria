@@ -234,7 +234,7 @@ namespace Inmobiliaria.Controllers
                         string wwwPath_delete = environment.WebRootPath;
                         string filePath_delete = wwwPath_delete + usuario.Avatar;
 
-                        if (System.IO.File.Exists(filePath_delete) && Path.GetFileName(filePath) != "default.webp")
+                        if (System.IO.File.Exists(filePath_delete) && Path.GetFileName(filePath_delete) != "default.webp")
                         {
                             System.IO.File.Delete(filePath);
                             Console.WriteLine("Archivo eliminado exitosamente");
