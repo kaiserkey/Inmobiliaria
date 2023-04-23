@@ -1,5 +1,37 @@
 ﻿/* busquedas por modales y jquery */
+/* Abrir Modal de buscar inmuebles */
+function abrirModalInmueble() {
+    $('#modalBuscarInmuebles').modal('show');
+    $('#tblInmuebles').empty();
+}
 
+function buscarInmueble() {
+    var busqueda = $('#txtBuscar').val();
+    var opcion = $('#buscarInmueblePor').val();
+    $.getJSON('/Contrato/BuscarInmuebles', { busqueda: busqueda, opcion: opcion }, function (resultados) {
+        $('#tblInmuebles').empty();
+        $.each(resultados, function (index, resultado) {
+            var fila = '<tr><td>' + resultado.idInmueble +
+                '</td><td>' + resultado.tipo +
+                '</td><td>' + resultado.coordenadas +
+                '</td><td>' + resultado.precio +
+                '</td><td>' + resultado.ambientes +
+                '</td><td>' + resultado.uso +
+                '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarInmueble(' + resultado.idInmueble + ')">Seleccionar</button></td></tr>';
+            $('#tblInmuebles').append(fila);
+        });
+    });
+}
+
+function seleccionarInmueble(idInmueble) {
+    $('#IdInmueble').val(idInmueble);
+    $('#modalBuscarInmuebles').modal('hide');
+}
+
+// Función para cerrar el modal al hacer clic en el botón
+function cerrarModalInmueble() {
+    $('#modalBuscarInmuebles').modal('hide');
+}
 
 
 
