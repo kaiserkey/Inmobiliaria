@@ -1,5 +1,42 @@
 ﻿/* busquedas por modales y jquery */
 /* Abrir modal buscar contratos por fecha, inmuebel y pagos */
+function abrirModalContrato() {
+    $('#modalBuscarContrato').modal('show');
+    $('#tblContrato').empty();
+}
+
+function buscarContratos() {
+    var busqueda = $('#txtBuscar').val();
+    var opcion = $('#buscarContratoPor').val();
+    $.getJSON('/Pago/BuscarContratos', { busqueda: busqueda, opcion: opcion }, function (resultados) {
+        $('#tblContrato').empty();
+        $.each(resultados, function (index, resultado) {
+            var fila = '<tr><td>' + resultado.idContrato +
+                '</td><td>' + resultado.idInmueble +
+                '</td><td>' + resultado.nombre + " " + resultado.apellido +
+                '</td><td>' + resultado.dni +
+                '</td><td>' + resultado.fechaInicio +
+                '</td><td>' + resultado.fechaFin +
+                '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarContrato(' + resultado.idContrato + ')">Seleccionar</button></td></tr>';
+            $('#tblContrato').append(fila);
+        });
+    });
+}
+
+function seleccionarContrato(idContrato) {
+    $('#IdContrato').val(idContrato);
+    $('#modalBuscarContrato').modal('hide');
+}
+
+// Función para cerrar el modal al hacer clic en el botón
+function cerrarModalContrato() {
+    $('#modalBuscarContrato').modal('hide');
+}
+
+
+
+
+
 
 /* Abrir Modal de buscar inmuebles por disponibilidad y propietario */
 function abrirModalBuscarInmueble() {
