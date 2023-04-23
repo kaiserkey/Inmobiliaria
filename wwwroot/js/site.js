@@ -23,6 +23,16 @@ function buscarInmuebles() {
         });
     });
 }
+/* Ocultar  */
+$(document).ready(function(){
+    $('#buscarInmueblePor').change(function(){
+        if($(this).val() == 'Disponibles'){
+            $('#txtBuscar').hide();
+        } else {
+            $('#txtBuscar').show();
+        }
+    });
+});
 
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModalBuscarInmueble() {
