@@ -197,7 +197,7 @@ public class RepositorioInmueble
                                 FROM Inmueble i
                                 JOIN Propietario p ON i.IdPropietario = p.IdPropietario
                                 WHERE (p.Nombre LIKE @busqueda OR p.Dni LIKE @busqueda) LIMIT 10";
-                Console.WriteLine("Propietario");
+                Console.WriteLine(busqueda);
                 cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             }
             
