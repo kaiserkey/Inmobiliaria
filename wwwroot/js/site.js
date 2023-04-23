@@ -1,6 +1,6 @@
 ﻿/* busquedas por modales y jquery */
 /* Abrir modal buscar contratos por fecha, inmuebel y pagos */
-function abrirModalContrato() {
+function abrirModalBuscarContratos() {
     $('#modalBuscarContrato').modal('show');
     $('#tblContrato').empty();
 }
