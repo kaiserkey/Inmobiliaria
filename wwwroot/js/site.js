@@ -24,14 +24,17 @@ function buscarInmuebles() {
     });
 }
 /* Ocultar input text */
-$(document).ready(function(){
-    $('#buscarInmueblePor').change(function(){
-        if($(this).val() == 'Disponibles'){
-            $('#txtBuscar').hide();
-        } else {
-            $('#txtBuscar').show();
+$(document).ready(function () {
+    $("#buscarInmueblePor").change(function () {
+        var selectedOption = $(this).children("option:selected").val();
+        if (selectedOption == "Disponibles") {
+            $("#txtBuscar").hide();
+        }
+        else {
+            $("#txtBuscar").show();
         }
     });
+    $("#txtBuscar").hide();
 });
 
 // Función para cerrar el modal al hacer clic en el botón
@@ -58,7 +61,7 @@ function buscarContratos() {
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idContrato +
                 '</td><td>' + resultado.idInmueble +
-                '</td><td>' + resultado.nombre + " " + resultado.apellido + 
+                '</td><td>' + resultado.nombre + " " + resultado.apellido +
                 '</td><td>' + resultado.dni +
                 '</td><td>' + resultado.fechaInicio +
                 '</td><td>' + resultado.fechaFin +
@@ -233,7 +236,7 @@ $(document).ready(function () {
 function mostrarImagenSeleccionada(event) {
     var imagen = event.target.files[0];
     var reader = new FileReader();
-    reader.onload = function(e) {
+    reader.onload = function (e) {
         var vistaPrevia = document.getElementById("vista-previa");
         var imagenPrevia = vistaPrevia.querySelector("#imagen-previa");
         imagenPrevia.src = e.target.result;
