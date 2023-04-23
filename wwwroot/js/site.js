@@ -23,7 +23,7 @@ function buscarInmuebles() {
         });
     });
 }
-/* Ocultar  */
+/* Ocultar input text */
 $(document).ready(function(){
     $('#buscarInmueblePor').change(function(){
         if($(this).val() == 'Disponibles'){
