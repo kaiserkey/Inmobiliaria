@@ -12,6 +12,7 @@ function buscarInmuebles() {
         $('#tblInmuebles').empty();
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idInmueble +
+                '</td><td>' + resultado.nombre +
                 '</td><td>' + resultado.tipo +
                 '</td><td>' + resultado.coordenadas +
                 '</td><td>' + resultado.precio +
