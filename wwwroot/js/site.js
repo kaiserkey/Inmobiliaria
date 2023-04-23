@@ -63,7 +63,7 @@ $(document).ready(function () {
             $("#txtBuscar").show();
         }
     });
-    $(".optionInput").hide();
+    $(".optionInput-").hide();
 });
 
 // Función para cerrar el modal al hacer clic en el botón
