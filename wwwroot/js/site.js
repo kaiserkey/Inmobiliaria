@@ -1,4 +1,6 @@
-﻿/* Abrir Modal de buscar contrato */
+﻿/* busquedas por */
+
+/* Abrir Modal de buscar contrato */
 function abrirModalContrato() {
     $('#modalBuscarContrato').modal('show');
     $('#tblContrato').empty();
