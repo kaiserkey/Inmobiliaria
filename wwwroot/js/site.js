@@ -28,11 +28,6 @@ function seleccionarContrato(idContrato) {
     $('#modalBuscarContrato').modal('hide');
 }
 
-// Función para cerrar el modal al hacer clic en el botón
-function cerrarModalContrato() {
-    $('#modalBuscarContrato').modal('hide');
-}
-
 
 
 
