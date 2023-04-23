@@ -23,11 +23,6 @@ function buscarInmueble() {
     });
 }
 
-function seleccionarInmueble(idInmueble) {
-    $('#IdInmueble').val(idInmueble);
-    $('#modalBuscarInmuebles').modal('hide');
-}
-
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModalInmueble() {
     $('#modalBuscarInmuebles').modal('hide');
