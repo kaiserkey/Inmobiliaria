@@ -1,5 +1,5 @@
 ﻿/* busquedas por modales y jquery */
-/* Abrir Modal de buscar inmuebles */
+/* Abrir Modal de buscar inmuebles por disponibil */
 function abrirModalInmueble() {
     $('#modalBuscarInmuebles').modal('show');
     $('#tblInmuebles').empty();
