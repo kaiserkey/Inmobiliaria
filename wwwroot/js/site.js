@@ -54,17 +54,17 @@ function buscarInmuebles() {
 }
 /* Ocultar input text */
 $(document).ready(function () {
-    $("#buscarInmueblePor").change(function () {
-        var selectedOption = $(this).children("option:selected").val();
-        if (selectedOption == "Disponibles") {
-            $("#txtBuscar").hide();
-        }
-        else {
-            $("#txtBuscar").show();
-        }
+    $(".optionInput").change(function () {
+    var selectedOption = $(this).children("option:selected").val();
+    if (selectedOption == "Disponibles") {
+    $("#txtBuscar").hide();
+    }
+    else {
+    $("#txtBuscar").show();
+    }
     });
     $("#txtBuscar").hide();
-});
+    });
 
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModalBuscarInmueble() {
