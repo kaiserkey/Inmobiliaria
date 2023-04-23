@@ -191,7 +191,7 @@ public class RepositorioContrato
                             i.Nombre, i.Apellido, i.Dni
                             FROM Contrato c
                             INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
-                            WHERE CONCAT(i.Nombre, ' ', i.Apellido) LIKE @busqueda";
+                            WHERE CONCAT(i.Nombre, ' ', i.Apellido) LIKE @busqueda LIMIT 10";
             }
             else if (buscarPor.Equals("FechaInicio") || buscarPor.Equals("FechaFin"))
             {
