@@ -40,7 +40,7 @@ namespace Inmobiliaria.Controllers
         }
 
         //obtener Inmuebles por JQuery
-        public IActionResult BuscarIN(string busqueda, string opcion)
+        public IActionResult BuscarInmuebles(string busqueda, string opcion)
         {
             var inmuebles = new List<Inmueble>();
             
