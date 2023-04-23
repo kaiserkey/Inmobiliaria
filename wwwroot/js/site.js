@@ -200,3 +200,17 @@ function mostrarImagenSeleccionada(event) {
         imagenPrevia.src = "/img/default.webp";
     }
 }
+
+//menu de navegacion dropdown
+$(document).ready(function () {
+    $(".dropdown-hover").hover(
+        function () {
+            $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+            $(this).toggleClass('open');
+        },
+        function () {
+            $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+            $(this).toggleClass('open');
+        }
+    );
+});

@@ -154,8 +154,8 @@ public class RepositorioInmueble
         {
             cmd.CommandText = @"SELECT IdInmueble, Tipo, Coordenadas, Precio, Ambientes, Uso, Activo, IdPropietario 
                             FROM Inmueble 
-                            WHERE " + buscarPor + " LIKE @busqueda AND Activo = 1";
-            
+                            WHERE " + buscarPor + " LIKE @busqueda AND Activo = 1 LIMIT 10";
+
             /* cmd.Parameters.AddWithValue("@buscarPor", buscarPor); */
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             using (var reader = cmd.ExecuteReader())
@@ -172,6 +172,53 @@ public class RepositorioInmueble
                         Uso = reader.GetString(nameof(Inmueble.Uso)),
                         Activo = reader.GetBoolean(nameof(Inmueble.Activo)),
                         IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
+                    };
+                    inmuebles.Add(inmueble);
+                }
+            }
+        }
+        return inmuebles;
+    }
+
+    public List<Inmueble> BuscarInmuebles(MySqlDatabase mySqlDatabase, string busqueda = "", string buscarPor)
+    {
+        var inmuebles = new List<Inmueble>();
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"SELECT i.IdInmueble, i.Tipo, i.Coordenadas, i.Precio, i.Ambientes, i.Uso, i.Activo, i.IdPropietario,
+                    p.Nombre, p.Apellido
+                    FROM Inmueble i 
+                    JOIN Propietario p ON i.IdPropietario = p.IdPropietario
+                    WHERE i.Activo = 1 LIMIT 10";
+
+            if(buscarPor == "Propietario"){
+                cmd.CommandText = @"SELECT i.IdInmueble, i.Tipo, i.Coordenadas, i.Precio, i.Ambientes, i.Uso, i.Activo, i.IdPropietario, 
+                                p.Nombre, p.Apellido
+                                FROM Inmueble i
+                                JOIN Propietario p ON i.IdPropietario = p.IdPropietario
+                                WHERE (p.Nombre LIKE @busqueda OR p.Dni LIKE @busqueda) LIMIT 10";
+                cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
+            }
+            
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var inmueble = new Inmueble
+                    {
+                        IdInmueble = reader.GetInt32(nameof(Inmueble.IdInmueble)),
+                        Tipo = reader.GetString(nameof(Inmueble.Tipo)),
+                        Coordenadas = reader.GetString(nameof(Inmueble.Coordenadas)),
+                        Precio = reader.GetDecimal(nameof(Inmueble.Precio)),
+                        Ambientes = reader.GetInt32(nameof(Inmueble.Ambientes)),
+                        Uso = reader.GetString(nameof(Inmueble.Uso)),
+                        Activo = reader.GetBoolean(nameof(Inmueble.Activo)),
+                        IdPropietario = reader.GetInt32(nameof(Inmueble.IdPropietario)),
+                        Propietario = new Propietario
+                        {
+                            Nombre = reader.GetString(nameof(Propietario.Nombre)),
+                            Apellido = reader.GetString(nameof(Propietario.Apellido)),
+                        }
                     };
                     inmuebles.Add(inmueble);
                 }

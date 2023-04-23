@@ -135,8 +135,9 @@ public class RepositorioPropietario
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
             cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email 
-                                FROM Propietario
-                                WHERE CONCAT(Nombre, ' ', Apellido) LIKE @nombreCompleto";
+                            FROM Propietario
+                            WHERE CONCAT(Nombre, ' ', Apellido) LIKE @nombreCompleto
+                            LIMIT 10";
             cmd.Parameters.AddWithValue("@nombreCompleto", "%" + nombreCompleto + "%");
             using (var reader = cmd.ExecuteReader())
             {

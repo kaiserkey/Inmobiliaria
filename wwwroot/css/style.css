@@ -62,8 +62,8 @@ nav img:hover {
     box-shadow: #e95a0d 0px 0px 10px;
 }
 
-nav li a:not(.dropdown-item, .nav-link):hover {
-    font-size: 20px !important;
+nav li a:not(.dropdown-item, #dropdown-name):hover {
+    font-size: 18px !important;
     transition: 1s;
     -webkit-transition: 1s;
     -moz-transition: 1s;
@@ -73,7 +73,7 @@ nav li a:not(.dropdown-item, .nav-link):hover {
     margin-bottom: 3px;
 }
 
-nav li .dropdown-item:hover, .nav-link:hover {
+nav li .dropdown-item:hover {
     font-size: 15px !important;
     transition: 1s;
     -webkit-transition: 1s;

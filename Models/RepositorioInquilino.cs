@@ -138,7 +138,8 @@ public class RepositorioInquilino
         {
             cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Email, Dni, Telefono, FechaNacimiento 
                             FROM Inquilino
-                            WHERE CONCAT(Nombre, ' ', Apellido) LIKE @nombreCompleto";
+                            WHERE CONCAT(Nombre, ' ', Apellido) LIKE @nombreCompleto
+                            LIMIT 10";
             cmd.Parameters.AddWithValue("@nombreCompleto", "%" + nombreCompleto + "%");
             using (var reader = cmd.ExecuteReader())
             {

@@ -177,7 +177,7 @@ public class RepositorioContrato
     }
 
     public List<Contrato> BuscarContrato(MySqlDatabase mySqlDatabase, string busqueda, string buscarPor)
-    {Console.WriteLine(buscarPor);
+    {
 
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
@@ -199,7 +199,7 @@ public class RepositorioContrato
                             i.Nombre, i.Apellido, i.Dni
                             FROM Contrato c
                             INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino 
-                            WHERE " + buscarPor + " LIKE @busqueda";
+                            WHERE " + buscarPor + " LIKE @busqueda LIMIT 10";
             }
             cmd.CommandText = query;
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
