@@ -24,7 +24,7 @@ function buscarInmueble() {
 }
 
 // Función para cerrar el modal al hacer clic en el botón
-function cerrarModalInmueble() {
+function cerrarModalBuscarInmueble() {
     $('#modalBuscarInmuebles').modal('hide');
 }
 
