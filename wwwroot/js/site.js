@@ -45,10 +45,6 @@ function cerrarModalBuscarInmueble() {
 }
 
 
-
-
-
-
 /* Abrir Modal de buscar contrato */
 function abrirModalContrato() {
     $('#modalBuscarContrato').modal('show');
