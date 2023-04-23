@@ -1,4 +1,4 @@
-﻿/* busquedas por */
+﻿/* busquedas por modales y jquery */
 
 /* Abrir Modal de buscar contrato */
 function abrirModalContrato() {
