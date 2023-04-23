@@ -8,7 +8,7 @@ function abrirModalBuscarInmueble() {
 function buscarInmuebles() {
     var busqueda = $('#txtBuscar').val();
     var opcion = $('#buscarInmueblePor').val();
-    $.getJSON('/Contrato/BuscarInmuebles', { busqueda: busqueda, opcion: opcion }, function (resultados) {
+    $.getJSON('/Inmueble/BuscarInmuebles', { busqueda: busqueda, opcion: opcion }, function (resultados) {
         $('#tblInmuebles').empty();
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idInmueble +
