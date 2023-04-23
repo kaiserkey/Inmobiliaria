@@ -1,4 +1,6 @@
 ﻿/* busquedas por modales y jquery */
+/*  */
+
 /* Abrir Modal de buscar inmuebles por disponibilidad y propietario */
 function abrirModalBuscarInmueble() {
     $('#modalBuscarInmuebles').modal('show');
