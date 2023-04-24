@@ -8,7 +8,7 @@ function abrirModalBuscarContratos() {
 function buscarContratosPor() {
     var busqueda;
     if ($('#Codigo').val()) {
-        busqueda = $('#Codigo').val();
+        var busqueda = $('#Codigo').val();
     } else if($('#fechaDesde').val() && $('#fechaHasta').val()) {
         busqueda = "valor por defecto";
     }
