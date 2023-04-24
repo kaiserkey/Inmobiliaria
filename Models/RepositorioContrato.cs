@@ -235,7 +235,7 @@ public class RepositorioContrato
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
             DateTime fechaDesde =  fechaDesde;
-            DateTime fechaH =  fechaDesde;
+            DateTime fechaHasta =  fechaHasta;
 
             cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
                 i.Nombre, i.Apellido, i.Dni
