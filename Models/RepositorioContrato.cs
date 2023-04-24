@@ -245,8 +245,8 @@ public class RepositorioContrato
                 OR (c.FechaInicio <= @fechaDesde AND c.FechaFin >= @fechaHasta)
             LIMIT 10";
 
-            cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
-            cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+            cmd.Parameters.AddWithValue("@fechaDesde", fechaDesdeDB);
+            cmd.Parameters.AddWithValue("@fechaHasta", fechaHastaDB);
 
             using (var reader = cmd.ExecuteReader())
             {
