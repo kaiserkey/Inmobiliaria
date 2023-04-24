@@ -25,7 +25,7 @@ function buscarContratosPor() {
 
 /* opciones del select de buscar contratos */
 $(document).ready(function () {
-    $("#buscarContratoPor").change(function () {
+    $(".optionContrato").change(function () {
         var selectedOption = $(this).children("option:selected").val();
         $(".optionInputContrato").empty();
         if (selectedOption == "Fecha") {
