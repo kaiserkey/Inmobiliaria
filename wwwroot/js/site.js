@@ -25,37 +25,36 @@ function buscarContratosPor() {
 
 /* opciones del select de buscar contratos */
 $(document).ready(function () {
-    // Fijar tamaño del select
-    $("#buscarContratoPor").on("click", function () {
-        $(this).css("height", "auto");
-    }).on("mouseleave", function () {
-        $(this).css("height", "50px");
-    });
     // Ocultar input por defecto
     $(".optionInputContrato").append('<label class="mr-3">Desde:</label>');
     $(".optionInputContrato").append('<input type="date" class="form-control mr-3" id="fechaDesde">');
     $(".optionInputContrato").append('<label class="mr-3">Hasta:</label>');
     $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
-
+  
     $("#buscarContratoPor").change(function () {
-        var selectedOption = $(this).children("option:selected").val();
-
-        // Limpiar inputs previos
-        $(".optionInputContrato").empty();
-
-        // Agregar inputs según la opción seleccionada
-        if (selectedOption == "Fecha") {
-            $(".optionInputContrato").append('<label class="mr-3">Desde:</label>');
-            $(".optionInputContrato").append('<input type="date" class="form-control mr-3" id="fechaDesde">');
-            $(".optionInputContrato").append('<label class="mr-3">Hasta:</label>');
-            $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
-        } else {
-            $(".optionInputContrato").append('<input type="number" class="form-control" placeholder="Ingrese el valor" id="valor">');
-        }
+      var selectedOption = $(this).children("option:selected").val();
+  
+      // Limpiar inputs previos
+      $(".optionInputContrato").empty();
+  
+      // Agregar inputs según la opción seleccionada
+      if (selectedOption == "Fecha") {
+        $(".optionInputContrato").append('<label class="mr-3">Desde:</label>');
+        $(".optionInputContrato").append('<input type="date" class="form-control mr-3" id="fechaDesde">');
+        $(".optionInputContrato").append('<label class="mr-3">Hasta:</label>');
+        $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
+      } else {
+        $(".optionInputContrato").append('<input type="number" class="form-control" placeholder="Ingrese el valor" id="valor">');
+      }
     });
-
-    
-});
+  
+    // Fijar tamaño del select
+    $("#buscarContratoPor").on("click", function () {
+      $(this).css("heigh", "auto");
+    }).on("mouseleave", function () {
+      $(this).css("width", "170px");
+    });
+  });
 
 
 
