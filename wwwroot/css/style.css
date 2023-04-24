@@ -409,8 +409,8 @@ tbody {
     display: flex !important;
 }
 
-.optionInputContrato i{
-    
+.optionInputContrato input{
+    margin-left: 1;
 }
 
 
