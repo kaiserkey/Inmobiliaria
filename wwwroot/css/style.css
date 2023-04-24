@@ -394,3 +394,14 @@ tbody {
 .optionContrato {
     max-height: 38px; /* ajusta el valor a tu preferencia */
 }
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.optionInputContrato input {
+    margin-right: 10px;
+}
