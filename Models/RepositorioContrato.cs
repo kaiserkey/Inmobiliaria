@@ -241,7 +241,7 @@ public class RepositorioContrato
                 INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
                 WHERE c.FechaInicio >= @fechaDesde AND c.FechaFin <= @fechaHasta LIMIT 10";
 
-            cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
+            cmd.Parameters.AddWithValue("@fechaDesde", "%" + busqueda + "%");
             using (var reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
