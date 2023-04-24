@@ -390,3 +390,7 @@ tbody {
 #contenedor-principal{
     min-height: 500px;
 }
+
+.optionContrato {
+    height: 38px; /* ajusta el valor a tu preferencia */
+}
