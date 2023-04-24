@@ -30,7 +30,7 @@ $(document).ready(function() {
         $(".optionInputContrato").empty(); // Eliminamos cualquier input anteriormente agregado
         
         if (selectedOption == "Fecha") {
-            $(".optionInputContrato").append('<input type="date" class="form-control mb-3" placeholder="Fecha desde" id="fechaDesde">');
+            $(".optionInputContrato").append('<input type="date" class="form-control" placeholder="Fecha desde" id="fechaDesde">');
             $(".optionInputContrato").append('<input type="date" class="form-control" placeholder="Fecha hasta" id="fechaHasta">');
         } else {
             $(".optionInputContrato").append('<input type="number" class="form-control" placeholder="Ingrese el número" id="numeroInput">');
