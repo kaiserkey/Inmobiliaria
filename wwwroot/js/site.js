@@ -9,7 +9,7 @@ function buscarContratosPor() {
     var opcion = $('#buscarContratoPor').val();
     if ($('#Codigo').val()) {
         var busqueda = $('#Codigo').val();
-        $.getJSON('/Pago/BuscarContratos', { busqueda: busqueda, opcion: opcion }, function (resultados) {
+        $.getJSON('/Contrato/BuscarContratos', { busqueda: busqueda, opcion: opcion }, function (resultados) {
             $('#tblContrato').empty();
             $.each(resultados, function (index, resultado) {
                 var fila = '<tr><td>' + resultado.idContrato +
