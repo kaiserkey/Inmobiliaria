@@ -396,7 +396,7 @@ tbody {
     max-height: 38px; /* ajusta el valor a tu preferencia */
 }
 
-.estiloEnLinea input{
+.estiloEnLinea{
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
