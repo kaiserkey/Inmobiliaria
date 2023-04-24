@@ -114,6 +114,28 @@ namespace Inmobiliaria.Controllers
             return Json(resultados);
         }
 
+        /* buscar contratos por jquery */
+        public IActionResult BuscarContratos(string busqueda, string opcion)
+        {
+            var contrato = new List<Contrato>();
+            
+            contrato = RepoContrato.BuscarContrato(con, busqueda, opcion);
+            
+            var resultados = contrato.Select(c => new
+            {
+                idContrato = c.IdContrato,
+                idInmueble = c.IdInmueble,
+                idInquilino = c.IdInquilino,
+                nombre = c.Inquilino.Nombre,
+                apellido = c.Inquilino.Apellido,
+                dni = c.Inquilino.Dni,
+                fechaFin = c.FechaFin,
+                fechaInicio = c.FechaInicio,
+            });
+
+            return Json(resultados);
+        }
+
         // GET: Contrato/Edit/5
         public ActionResult Edit(int id)
         {
