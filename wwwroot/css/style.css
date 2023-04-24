@@ -404,7 +404,7 @@ tbody {
 }
 
 .estiloEnLinea label{
-    width: 100px;
+    width: 100px !important;
 }
 
 .optionInputContrato {
