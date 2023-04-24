@@ -231,7 +231,6 @@ public class RepositorioContrato
     public List<Contrato> BuscarContratosPorFecha(MySqlDatabase mySqlDatabase, string fechaDesde, string fechaHasta, string buscarPor)
     {
 
-
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
