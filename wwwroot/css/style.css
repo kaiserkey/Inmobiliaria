@@ -404,7 +404,7 @@ tbody {
 }
 
 .estiloEnLinea select{
-    minwidth: 100px !important;
+    min-width: 200px !important;
 }
 
 .optionInputContrato {
