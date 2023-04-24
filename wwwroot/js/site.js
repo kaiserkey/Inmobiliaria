@@ -40,7 +40,7 @@ $(document).ready(function () {
             $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
         } else {
             $(".optionInputContrato").append('<label for="fechaDesde" class="input-group-text">Desde:</label>');
-            $(".optionInputContrato").append('<input type="codi" class="form-control" id="inputNumerico">');
+            $(".optionInputContrato").append('<input type="number" class="form-control" id="inputNumerico">');
         }
     });
     // por defecto, agregar los inputs de fecha
