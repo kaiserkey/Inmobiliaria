@@ -24,22 +24,25 @@ function buscarContratosPor() {
 }
 
 /* opciones del select de buscar contratos */
-$(document).ready(function() {
-    $(".optionContrato").change(function() {
+$(document).ready(function () {
+    $(".optionContrato").change(function () {
         var selectedOption = $(this).children("option:selected").val();
-        $(".optionInputContrato").empty(); // Eliminamos cualquier input anteriormente agregado
-        
+        $(".optionInputContrato").empty();
         if (selectedOption == "Fecha") {
-            $(".optionInputContrato").append('<input type="date" class="form-control" placeholder="Fecha desde" id="fechaDesde">');
-            $(".optionInputContrato").append('<input type="date" class="form-control" placeholder="Fecha hasta" id="fechaHasta">');
+            $(".optionInputContrato").append('<label for="fechaDesde">Desde:</label>');
+            $(".optionInputContrato").append('<input type="date" class="form-control mb-3" id="fechaDesde">');
+            $(".optionInputContrato").append('<label for="fechaHasta">Hasta:</label>');
+            $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
         } else {
-            $(".optionInputContrato").append('<input type="number" class="form-control" placeholder="Ingrese el número" id="numeroInput">');
+            $(".optionInputContrato").append('<label for="inputNumerico">Ingrese un número:</label>');
+            $(".optionInputContrato").append('<input type="number" class="form-control" id="inputNumerico">');
         }
     });
-    
-    // Carga inicial de los inputs de fecha
-    $(".optionInputContrato").append('<input type="date" class="form-control" placeholder="Fecha desde" id="fechaDesde">');
-    $(".optionInputContrato").append('<input type="date" class="form-control" placeholder="Fecha hasta" id="fechaHasta">');
+    // por defecto, agregar los inputs de fecha
+    $(".optionInputContrato").append('<label for="fechaDesde">Desde:</label>');
+    $(".optionInputContrato").append('<input type="date" class="form-control mb-3" id="fechaDesde">');
+    $(".optionInputContrato").append('<label for="fechaHasta">Hasta:</label>');
+    $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
 });
 
 
