@@ -396,7 +396,7 @@ tbody {
     max-height: 38px; /* ajusta el valor a tu preferencia */
 }
 
-.estiloEnLinea {
+/* .estiloEnLinea {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
@@ -406,7 +406,7 @@ tbody {
 .optionInputContrato {
     margin-right: 10px !important;
     margin-left: 10px !important;
-}
+} */
 
 .custom-modal .modal-dialog {
     max-width: 900px; 
