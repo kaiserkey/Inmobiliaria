@@ -23,6 +23,8 @@ function buscarContratosPor() {
     });
 }
 
+/* opciones del select de buscar */
+
 
 
 
