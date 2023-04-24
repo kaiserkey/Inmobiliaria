@@ -392,5 +392,5 @@ tbody {
 }
 
 .optionContrato {
-    min-height: 40px; /* ajusta el valor a tu preferencia */
+    max-height: 40px; /* ajusta el valor a tu preferencia */
 }
