@@ -234,7 +234,7 @@ public class RepositorioContrato
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            
+            var busqueda="";
             var query = "";
             
             if (buscarPor.Equals("Inquilino"))
