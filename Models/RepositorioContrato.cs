@@ -241,7 +241,7 @@ public class RepositorioContrato
                 i.Nombre, i.Apellido, i.Dni
                 FROM Contrato c
                 INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
-                WHERE c.FechaInicio <= @fechaIn AND (c.FechaFin >= NOW() OR c.FechaFin IS NULL) LIMIT 10";
+                WHERE c.FechaInicio <= @fechaInicio AND (c.FechaFin >= NOW() OR c.FechaFin IS NULL) LIMIT 10";
 
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             using (var reader = cmd.ExecuteReader())
