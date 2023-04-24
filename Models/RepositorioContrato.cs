@@ -232,6 +232,7 @@ public class RepositorioContrato
     {
         var fechaDesde = fechaDesde;
         var fechaHasta = fechaHasta;
+        
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
