@@ -406,10 +406,11 @@ tbody {
 .optionInputContrato {
     margin-right: 10px !important;
     margin-left: 10px !important;
+    display: flex !important;
 }
 
 .optionInputContrato {
-    display: flex !important;
+    
 }
 
 
