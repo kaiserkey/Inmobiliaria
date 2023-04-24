@@ -25,6 +25,12 @@ function buscarContratosPor() {
 
 /* opciones del select de buscar contratos */
 $(document).ready(function () {
+    // Fijar tamaño del select
+    $("#buscarContratoPor").on("click", function () {
+        $(this).css("height", "auto");
+    }).on("mouseleave", function () {
+        $(this).css("height", "50px");
+    });
     // Ocultar input por defecto
     $(".optionInputContrato").append('<label class="mr-3">Desde:</label>');
     $(".optionInputContrato").append('<input type="date" class="form-control mr-3" id="fechaDesde">');
@@ -48,12 +54,7 @@ $(document).ready(function () {
         }
     });
 
-    // Fijar tamaño del select
-    $("#buscarContratoPor").on("click", function () {
-        $(this).css("height", "auto");
-    }).on("mouseleave", function () {
-        $(this).css("height", "50px");
-    });
+    
 });
 
 
