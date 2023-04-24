@@ -39,7 +39,7 @@ $(document).ready(function () {
         }
     });
     // por defecto, agregar los inputs de fecha
-    $(".optionInputContrato").append('<label for="fechaDesde">Desde:</label>');
+    $(".optionInputContrato").append('<label for="fechaDesde" class="">Desde:</label>');
     $(".optionInputContrato").append('<input type="date" class="form-control mb-3" id="fechaDesde">');
     $(".optionInputContrato").append('<label for="fechaHasta">Hasta:</label>');
     $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
