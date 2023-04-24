@@ -23,7 +23,20 @@ function buscarContratosPor() {
     });
 }
 
-/* opciones del select de buscar */
+/* opciones del select de buscar contratos */
+$(document).ready(function () {
+    $("#buscarContratoPor").change(function () {
+      var selectedOption = $(this).children("option:selected").val();
+      $(".optionInputContrato").empty();
+      if (selectedOption == "Fecha") {
+        $(".optionInputContrato").append('<input type="date" class="form-control mb-3" placeholder="Fecha desde" id="fechaDesde">');
+        $(".optionInputContrato").append('<input type="date" class="form-control" placeholder="Fecha hasta" id="fechaHasta">');
+      }
+      else {
+        $(".optionInputContrato").append('<input type="number" class="form-control" placeholder="Ingrese un valor" id="inputNumerico">');
+      }
+    });
+  });
 
 
 
