@@ -22,10 +22,11 @@ function buscarContratosPor() {
                 $('#tblContrato').append(fila);
             });
         });
-    } else if($('#fechaDesde').val() && $('#fechaHasta').val()) {
+    }
+    if ($('#fechaDesde').val() && $('#fechaHasta').val()) {
         var fechaDesde = $('#fechaDesde').val();
         var fechaHasta = $('#fechaHasta').val();
-        $.getJSON('/Pago/BuscarContratosPorFecha', { fechaDesde: fechaDesde, fechaHasta:fechaHasta, opcion: opcion }, function (resultados) {
+        $.getJSON('/Pago/BuscarContratosPorFecha', { fechaDesde: fechaDesde, fechaHasta: fechaHasta, opcion: opcion }, function (resultados) {
             $('#tblContrato').empty();
             $.each(resultados, function (index, resultado) {
                 var fila = '<tr><td>' + resultado.idContrato +
