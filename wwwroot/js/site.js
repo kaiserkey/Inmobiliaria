@@ -9,9 +9,33 @@ function buscarContratosPor() {
     var opcion = $('#buscarContratoPor').val();
     if ($('#Codigo').val()) {
         var busqueda = $('#Codigo').val();
-        
+        $.getJSON('/Pago/BuscarContratos', { busqueda: busqueda, opcion: opcion }, function (resultados) {
+            $('#tblContrato').empty();
+            $.each(resultados, function (index, resultado) {
+                var fila = '<tr><td>' + resultado.idContrato +
+                    '</td><td>' + resultado.idInmueble +
+                    '</td><td>' + resultado.nombre + " " + resultado.apellido +
+                    '</td><td>' + resultado.dni +
+                    '</td><td>' + resultado.fechaInicio +
+                    '</td><td>' + resultado.fechaFin +
+                    '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarContrato(' + resultado.idContrato + ')">Seleccionar</button></td></tr>';
+                $('#tblContrato').append(fila);
+            });
+        });
     } else if($('#fechaDesde').val() && $('#fechaHasta').val()) {
-        
+        $.getJSON('/Pago/BuscarContratos', { busqueda: busqueda, opcion: opcion }, function (resultados) {
+            $('#tblContrato').empty();
+            $.each(resultados, function (index, resultado) {
+                var fila = '<tr><td>' + resultado.idContrato +
+                    '</td><td>' + resultado.idInmueble +
+                    '</td><td>' + resultado.nombre + " " + resultado.apellido +
+                    '</td><td>' + resultado.dni +
+                    '</td><td>' + resultado.fechaInicio +
+                    '</td><td>' + resultado.fechaFin +
+                    '</td><td><button type="button" id="boton-general" class="btn btn-primary" onclick="seleccionarContrato(' + resultado.idContrato + ')">Seleccionar</button></td></tr>';
+                $('#tblContrato').append(fila);
+            });
+        });
     }
 }
 
