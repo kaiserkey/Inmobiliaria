@@ -9,7 +9,7 @@ function buscarContratosPor() {
     var busqueda;
     if ($('#Codigo').val()) {
         busqueda = $('#Codigo').val();
-    } else if($('#Codigo').val() && $('#Codigo').val()) {
+    } else if($('#fechaDesde').val() && $('#Codigo').val()) {
         busqueda = "valor por defecto";
     }
     var opcion = $('#buscarContratoPor').val();
