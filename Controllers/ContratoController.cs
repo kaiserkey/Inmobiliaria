@@ -114,8 +114,8 @@ namespace Inmobiliaria.Controllers
             return Json(resultados);
         }
 
-        /* buscar contratos por jquery */
-        public IActionResult BuscarContratos(string busqueda, string opcion)
+        /* buscar contratos por fe por jquery */
+        public IActionResult BuscarContratosPorFecha(string busqueda, string opcion)
         {
             var contrato = new List<Contrato>();
             
