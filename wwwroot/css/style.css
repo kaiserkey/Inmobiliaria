@@ -408,7 +408,7 @@ tbody {
     margin-left: 10px !important;
 }
 
-.optionInputContrato input {
+.optionInputContrato label {
     display: flex !important;
 }
 
