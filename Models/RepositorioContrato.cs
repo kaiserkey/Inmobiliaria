@@ -234,7 +234,7 @@ public class RepositorioContrato
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            DateTime fecha= 
+            DateTime fechaDesde =  
 
             cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
                 i.Nombre, i.Apellido, i.Dni
