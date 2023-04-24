@@ -182,9 +182,9 @@ public class RepositorioContrato
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            
+
             var query = "";
-            
+
             if (buscarPor.Equals("Inquilino"))
             {
                 query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
@@ -234,25 +234,13 @@ public class RepositorioContrato
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            
-            var query = "";
-            
-            if (buscarPor.Equals("Inquilino"))
-            {
-                query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
-                            i.Nombre, i.Apellido, i.Dni
-                            FROM Contrato c
-                            INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
-                            WHERE CONCAT(i.Nombre, ' ', i.Apellido) LIKE @busqueda LIMIT 10";
-            }
-            else if (buscarPor.Equals("FechaInicio") || buscarPor.Equals("FechaFin"))
-            {
-                query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
-                            i.Nombre, i.Apellido, i.Dni
-                            FROM Contrato c
-                            INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino 
-                            WHERE " + buscarPor + " LIKE @busqueda LIMIT 10";
-            }
+
+            var query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
+                i.Nombre, i.Apellido, i.Dni
+                FROM Contrato c
+                INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
+                WHERE CONCAT(i.Nombre, ' ', i.Apellido) LIKE @busqueda 
+                AND c.FechaInicio <= NOW() AND (c.FechaFin >= NOW() OR c.FechaFin IS NULL) LIMIT 10";
             cmd.CommandText = query;
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             using (var reader = cmd.ExecuteReader())
