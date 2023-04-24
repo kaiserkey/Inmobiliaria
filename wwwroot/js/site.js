@@ -9,9 +9,9 @@ function buscarContratosPor() {
     var busqueda;
     if ($('#txtBuscar').val()) {
         busqueda = $('#txtBuscar').val();
-     } else {
+    } else {
         busqueda = "valor por defecto";
-     }
+    }
     var opcion = $('#buscarContratoPor').val();
     $.getJSON('/Pago/BuscarContratos', { busqueda: busqueda, opcion: opcion }, function (resultados) {
         $('#tblContrato').empty();
