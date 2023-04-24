@@ -406,9 +406,10 @@ tbody {
 .optionInputContrato {
     margin-right: 10px !important;
     margin-left: 10px !important;
+    display: flex !;
 }
 
-.optionInputContrato
+
 
 .custom-modal .modal-dialog {
     max-width: 900px; 
