@@ -52,7 +52,7 @@ $(document).ready(function () {
     $("#buscarContratoPor").on("click", function () {
       $(this).css("height", "auto");
     }).on("mouseleave", function () {
-      $(this).css("height", "170px");
+      $(this).css("height", "50px");
     });
   });
 
