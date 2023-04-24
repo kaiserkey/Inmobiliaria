@@ -40,14 +40,14 @@ $(document).ready(function () {
             $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta required">');
         } else {
             $(".optionInputContrato").append('<label for="Codigo" class="input-group-text">Codigo: </label>');
-            $(".optionInputContrato").append('<input type="number" class="form-control" id="Codigo" required>');
+            $(".optionInputContrato").append('<input type="number" class="form-control" id="Codigo" >');
         }
     });
     // por defecto, agregar los inputs de fecha
     $(".optionInputContrato").append('<label for="fechaDesde" class="input-group-text">Desde:</label>');
-    $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaDesde" required>');
+    $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaDesde">');
     $(".optionInputContrato").append('<label for="fechaHasta" class="input-group-text">Hasta:</label>');
-    $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta" required>');
+    $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
 });
 
 
