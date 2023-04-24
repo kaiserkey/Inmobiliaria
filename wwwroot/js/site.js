@@ -45,9 +45,9 @@ $(document).ready(function () {
     });
     // por defecto, agregar los inputs de fecha
     $(".optionInputContrato").append('<label for="fechaDesde" class="input-group-text">Desde:</label>');
-    $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaDesde">');
+    $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaDesde" required>');
     $(".optionInputContrato").append('<label for="fechaHasta" class="input-group-text">Hasta:</label>');
-    $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
+    $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta" required>');
 });
 
 
