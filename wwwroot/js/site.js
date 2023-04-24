@@ -34,7 +34,6 @@ $(document).ready(function () {
             $(".optionInputContrato").append('<label for="fechaHasta" class="input-group-text">Hasta:</label>');
             $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
         } else {
-            $(".optionInputContrato").append('<label for="inputNumerico">Ingrese un número:</label>');
             $(".optionInputContrato").append('<input type="number" class="form-control" id="inputNumerico">');
         }
     });
