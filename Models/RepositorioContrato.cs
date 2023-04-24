@@ -231,53 +231,7 @@ public class RepositorioContrato
     public List<Contrato> BuscarContratosPorFecha(MySqlDatabase mySqlDatabase, string fechaDesde, string fechaHasta, string buscarPor)
     {
 
-        var contratos = new List<Contrato>();
-        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
-        {
-            
-            var query = "";
-            
-            if (buscarPor.Equals("Inquilino"))
-            {
-                query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
-                            i.Nombre, i.Apellido, i.Dni
-                            FROM Contrato c
-                            INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
-                            WHERE CONCAT(i.Nombre, ' ', i.Apellido) LIKE @busqueda LIMIT 10";
-            }
-            else if (buscarPor.Equals("FechaInicio") || buscarPor.Equals("FechaFin"))
-            {
-                query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
-                            i.Nombre, i.Apellido, i.Dni
-                            FROM Contrato c
-                            INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino 
-                            WHERE " + buscarPor + " LIKE @busqueda LIMIT 10";
-            }
-            cmd.CommandText = query;
-            cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
-            using (var reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    var contrato = new Contrato
-                    {
-                        IdContrato = reader.GetInt32(nameof(Contrato.IdContrato)),
-                        IdInquilino = reader.GetInt32(nameof(Contrato.IdInquilino)),
-                        IdInmueble = reader.GetInt32(nameof(Contrato.IdInmueble)),
-                        FechaInicio = reader.GetDateTime(nameof(Contrato.FechaInicio)),
-                        FechaFin = reader.GetDateTime(nameof(Contrato.FechaFin)),
-                        Inquilino = new Inquilino
-                        {
-                            Nombre = reader.GetString(nameof(Inquilino.Nombre)),
-                            Apellido = reader.GetString(nameof(Inquilino.Apellido)),
-                            Dni = reader.GetString(nameof(Inquilino.Dni)),
-                        }
-                    };
-                    contratos.Add(contrato);
-                }
-            }
-        }
-        return contratos;
+        
     }
 
 }
