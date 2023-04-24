@@ -6,12 +6,13 @@ function abrirModalBuscarContratos() {
 }
 
 function buscarContratosPor() {
+    var opcion = $('#buscarContratoPor').val();
     if ($('#Codigo').val()) {
         var busqueda = $('#Codigo').val();
     } else if($('#fechaDesde').val() && $('#fechaHasta').val()) {
         
     }
-    var opcion = $('#buscarContratoPor').val();
+    
     $.getJSON('/Pago/BuscarContratos', { busqueda: busqueda, opcion: opcion }, function (resultados) {
         $('#tblContrato').empty();
         $.each(resultados, function (index, resultado) {
