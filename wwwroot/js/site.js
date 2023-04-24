@@ -31,7 +31,6 @@ $(document).ready(function () {
     }).on("mouseleave", function () {
         $(this).css("height", "50px");
     });
-    
     // Ocultar input por defecto
     $(".optionInputContrato").append('<label class="mr-3">Desde:</label>');
     $(".optionInputContrato").append('<input type="date" class="form-control mr-3" id="fechaDesde">');
