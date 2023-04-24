@@ -6,7 +6,7 @@ function abrirModalBuscarContratos() {
 }
 
 function buscarContratosPor() {
-    var busqueda
+    var busqueda;
     if ($('#txtBuscar').val()) {
         busqueda = $('#txtBuscar').val();
      } else {
