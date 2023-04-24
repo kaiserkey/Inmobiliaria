@@ -29,9 +29,9 @@ $(document).ready(function () {
         var selectedOption = $(this).children("option:selected").val();
         $(".optionInputContrato").empty();
         if (selectedOption == "Fecha") {
-            $(".optionInputContrato").append('<label for="fechaDesde">Desde:</label>');
+            $(".optionInputContrato").append('<label for="fechaDesde" class="input-group-text">Desde:</label>');
             $(".optionInputContrato").append('<input type="date" class="form-control mb-3" id="fechaDesde">');
-            $(".optionInputContrato").append('<label for="fechaHasta">Hasta:</label>');
+            $(".optionInputContrato").append('<label for="fechaHasta" class="input-group-text">Hasta:</label>');
             $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
         } else {
             $(".optionInputContrato").append('<label for="inputNumerico">Ingrese un número:</label>');
