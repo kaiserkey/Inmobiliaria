@@ -25,7 +25,7 @@ function buscarContratosPor() {
     } else if($('#fechaDesde').val() && $('#fechaHasta').val()) {
         var fechaDesde = $('#fechaDesde').val();
         var fechaHasta = $('#fechaHasta').val();
-        $.getJSON('/Pago/BuscarContratosPorFecha', { busqueda: busqueda, opcion: opcion }, function (resultados) {
+        $.getJSON('/Pago/BuscarContratosPorFecha', { fechaDesde: fechaDesde, opcion: opcion }, function (resultados) {
             $('#tblContrato').empty();
             $.each(resultados, function (index, resultado) {
                 var fila = '<tr><td>' + resultado.idContrato +
