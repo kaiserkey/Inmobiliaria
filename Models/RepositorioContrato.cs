@@ -230,12 +230,12 @@ public class RepositorioContrato
 
     public List<Contrato> BuscarContratosPorFecha(MySqlDatabase mySqlDatabase, string fechaDesde, string fechaHasta, string buscarPor)
     {
-
+        DateTime fechaDesde = fechaDesde;
+        DateTime fechaHasta = fechaHasta;
         var contratos = new List<Contrato>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            DateTime fechaDesde =  fechaDesde;
-            DateTime fechaHasta =  fechaHasta;
+
 
             cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
                 i.Nombre, i.Apellido, i.Dni
@@ -243,7 +243,7 @@ public class RepositorioContrato
                 INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
                 WHERE CONCAT(i.Nombre, ' ', i.Apellido) LIKE @busqueda 
                 AND c.FechaInicio <= NOW() AND (c.FechaFin >= NOW() OR c.FechaFin IS NULL) LIMIT 10";
-            
+
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             using (var reader = cmd.ExecuteReader())
             {
