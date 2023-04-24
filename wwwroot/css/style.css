@@ -399,8 +399,7 @@ tbody {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    margin-bottom: 10px !important;
-    margin: 10px;
+    margin: 10px ;
 }
 
 .optionInputContrato input {
