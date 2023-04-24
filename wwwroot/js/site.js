@@ -6,7 +6,11 @@ function abrirModalBuscarContratos() {
 }
 
 function buscarContratosPor() {
-    var busqueda = $('#txtBuscar').val();
+    if ($('#txtBuscar').val()) {
+        busqueda = $('#txtBuscar').val();
+     } else {
+        busqueda = "valor por defecto";
+     }
     var opcion = $('#buscarContratoPor').val();
     $.getJSON('/Pago/BuscarContratos', { busqueda: busqueda, opcion: opcion }, function (resultados) {
         $('#tblContrato').empty();
