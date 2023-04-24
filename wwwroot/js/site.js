@@ -50,7 +50,7 @@ $(document).ready(function () {
   
     // Fijar tamaño del select
     $("#buscarContratoPor").on("click", function () {
-      $(this).css("heig", "auto");
+      $(this).css("height", "auto");
     }).on("mouseleave", function () {
       $(this).css("width", "170px");
     });
