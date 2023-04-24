@@ -395,8 +395,8 @@ tbody {
     max-height: 38px; /* ajusta el valor a tu preferencia */
 }
 
-.input-group {
-    display: flex;
+.estiloEnLinea {
+    display: flex !important;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
