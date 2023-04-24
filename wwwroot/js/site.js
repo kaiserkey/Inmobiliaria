@@ -23,8 +23,8 @@ function buscarContratosPor() {
             });
         });
     } else if($('#fechaDesde').val() && $('#fechaHasta').val()) {
-        var busqueda = $('#Codigo').val();
-        var busqueda = $('#Codigo').val();
+        var fechaDesde = $('#Codigo').val();
+        var fechaHasta = $('#Codigo').val();
         $.getJSON('/Pago/BuscarContratos', { busqueda: busqueda, opcion: opcion }, function (resultados) {
             $('#tblContrato').empty();
             $.each(resultados, function (index, resultado) {
