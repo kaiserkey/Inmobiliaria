@@ -228,7 +228,7 @@ public class RepositorioContrato
         return contratos;
     }
 
-    public List<Contrato> BuscarContratosPorFecha(MySqlDatabase mySqlDatabase, string fechaDesde, string string buscarPor)
+    public List<Contrato> BuscarContratosPorFecha(MySqlDatabase mySqlDatabase, string fechaDesde, string fechaHasta, string buscarPor)
     {
 
         var contratos = new List<Contrato>();
