@@ -38,7 +38,7 @@ $(document).ready(function() {
     });
     
     // Carga inicial de los inputs de fecha
-    $(".optionInputContrato").append('<input type="date" class="form-control mb-3" placeholder="Fecha desde" id="fechaDesde">');
+    $(".optionInputContrato").append('<input type="date" class="form-control" placeholder="Fecha desde" id="fechaDesde">');
     $(".optionInputContrato").append('<input type="date" class="form-control" placeholder="Fecha hasta" id="fechaHasta">');
 });
 
