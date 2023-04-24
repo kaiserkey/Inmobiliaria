@@ -240,9 +240,7 @@ public class RepositorioContrato
             i.Nombre, i.Apellido, i.Dni
             FROM Contrato c
             INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
-            WHERE (c.FechaInicio >= @fechaDesde AND c.FechaInicio <= @fechaHasta)
-                OR (c.FechaFin >= @fechaDesde AND c.FechaFin <= @fechaHasta)
-                OR (c.FechaInicio <= @fechaDesde AND c.FechaFin >= @fechaHasta)
+            WHERE c.FechaInicio <= @fechaHasta AND c.FechaFin >= @fechaDesde
             LIMIT 10";
 
             cmd.Parameters.AddWithValue("@fechaDesde", fechaDesdeDB);
