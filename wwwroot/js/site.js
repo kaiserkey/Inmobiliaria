@@ -54,7 +54,7 @@ function buscarInmuebles() {
 }
 /* Ocultar input text */
 $(document).ready(function () {
-    $(".optionInput").change(function () {
+    $(".option").change(function () {
         var selectedOption = $(this).children("option:selected").val();
         if (selectedOption == "Disponibles") {
             $("#txtBuscar").hide();
