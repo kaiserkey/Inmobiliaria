@@ -95,7 +95,7 @@ namespace Inmobiliaria.Controllers
         }
 
         //obtener Inmuebles por JQuery
-        public IActionResult BuscarInmueblesPorFecha(string busqueda, string opcion)
+        public IActionResult BuscarInmueblesPorFech(string busqueda, string opcion)
         {
             var inmuebles = new List<Inmueble>();
             
