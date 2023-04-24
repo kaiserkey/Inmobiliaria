@@ -234,8 +234,8 @@ public class RepositorioContrato
         // Convertir las fechas al formato de la base de datos
         /* var fechaDesdeDB = DateTime.ParseExact(fechaDesde, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss");
         var fechaHastaDB = DateTime.ParseExact(fechaHasta, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss"); */
-        var fechaDesdeDB = DateTime.ParseExact(fechaDesde, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
-        var fechaHastaDB = DateTime.ParseExact(fechaHasta, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+        var fechaDesdeDB = DateTime.ParseExact(fechaDesde, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+        var fechaHastaDB = DateTime.ParseExact(fechaHasta, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
         var contratos = new List<Contrato>();
 
