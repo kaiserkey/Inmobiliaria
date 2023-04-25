@@ -243,14 +243,6 @@ public class RepositorioInmueble
                                     WHERE (c.FechaInicio BETWEEN <fecha_inicio> AND <fecha_fin>)
                                         OR (c.FechaFin BETWEEN <fecha_inicio> AND <fecha_fin>)
                                 )";
-
-            if(buscarPor == "Propietario"){
-                cmd.CommandText = @"SELECT i.IdInmueble, i.Tipo, i.Coordenadas, i.Precio, i.Ambientes, i.Uso, i.Activo, i.IdPropietario, 
-                                p.Nombre, p.Apellido
-                                FROM Inmueble i
-                                JOIN Propietario p ON i.IdPropietario = p.IdPropietario
-                                WHERE (CONCAT(p.Nombre, ' ', p.Apellido) LIKE @busqueda OR p.Dni LIKE @busqueda) LIMIT 10";
-                Console.WriteLine(busqueda);
                 cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             }
             
