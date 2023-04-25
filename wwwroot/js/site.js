@@ -6,7 +6,7 @@ function abrirModalBuscarContratos() {
 }
 
 function buscarContratosPor() {
-    var opcion = $('#buscarContratoPor').val();
+    //var opcion = $('#buscarContratoPor').val();
     if ($('#Codigo').val()) {
         var codigo = $('#Codigo').val();
         $.getJSON('/Contrato/BuscarContratosPorCodigo', { codigo: codigo }, function (resultados) {
