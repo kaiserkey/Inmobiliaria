@@ -110,7 +110,7 @@ namespace Inmobiliaria.Controllers
                 importe = p.Importe,
                 idContrato = p.IdContrato,
             });
-            Console.WriteLine(resultados.ToString());
+            Console.WriteLine(pago.C);
             return Json(resultados);
         }
 
