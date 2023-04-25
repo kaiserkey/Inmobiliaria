@@ -233,11 +233,14 @@ public class RepositorioInmueble
         var inmuebles = new List<Inmueble>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT i.IdInmueble, i.Tipo, i.Coordenadas, i.Precio, i.Ambientes, i.Uso, i.Activo, i.IdPropietario,
-                    p.Nombre, p.Apellido
-                    FROM Inmueble i 
-                    JOIN Propietario p ON i.IdPropietario = p.IdPropietario
-                    WHERE i.Activo = 1 LIMIT 10";
+            cmd.CommandText = @"SELECT i.IdInmueble, i.Tipo, i.Coordenadas, i.Precio, i.Ambientes, i.Uso
+                                FROM Inmueble i
+                                WHERE i.Activo = 1 AND i.IdInmueble NOT IN (
+                                    SELECT c.IdInmueble
+                                    FROM Contrato c
+                                    WHERE (c.FechaInicio BETWEEN <fecha_inicio> AND <fecha_fin>)
+                                        OR (c.FechaFin BETWEEN <fecha_inicio> AND <fecha_fin>)
+                                )";
 
             if(buscarPor == "Propietario"){
                 cmd.CommandText = @"SELECT i.IdInmueble, i.Tipo, i.Coordenadas, i.Precio, i.Ambientes, i.Uso, i.Activo, i.IdPropietario, 
