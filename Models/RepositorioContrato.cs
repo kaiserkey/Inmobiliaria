@@ -249,20 +249,6 @@ public class RepositorioContrato
 
             cmd.CommandText = query;
 
-            if (opcion.Equals("Fecha"))
-            {
-                query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
-                                i.Nombre, i.Apellido, i.Dni
-                                FROM Inmueble i
-                                WHERE i.IdInmueble NOT IN (
-                                SELECT DISTINCT i.IdInmueble
-                                FROM Contrato c
-                                WHERE (c.FechaInicio BETWEEN @fechaInicio AND @fechaFin)
-                                    OR (c.FechaFin BETWEEN @fechaInicio AND @fechaFin)
-                                    OR (c.FechaInicio < @fechaInicio AND c.FechaFin > @fechaFin)
-                                )";
-            }
-
             cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
             cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
 
