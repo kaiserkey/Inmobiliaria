@@ -133,9 +133,9 @@ public class RepositorioPago
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
             cmd.CommandText = @"SELECT IdPago, Importe, Fecha, NumeroPago, IdContrato
-                    FROM Pago
-                    WHERE IdContrato = @idContrato";
-            cmd.Parameters.AddWithValue("@idContrato", idContrato);
+                                FROM Pago
+                                WHERE IdContrato = @codigo";
+            cmd.Parameters.AddWithValue("@codigo", codigo);
 
             using (var reader = cmd.ExecuteReader())
             {
