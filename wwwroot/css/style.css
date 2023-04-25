@@ -392,7 +392,7 @@ tbody {
 }
 
 /* estilos del select de Buscar Contratos */
-.optionContrato {
+.optionContrato, .option {
     max-height: 38px; /* ajusta el valor a tu preferencia */
 }
 
