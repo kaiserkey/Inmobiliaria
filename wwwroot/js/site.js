@@ -94,7 +94,7 @@ $(document).ready(function () {
 });
 
 
-/* Abrir Modal de buscar inmuebles por disponibilidad, propietario y  */
+/* Abrir Modal de buscar inmuebles por disponibilidad, propietario y sin contrato */
 function abrirModalBuscarInmueble() {
     $('#modalBuscarInmuebles').modal('show');
     $('#tblInmuebles').empty();
