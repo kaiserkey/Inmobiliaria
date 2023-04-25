@@ -128,10 +128,10 @@ public class RepositorioContrato
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
             cmd.CommandText = @"SELECT COUNT(*) FROM Contrato 
-                            WHERE IdInquilino = @IdInquilino 
-                            AND IdInmueble = @IdInmueble 
-                            AND FechaInicio <= @FechaFin 
-                            AND FechaFin >= @FechaInicio";
+                                WHERE IdInquilino = @IdInquilino 
+                                AND IdInmueble = @IdInmueble 
+                                AND FechaInicio <= @FechaFin 
+                                AND FechaFin >= @FechaInicio";
 
             cmd.Parameters.AddWithValue("@IdInquilino", CreateContrato.IdInquilino);
             cmd.Parameters.AddWithValue("@IdInmueble", CreateContrato.IdInmueble);
