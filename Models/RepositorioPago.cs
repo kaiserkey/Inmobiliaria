@@ -154,7 +154,7 @@ public class RepositorioPago
 
             }
         }
-        Console.WriteLine("Codigo: " + codigo);
+        Console.WriteLine("Codigo: " + pagos.I);
         return pagos;
     }
 
