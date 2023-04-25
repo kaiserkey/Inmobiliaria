@@ -124,7 +124,7 @@ $(document).ready(function () {
     $(".optionInmueble").change(function () {
         var selectedOption = $(this).children("option:selected").val();
         $(".optionInputContrato").empty();
-        if (selectedOption == "Fecha") {
+        if (selectedOption == "Inmueble") {
             $(".optionInputInmueble").append('<label for="fechaDesde" class="input-group-text">Desde:</label>');
             $(".optionInputInmueble").append('<input type="date" class="form-control" id="fechaDesde">');
             $(".optionInputInmueble").append('<label for="fechaHasta" class="input-group-text">Hasta:</label>');
