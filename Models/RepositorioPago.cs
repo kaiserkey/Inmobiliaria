@@ -67,7 +67,7 @@ public class RepositorioPago
         return null;
     }
 
-    public Pago GetPagoPorInqui(MySqlDatabase mySqlDatabase, int id)
+    public Pago GetPagoPor(MySqlDatabase mySqlDatabase, int id)
     {
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
