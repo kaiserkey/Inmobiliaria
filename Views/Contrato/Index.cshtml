@@ -14,7 +14,8 @@
 </div>
 
 <!-- Modal Buscar Contrato -->
-<div class="modal fade custom-modal" id="modalBuscarContrato" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade custom-modal" id="modalBuscarContrato" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-dialog-centered justify-content-center align-items-center" role="document">
         <div class="modal-content w-auto">
             <div class="modal-header">
@@ -122,10 +123,17 @@
                         <a href="@Url.Action("Renovar", new { id = item.IdContrato })"> <i class="bi bi-hourglass-top"
                                 style="font-size: 2em; color: lightgreen;"></i> </a>
                     </td>
-                    <td>
-                        <a href="@Url.Action("Cancelar", new { id = item.IdContrato })"> <i class="bi bi-x-circle-fill"
-                                style="font-size: 2em; color: brown;"></i> </a>
-                    </td>
+                    @if (item.FechaFin > DateTime.Now)
+                    {
+                        <td>
+                            <a href="@Url.Action("Cancelar", new { id = item.IdContrato })"> <i class="bi bi-x-circle-fill"
+                                    style="font-size: 2em; color: brown;"></i> </a>
+                        </td>
+                    }else{
+                        <td>
+                            --
+                        </td>
+                    }
                     <td>
                         <a href="@Url.Action("Details", new { id = item.IdContrato })"> <i class="bi bi-file-text-fill"
                                 style="font-size: 2em; color: orange;"></i> </a>
