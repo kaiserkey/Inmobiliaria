@@ -128,6 +128,8 @@ public class RepositorioContrato
         // Calcular la multa a pagar según la duración transcurrida
         var multaPagar = duracionTranscurrida < (duracionMeses / 2) ? importe * 2 : importe;
 
+        // Actualizar la fecha de fin del contrato y guardar los cambios
+        contrato.FechaFin = fechaTermino;
 
 
 
