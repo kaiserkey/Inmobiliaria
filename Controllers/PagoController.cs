@@ -106,9 +106,9 @@ namespace Inmobiliaria.Controllers
             {
                 IdPago = p.IdPago,
                 Fecha = p.Fecha,
-                NumeroPago = p.NumeroPago,
-                nombre = p.Importe,
-                apellido = p.IdContrato,
+                umeroPago = p.NumeroPago,
+                importe = p.Importe,
+                idContrato = p.IdContrato,
             });
 
             return Json(resultados);
