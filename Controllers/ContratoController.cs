@@ -115,7 +115,7 @@ namespace Inmobiliaria.Controllers
         }
 
         /* buscar contratos por fecha jquery */
-        public IActionResult BuscarContratosPorFecha(string fechaDesde, string fechaHasta)
+        public IActionResult BuscarContratosPorFecha(string fechaDesde, string fechaHasta,string opcion)
         {
             var contrato = new List<Contrato>();
             
