@@ -173,29 +173,29 @@ public class RepositorioContrato
         int res = -1;
 
         // Verificar si existe otro contrato activo en las fechas proporcionadas
-using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
-{
-    cmd.CommandText = @"SELECT COUNT(*) FROM Contrato 
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"SELECT COUNT(*) FROM Contrato 
                         WHERE IdInquilino = @IdInquilino 
                         AND IdInmueble = @IdInmueble 
                         AND FechaInicio <= @FechaFin 
                         AND FechaFin >= @FechaInicio
                         AND IdContrato != @IdContrato";
 
-    cmd.Parameters.AddWithValue("@IdInquilino", contrato.IdInquilino);
-    cmd.Parameters.AddWithValue("@IdInmueble", contrato.IdInmueble);
-    cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioFormat);
-    cmd.Parameters.AddWithValue("@FechaFin", fechaFinFormat);
-    cmd.Parameters.AddWithValue("@IdContrato", contrato.IdContrato);
+            cmd.Parameters.AddWithValue("@IdInquilino", contrato.IdInquilino);
+            cmd.Parameters.AddWithValue("@IdInmueble", contrato.IdInmueble);
+            cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioFormat);
+            cmd.Parameters.AddWithValue("@FechaFin", fechaFinFormat);
+            cmd.Parameters.AddWithValue("@IdContrato", contrato.IdContrato);
 
-    int count = Convert.ToInt32(cmd.ExecuteScalar());
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
 
-    if (count > 0)
-    {
-        throw new Exception("Ya existe otro contrato activo en esas fechas.");
-        // Alternativamente, podrías devolver -1 o algún otro valor que indique un error.
-    }
-}
+            if (count > 0)
+            {
+                throw new Exception("Ya existe otro contrato activo en esas fechas.");
+                // Alternativamente, podrías devolver -1 o algún otro valor que indique un error.
+            }
+        }
 
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
