@@ -236,14 +236,14 @@ public class RepositorioContrato
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
             cmd.CommandText = @"SELECT *
-FROM Inmueble
-WHERE IdInmueble NOT IN (
-  SELECT DISTINCT IdInmueble
-  FROM Contrato
-  WHERE (FechaInicio BETWEEN '2023-01-01' AND '2023-04-30')
-    OR (FechaFin BETWEEN '2023-01-01' AND '2023-04-30')
-    OR (FechaInicio < '2023-01-01' AND FechaFin > '2023-04-30')
-);";
+                                FROM Inmueble
+                                WHERE IdInmueble NOT IN (
+                                SELECT DISTINCT IdInmueble
+                                FROM Contrato
+                                WHERE (FechaInicio BETWEEN '2023-01-01' AND '2023-04-30')
+                                    OR (FechaFin BETWEEN '2023-01-01' AND '2023-04-30')
+                                    OR (FechaInicio < '2023-01-01' AND FechaFin > '2023-04-30')
+                                )";
 
             cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
             cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
