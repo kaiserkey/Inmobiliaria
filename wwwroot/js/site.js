@@ -123,7 +123,7 @@ function buscarInmuebles() {
 $(document).ready(function () {
     $(".optionInmueble").change(function () {
         var selectedOption = $(this).children("option:selected").val();
-        $(".optionInputContrato").empty();
+        $(".optionInputInmueble").empty();
         if (selectedOption == "InmuebleNotIn") {
             $(".optionInputInmueble").append('<label for="fechaDesde" class="input-group-text">Desde:</label>');
             $(".optionInputInmueble").append('<input type="date" class="form-control" id="fechaDesde">');
