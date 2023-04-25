@@ -126,7 +126,7 @@ public class RepositorioContrato
         // Calcular la duración transcurrida en meses
         var duracionTranscurrida = (fechaFin - contrato.FechaInicio).TotalDays / 30;
         // Calcular la multa a pagar según la duración transcurrida
-        var multaPagar = duracionTranscurrida < (duracionMeses / 2) ? contrato.Importe * 2 : contrato.Importe;
+        var multaPagar = duracionTranscurrida < (duracionMeses / 2) ? importe * 2 : importe;
 
 
 
