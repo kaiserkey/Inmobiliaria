@@ -135,7 +135,7 @@ public class RepositorioPago
         {
             cmd.CommandText = @"SELECT IdPago, Importe, Fecha, NumeroPago, IdContrato
                                 FROM Pago
-                                WHERE IdContrato = @codigo";
+                                WHERE IdPago = @codigo";
             cmd.Parameters.AddWithValue("@codigo", codigo);
 
             using (var reader = cmd.ExecuteReader())
