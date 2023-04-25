@@ -165,7 +165,7 @@ namespace Inmobiliaria.Controllers
         }
 
         // GET: Contrato/Renovar/5
-        public ActionResult Renovar(int id)
+        public ActionResult CancelarContrato(int id)
         {
             Contrato contrato = RepoContrato.GetContrato(con, id);
             return View(contrato);
