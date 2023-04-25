@@ -125,9 +125,9 @@ $(document).ready(function () {
         var selectedOption = $(this).children("option:selected").val();
         $(".optionInputInmueble").empty();
         if (selectedOption == "InmuebleNotIn") {
-            $(".optionInputInmueble").append('<label for="fechaInicio" class="input-group-text">Desde:</label>');
+            $(".optionInputInmueble").append('<label for="fechaInicio" class="input-group-text">Inicio:</label>');
             $(".optionInputInmueble").append('<input type="date" class="form-control" id="fechaInicio">');
-            $(".optionInputInmueble").append('<label for="fechaHasta" class="input-group-text">Hasta:</label>');
+            $(".optionInputInmueble").append('<label for="fechaHasta" class="input-group-text">Fin:</label>');
             $(".optionInputInmueble").append('<input type="date" class="form-control" id="fechaHasta">');
         } else if (selectedOption == "Propietario"){
             $(".optionInputInmueble").append('<input type="number" id="txtBuscar" class="form-control" placeholder="Codigo De Propietario" />');
