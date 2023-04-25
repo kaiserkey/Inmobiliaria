@@ -171,6 +171,7 @@ namespace Inmobiliaria.Controllers
         {
             Contrato contrato = RepoContrato.GetContrato(con, id);
             Pago pago = RepoPago.GetPagoPorContrato(con, contrato.IdContrato);
+            
             return View(nameof(Index));
         }
 
