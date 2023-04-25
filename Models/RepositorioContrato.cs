@@ -192,7 +192,7 @@ public class RepositorioContrato
 
             if (count > 0)
             {
-                res = -1;
+                return res = -1;
             }
         }
 
