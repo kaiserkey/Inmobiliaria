@@ -170,7 +170,7 @@ namespace Inmobiliaria.Controllers
         public ActionResult Cancelar(int id)
         {
             Contrato contrato = RepoContrato.GetContrato(con, id);
-            Pago pago = RepoContrato.GetPago(con, id);
+            Pago pago = RepoPago.GetPago(con, id);
             return View(nameof(Index));
         }
 
