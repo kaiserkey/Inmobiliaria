@@ -252,12 +252,12 @@ public class RepositorioContrato
             {
                 query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
                         i.Nombre, i.Apellido, i.Dni
-                        FROM Inmueble i
+                        FROM Inmueble
                         LEFT JOIN Contrato c ON i.IdInmueble = c.IdInmueble
                         LEFT JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
                         WHERE i.IdInmueble NOT IN (
                         SELECT DISTINCT c.IdInmueble
-                        FROM Contrato c
+                        FROM Contrato
                         WHERE (c.FechaInicio BETWEEN @fechaDesde AND @fechaHasta)
                         OR (c.FechaFin BETWEEN @fechaDesde AND @fechaHasta)
                         OR (c.FechaInicio < @fechaDesde AND c.FechaFin > @fechaHasta)
