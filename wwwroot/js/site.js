@@ -14,7 +14,7 @@ function buscarPagos() {
                 '</td><td>' + resultado.fecha +
                 '</td><td>' + resultado.importe +
                 '</td><td>' + resultado.idContrato +
-                '</td><td>' + resultado.precio +
+                '</td><td>' + resultado.numeroPago +
                 '</td><td>' + resultado.ambientes +
                 '</td><td>' + resultado.uso +
                 '</td></tr>';
