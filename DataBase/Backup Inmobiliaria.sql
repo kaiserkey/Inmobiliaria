@@ -33,7 +33,7 @@ CREATE TABLE `Contrato` (
   KEY `fk_Contrato_Inmueble1_idx` (`IdInmueble`),
   CONSTRAINT `fk_Contrato_Inmueble1` FOREIGN KEY (`IdInmueble`) REFERENCES `Inmueble` (`IdInmueble`),
   CONSTRAINT `fk_Contrato_Inquilino1` FOREIGN KEY (`IdInquilino`) REFERENCES `Inquilino` (`IdInquilino`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `Contrato` (
 
 LOCK TABLES `Contrato` WRITE;
 /*!40000 ALTER TABLE `Contrato` DISABLE KEYS */;
-INSERT INTO `Contrato` VALUES (3,2,4,'2023-04-01 00:00:00','2023-04-30 00:00:00'),(4,2,5,'2023-05-01 00:00:00','2023-06-30 00:00:00'),(5,3,6,'2023-07-01 00:00:00','2023-08-31 00:00:00'),(6,4,7,'2023-09-01 00:00:00','2023-10-31 00:00:00'),(7,5,8,'2023-11-01 00:00:00','2023-12-31 00:00:00');
+INSERT INTO `Contrato` VALUES (3,2,4,'2023-04-01 00:00:00','2023-04-25 11:36:09'),(4,2,5,'2023-05-01 00:00:00','2023-06-30 00:00:00'),(5,3,6,'2023-07-01 00:00:00','2023-08-31 00:00:00'),(6,4,7,'2023-09-01 00:00:00','2023-10-31 00:00:00'),(7,5,8,'2023-11-01 00:00:00','2023-12-31 00:00:00');
 /*!40000 ALTER TABLE `Contrato` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,7 +74,7 @@ CREATE TABLE `Inmueble` (
 
 LOCK TABLES `Inmueble` WRITE;
 /*!40000 ALTER TABLE `Inmueble` DISABLE KEYS */;
-INSERT INTO `Inmueble` VALUES (4,'departamento','10.4567,-65.4321',200000,3,'residencial',1,5),(5,'apartamento','12.5678,-67.9012',100000,2,'residencial',1,6),(6,'casa','10.4567,-65.4321',200000,3,'residencial',1,4),(7,'apartamento','12.5678,-67.9012',100000,2,'residencial',1,5),(8,'local comercial','13.2468,-68.1357',800000,2,'comercial',1,4),(11,'casa','54.8442,-63.0834',50000,2,'comercial',1,4),(12,'casa','54.8442,-63.0834',150000,4,'residencial',1,4);
+INSERT INTO `Inmueble` VALUES (4,'departamento','10.4567,-65.4321',200000,3,'residencial',1,5),(5,'apartamento','12.5678,-67.9012',100000,2,'residencial',1,6),(6,'casa','10.4567,-65.4321',200000,3,'residencial',1,4),(7,'apartamento','12.5678,-67.9012',100000,2,'residencial',1,5),(8,'local comercial','13.2468,-68.1357',800000,2,'comercial',1,4),(11,'casa','54.8442,-63.0834',50000,2,'comercial',0,4),(12,'casa','54.8442,-63.0834',150000,4,'residencial',0,4);
 /*!40000 ALTER TABLE `Inmueble` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,6 +108,33 @@ INSERT INTO `Inquilino` VALUES (1,'Juan','Pérez','juanperez@mail.com','12345678
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Multa`
+--
+
+DROP TABLE IF EXISTS `Multa`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Multa` (
+  `IdMulta` int NOT NULL AUTO_INCREMENT,
+  `Importe` decimal(10,0) DEFAULT NULL,
+  `IdInquilino` int NOT NULL,
+  PRIMARY KEY (`IdMulta`),
+  KEY `fk_Multa_Inquilino1_idx` (`IdInquilino`),
+  CONSTRAINT `fk_Multa_Inquilino1` FOREIGN KEY (`IdInquilino`) REFERENCES `Inquilino` (`IdInquilino`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Multa`
+--
+
+LOCK TABLES `Multa` WRITE;
+/*!40000 ALTER TABLE `Multa` DISABLE KEYS */;
+INSERT INTO `Multa` VALUES (5,30000,2);
+/*!40000 ALTER TABLE `Multa` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Pago`
 --
 
@@ -123,7 +150,7 @@ CREATE TABLE `Pago` (
   PRIMARY KEY (`IdPago`),
   KEY `fk_Pago_Contrato1_idx` (`IdContrato`),
   CONSTRAINT `fk_Pago_Contrato1` FOREIGN KEY (`IdContrato`) REFERENCES `Contrato` (`IdContrato`)
-) ENGINE=InnoDB AUTO_INCREMENT=238 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=239 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,7 +159,7 @@ CREATE TABLE `Pago` (
 
 LOCK TABLES `Pago` WRITE;
 /*!40000 ALTER TABLE `Pago` DISABLE KEYS */;
-INSERT INTO `Pago` VALUES (3,'2022-03-01 00:00:00',3,60000,5),(5,'2022-02-01 00:00:00',2,80000,5),(46,'2023-04-12 13:43:00',234,30000,3),(47,'2023-04-12 13:59:00',14,30000,6),(236,'2023-04-12 10:30:00',222,10000,3);
+INSERT INTO `Pago` VALUES (3,'2022-03-01 00:00:00',3,90000,5),(5,'2022-02-01 00:00:00',2,80000,5),(46,'2023-04-12 13:43:00',234,30000,3),(47,'2023-04-12 13:59:00',14,30000,6),(236,'2023-04-12 10:30:00',222,10000,3),(238,'2023-04-25 00:32:00',234,80000,5);
 /*!40000 ALTER TABLE `Pago` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,7 +211,7 @@ CREATE TABLE `Usuario` (
   `Telefono` varchar(45) COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`IdUsuario`),
   UNIQUE KEY `Dni_UNIQUE` (`Dni`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -193,7 +220,7 @@ CREATE TABLE `Usuario` (
 
 LOCK TABLES `Usuario` WRITE;
 /*!40000 ALTER TABLE `Usuario` DISABLE KEYS */;
-INSERT INTO `Usuario` VALUES (3,'Fernando Daniel','Gonzalez','/Uploads/avatar_3.jpeg','1Ml74PPgdjWOxqeb/SWbBGq5wDfyV/f25WupRDBxLa0=','kaiserkey2@gmail.com',1,'123456789','2657534231'),(4,'Jose','Vizcay','/Uploads/avatar_4.png','1Ml74PPgdjWOxqeb/SWbBGq5wDfyV/f25WupRDBxLa0=','josevizcay@gmail.com',2,'123456783','2657544323');
+INSERT INTO `Usuario` VALUES (3,'Fernando Daniel','Gonzalez','/Uploads/avatar_3.jpeg','1Ml74PPgdjWOxqeb/SWbBGq5wDfyV/f25WupRDBxLa0=','kaiserkey2@gmail.com',1,'123456789','2657534231'),(4,'Jose','Vizcay','/Uploads/avatar_4.jpg','1Ml74PPgdjWOxqeb/SWbBGq5wDfyV/f25WupRDBxLa0=','josevizcay@gmail.com',2,'123456783','2657544323');
 /*!40000 ALTER TABLE `Usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -206,4 +233,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-19 21:59:18
+-- Dump completed on 2023-04-25 12:11:36
