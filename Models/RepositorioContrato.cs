@@ -131,15 +131,15 @@ public class RepositorioContrato
         // Actualizar la fecha de fin del contrato y guardar los cambios
         contrato.FechaFin = fechaFin;
         UpdateContrato(mySqlDatabase, contrato);
-
+        int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            
+
         }
 
 
 
-        return 1;
+        return res;
     }
 
     public int CreateContrato(MySqlDatabase mySqlDatabase, Contrato CreateContrato)
