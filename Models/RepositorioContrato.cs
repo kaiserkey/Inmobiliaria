@@ -296,7 +296,12 @@ public class RepositorioContrato
                 query = ;
             }
 
-            cmd.CommandText = query;
+            cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
+                        i.Nombre, i.Apellido, i.Dni
+                        FROM Contrato c
+                        INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
+                        WHERE c.IdInmueble = @codigo
+                        LIMIT 10";
 
             cmd.Parameters.AddWithValue("@codigo", codigo);
 
