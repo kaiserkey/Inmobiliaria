@@ -7,7 +7,6 @@ function abrirModalBuscarPago() {
 
 function buscarPagos() {
     var codigo = $('#txtBuscar').val();
-    var opcion = $('#buscarInmueblePor').val();
     $.getJSON('/Pago/BuscarPagos', { codigo: codigo }, function (resultados) {
         $('#tblInmuebles').empty();
         $.each(resultados, function (index, resultado) {
