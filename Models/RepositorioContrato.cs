@@ -129,7 +129,7 @@ public class RepositorioContrato
         var multaPagar = duracionTranscurrida < (duracionMeses / 2) ? importe * 2 : importe;
 
         // Actualizar la fecha de fin del contrato y guardar los cambios
-        contrato.FechaFin = fechaTermino;
+        contrato.FechaFin = fechaFin;
 
 
 
