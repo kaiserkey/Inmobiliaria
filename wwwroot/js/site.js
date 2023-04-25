@@ -121,7 +121,7 @@ function buscarInmuebles() {
 
 /* cargar input segun select de buscar inmueble */
 $(document).ready(function () {
-    $(".optionINmueble").change(function () {
+    $(".optionInmueble").change(function () {
         var selectedOption = $(this).children("option:selected").val();
         $(".optionInputContrato").empty();
         if (selectedOption == "Fecha") {
