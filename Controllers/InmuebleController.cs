@@ -62,7 +62,7 @@ namespace Inmobiliaria.Controllers
         }
 
         //buscar disponibles Inmuebles por JQuery
-        public IActionResult BuscarInmueblesDisponibles(string fechaInicio, string fechaFin)
+        public IActionResult BuscarInmueblesSinContrato(string fechaInicio, string fechaFin)
         {
             var inmuebles = new List<Inmueble>();
             
