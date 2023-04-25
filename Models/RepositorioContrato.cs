@@ -135,7 +135,7 @@ public class RepositorioContrato
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
             cmd.CommandText = @"INSERT INTO Multa (Importe, IdInquilino) 
-                            VALUES (@IdInquilino, @IdInmueble, @FechaInicio, @FechaFin);
+                            VALUES (@Importe, @IdInmueble, @FechaInicio, @FechaFin);
                             SELECT LAST_INSERT_ID();";
         }
 
