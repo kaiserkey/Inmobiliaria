@@ -98,7 +98,7 @@ namespace Inmobiliaria.Controllers
         /* buscar pagos por jquery */
         public IActionResult BuscarPagos(int codigo)
         {
-            var contrato = new List<Contrato>();
+            var pago = new List<Pago>();
             
             pago = RepoPago.BuscarPagos(con, codigo);
             
