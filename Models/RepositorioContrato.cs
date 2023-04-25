@@ -121,6 +121,9 @@ public class RepositorioContrato
     public int CancelarContrato(MySqlDatabase mySqlDatabase, int idContrato, DateTime fechaFin){
         // Obtener el contrato correspondiente a partir de su ID
         var contrato = GetContrato(mySqlDatabase, idContrato);
+        // Calcular la duración original del contrato en meses
+        var duracionMeses = (contrato.FechaFin - contrato.FechaInicio).TotalDays / 30;
+
 
         return 1;
     }
