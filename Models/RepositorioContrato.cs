@@ -251,7 +251,7 @@ public class RepositorioContrato
             if (opcion.Equals("FechaNotIn"))
             {
                 query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
-                            i.Nombre, i.Apellido, i.Dni
+                                i.Nombre, i.Apellido, i.Dni
                         FROM Contrato c
                         INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
                         WHERE c.IdInmueble NOT IN (
