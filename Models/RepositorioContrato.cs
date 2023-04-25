@@ -288,7 +288,7 @@ public class RepositorioContrato
                         LIMIT 10";
             }
             if(opcion.Equals("Fecha")){
-                query = "SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
+                query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
                                 i.Nombre, i.Apellido, i.Dni
                                 FROM Inmueble i
                                 WHERE IdInmueble NOT IN (
