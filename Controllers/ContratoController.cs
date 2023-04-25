@@ -211,7 +211,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                Console.WriteLine(res);
+                Console.WriteLine(reupdateContrato);
                 int res = RepoContrato.UpdateContrato(con, updateContrato);
                 
                 if(res > 0){
