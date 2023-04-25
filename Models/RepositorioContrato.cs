@@ -118,7 +118,7 @@ public class RepositorioContrato
         return null;
     }
 
-    public int CancelarContrato(MySqlDatabase mySqlDatabase, int idContrato, DateTime fechaFin){
+    public int CancelarContrato(MySqlDatabase mySqlDatabase, int idContrato, DateTime fechaFin, double ){
         // Obtener el contrato correspondiente a partir de su ID
         var contrato = GetContrato(mySqlDatabase, idContrato);
         // Calcular la duración original del contrato en meses
