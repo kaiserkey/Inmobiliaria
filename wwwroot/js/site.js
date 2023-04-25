@@ -1,6 +1,6 @@
 ﻿/* busquedas por modales y jquery */
-/* Abrir Modal de buscar inmuebles por disponibilidad y propietario */
-function abrirModalBuscarInmueble() {
+/* Abrir Modal de buscar pagos por su codigo de contrato */
+function abrirModalBuscarPago() {
     $('#modalBuscarInmuebles').modal('show');
     $('#tblInmuebles').empty();
 }
