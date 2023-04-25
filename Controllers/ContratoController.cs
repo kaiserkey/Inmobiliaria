@@ -178,6 +178,8 @@ namespace Inmobiliaria.Controllers
                     TempData["Mensaje"] = "La entidad se actualizo correctamente ID:" + id;
                 }else if (res == -1){
                     TempData["Mensaje"] = "Existe superposicion de fechas con otro contrato";
+                }else {
+                    TempData["Mensaje"] = "No se pudo actualizar la entidad ID:" + id;
                 }
                 
                 return RedirectToAction(nameof(Index));
