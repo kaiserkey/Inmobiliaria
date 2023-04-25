@@ -130,7 +130,7 @@ $(document).ready(function () {
             $(".optionInputInmueble").append('<label for="fechaHasta" class="input-group-text">Hasta:</label>');
             $(".optionInputInmueble").append('<input type="date" class="form-control" id="fechaHasta">');
         } else if (selectedOption == "Propietario"){
-            $(".optionInputInmueble").append('<label for="Codigo" class="input-group-text">Codigo: </label>');
+            $(".optionInputInmueble").append('<label for="txtBuscar" class="input-group-text">Codigo: </label>');
             $(".optionInputInmueble").append('<input type="number" id="txtBuscar" class="form-control" placeholder="Codigo Contrato" />');
         }
     });
