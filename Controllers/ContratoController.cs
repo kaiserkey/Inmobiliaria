@@ -171,6 +171,31 @@ namespace Inmobiliaria.Controllers
             return View(contrato);
         }
 
+        // POST: Contrato/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        public ActionResult Renovar(int id, Contrato updateContrato)
+        {
+            try
+            {
+                int res = RepoContrato.UpdateContrato(con, updateContrato);
+                if(res > 0){
+                    TempData["Mensaje"] = "La entidad se actualizo correctamente ID:" + id;
+                }else if (res == -1){
+                    TempData["Mensaje"] = "Existe superposicion de fechas con otro contrato.";
+                }else {
+                    TempData["Mensaje"] = "No se pudo actualizar la entidad ID:" + id;
+                }
+                
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
         // GET: Contrato/Edit/5
         public ActionResult Edit(int id)
         {
