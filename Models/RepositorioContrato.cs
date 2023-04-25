@@ -137,6 +137,7 @@ public class RepositorioContrato
             cmd.CommandText = @"INSERT INTO Multa (Importe, IdInquilino) 
                             VALUES (@Importe, @IdInquilino);
                             SELECT LAST_INSERT_ID();";
+            cmd.Parameters.AddWithValue("@Importe", multaPagar);
             
         }
 
