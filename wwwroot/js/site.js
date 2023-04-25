@@ -118,6 +118,31 @@ function buscarInmuebles() {
         });
     });
 }
+
+/* opciones del select de buscar contratos */
+$(document).ready(function () {
+    $(".optionContrato").change(function () {
+        var selectedOption = $(this).children("option:selected").val();
+        $(".optionInputContrato").empty();
+        if (selectedOption == "Fecha") {
+            $(".optionInputContrato").append('<label for="fechaDesde" class="input-group-text">Desde:</label>');
+            $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaDesde">');
+            $(".optionInputContrato").append('<label for="fechaHasta" class="input-group-text">Hasta:</label>');
+            $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
+        } else {
+            $(".optionInputContrato").append('<label for="Codigo" class="input-group-text">Codigo: </label>');
+            $(".optionInputContrato").append('<input type="number" class="form-control" id="Codigo">');
+        }
+    });
+    // por defecto, agregar los inputs de fecha
+    $(".optionInputContrato").append('<label for="fechaDesde" class="input-group-text">Desde:</label>');
+    $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaDesde">');
+    $(".optionInputContrato").append('<label for="fechaHasta" class="input-group-text">Hasta:</label>');
+    $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
+});
+
+
+
 /* Ocultar input text */
 $(document).ready(function () {
     $(".option").change(function () {
