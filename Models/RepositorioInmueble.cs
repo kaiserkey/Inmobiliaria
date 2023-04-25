@@ -234,6 +234,7 @@ public class RepositorioInmueble
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
             cmd.CommandText = @"SELECT i.IdInmueble, i.Tipo, i.Coordenadas, i.Precio, i.Ambientes, i.Uso
+                                
                                 FROM Inmueble i
                                 JOIN Propietario p ON i.IdPropietario = p.IdPropietario
                                 WHERE i.Activo = 1 AND i.IdInmueble NOT IN (
