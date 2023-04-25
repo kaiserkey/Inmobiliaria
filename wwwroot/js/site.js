@@ -25,7 +25,7 @@ function buscarPagos() {
 }
 
 // Función para cerrar el modal al hacer clic en el botón
-function cerrarModalBuscarInmueble() {
+function cerrarModalPago() {
     $('#modalBuscarInmuebles').modal('hide');
 }
 
