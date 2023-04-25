@@ -248,7 +248,7 @@ public class RepositorioContrato
                         LIMIT 10";
             }
 
-            
+            if(opcion.Equals)
 
             cmd.CommandText = query;
 
