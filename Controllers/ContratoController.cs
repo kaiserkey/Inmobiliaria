@@ -176,6 +176,7 @@ namespace Inmobiliaria.Controllers
                 return RedirectToAction(nameof(Index));
             }
             var res = RepoContrato.CancelarContrato(con, id, DateTime.Now, pago.IdContrato);
+            if()
             return View(nameof(Index));
         }
 
