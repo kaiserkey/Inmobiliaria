@@ -66,7 +66,7 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
-                RepoContrato.CreateContrato(con, contrato);
+                var res = RepoContrato.CreateContrato(con, contrato);
                 if(res > 0){
                     TempData["Mensaje"] = "La entidad se actualizo correctamente ID:" + id;
                 }else if (res == -1){
