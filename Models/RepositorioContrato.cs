@@ -134,7 +134,7 @@ public class RepositorioContrato
         int res = -1;
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-
+            
         }
 
 
