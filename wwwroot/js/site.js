@@ -119,7 +119,7 @@ function buscarInmuebles() {
             });
         });
     }
-    if(option == )
+    if(option == "InmuebleNotIn")
 
 }
 
