@@ -54,9 +54,9 @@ namespace Inmobiliaria.Controllers
         {
             return View();
         }
+        
         [Authorize]
-        public ActionResult         CreateModal
-()
+        public ActionResult  CreateModal(int id)
         {
             return View();
         }
