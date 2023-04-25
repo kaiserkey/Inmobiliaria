@@ -119,6 +119,7 @@ function buscarInmuebles() {
             });
         });
     }
+    if(option == )
 
 }
 
