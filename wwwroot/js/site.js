@@ -16,7 +16,7 @@ function buscarPagos() {
                 '</td><td>' + resultado.idContrato +
                 '</td><td>' + resultado.numeroPago +
                 '</td></tr>';
-            $('#tblInmuebles').append(fila);
+            $('#tblPagos').append(fila);
         });
     });
 }
