@@ -10,7 +10,7 @@ function buscarPagos() {
     $.getJSON('/Pago/BuscarPagos', { codigo: codigo }, function (resultados) {
         $('#tblInmuebles').empty();
         $.each(resultados, function (index, resultado) {
-            var fila = '<tr><td>' + resultado.idInmueble +
+            var fila = '<tr><td>' + resultado.idPago +
                 '</td><td>' + resultado.nombre + " " + resultado.apellido +
                 '</td><td>' + resultado.tipo +
                 '</td><td>' + resultado.coordenadas +
