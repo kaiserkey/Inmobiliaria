@@ -212,7 +212,7 @@ namespace Inmobiliaria.Controllers
             try
             {
                 int res = RepoContrato.UpdateContrato(con, updateContrato);
-                Console
+                Console.WriteLine(res);
                 if(res > 0){
                     TempData["Mensaje"] = "La entidad se actualizo correctamente ID:" + id;
                 }else if (res == -1){
