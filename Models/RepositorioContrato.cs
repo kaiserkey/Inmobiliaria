@@ -295,8 +295,8 @@ public class RepositorioContrato
                                 SELECT DISTINCT IdInmueble
                                 FROM Contrato c
                                 WHERE (c.FechaInicio BETWEEN @fechaInicio AND @fechaFin)
-                                    OR (c.FechaFin BETWEEN @fechaInicio AND '2023-04-30')
-                                    OR (c.FechaInicio < @fechaInicio AND c.FechaFin > '2023-04-30')
+                                    OR (c.FechaFin BETWEEN @fechaInicio AND @fechaFin)
+                                    OR (c.FechaInicio < @fechaInicio AND c.FechaFin > @fechaFin)
                                 )";
             }
 
