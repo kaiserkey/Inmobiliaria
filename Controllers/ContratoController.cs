@@ -72,7 +72,7 @@ namespace Inmobiliaria.Controllers
                 }else if (res == -1){
                     TempData["Mensaje"] = "Existe superposicion de fechas con otro contrato";
                 }else {
-                    TempData["Mensaje"] = "No se pudo crear el nuevo ID:" + contrato.IdContrato;
+                    TempData["Mensaje"] = "No se pudo crear el nuevo contrato";
                 }
                 return RedirectToAction(nameof(Index));
             }
