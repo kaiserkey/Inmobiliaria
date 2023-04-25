@@ -233,7 +233,7 @@ public class RepositorioInmueble
         var inmuebles = new List<Inmueble>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
-            cmd.CommandText = @"SELECT i.IdInmueble, i.Tipo, i.Coordenadas, i.Precio, i.Ambientes, i.Uso,
+            cmd.CommandText = @"SELECT i.IdInmueble, i.Tipo, i.Coordenadas, i.Precio, i.Ambientes, i.Uso, i.Activo, i.IdPropietario,
                                 p.Nombre, p.Apellido
                                 FROM Inmueble i
                                 JOIN Propietario p ON i.IdPropietario = p.IdPropietario
