@@ -192,7 +192,7 @@ public class RepositorioContrato
 
             if (count > 0)
             {
-                throw new Exception("Ya existe otro contrato activo en esas fechas.");
+                res = -1;
             }
         }
 
