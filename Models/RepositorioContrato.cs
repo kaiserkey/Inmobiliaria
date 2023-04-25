@@ -239,15 +239,15 @@ public class RepositorioContrato
             var query = "";
 
             if(opcion.Equals("Fecha")){
-                query = 
+                query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
+                        i.Nombre, i.Apellido, i.Dni
+                        FROM Contrato c
+                        INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
+                        WHERE c.FechaInicio <= @fechaHasta AND c.FechaFin >= @fechaDesde
+                        LIMIT 10";
             }
 
-            cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
-            i.Nombre, i.Apellido, i.Dni
-            FROM Contrato c
-            INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
-            WHERE c.FechaInicio <= @fechaHasta AND c.FechaFin >= @fechaDesde
-            LIMIT 10";
+            cmd.CommandText = 
 
             if (opcion.Equals("Fecha"))
             {
