@@ -123,7 +123,9 @@ public class RepositorioContrato
         var contrato = GetContrato(mySqlDatabase, idContrato);
         // Calcular la duración original del contrato en meses
         var duracionMeses = (contrato.FechaFin - contrato.FechaInicio).TotalDays / 30;
-        
+        // Calcular la duración transcurrida en meses
+    |||var duracionTranscurrida = (fechaTermino - contrato.FechaInicio).TotalDays / 30;
+
 
 
         return 1;
