@@ -125,13 +125,13 @@ $(document).ready(function () {
         var selectedOption = $(this).children("option:selected").val();
         $(".optionInputContrato").empty();
         if (selectedOption == "Fecha") {
-            $(".optionInputContrato").append('<label for="fechaDesde" class="input-group-text">Desde:</label>');
-            $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaDesde">');
-            $(".optionInputContrato").append('<label for="fechaHasta" class="input-group-text">Hasta:</label>');
-            $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
+            $(".optionInputInmueble").append('<label for="fechaDesde" class="input-group-text">Desde:</label>');
+            $(".optionInputInmueble").append('<input type="date" class="form-control" id="fechaDesde">');
+            $(".optionInputInmueble").append('<label for="fechaHasta" class="input-group-text">Hasta:</label>');
+            $(".optionInputInmueble").append('<input type="date" class="form-control" id="fechaHasta">');
         } else if (selectedOption == "Propietario"){
-            $(".optionInputContrato").append('<label for="Codigo" class="input-group-text">Codigo: </label>');
-            $(".optionInputContrato").append('<input type="number" class="form-control" id="Codigo">');
+            $(".optionInputInmueble").append('<label for="Codigo" class="input-group-text">Codigo: </label>');
+            $(".optionInputInmueble").append('<input type="number" class="form-control" id="Codigo">');
         }
     });
     // por defecto, agregar los inputs de fecha
