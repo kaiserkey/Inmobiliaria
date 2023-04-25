@@ -288,12 +288,13 @@ public class RepositorioContrato
             }
 
             if(opcion.Equals("Pagos")){
-                query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
-                        i.Nombre, i.Apellido, i.Dni
-                        FROM Contrato c
-                        INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
-                        WHERE c.IdInmueble = @codigo
-                        LIMIT 10";
+                query @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
+                i.Nombre, i.Apellido, i.Dni,
+                p.IdPago, p.FechaPago, p.MontoPago
+                FROM Contrato c
+                INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
+                INNER JOIN Pago p ON c.IdContrato = p.IdContrato
+                WHERE c.IdContrato = @idContrato";
             }
 
             cmd.CommandText = query;
