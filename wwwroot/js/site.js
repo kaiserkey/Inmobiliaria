@@ -1,7 +1,7 @@
 ﻿/* busquedas por modales y jquery */
 /* Abrir Modal de buscar pagos por su codigo de contrato */
 function abrirModalBuscarPago() {
-    $('#modalBuscarInmuebles').modal('show');
+    $('#modalBuscarPago').modal('show');
     $('#tblInmuebles').empty();
 }
 
@@ -26,7 +26,7 @@ function buscarPagos() {
 
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModalPago() {
-    $('#modalBuscarInmuebles').modal('hide');
+    $('#modalBuscarPago').modal('hide');
 }
 
 
