@@ -104,9 +104,9 @@ namespace Inmobiliaria.Controllers
             
             var resultados = pago.Select(p => new
             {
-                IdPago = p.IdPago,
-                Fecha = p.Fecha,
-                umeroPago = p.NumeroPago,
+                idPago = p.IdPago,
+                fecha = p.Fecha,
+                numeroPago = p.NumeroPago,
                 importe = p.Importe,
                 idContrato = p.IdContrato,
             });
