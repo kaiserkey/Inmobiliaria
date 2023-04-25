@@ -6,6 +6,9 @@
 
 <div class="col-md-12 text-center">
     <h1>Pagos</h1>
+    <span class="input-group-addon" id="lupa" style="cursor:pointer" onclick="abrirModalBuscarContratos()">
+        <h2><i class="bi bi-search-heart-fill" style="font-size: 1em; color: black;">Buscar Pagos</i></h2>
+    </span>
     <h2><a asp-action="Create"> <i class="bi bi-plus-square-fill" style="font-size: 1em; color: black;"> Nuevo Pago </i>
         </a></h2>
 </div>
@@ -21,13 +24,10 @@
                 <div class="form-group">
                     <label>Buscar por:</label>
                     <div class="input-group estiloEnLinea">
-                        <select class="form-select optionContrato" id="buscarContratoPor">
-                            <option value="Fecha">Fecha [DESDE/HASTA]</option>
-                            <option value="Inmueble">Inmueble Asociado</option>
+                        <select class="form-select">
+                            <option value="Fecha">Pagos Por Contrato</option>
                         </select>
-                        <div class="optionInputContrato">
-                            @* aqui van los input segun el select *@
-                        </div>
+                        <input type="number" id="txtBuscar" class="form-control" placeholder="Codigo Contrato" />
                         <div class="input-group-append">
                             <button id="boton-general" class="btn btn-primary" type="button"
                                 onclick="buscarContratosPor()">Buscar</button>
