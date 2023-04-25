@@ -61,8 +61,8 @@ namespace Inmobiliaria.Controllers
             return Json(resultados);
         }
 
-        //buscar Inmuebles por JQuery
-        public IActionResult BuscarInmuebles(string busqueda, string opcion)
+        //buscar disponibles Inmuebles por JQuery
+        public IActionResult BuscarInmueblesD(string busqueda, string opcion)
         {
             var inmuebles = new List<Inmueble>();
             
