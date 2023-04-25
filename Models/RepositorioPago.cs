@@ -127,7 +127,7 @@ public class RepositorioPago
         return res;
     }
 
-    public List<Pago> BuscarPagos(MySqlDatabase mySqlDatabase)
+    public List<Pago> BuscarPagos(MySqlDatabase mySqlDatabase, int )
     {
         var pagos = new List<Pago>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
