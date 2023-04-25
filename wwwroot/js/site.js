@@ -12,7 +12,7 @@ function buscarPagos() {
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idPago +
                 '</td><td>' + resultado.fecha +
-                '</td><td>' + resultado.tipo +
+                '</td><td>' + resultado.importe +
                 '</td><td>' + resultado.coordenadas +
                 '</td><td>' + resultado.precio +
                 '</td><td>' + resultado.ambientes +
