@@ -294,7 +294,7 @@ public class RepositorioContrato
                                 WHERE IdInmueble NOT IN (
                                 SELECT DISTINCT IdInmueble
                                 FROM Contrato c
-                                WHERE (c.FechaInicio BETWEEN '2023-01-01' AND '2023-04-30')
+                                WHERE (c.FechaInicio BETWEEN @fechaInicio AND '2023-04-30')
                                     OR (c.FechaFin BETWEEN '2023-01-01' AND '2023-04-30')
                                     OR (c.FechaInicio < '2023-01-01' AND c.FechaFin > '2023-04-30')
                                 )";
