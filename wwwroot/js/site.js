@@ -121,9 +121,7 @@ function buscarInmuebles() {
     }
     if(option == "InmuebleNotIn"){
         var fechaInicio = $.datepicker.formatDate("yy-mm-dd", new Date($('#fechaInicio').val())) + " 00:00:00";
-        var fechaFin = $.datepicker.formatDate("yy-mm-dd", new Date($('#fechaHasta').val())) + " 00:00:00";
-        var fechaInicio = $('#fechaInicio').val();
-        var fechaFin = $('#fechaFin').val();
+        var fechaFin = $.datepicker.formatDate("yy-mm-dd", new Date($('#fechaFin').val())) + " 00:00:00";
         $.getJSON('/Inmueble/BuscarInmueblesSinContrato', { fechaInicio: fechaInicio, fechaFin: fechaFin }, function (resultados) {
             $('#tblInmuebles').empty();
             $.each(resultados, function (index, resultado) {
