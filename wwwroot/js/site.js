@@ -47,7 +47,7 @@ $(document).ready(function () {
     $(".optionContrato").change(function () {
         var selectedOption = $(this).children("option:selected").val();
         $(".optionInputContrato").empty();
-        if (selectedOption == "Fecha" || selectedOption == "Fecha") {
+        if (selectedOption == "Fecha" || selectedOption == "FechaNotIn") {
             $(".optionInputContrato").append('<label for="fechaDesde" class="input-group-text">Desde:</label>');
             $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaDesde">');
             $(".optionInputContrato").append('<label for="fechaHasta" class="input-group-text">Hasta:</label>');
