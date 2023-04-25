@@ -137,7 +137,7 @@ namespace Inmobiliaria.Controllers
         }
 
         /* buscar contratos por fecha jquery */
-        public IActionResult BuscarContratosPorCodigo(string fechaDesde, string fechaHasta)
+        public IActionResult BuscarContratosPorCodigo(int codig, string fechaHasta)
         {
             var contrato = new List<Contrato>();
             
