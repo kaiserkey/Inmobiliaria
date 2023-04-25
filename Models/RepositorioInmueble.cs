@@ -228,7 +228,7 @@ public class RepositorioInmueble
         return inmuebles;
     }
 
-    public List<Inmueble> BuscarInmueblesDisponibles(MySqlDatabase mySqlDatabase, string fechaInicio, string fechaFin)
+    public List<Inmueble> BuscarInmueblesSinContrato(MySqlDatabase mySqlDatabase, string fechaInicio, string fechaFin)
     {
         var inmuebles = new List<Inmueble>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)

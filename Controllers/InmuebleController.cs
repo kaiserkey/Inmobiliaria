@@ -66,7 +66,7 @@ namespace Inmobiliaria.Controllers
         {
             var inmuebles = new List<Inmueble>();
             
-            inmuebles = RepoInmueble.BuscarInmueblesDisponibles(con, fechaInicio, fechaFin);
+            inmuebles = RepoInmueble.BuscarInmueblesSinContrato(con, fechaInicio, fechaFin);
 
             var resultados = inmuebles.Select(i => new
             {
