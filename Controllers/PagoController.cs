@@ -106,8 +106,8 @@ namespace Inmobiliaria.Controllers
             {
                 idContrato = p.IdPago,
                 idInmueble = p.Fecha,
-                idInquilino = p.,
-                nombre = p.Inquilino.Nombre,
+                idInquilino = p.NumeroPago,
+                nombre = p.,
                 apellido = p.Inquilino.Apellido,
                 dni = p.Inquilino.Dni,
                 fechaFin = p.FechaFin,
