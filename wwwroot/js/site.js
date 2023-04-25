@@ -23,19 +23,6 @@ function buscarPagos() {
         });
     });
 }
-/* Ocultar input text */
-$(document).ready(function () {
-    $(".option").change(function () {
-        var selectedOption = $(this).children("option:selected").val();
-        if (selectedOption == "Disponibles") {
-            $("#txtBuscar").hide();
-        }
-        else {
-            $("#txtBuscar").show();
-        }
-    });
-    $(".optionInput").hide();
-});
 
 // Función para cerrar el modal al hacer clic en el botón
 function cerrarModalBuscarInmueble() {
