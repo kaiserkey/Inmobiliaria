@@ -143,7 +143,6 @@ public class RepositorioContrato
             if (count > 0)
             {
                 throw new Exception("Ya existe un contrato activo en esas fechas.");
-                // Alternativamente, podrías devolver -1 o algún otro valor que indique un error.
             }
         }
 
