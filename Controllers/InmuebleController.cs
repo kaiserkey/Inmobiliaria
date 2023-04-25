@@ -61,6 +61,28 @@ namespace Inmobiliaria.Controllers
             return Json(resultados);
         }
 
+        //obtener Inmuebles por JQuery
+        public IActionResult BuscarInmuebles(string busqueda, string opcion)
+        {
+            var inmuebles = new List<Inmueble>();
+            
+            inmuebles = RepoInmueble.BuscarInmuebles(con, busqueda, opcion);
+
+            var resultados = inmuebles.Select(i => new
+            {
+                idInmueble = i.IdInmueble,
+                tipo = i.Tipo,
+                coordenadas = i.Coordenadas,
+                precio = i.Precio,
+                ambientes = i.Ambientes,
+                uso = i.Uso,
+                nombre = i.Propietario.Nombre,
+                apellido = i.Propietario.Apellido,
+            });
+
+            return Json(resultados);
+        }
+
         [Authorize]
         public ActionResult Create()
         {
