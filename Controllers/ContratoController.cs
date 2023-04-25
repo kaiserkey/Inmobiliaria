@@ -68,7 +68,7 @@ namespace Inmobiliaria.Controllers
             {
                 var res = RepoContrato.CreateContrato(con, contrato);
                 if(res > 0){
-                    TempData["Mensaje"] = "La entidad se actualizo correctamente ID:" + contrato.IdContrato;
+                    TempData["Mensaje"] = "Se ha creado con exito correctamente ID:" + contrato.IdContrato;
                 }else if (res == -1){
                     TempData["Mensaje"] = "Existe superposicion de fechas con otro contrato";
                 }else {
