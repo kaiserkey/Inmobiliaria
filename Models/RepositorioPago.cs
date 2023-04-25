@@ -136,7 +136,7 @@ public class RepositorioPago
                                 FROM Pago
                                 WHERE IdContrato = @codigo";
             cmd.Parameters.AddWithValue("@codigo", codigo);
-            
+            Console.WriteLine("Codigo: " + codigo);
             using (var reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
