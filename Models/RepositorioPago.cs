@@ -67,6 +67,35 @@ public class RepositorioPago
         return null;
     }
 
+    public Pago GetPagoPorInqui(MySqlDatabase mySqlDatabase, int id)
+    {
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"SELECT IdPago, Importe, Fecha, NumeroPago, IdContrato
+                            FROM Pago
+                            WHERE IdPago = @IdPago";
+            cmd.Parameters.AddWithValue("@IdPago", id);
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    var pago = new Pago
+                    {
+                        IdPago = reader.GetInt32(nameof(Pago.IdPago)),
+                        Importe = reader.GetDecimal(nameof(Pago.Importe)),
+                        NumeroPago = reader.GetInt32(nameof(Pago.NumeroPago)),
+                        Fecha = reader.GetDateTime(nameof(Pago.Fecha)),
+                        IdContrato = reader.GetInt32(nameof(Pago.IdContrato)),
+                    };
+
+                    return pago;
+                }
+            }
+        }
+        return null;
+    }
+
     public int CreatePago(MySqlDatabase mySqlDatabase, Pago createPago)
     {
         var fecha = createPago.Fecha.ToString("yyyy-MM-dd HH:mm:ss");
