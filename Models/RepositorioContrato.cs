@@ -141,7 +141,6 @@ public class RepositorioContrato
             cmd.Parameters.AddWithValue("@IdInquilino", contrato.IdInquilino);
 
             res = Convert.ToInt32(cmd.ExecuteScalar());
-            
         }
 
 
