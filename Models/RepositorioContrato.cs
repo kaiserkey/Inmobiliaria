@@ -287,7 +287,9 @@ public class RepositorioContrato
                         WHERE c.IdInmueble = @codigo
                         LIMIT 10";
             }
-            if(opcion.Equals("Fecha"))
+            if(opcion.Equals("Fecha")){
+                query = 
+            }
 
             if (opcion.Equals("Pagos"))
             {
