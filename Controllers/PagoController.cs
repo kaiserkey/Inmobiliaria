@@ -55,12 +55,6 @@ namespace Inmobiliaria.Controllers
             return View();
         }
 
-        [Authorize]
-        public ActionResult Create(int id)
-        {
-            return View();
-        }
-
         // POST: Pago/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
