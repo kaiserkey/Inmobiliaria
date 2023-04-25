@@ -283,7 +283,7 @@ public class RepositorioContrato
                         i.Nombre, i.Apellido, i.Dni
                         FROM Contrato c
                         INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
-                        WHERE c.IdContrato = @codigo
+                        WHERE c.IdInmueble = @codigo
                         LIMIT 10";
             }
 
