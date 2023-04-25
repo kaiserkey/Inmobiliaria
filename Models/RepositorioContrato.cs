@@ -278,7 +278,9 @@ public class RepositorioContrato
         {
             var query = "";
 
-            if(opcion.Equals("Inmueble"))
+            if(opcion.Equals("Inmueble")){
+                
+            }
 
             cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
             i.Nombre, i.Apellido, i.Dni
