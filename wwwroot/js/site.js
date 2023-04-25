@@ -125,7 +125,7 @@ $(document).ready(function () {
         var selectedOption = $(this).children("option:selected").val();
         $(".optionInputInmueble").empty();
         if (selectedOption == "InmuebleNotIn") {
-            $(".optionInputInmueble").append('<label for="fechaDesde" class="input-group-text">Desde:</label>');
+            $(".optionInputInmueble").append('<label for="fechaInicio" class="input-group-text">Desde:</label>');
             $(".optionInputInmueble").append('<input type="date" class="form-control" id="fechaDesde">');
             $(".optionInputInmueble").append('<label for="fechaHasta" class="input-group-text">Hasta:</label>');
             $(".optionInputInmueble").append('<input type="date" class="form-control" id="fechaHasta">');
