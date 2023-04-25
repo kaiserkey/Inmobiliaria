@@ -179,7 +179,7 @@ public class RepositorioContrato
         if (originalContrato.FechaInicio == contrato.FechaInicio && originalContrato.FechaFin == contrato.FechaFin)
         {
             // No es necesario actualizar el contrato, las fechas no han cambiado
-            return res = 0;
+            return res = 1;
         }
         else
         {
