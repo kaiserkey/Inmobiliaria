@@ -270,4 +270,45 @@ public class RepositorioContrato
         return contratos;
     }
 
+    public List<Contrato> BuscarContratosPorFecha(MySqlDatabase mySqlDatabase, string fechaDesde, string fechaHasta)
+    {
+        var contratos = new List<Contrato>();
+
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
+            i.Nombre, i.Apellido, i.Dni
+            FROM Contrato c
+            INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
+            WHERE c.FechaInicio <= @fechaHasta AND c.FechaFin >= @fechaDesde
+            LIMIT 10";
+
+            cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+            cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var contrato = new Contrato
+                    {
+                        IdContrato = reader.GetInt32(nameof(Contrato.IdContrato)),
+                        IdInquilino = reader.GetInt32(nameof(Contrato.IdInquilino)),
+                        IdInmueble = reader.GetInt32(nameof(Contrato.IdInmueble)),
+                        FechaInicio = reader.GetDateTime(nameof(Contrato.FechaInicio)),
+                        FechaFin = reader.GetDateTime(nameof(Contrato.FechaFin)),
+                        Inquilino = new Inquilino
+                        {
+                            Nombre = reader.GetString(nameof(Inquilino.Nombre)),
+                            Apellido = reader.GetString(nameof(Inquilino.Apellido)),
+                            Dni = reader.GetString(nameof(Inquilino.Dni)),
+                        }
+                    };
+                    contratos.Add(contrato);
+                }
+            }
+        }
+        return contratos;
+    }
+
 }
