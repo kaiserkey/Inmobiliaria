@@ -102,9 +102,9 @@ namespace Inmobiliaria.Controllers
             
             pago = RepoPago.BuscarPagos(con, codigo);
             
-            var resultados = contrato.Select(c => new
+            var resultados = pago.Select(p => new
             {
-                idContrato = c.IdContrato,
+                idContrato = p.IdContrato,
                 idInmueble = c.IdInmueble,
                 idInquilino = c.IdInquilino,
                 nombre = c.Inquilino.Nombre,
