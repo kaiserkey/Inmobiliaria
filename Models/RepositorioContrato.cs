@@ -118,6 +118,8 @@ public class RepositorioContrato
         return null;
     }
 
+    
+
     public int CreateContrato(MySqlDatabase mySqlDatabase, Contrato CreateContrato)
     {
         var fechaInicioFormat = CreateContrato.FechaInicio.ToString("yyyy-MM-dd HH:mm:ss");
