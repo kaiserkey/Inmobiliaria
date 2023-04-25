@@ -103,7 +103,7 @@ function abrirModalBuscarInmueble() {
 function buscarInmuebles() {
     var busqueda = $('#txtBuscar').val();
     var opcion = $('#buscarInmueblePor').val();
-    if <option value=""></option>
+    if op
     $.getJSON('/Inmueble/BuscarInmuebles', { busqueda: busqueda, opcion: opcion }, function (resultados) {
         $('#tblInmuebles').empty();
         $.each(resultados, function (index, resultado) {
