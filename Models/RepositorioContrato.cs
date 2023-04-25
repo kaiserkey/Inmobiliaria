@@ -289,7 +289,7 @@ public class RepositorioContrato
 
             cmd.CommandText = query;
 
-            cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+            cmd.Parameters.AddWithValue("@codigo", codigo);
 
             using (var reader = cmd.ExecuteReader())
             {
