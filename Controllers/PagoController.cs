@@ -105,12 +105,12 @@ namespace Inmobiliaria.Controllers
             var resultados = pago.Select(p => new
             {
                 idContrato = p.IdContrato,
-                idInmueble = c.IdInmueble,
-                idInquilino = c.IdInquilino,
-                nombre = c.Inquilino.Nombre,
-                apellido = c.Inquilino.Apellido,
-                dni = c.Inquilino.Dni,
-                fechaFin = c.FechaFin,
+                idInmueble = p.IdInmueble,
+                idInquilino = p.IdInquilino,
+                nombre = p.Inquilino.Nombre,
+                apellido = p.Inquilino.Apellido,
+                dni = p.Inquilino.Dni,
+                fechaFin = p.FechaFin,
                 fechaInicio = c.FechaInicio,
             });
 
