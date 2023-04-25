@@ -256,7 +256,7 @@ table {
     font-family: 'Roboto Mono', monospace;
 }
 
-tbody:not(.email) {
+tbody {
     text-align: center;
     font-size: 1rem;
     text-transform: capitalize;
