@@ -54,6 +54,12 @@ namespace Inmobiliaria.Controllers
         {
             return View();
         }
+        [Authorize]
+        public ActionResult         CreateModal
+()
+        {
+            return View();
+        }
 
         // POST: Pago/Create
         [HttpPost]
