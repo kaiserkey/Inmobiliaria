@@ -11,7 +11,7 @@ function buscarPagos() {
         $('#tblInmuebles').empty();
         $.each(resultados, function (index, resultado) {
             var fila = '<tr><td>' + resultado.idPago +
-                '</td><td>' + resultado.nombre + " " + resultado.apellido +
+                '</td><td>' + resultado.fecha +
                 '</td><td>' + resultado.tipo +
                 '</td><td>' + resultado.coordenadas +
                 '</td><td>' + resultado.precio +
