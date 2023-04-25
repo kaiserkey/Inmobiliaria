@@ -244,7 +244,7 @@ public class RepositorioInmueble
                                         OR (c.FechaFin BETWEEN <fecha_inicio> AND <fecha_fin>)
                                 )";
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
-                        
+            
             using (var reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
