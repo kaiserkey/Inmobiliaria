@@ -172,45 +172,56 @@ public class RepositorioContrato
         var fechaFinFormat = contrato.FechaFin.ToString("yyyy-MM-dd HH:mm:ss");
         int res = -1;
 
-        // Verificar si existe otro contrato activo en las fechas proporcionadas
-        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        // Obtener el contrato original
+        var originalContrato = GetContrato(mySqlDatabase, contrato.IdContrato);
+
+        // Comprobar si las fechas de inicio y fin del contrato que se está editando han cambiado
+        if (originalContrato.FechaInicio == contrato.FechaInicio && originalContrato.FechaFin == contrato.FechaFin)
         {
-            cmd.CommandText = @"SELECT COUNT(*) FROM Contrato 
+            // No es necesario actualizar el contrato, las fechas no han cambiado
+            return res = 0;
+        }
+        else
+        {
+            // Verificar si existe otro contrato activo en las fechas proporcionadas
+            using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+            {
+                cmd.CommandText = @"SELECT COUNT(*) FROM Contrato 
                         WHERE IdInquilino = @IdInquilino 
                         AND IdInmueble = @IdInmueble 
                         AND FechaInicio <= @FechaFin 
                         AND FechaFin >= @FechaInicio
                         AND IdContrato != @IdContrato";
 
-            cmd.Parameters.AddWithValue("@IdInquilino", contrato.IdInquilino);
-            cmd.Parameters.AddWithValue("@IdInmueble", contrato.IdInmueble);
-            cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioFormat);
-            cmd.Parameters.AddWithValue("@FechaFin", fechaFinFormat);
-            cmd.Parameters.AddWithValue("@IdContrato", contrato.IdContrato);
+                cmd.Parameters.AddWithValue("@IdInquilino", contrato.IdInquilino);
+                cmd.Parameters.AddWithValue("@IdInmueble", contrato.IdInmueble);
+                cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioFormat);
+                cmd.Parameters.AddWithValue("@FechaFin", fechaFinFormat);
+                cmd.Parameters.AddWithValue("@IdContrato", contrato.IdContrato);
 
-            int count = Convert.ToInt32(cmd.ExecuteScalar());
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
 
-            if (count > 0)
+                if (count > 0)
+                {
+                    return res = -1;
+                }
+            }
+
+            using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
             {
-                return res = -1;
+                cmd.CommandText = @"UPDATE Contrato SET IdInquilino = @IdInquilino, IdInmueble = @IdInmueble, FechaInicio = @FechaInicio, FechaFin = @FechaFin
+                            WHERE IdContrato = @IdContrato;";
+
+                cmd.Parameters.AddWithValue("@IdContrato", contrato.IdContrato);
+                cmd.Parameters.AddWithValue("@IdInquilino", contrato.IdInquilino);
+                cmd.Parameters.AddWithValue("@IdInmueble", contrato.IdInmueble);
+                cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioFormat);
+                cmd.Parameters.AddWithValue("@FechaFin", fechaFinFormat);
+
+                res = Convert.ToInt32(cmd.ExecuteNonQuery());
             }
         }
 
-        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
-        {
-
-            cmd.CommandText = @"UPDATE Contrato SET IdInquilino = @IdInquilino, IdInmueble = @IdInmueble, FechaInicio = @FechaInicio, FechaFin = @FechaFin
-                            WHERE IdContrato = @IdContrato;";
-
-            cmd.Parameters.AddWithValue("@IdContrato", contrato.IdContrato);
-            cmd.Parameters.AddWithValue("@IdInquilino", contrato.IdInquilino);
-            cmd.Parameters.AddWithValue("@IdInmueble", contrato.IdInmueble);
-            cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioFormat);
-            cmd.Parameters.AddWithValue("@FechaFin", fechaFinFormat);
-
-            res = Convert.ToInt32(cmd.ExecuteNonQuery());
-
-        }
         return res;
     }
 
