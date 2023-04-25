@@ -109,9 +109,6 @@ namespace Inmobiliaria.Controllers
                 idInquilino = p.NumeroPago,
                 nombre = p.Importe,
                 apellido = p.IdContrato,
-                dni = p.Inquilino.Dni,
-                fechaFin = p.FechaFin,
-                fechaInicio = p.FechaInicio,
             });
 
             return Json(resultados);
