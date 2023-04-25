@@ -413,7 +413,7 @@ tbody {
     display: flex !important;
 }
 
-.optionInputContrato, .optionInmueble input{
+.optionInputContrato, .optionInputInmueble input{
     margin-right: 10px !important;
 }
 
