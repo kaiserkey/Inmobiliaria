@@ -132,7 +132,10 @@ public class RepositorioContrato
         contrato.FechaFin = fechaFin;
         UpdateContrato(mySqlDatabase, contrato);
 
-        
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            
+        }
 
 
 
