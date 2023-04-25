@@ -122,7 +122,7 @@ function buscarInmuebles() {
     if(option == "InmuebleNotIn"){
         var fechaInicio = $('#fechaInicio').val();
         var fechaFin = $('#fechaFin').val();
-        $.getJSON('/Inmueble/BuscarInmueblesSinContrato', { fechaInicio: fechaInicio, fechaFin: opcion }, function (resultados) {
+        $.getJSON('/Inmueble/BuscarInmueblesSinContrato', { fechaInicio: fechaInicio, fechaFin: fechaFin }, function (resultados) {
             $('#tblInmuebles').empty();
             $.each(resultados, function (index, resultado) {
                 var fila = '<tr><td>' + resultado.idInmueble +
