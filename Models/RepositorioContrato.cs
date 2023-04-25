@@ -130,6 +130,9 @@ public class RepositorioContrato
 
         // Actualizar la fecha de fin del contrato y guardar los cambios
         contrato.FechaFin = fechaFin;
+        UpdateContrato(mySqlDatabase, contrato);
+
+        
 
 
 
