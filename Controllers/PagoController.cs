@@ -100,7 +100,7 @@ namespace Inmobiliaria.Controllers
         {
             var contrato = new List<Contrato>();
             
-            contrato = RepoContrato.BuscarContrato(con, codigo);
+            contrato = RepoPago.BuscarPagos(con, codigo);
             
             var resultados = contrato.Select(c => new
             {
