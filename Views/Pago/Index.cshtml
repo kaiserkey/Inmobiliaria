@@ -9,6 +9,58 @@
     <h2><a asp-action="Create"> <i class="bi bi-plus-square-fill" style="font-size: 1em; color: black;"> Nuevo Pago </i>
         </a></h2>
 </div>
+
+<!-- Modal Buscar Contrato -->
+<div class="modal fade" id="modalBuscarContrato" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-centered justify-content-center align-items-center" role="document">
+        <div class="modal-content w-auto">
+            <div class="modal-header">
+                <h4 class="modal-title">Buscar Contratos</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Buscar por:</label>
+                    <div class="input-group estiloEnLinea">
+                        <select class="form-select optionContrato" id="buscarContratoPor">
+                            <option value="Fecha">Fecha [DESDE/HASTA]</option>
+                            <option value="Inmueble">Inmueble Asociado</option>
+                        </select>
+                        <div class="optionInputContrato">
+                            @* aqui van los input segun el select *@
+                        </div>
+                        <div class="input-group-append">
+                            <button id="boton-general" class="btn btn-primary" type="button"
+                                onclick="buscarContratosPor()">Buscar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive mw-100">
+                    <table class="table table-striped d-inline-block">
+                        <thead>
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Codigo Inmueble</th>
+                                <th>Inquilino</th>
+                                <th>DNI</th>
+                                <th>Fecha de Inicio</th>
+                                <th>Fecha de Finalizacion</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tblContrato">
+                            <!-- Aquí van los datos de los Contrato... -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="boton-general" onclick="cerrarModalContrato()" class="btn btn-primary"
+                        data-dismiss="modal">Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="table-responsive d-flex justify-content-center align-items-center">
     <table class="table table-bordered table-striped w-auto">
         <thead id="thead-color">
