@@ -185,7 +185,7 @@ namespace Inmobiliaria.Controllers
                 }else if (res == -1){
                     TempData["Mensaje"] = "Existe superposicion de fechas con otro contrato.";
                 }else {
-                    TempData["Mensaje"] = "No se pudo actualizar la entidad ID:" + id;
+                    TempData["Mensaje"] = "El contrato No se pudo renovar ID:" + id;
                 }
                 
                 return RedirectToAction(nameof(Index));
