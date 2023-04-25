@@ -120,7 +120,7 @@ public class RepositorioContrato
 
     public int CancelarContrato(MySqlDatabase mySqlDatabase, int idContrato, DateTime fechaFin){
         // Obtener el contrato correspondiente a partir de su ID
-        var contrato = GetContrato(idContrato);
+        var contrato = GetContrato(mySqlDatabase, idContrato);
     }
 
     public int CreateContrato(MySqlDatabase mySqlDatabase, Contrato CreateContrato)
