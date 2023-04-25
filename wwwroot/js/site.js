@@ -119,7 +119,22 @@ function buscarInmuebles() {
             });
         });
     }
-    if(option == "InmuebleNotIn")
+    if(option == "InmuebleNotIn"){
+        $.getJSON('/Inmueble/BuscarInmuebles', { busqueda: busqueda, opcion: opcion }, function (resultados) {
+            $('#tblInmuebles').empty();
+            $.each(resultados, function (index, resultado) {
+                var fila = '<tr><td>' + resultado.idInmueble +
+                    '</td><td>' + resultado.nombre + " " + resultado.apellido +
+                    '</td><td>' + resultado.tipo +
+                    '</td><td>' + resultado.coordenadas +
+                    '</td><td>' + resultado.precio +
+                    '</td><td>' + resultado.ambientes +
+                    '</td><td>' + resultado.uso +
+                    '</td></tr>';
+                $('#tblInmuebles').append(fila);
+            });
+        });
+    }
 
 }
 
