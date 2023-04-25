@@ -15,7 +15,7 @@ function buscarPagos() {
                 '</td><td>' + resultado.importe +
                 '</td><td>' + resultado.idContrato +
                 '</td><td>' + resultado.numeroPago +
-                <a asp-action="Edit" asp-route-id="@item.IdPago"> <i class="bi bi-pencil-square"
+                '</td><td><a asp-action="Edit" asp-route-id="@item.IdPago"> <i class="bi bi-pencil-square"
                                 style="font-size: 2em; color: green;"></i> </a>
                 '</td></tr>';
             $('#tblPagos').append(fila);
