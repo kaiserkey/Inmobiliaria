@@ -295,7 +295,7 @@ public class RepositorioContrato
                         FROM Contrato c
                         INNER JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
                         INNER JOIN Pago p ON c.IdContrato = p.IdContrato
-                        WHERE c.IdContrato = @idContrato";
+                        WHERE c.IdContrato = @codigo";
             }
 
             cmd.CommandText = query;
