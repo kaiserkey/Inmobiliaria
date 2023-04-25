@@ -241,7 +241,7 @@ public class RepositorioInmueble
                                     SELECT c.IdInmueble
                                     FROM Contrato c
                                     WHERE (c.FechaInicio BETWEEN @fechaInicio AND <fecha_fin>)
-                                        OR (c.FechaFin BETWEEN fechaInicio AND <fecha_fin>)
+                                        OR (c.FechaFin BETWEEN @fechaInicio AND <fecha_fin>)
                                 )";
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             
