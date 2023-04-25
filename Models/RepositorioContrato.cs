@@ -118,7 +118,7 @@ public class RepositorioContrato
         return null;
     }
 
-    public int CancelarContrato(MySqlDatabase mySqlDatabase, ){
+    public int CancelarContrato(MySqlDatabase mySqlDatabase, int idContrato, DateTime fechaFin){
 
     }
 
