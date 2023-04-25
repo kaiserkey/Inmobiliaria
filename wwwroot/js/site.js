@@ -119,7 +119,7 @@ function buscarInmuebles() {
     });
 }
 
-/* opciones del select de buscar contratos */
+/* opciones del select de buscar inmueble */
 $(document).ready(function () {
     $(".optionContrato").change(function () {
         var selectedOption = $(this).children("option:selected").val();
