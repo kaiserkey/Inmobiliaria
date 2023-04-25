@@ -138,7 +138,7 @@ public class RepositorioContrato
                             VALUES (@Importe, @IdInquilino);
                             SELECT LAST_INSERT_ID();";
             cmd.Parameters.AddWithValue("@Importe", multaPagar);
-            
+            cmd.Parameters.AddWithValue("@IdInquilino", contrato.IdInquilino);
         }
 
 
