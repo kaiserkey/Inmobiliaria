@@ -58,6 +58,7 @@ namespace Inmobiliaria.Controllers
         [Authorize]
         public ActionResult  CreateModal(int id)
         {
+            ViewBag.IdContrato = id;
             return View();
         }
 
