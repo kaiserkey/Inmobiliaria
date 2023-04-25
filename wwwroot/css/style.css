@@ -259,10 +259,11 @@ table {
 tbody:not(.email) {
     text-align: center;
     font-size: 1rem;
+    text-transform: capitalize !important;
 }
 
 tbody .email{
-    text-transform: capitalize !important;
+    text-transform: none !important;
 }
 
 
