@@ -243,7 +243,7 @@ public class RepositorioInmueble
                                     WHERE (c.FechaInicio BETWEEN @fechaInicio AND @fechaFin)
                                         OR (c.FechaFin BETWEEN @fechaInicio AND @fechaFin)
                                 )";
-            cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
+            cmd.Parameters.AddWithValue("@fechaFin", );
             
             using (var reader = cmd.ExecuteReader())
             {
