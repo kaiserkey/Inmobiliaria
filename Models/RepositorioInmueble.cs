@@ -240,7 +240,7 @@ public class RepositorioInmueble
                                 WHERE i.Activo = 1 AND i.IdInmueble NOT IN (
                                     SELECT c.IdInmueble
                                     FROM Contrato c
-                                    WHERE (c.FechaInicio BETWEEN <fecha_inicio> AND <fecha_fin>)
+                                    WHERE (c.FechaInicio BETWEEN fechaInicio AND <fecha_fin>)
                                         OR (c.FechaFin BETWEEN <fecha_inicio> AND <fecha_fin>)
                                 )";
             cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
