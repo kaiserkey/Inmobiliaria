@@ -176,6 +176,8 @@ namespace Inmobiliaria.Controllers
                 int res = RepoContrato.UpdateContrato(con, updateContrato);
                 if(res > 0){
                     TempData["Mensaje"] = "La entidad se actualizo correctamente ID:" + id;
+                }else{
+                    TempData["Mensaje"] = "No se pudo actualizar la entidad ID:" + id;
                 }
                 
                 return RedirectToAction(nameof(Index));
