@@ -287,10 +287,9 @@ public class RepositorioContrato
                         LIMIT 10";
             }
 
-            cmd.CommandText = 
+            cmd.CommandText = query;
 
             cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
-            cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
 
             using (var reader = cmd.ExecuteReader())
             {
