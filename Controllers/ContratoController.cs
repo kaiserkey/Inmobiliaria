@@ -172,9 +172,10 @@ namespace Inmobiliaria.Controllers
             Contrato contrato = RepoContrato.GetContrato(con, id);
             Pago pago = RepoPago.GetPagoPorContrato(con, contrato.IdContrato);
             if(pago == null){
-                TempData["Mensaje"] = "No se puede cancelar el contrato ID:" + id + " porque ya se realizo un pago.";
+                TempData["Mensaje"] = "No se puede cancelar el contrato ID:" + id;
                 return RedirectToAction(nameof(Index));
             }
+            
             return View(nameof(Index));
         }
 
