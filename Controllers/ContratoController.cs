@@ -175,7 +175,7 @@ namespace Inmobiliaria.Controllers
                 TempData["Mensaje"] = "No se puede cancelar el contrato ID:" + id;
                 return RedirectToAction(nameof(Index));
             }
-            var res = RepoContrato.CancelarContrato(con, id, DateTime.Now, pago.IdContrato);
+            var res = RepoContrato.CancelarContrato(con, id, DateTime.Now, pago.Importe);
             Console.WriteLine(res);
             if(res > 0){
                 TempData["Mensaje"] = "Se ha cancelado con exito el contrato ID:" + id;
