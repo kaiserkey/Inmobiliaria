@@ -119,7 +119,7 @@ public class RepositorioContrato
     }
 
     public int CancelarContrato(MySqlDatabase mySqlDatabase, int idContrato, DateTime fechaFin, double importe){
-        //obtener el importe 
+        //obtener el importe segun el pago de los me
         // Obtener el contrato correspondiente a partir de su ID
         var contrato = GetContrato(mySqlDatabase, idContrato);
         // Calcular la duración original del contrato en meses
