@@ -292,7 +292,7 @@ public class RepositorioContrato
                                 i.Nombre, i.Apellido, i.Dni
                                 FROM Inmueble i
                                 WHERE IdInmueble NOT IN (
-                                SELECT DISTINCT IdInmueble
+                                SELECT DISTINCT i.IdInmueble
                                 FROM Contrato c
                                 WHERE (c.FechaInicio BETWEEN @fechaInicio AND @fechaFin)
                                     OR (c.FechaFin BETWEEN @fechaInicio AND @fechaFin)
