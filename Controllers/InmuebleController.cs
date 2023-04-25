@@ -62,11 +62,11 @@ namespace Inmobiliaria.Controllers
         }
 
         //buscar disponibles Inmuebles por JQuery
-        public IActionResult BuscarInmueblesDisponibles(string fechaInicio, string fecha)
+        public IActionResult BuscarInmueblesDisponibles(string fechaInicio, string fechaFin)
         {
             var inmuebles = new List<Inmueble>();
             
-            inmuebles = RepoInmueble.BuscarInmuebles(con, busqueda, opcion);
+            inmuebles = RepoInmueble.BuscarInmueblesDisponibles(con, fechaInicio);
 
             var resultados = inmuebles.Select(i => new
             {
