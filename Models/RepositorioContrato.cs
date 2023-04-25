@@ -118,7 +118,7 @@ public class RepositorioContrato
         return null;
     }
 
-    
+    public int 
 
     public int CreateContrato(MySqlDatabase mySqlDatabase, Contrato CreateContrato)
     {
