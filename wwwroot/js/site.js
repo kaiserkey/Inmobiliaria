@@ -15,7 +15,7 @@ function buscarPagos() {
                 '</td><td>' + resultado.importe +
                 '</td><td>' + resultado.idContrato +
                 '</td><td>' + resultado.numeroPago +
-                '</td><td><a href="Pago/Create/' + resultado.idPago + '"> <i class="bi bi-pencil-square" style="font-size: 2em; color: blue;"></i> </a>'+
+                '</td><td><a href="Pago/CreateModal/' + resultado.idPago + '"> <i class="bi bi-pencil-square" style="font-size: 2em; color: blue;"></i> </a>'+
                 '</td></tr>';
             $('#tblPagos').append(fila);
         });
