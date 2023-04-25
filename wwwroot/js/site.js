@@ -141,8 +141,6 @@ $(document).ready(function () {
     $(".optionInputContrato").append('<input type="date" class="form-control" id="fechaHasta">');
 });
 
-
-
 /* Ocultar input text */
 $(document).ready(function () {
     $(".optionInmueble").change(function () {
