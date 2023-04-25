@@ -15,7 +15,7 @@ function buscarPagos() {
                 '</td><td>' + resultado.importe +
                 '</td><td>' + resultado.idContrato +
                 '</td><td>' + resultado.numeroPago +
-                '</td><td><a href="Pago/CreateModal/' + resultado.idPago + '"> <i class="bi bi-pencil-square" style="font-size: 2em; color: blue;"></i> </a>'+
+                '</td><td><a href="Pago/CreateModal/' + resultado.idPago + '"> <i class="bi bi-pencil-square" style="font-size: 2em; color: blue;"></i> </a>' +
                 '</td></tr>';
             $('#tblPagos').append(fila);
         });
@@ -103,23 +103,23 @@ function abrirModalBuscarInmueble() {
 function buscarInmuebles() {
     var busqueda = $('#txtBuscar').val();
     var opcion = $('#buscarInmueblePor').val();
-    if (option == "Disponibles" || option == "Propietario"){
-        
-    }
-    $.getJSON('/Inmueble/BuscarInmuebles', { busqueda: busqueda, opcion: opcion }, function (resultados) {
-        $('#tblInmuebles').empty();
-        $.each(resultados, function (index, resultado) {
-            var fila = '<tr><td>' + resultado.idInmueble +
-                '</td><td>' + resultado.nombre + " " + resultado.apellido +
-                '</td><td>' + resultado.tipo +
-                '</td><td>' + resultado.coordenadas +
-                '</td><td>' + resultado.precio +
-                '</td><td>' + resultado.ambientes +
-                '</td><td>' + resultado.uso +
-                '</td></tr>';
-            $('#tblInmuebles').append(fila);
+    if (option == "Disponibles" || option == "Propietario") {
+        $.getJSON('/Inmueble/BuscarInmuebles', { busqueda: busqueda, opcion: opcion }, function (resultados) {
+            $('#tblInmuebles').empty();
+            $.each(resultados, function (index, resultado) {
+                var fila = '<tr><td>' + resultado.idInmueble +
+                    '</td><td>' + resultado.nombre + " " + resultado.apellido +
+                    '</td><td>' + resultado.tipo +
+                    '</td><td>' + resultado.coordenadas +
+                    '</td><td>' + resultado.precio +
+                    '</td><td>' + resultado.ambientes +
+                    '</td><td>' + resultado.uso +
+                    '</td></tr>';
+                $('#tblInmuebles').append(fila);
+            });
         });
-    });
+    }
+
 }
 
 /* cargar input segun select de buscar inmueble */
@@ -132,7 +132,7 @@ $(document).ready(function () {
             $(".optionInputInmueble").append('<input type="date" class="form-control" id="fechaInicio">');
             $(".optionInputInmueble").append('<label for="fechaFin" class="input-group-text">Fin:</label>');
             $(".optionInputInmueble").append('<input type="date" class="form-control" id="fechaFin">');
-        } else if (selectedOption == "Propietario"){
+        } else if (selectedOption == "Propietario") {
             $(".optionInputInmueble").append('<input type="number" id="txtBuscar" class="form-control" placeholder="Codigo De Propietario" />');
         }
     });
