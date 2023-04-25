@@ -21,6 +21,8 @@ namespace Inmobiliaria.Controllers
         private MySqlDatabase con { get; set; }
         private readonly RepositorioInmueble RepoInmueble;
         private readonly RepositorioContrato RepoContrato;
+
+        private readonly RepositorioContrato RepoP;
         private readonly RepositorioInquilino RepoInquilino;
         public ContratoController()
         {
