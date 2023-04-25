@@ -129,7 +129,6 @@ public class RepositorioPago
 
     public List<Pago> BuscarPagos(MySqlDatabase mySqlDatabase, int codigo)
     {
-        Console.WriteLine("Codigo: " + codigo);
         var pagos = new List<Pago>();
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
@@ -137,7 +136,7 @@ public class RepositorioPago
                                 FROM Pago
                                 WHERE IdContrato = @codigo";
             cmd.Parameters.AddWithValue("@codigo", codigo);
-
+            
             using (var reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
