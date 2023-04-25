@@ -1,4 +1,48 @@
 ﻿/* busquedas por modales y jquery */
+/* Abrir Modal de buscar inmuebles por disponibilidad y propietario */
+function abrirModalBuscarInmueble() {
+    $('#modalBuscarInmuebles').modal('show');
+    $('#tblInmuebles').empty();
+}
+
+function buscarInmuebles() {
+    var busqueda = $('#txtBuscar').val();
+    var opcion = $('#buscarInmueblePor').val();
+    $.getJSON('/Inmueble/BuscarInmuebles', { busqueda: busqueda, opcion: opcion }, function (resultados) {
+        $('#tblInmuebles').empty();
+        $.each(resultados, function (index, resultado) {
+            var fila = '<tr><td>' + resultado.idInmueble +
+                '</td><td>' + resultado.nombre + " " + resultado.apellido +
+                '</td><td>' + resultado.tipo +
+                '</td><td>' + resultado.coordenadas +
+                '</td><td>' + resultado.precio +
+                '</td><td>' + resultado.ambientes +
+                '</td><td>' + resultado.uso +
+                '</td></tr>';
+            $('#tblInmuebles').append(fila);
+        });
+    });
+}
+/* Ocultar input text */
+$(document).ready(function () {
+    $(".option").change(function () {
+        var selectedOption = $(this).children("option:selected").val();
+        if (selectedOption == "Disponibles") {
+            $("#txtBuscar").hide();
+        }
+        else {
+            $("#txtBuscar").show();
+        }
+    });
+    $(".optionInput").hide();
+});
+
+// Función para cerrar el modal al hacer clic en el botón
+function cerrarModalBuscarInmueble() {
+    $('#modalBuscarInmuebles').modal('hide');
+}
+
+
 /* Abrir modal buscar contratos por fecha, inmuebel y pagos */
 function abrirModalBuscarContratos() {
     $('#modalBuscarContrato').modal('show');
