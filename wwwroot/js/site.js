@@ -103,7 +103,7 @@ function abrirModalBuscarInmueble() {
 function buscarInmuebles() {
     var busqueda = $('#txtBuscar').val();
     var opcion = $('#buscarInmueblePor').val();
-    if (option == "Disponibles" || option == "Propietario") {
+    if (opcion == "Disponibles" || opcion == "Propietario") {
         $.getJSON('/Inmueble/BuscarInmuebles', { busqueda: busqueda, opcion: opcion }, function (resultados) {
             $('#tblInmuebles').empty();
             $.each(resultados, function (index, resultado) {
@@ -119,10 +119,10 @@ function buscarInmuebles() {
             });
         });
     }
-    if(option == "InmuebleNotIn"){
+    if(opcion == "InmuebleNotIn"){
         var fechaInicio = $.datepicker.formatDate("yy-mm-dd", new Date($('#fechaInicio').val())) + " 00:00:00";
         var fechaFin = $.datepicker.formatDate("yy-mm-dd", new Date($('#fechaFin').val())) + " 00:00:00";
-        
+
         $.getJSON('/Inmueble/BuscarInmueblesSinContrato', { fechaInicio: fechaInicio, fechaFin: fechaFin }, function (resultados) {
             $('#tblInmuebles').empty();
             $.each(resultados, function (index, resultado) {
