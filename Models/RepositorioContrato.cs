@@ -250,16 +250,17 @@ public class RepositorioContrato
             if (opcion.Equals("FechaNotIn"))
             {
                 query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
-                                i.Nombre, i.Apellido, i.Dni
-                                FROM Inmueble i
-                                LEFT JOIN Contrato c ON i.IdInmueble = c.IdInmueble
-                                WHERE i.IdInmueble NOT IN (
-                                SELECT DISTINCT c.IdInmueble
-                                FROM Contrato c
-                                WHERE (c.FechaInicio BETWEEN @fechaDesde AND @fechaHasta)
-                                    OR (c.FechaFin BETWEEN @fechaDesde AND @fechaHasta)
-                                    OR (c.FechaInicio < @fechaDesde AND c.FechaFin > @fechaHasta)
-                                )";
+i.Nombre, i.Apellido, i.Dni
+FROM Inmueble i
+LEFT JOIN Contrato c ON i.IdInmueble = c.IdInmueble
+LEFT JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
+WHERE i.IdInmueble NOT IN (
+SELECT DISTINCT c.IdInmueble
+FROM Contrato c
+WHERE (c.FechaInicio BETWEEN @fechaDesde AND @fechaHasta)
+OR (c.FechaFin BETWEEN @fechaDesde AND @fechaHasta)
+OR (c.FechaInicio < @fechaDesde AND c.FechaFin > @fechaHasta)
+)";
             }
 
             cmd.CommandText = query;
