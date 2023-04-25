@@ -134,8 +134,6 @@ $(document).ready(function () {
             $(".optionInputInmueble").append('<input type="number" class="form-control" id="Codigo">');
         }
     });
-    // por defecto, agregar los inputs de fecha
-    $(".optionInputContrato").append('<input type="text" id="txtBuscar" class="form-control optionInput" />');
 });
 
 /* Ocultar input text */
