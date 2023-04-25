@@ -74,7 +74,6 @@ namespace Inmobiliaria.Controllers
                 }else {
                     TempData["Mensaje"] = "No se pudo actualizar la entidad ID:" + contrato.IdContrato;
                 }
-                TempData["Id"] = contrato.IdContrato;
                 return RedirectToAction(nameof(Index));
             }
             catch
