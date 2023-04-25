@@ -123,6 +123,31 @@ public class RepositorioContrato
         var fechaInicioFormat = CreateContrato.FechaInicio.ToString("yyyy-MM-dd HH:mm:ss");
         var fechaFinFormat = CreateContrato.FechaFin.ToString("yyyy-MM-dd HH:mm:ss");
         int res = -1;
+
+        // Verificar si existe un contrato activo en las fechas proporcionadas
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"SELECT COUNT(*) FROM Contrato 
+                            WHERE IdInquilino = @IdInquilino 
+                            AND IdInmueble = @IdInmueble 
+                            AND FechaInicio <= @FechaFin 
+                            AND FechaFin >= @FechaInicio";
+
+            cmd.Parameters.AddWithValue("@IdInquilino", CreateContrato.IdInquilino);
+            cmd.Parameters.AddWithValue("@IdInmueble", CreateContrato.IdInmueble);
+            cmd.Parameters.AddWithValue("@FechaInicio", fechaInicioFormat);
+            cmd.Parameters.AddWithValue("@FechaFin", fechaFinFormat);
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (count > 0)
+            {
+                throw new Exception("Ya existe un contrato activo en esas fechas.");
+                // Alternativamente, podrías devolver -1 o algún otro valor que indique un error.
+            }
+        }
+
+        // Si no existe un contrato activo, crear el nuevo contrato
         using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
         {
 
@@ -138,6 +163,7 @@ public class RepositorioContrato
             res = Convert.ToInt32(cmd.ExecuteScalar());
             CreateContrato.IdContrato = res;
         }
+
         return res;
     }
 
