@@ -235,6 +235,7 @@ public class RepositorioInmueble
         {
             cmd.CommandText = @"SELECT i.IdInmueble, i.Tipo, i.Coordenadas, i.Precio, i.Ambientes, i.Uso
                                 FROM Inmueble i
+                                JOIN Propietario p ON i.IdPropietario = p.IdPropietario
                                 WHERE i.Activo = 1 AND i.IdInmueble NOT IN (
                                     SELECT c.IdInmueble
                                     FROM Contrato c
