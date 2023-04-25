@@ -252,7 +252,7 @@ public class RepositorioContrato
             {
                 query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
                         i.Nombre, i.Apellido, i.Dni
-                        FROM Inmueble 
+                        FROM Inmueble i
                         LEFT JOIN Contrato c ON i.IdInmueble = c.IdInmueble
                         LEFT JOIN Inquilino i ON c.IdInquilino = i.IdInquilino
                         WHERE i.IdInmueble NOT IN (
