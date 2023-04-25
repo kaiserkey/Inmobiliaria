@@ -120,6 +120,7 @@ function buscarInmuebles() {
         });
     }
     if(option == "InmuebleNotIn"){
+        var busqueda = $('#txtBuscar').val();
         $.getJSON('/Inmueble/BuscarInmueblesSinContrato', { busqueda: busqueda, opcion: opcion }, function (resultados) {
             $('#tblInmuebles').empty();
             $.each(resultados, function (index, resultado) {
