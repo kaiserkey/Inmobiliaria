@@ -145,8 +145,8 @@ $(document).ready(function () {
 
 /* Ocultar input text */
 $(document).ready(function () {
-    $(".option").change(function () {
-        var selectedOption = $(this).children("option:selected").val();
+    $(".optionInmueble").change(function () {
+        var selectedOption = $(this).children("optionInmueble:selected").val();
         if (selectedOption == "Disponibles") {
             $("#txtBuscar").hide();
         }
