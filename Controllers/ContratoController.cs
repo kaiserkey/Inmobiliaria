@@ -164,6 +164,8 @@ namespace Inmobiliaria.Controllers
             return Json(resultados);
         }
 
+        
+
         // GET: Contrato/Renovar/5
         public ActionResult Renovar(int id)
         {
