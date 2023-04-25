@@ -270,7 +270,7 @@ public class RepositorioContrato
         return contratos;
     }
 
-    public List<Contrato> BuscarContratosPorCodigo(MySqlDatabase mySqlDatabase, int codigo)
+    public List<Contrato> BuscarContratosPorCodigo(MySqlDatabase mySqlDatabase, int codigo, string opcion)
     {
         var contratos = new List<Contrato>();
 
