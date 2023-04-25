@@ -127,4 +127,32 @@ public class RepositorioPago
         return res;
     }
 
+    public List<Pago> GetPagos(MySqlDatabase mySqlDatabase)
+    {
+        var pagos = new List<Pago>();
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"SELECT IdPago, Importe, Fecha, NumeroPago, IdContrato
+                            FROM Pago";
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var pago = new Pago
+                    {
+                        IdPago = reader.GetInt32(nameof(Pago.IdPago)),
+                        Importe = reader.GetDecimal(nameof(Pago.Importe)),
+                        NumeroPago = reader.GetInt32(nameof(Pago.NumeroPago)),
+                        Fecha = reader.GetDateTime(nameof(Pago.Fecha)),
+                        IdContrato = reader.GetInt32(nameof(Pago.IdContrato)),
+                    };
+                    pagos.Add(pago);
+                }
+
+            }
+        }
+        return pagos;
+    }
+
 }
