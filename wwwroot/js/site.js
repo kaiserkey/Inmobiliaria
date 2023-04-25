@@ -8,8 +8,8 @@ function abrirModalBuscarContratos() {
 function buscarContratosPor() {
     var opcion = $('#buscarContratoPor').val();
     if ($('#Codigo').val()) {
-        var busqueda = $('#Codigo').val();
-        $.getJSON('/Contrato/BuscarContratosPor', { busqueda: busqueda, opcion: opcion }, function (resultados) {
+        var codigo = $('#Codigo').val();
+        $.getJSON('/Contrato/BuscarContratosPor', { codigo: codigo, opcion: opcion }, function (resultados) {
             $('#tblContrato').empty();
             $.each(resultados, function (index, resultado) {
                 var fila = '<tr><td>' + resultado.idContrato +
