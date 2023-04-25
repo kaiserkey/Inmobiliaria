@@ -2,7 +2,7 @@
 /* Abrir Modal de buscar pagos por su codigo de contrato */
 function abrirModalBuscarPago() {
     $('#modalBuscarPago').modal('show');
-    $('#tblInmuebles').empty();
+    $('#tblPagos').empty();
 }
 
 function buscarPagos() {
