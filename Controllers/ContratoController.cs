@@ -183,7 +183,7 @@ namespace Inmobiliaria.Controllers
                 TempData["Mensaje"] = "No se pudo cancelar el contrato ID:" + id;
             }
 
-            return View(nameof(Index));
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Contrato/Renovar/5
