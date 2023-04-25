@@ -26,7 +26,7 @@ function buscarContratosPor() {
     if ($('#fechaDesde').val() && $('#fechaHasta').val()) {
         var fechaDesde = $.datepicker.formatDate("yy-mm-dd", new Date($('#fechaDesde').val())) + " 00:00:00";
         var fechaHasta = $.datepicker.formatDate("yy-mm-dd", new Date($('#fechaHasta').val())) + " 00:00:00";
-        $.getJSON('/Contrato/BuscarContratosPorFecha', { fechaDesde: fechaDesde, fechaHasta: fechaHasta, opcion: opcion }, function (resultados) {
+        $.getJSON('/Contrato/BuscarContratosPorFecha', { fechaDesde: fechaDesde, fechaHasta: fechaHasta }, function (resultados) {
             $('#tblContrato').empty();
             $.each(resultados, function (index, resultado) {
                 var fila = '<tr><td>' + resultado.idContrato +
