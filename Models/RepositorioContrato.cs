@@ -125,6 +125,7 @@ public class RepositorioContrato
         var duracionMeses = (contrato.FechaFin - contrato.FechaInicio).TotalDays / 30;
         // Calcular la duración transcurrida en meses
         var duracionTranscurrida = (fechaFin - contrato.FechaInicio).TotalDays / 30;
+        
 
 
 
