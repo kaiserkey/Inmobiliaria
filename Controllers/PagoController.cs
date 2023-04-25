@@ -96,7 +96,7 @@ namespace Inmobiliaria.Controllers
         }
 
         /* buscar pagos por jquery */
-        public IActionResult BuscarContratos(string busqueda, string opcion)
+        public IActionResult BuscarPag(string busqueda, string opcion)
         {
             var contrato = new List<Contrato>();
             
