@@ -28,6 +28,7 @@ namespace Inmobiliaria.Controllers
             con = new MySqlDatabase();
             RepoInmueble = new RepositorioInmueble();
             RepoContrato = new RepositorioContrato();
+            RepoPag = new RepositorioContrato();
             RepoInquilino = new RepositorioInquilino();
         }
         // GET: Contrato
