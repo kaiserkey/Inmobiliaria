@@ -242,7 +242,8 @@ public class RepositorioContrato
             WHERE c.FechaInicio <= @fechaHasta AND c.FechaFin >= @fechaDesde
             LIMIT 10";
 
-            if(opcion.Equals("Fecha")){
+            if (opcion.Equals("Fecha"))
+            {
                 query = @"SELECT c.IdContrato, c.IdInquilino, c.IdInmueble, c.FechaInicio, c.FechaFin,
                                 i.Nombre, i.Apellido, i.Dni
                                 FROM Inmueble i
