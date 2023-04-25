@@ -13,7 +13,7 @@ function buscarPagos() {
             var fila = '<tr><td>' + resultado.idPago +
                 '</td><td>' + resultado.fecha +
                 '</td><td>' + resultado.importe +
-                '</td><td>' + resultado.coordenadas +
+                '</td><td>' + resultado.idContrato +
                 '</td><td>' + resultado.precio +
                 '</td><td>' + resultado.ambientes +
                 '</td><td>' + resultado.uso +
