@@ -247,7 +247,7 @@ public class RepositorioContrato
                         LIMIT 10";
             }
 
-            cmd.CommandText = 
+            cmd.CommandText = query;
 
             if (opcion.Equals("Fecha"))
             {
