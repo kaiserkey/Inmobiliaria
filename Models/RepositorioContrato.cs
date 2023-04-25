@@ -142,9 +142,7 @@ public class RepositorioContrato
 
             res = Convert.ToInt32(cmd.ExecuteScalar());
         }
-
-
-
+        
         return res;
     }
 
