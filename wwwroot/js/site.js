@@ -28,7 +28,7 @@ function cerrarModalPago() {
 }
 
 
-/* Abrir modal buscar contratos por fecha, inmuebel y pagos */
+/* Abrir modal buscar contratos por fecha y pagos */
 function abrirModalBuscarContratos() {
     $('#modalBuscarContrato').modal('show');
     $('#tblContrato').empty();
