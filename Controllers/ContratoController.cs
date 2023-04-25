@@ -181,7 +181,7 @@ namespace Inmobiliaria.Controllers
             {
                 int res = RepoContrato.UpdateContrato(con, updateContrato);
                 if(res > 0){
-                    TempData["Mensaje"] = "La entidad se actualizo correctamente ID:" + id;
+                    TempData["Mensaje"] = "EL contrato se renovo ID:" + id;
                 }else if (res == -1){
                     TempData["Mensaje"] = "Existe superposicion de fechas con otro contrato.";
                 }else {
