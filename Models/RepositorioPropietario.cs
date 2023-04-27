@@ -69,6 +69,36 @@ public class RepositorioPropietario
         return null;
     }
 
+    public Propietario GetPropietarioPorEmail(MySqlDatabase mySqlDatabase, string email)
+    {
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"SELECT IdPropietario, Nombre, Apellido, Direccion, Telefono, Dni, Email 
+                                FROM Propietario WHERE Email = @Email";
+            cmd.Parameters.AddWithValue("@Email", email);
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    var propietario = new Propietario
+                    {
+                        IdPropietario = reader.GetInt32(nameof(Propietario.IdPropietario)),
+                        Nombre = reader.GetString(nameof(Propietario.Nombre)),
+                        Apellido = reader.GetString(nameof(Propietario.Apellido)),
+                        Direccion = reader.GetString(nameof(Propietario.Direccion)),
+                        Telefono = reader.GetString(nameof(Propietario.Telefono)),
+                        Dni = reader.GetString(nameof(Propietario.Dni)),
+                        Email = reader.GetString(nameof(Propietario.Email))
+                    };
+                    mySqlDatabase.Dispose();
+                    return propietario;
+                }
+            }
+        }
+        return null;
+    }
+
     public int CreatePropietario(MySqlDatabase mySqlDatabase, Propietario createPropietario)
     {
         int res = -1;

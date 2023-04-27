@@ -126,8 +126,8 @@
                     @if (item.FechaFin > DateTime.Now)
                     {
                         <td>
-                            <a href="@Url.Action("Cancelar", new { id = item.IdContrato })"> <i class="bi bi-x-circle-fill"
-                                    style="font-size: 2em; color: brown;"></i> </a>
+                            <button id="button-cancel" onclick="confirmarCancelar(@item.IdContrato)"> <i class="bi bi-x-circle-fill"
+                                style="font-size: 2em; color: brown;"></i> </button>
                         </td>
                     }else{
                         <td>
@@ -150,3 +150,10 @@
         </tbody>
     </table>
 </div>
+<script>
+    function confirmarCancelar(idContrato) {
+        if (confirm('¿Está seguro de cancelar el contrato?')) {
+            window.location.href = "@Url.Action("Cancelar", new { id = "__id__" })".replace('__id__', idContrato);
+        }
+    }
+</script>

@@ -66,7 +66,8 @@ namespace Inmobiliaria.Controllers
                     var Usuario = RepoUsuario.ObtenerPorEmail(con, login.Usuario);
                     if (Usuario == null || Usuario.Clave != hashed)
                     {
-                        ModelState.AddModelError("", "Usuario o contraseña incorrecto");
+                        
+                        ViewBag.Error = "Usuario o contraseña incorrecto.";
                         return View();
                     }
 
@@ -102,6 +103,10 @@ namespace Inmobiliaria.Controllers
         public ActionResult Index()
         {
             var usuarios = RepoUsuario.GetUsuarios(con);
+            ViewBag.Id = TempData["Id"];
+            if (TempData.ContainsKey("Mensaje")){
+                ViewBag.Mensaje = TempData["Mensaje"];
+            }
             return View(usuarios);
         }
 
@@ -129,6 +134,13 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
+
+                var existUser = RepoUsuario.ObtenerPorEmail(con, usuario.Email);
+                if(existUser != null){
+                    ViewBag.Roles = Usuario.ObtenerRoles();
+                    ViewBag.Error = "El email ya se encuentra registrado.";
+                    return View();
+                }
                 string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                         password: usuario.Clave,
                         salt: System.Text.Encoding.ASCII.GetBytes(configuration["Salt"]),
@@ -167,6 +179,7 @@ namespace Inmobiliaria.Controllers
                     RepoUsuario.UpdateUsuario(con, usuario);
                 }
                 ViewBag.Roles = Usuario.ObtenerRoles();
+                TempData["Id"] = usuario.IdUsuario;
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -181,6 +194,9 @@ namespace Inmobiliaria.Controllers
         {
             ViewBag.Roles = Usuario.ObtenerRoles();
             var usuario = RepoUsuario.ObtenerPorEmail(con, User.Identity.Name);
+            if (TempData.ContainsKey("Mensaje")){
+                ViewBag.Mensaje = TempData["Mensaje"];
+            }
             return View(usuario);
         }
 
@@ -262,6 +278,7 @@ namespace Inmobiliaria.Controllers
 
                 var res = RepoUsuario.UpdateUsuario(con, usuarioEdit);
                 ViewBag.Roles = Usuario.ObtenerRoles();
+                TempData["Mensaje"] = "El usuario se actualizo correctamente.";
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -339,6 +356,7 @@ namespace Inmobiliaria.Controllers
                 usuarioEdit.IdUsuario = id;
                 var res = RepoUsuario.UpdateUsuario(con, usuarioEdit);
                 ViewBag.Roles = Usuario.ObtenerRoles();
+                TempData["Mensaje"] = "Su perfil ha sido actualizado correctamente.";
                 return RedirectToAction(nameof(Perfil));
             }
             catch
@@ -380,7 +398,7 @@ namespace Inmobiliaria.Controllers
                         }
                     }
                 }
-
+                TempData["Mensaje"] = "El usuario ha sido eliminado.";
                 return RedirectToAction(nameof(Index));
             }
             catch

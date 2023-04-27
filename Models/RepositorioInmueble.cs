@@ -196,8 +196,8 @@ public class RepositorioInmueble
                                 p.Nombre, p.Apellido
                                 FROM Inmueble i
                                 JOIN Propietario p ON i.IdPropietario = p.IdPropietario
-                                WHERE (CONCAT(p.Nombre, ' ', p.Apellido) LIKE @busqueda OR p.Dni LIKE @busqueda) LIMIT 10";
-                Console.WriteLine(busqueda);
+                                WHERE (CONCAT(p.Nombre, ' ', p.Apellido) LIKE @busqueda) LIMIT 10";
+                
                 cmd.Parameters.AddWithValue("@busqueda", "%" + busqueda + "%");
             }
             

@@ -176,7 +176,6 @@ namespace Inmobiliaria.Controllers
                 return RedirectToAction(nameof(Index));
             }
             var res = RepoContrato.CancelarContrato(con, id, DateTime.Now, pago.Importe);
-            
             if(res > 0){
                 TempData["Mensaje"] = "Se ha cancelado con exito el contrato ID:" + id;
             }else {

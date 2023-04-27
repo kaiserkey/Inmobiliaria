@@ -69,6 +69,36 @@ public class RepositorioInquilino
         return null;
     }
 
+    public Inquilino GetInquilinoPorEmail(MySqlDatabase mySqlDatabase, string email)
+    {
+        using (var cmd = mySqlDatabase.Connection.CreateCommand() as MySqlCommand)
+        {
+            cmd.CommandText = @"SELECT IdInquilino, Nombre, Apellido, Telefono, Dni, Email, FechaNacimiento 
+                                FROM Inquilino WHERE Email = @Email";
+            cmd.Parameters.AddWithValue("@Email", email);
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    var inquilino = new Inquilino
+                    {
+                        IdInquilino = reader.GetInt32(nameof(Inquilino.IdInquilino)),
+                        Nombre = reader.GetString(nameof(Inquilino.Nombre)),
+                        Apellido = reader.GetString(nameof(Inquilino.Apellido)),
+                        Telefono = reader.GetString(nameof(Inquilino.Telefono)),
+                        Dni = reader.GetString(nameof(Inquilino.Dni)),
+                        Email = reader.GetString(nameof(Inquilino.Email)),
+                        FechaNacimiento = reader.GetDateTime(nameof(Inquilino.FechaNacimiento))
+                    };
+                    mySqlDatabase.Dispose();
+                    return inquilino;
+                }
+            }
+        }
+        return null;
+    }
+
     public int CreateInquilino(MySqlDatabase mySqlDatabase, Inquilino CreateInquilino)
     {
         int res = -1;

@@ -61,6 +61,12 @@ namespace Inmobiliaria.Controllers
         {
             try
             {
+                var existEmail = RepoPropietario.GetPropietarioPorEmail(con, propietario.Email);
+                if(existEmail != null){
+                    ViewBag.Roles = Usuario.ObtenerRoles();
+                    ViewBag.Error = "El email ya se encuentra registrado.";
+                    return View();
+                }
                 RepoPropietario.CreatePropietario(con, propietario);
                 TempData["Id"] = propietario.IdPropietario;
                 return RedirectToAction(nameof(Index));

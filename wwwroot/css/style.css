@@ -424,3 +424,8 @@ tbody .email{
 .custom-modal .modal-dialog {
     max-width: 900px; 
 }
+
+#button-cancel{
+    border: none;
+    background-color: #ffffff;
+}
